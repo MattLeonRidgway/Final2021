@@ -13,39 +13,33 @@ namespace Final2021
         int statusID;    
         // Empty default Constructor
         public Status() { }
-
+        // Full Constructor
         public Status(string status, int statusID){
             this.statusType = status;
             this.statusID = statusID;
         }
+        // Constructor for only statusType
         public Status(string status){
             this.statusType = status;
             
         }
         public string StatusType { get => statusType; set => statusType = value; }
         public int StatusID { get => statusID; set => statusID = value; }
-
+        // Insert into database statusType TESTED WORKING
         public void InsertStatus(string sType)
         {
            
-           
-               
-            //insertCommand.Parameters.Add(sType,StatusType); 
-            try
-            { 
+            try{ 
                 DBopen();
-                SQLiteCommand insertCommand= new SQLiteCommand("INSERT INTO Status(StatusType)VALUES(?)",con);
-                
-               insertCommand.Parameters.AddWithValue(sType, StatusType);
+                SQLiteCommand insertCommand= new SQLiteCommand("INSERT INTO Status(StatusType)VALUES(?)",con);                
+                insertCommand.Parameters.AddWithValue(sType, StatusType);
                 insertCommand.ExecuteNonQuery();
             }
-            catch (Exception e)
-            {
-                throw new Exception(e.Message); 
-              
+            catch (Exception e){
+                throw new Exception(e.Message);              
             }
-            finally { 
-             DBClose();
+            finally{ 
+                DBClose();
             }
 
            
@@ -81,17 +75,24 @@ namespace Final2021
             try
             {
                 DBopen();
-                SQLiteCommand sqlUpdate;
-                sqlUpdate = con.CreateCommand();
-                sqlUpdate.CommandText = "UPDATE INTO Status WHERE StatusID=StatusID(StatusType)" +
-                "VALUES(sType);";
+                SQLiteCommand sqlUpdate =new SQLiteCommand("UPDATE Status SET [Type]=@type WHERE [StatusID]=@typeID",con);
+              
+                sqlUpdate.Parameters.Add(new SQLiteParameter("@typeID"));
+                sqlUpdate.Parameters.Add(new SQLiteParameter("@type"));
+                sqlUpdate.Parameters["@typeID"].Value = statusID;
+                sqlUpdate.Parameters["@type"].Value = sType;
+
                 sqlUpdate.ExecuteNonQuery();
             }
-            catch
+            catch (SQLiteException e)
             {
-                Console.WriteLine("Catch Update status");
+                throw e;
             }
-            DBClose();
+            finally
+            {
+                DBClose();
+            }
+          
         }
     }
 }

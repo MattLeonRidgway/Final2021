@@ -87,7 +87,10 @@ namespace Final2021
             {
                 Console.WriteLine("Catch Update type");
             }
+            finally { 
             DBClose();
+            }
+            
         }
     }
 }
