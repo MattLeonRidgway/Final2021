@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DirectedGraph GraphDirection="LeftToRight" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+  <Nodes>
+    <Node Id="Database" Label="PatientCompact.sdf" Category="Database" Group="Expanded" />
+    <Node Id="Doctor" Label="Doctor" Category="Table" Group="Collapsed" />
+    <Node Id="Doctor_DoctorID" Label="DoctorID" Category="Field Primary" Description="int" />
+    <Node Id="Doctor_DoctorFName" Label="DoctorFName" Category="Field" Description="nvarchar(100)" />
+    <Node Id="Doctor_DoctorMName" Label="DoctorMName" Category="Field Optional" Description="nvarchar(100)" />
+    <Node Id="Doctor_DoctorLName" Label="DoctorLName" Category="Field" Description="nvarchar(100)" />
+    <Node Id="Doctor_DoctorSex" Label="DoctorSex" Category="Field" Description="nchar(100)" />
+    <Node Id="Doctor_DoctorStatus" Label="DoctorStatus" Category="Field" Description="int" />
+    <Node Id="Doctor_DoctorType" Label="DoctorType" Category="Field" Description="int" />
+    <Node Id="Doctor_DoctorDepartment" Label="DoctorDepartment" Category="Field" Description="int" />
+    <Node Id="Doctor_DoctorClinic" Label="DoctorClinic" Category="Field" Description="int" />
+    <Node Id="Doctor_DoctorEmail" Label="DoctorEmail" Category="Field" Description="nvarchar(100)" />
+    <Node Id="Doctor_DoctorNotes" Label="DoctorNotes" Category="Field Optional" Description="nvarchar(100)" />
+    <Node Id="DoctorClinic" Label="DoctorClinic" Category="Table" Group="Collapsed" />
+    <Node Id="DoctorClinic_ClinicID" Label="ClinicID" Category="Field Primary" Description="int" />
+    <Node Id="DoctorClinic_Clinic" Label="Clinic" Category="Field" Description="nvarchar(100)" />
+    <Node Id="DoctorDepartment" Label="DoctorDepartment" Category="Table" Group="Collapsed" />
+    <Node Id="DoctorDepartment_DepartmentID" Label="DepartmentID" Category="Field Primary" Description="int" />
+    <Node Id="DoctorDepartment_Department" Label="Department" Category="Field" Description="nvarchar(100)" />
+    <Node Id="DoctorStatus" Label="DoctorStatus" Category="Table" Group="Collapsed" />
+    <Node Id="DoctorStatus_StatusID" Label="StatusID" Category="Field Primary" Description="int" />
+    <Node Id="DoctorStatus_StatusType" Label="StatusType" Category="Field" Description="nvarchar(100)" />
+    <Node Id="DoctorType" Label="DoctorType" Category="Table" Group="Collapsed" />
+    <Node Id="DoctorType_TypeID" Label="TypeID" Category="Field Primary" Description="int" />
+    <Node Id="DoctorType_Type" Label="Type" Category="Field" Description="nvarchar(100)" />
+    <Node Id="Nurse" Label="Nurse" Category="Table" Group="Collapsed" />
+    <Node Id="Nurse_NurseID" Label="NurseID" Category="Field Primary" Description="int" />
+    <Node Id="Nurse_NurseFName" Label="NurseFName" Category="Field" Description="nvarchar(100)" />
+    <Node Id="Nurse_NurseMName" Label="NurseMName" Category="Field Optional" Description="nvarchar(100)" />
+    <Node Id="Nurse_NurseLName" Label="NurseLName" Category="Field" Description="nvarchar(100)" />
+    <Node Id="Nurse_NurseSex" Label="NurseSex" Category="Field" Description="nchar(100)" />
+    <Node Id="Nurse_NurseStatus" Label="NurseStatus" Category="Field" Description="int" />
+    <Node Id="Nurse_NurseType" Label="NurseType" Category="Field" Description="int" />
+    <Node Id="Nurse_NurseDepartment" Label="NurseDepartment" Category="Field" Description="int" />
+    <Node Id="Nurse_NurseClinic" Label="NurseClinic" Category="Field" Description="int" />
+    <Node Id="Nurse_NurseEmail" Label="NurseEmail" Category="Field" Description="nvarchar(100)" />
+    <Node Id="Nurse_NurseNotes" Label="NurseNotes" Category="Field Optional" Description="nvarchar(100)" />
+    <Node Id="NurseClinic" Label="NurseClinic" Category="Table" Group="Collapsed" />
+    <Node Id="NurseClinic_ClinicID" Label="ClinicID" Category="Field Primary" Description="int" />
+    <Node Id="NurseClinic_Clinic" Label="Clinic" Category="Field" Description="nvarchar(100)" />
+    <Node Id="NurseDepartment" Label="NurseDepartment" Category="Table" Group="Collapsed" />
+    <Node Id="NurseDepartment_DepartmentID" Label="DepartmentID" Category="Field Primary" Description="int" />
+    <Node Id="NurseDepartment_Department" Label="Department" Category="Field" Description="nvarchar(100)" />
+    <Node Id="NurseStatus" Label="NurseStatus" Category="Table" Group="Collapsed" />
+    <Node Id="NurseStatus_StatusID" Label="StatusID" Category="Field Primary" Description="int" />
+    <Node Id="NurseStatus_StatusType" Label="StatusType" Category="Field" Description="nvarchar(100)" />
+    <Node Id="NurseType" Label="NurseType" Category="Table" Group="Collapsed" />
+    <Node Id="NurseType_TypeID" Label="TypeID" Category="Field Primary" Description="int" />
+    <Node Id="NurseType_Type" Label="Type" Category="Field" Description="nvarchar(100)" />
+    <Node Id="ReviewedDoctor" Label="ReviewedDoctor" Category="Table" Group="Collapsed" />
+    <Node Id="ReviewedDoctor_ReviewID" Label="ReviewID" Category="Field Primary" Description="int" />
+    <Node Id="ReviewedDoctor_ReviewedDoctor" Label="ReviewedDoctor" Category="Field" Description="nvarchar(100)" />
+    <Node Id="ReviewedDoctor_ReviewedDoctorID" Label="ReviewedDoctorID" Category="Field" Description="int" />
+    <Node Id="ReviewedDoctor_ReviewedYear" Label="ReviewedYear" Category="Field" Description="int" />
+    <Node Id="ReviewedDoctor_ReviewedMonth" Label="ReviewedMonth" Category="Field" Description="int" />
+    <Node Id="ReviewedDoctor_ReviewDepartment" Label="ReviewDepartment" Category="Field" Description="int" />
+    <Node Id="ReviewedDoctor_ReviewClinic" Label="ReviewClinic" Category="Field" Description="int" />
+    <Node Id="ReviewedDoctor_ReviewByDoctor" Label="ReviewByDoctor" Category="Field" Description="nvarchar(100)" />
+    <Node Id="ReviewedDoctor_ReviewByDoctorID" Label="ReviewByDoctorID" Category="Field" Description="int" />
+    <Node Id="ReviewedNurse" Label="ReviewedNurse" Category="Table" Group="Collapsed" />
+    <Node Id="ReviewedNurse_ReviewID" Label="ReviewID" Category="Field Primary" Description="int" />
+    <Node Id="ReviewedNurse_ReviewedNurse" Label="ReviewedNurse" Category="Field" Description="nvarchar(100)" />
+    <Node Id="ReviewedNurse_ReviewedNurseID" Label="ReviewedNurseID" Category="Field" Description="int" />
+    <Node Id="ReviewedNurse_ReviewedYear" Label="ReviewedYear" Category="Field" Description="int" />
+    <Node Id="ReviewedNurse_ReviewedMonth" Label="ReviewedMonth" Category="Field" Description="int" />
+    <Node Id="ReviewedNurse_ReviewDepartment" Label="ReviewDepartment" Category="Field" Description="int" />
+    <Node Id="ReviewedNurse_ReviewClinic" Label="ReviewClinic" Category="Field" Description="int" />
+    <Node Id="ReviewedNurse_ReviewByNurse" Label="ReviewByNurse" Category="Field" Description="nvarchar(100)" />
+    <Node Id="ReviewedNurse_ReviewByNurseID" Label="ReviewByNurseID" Category="Field" Description="int" />
+  </Nodes>
+  <Links>
+    <Link Source="Database" Target="Doctor" Category="Contains" />
+    <Link Source="Doctor" Target="Doctor_DoctorID" Category="Contains" />
+    <Link Source="Doctor" Target="Doctor_DoctorFName" Category="Contains" />
+    <Link Source="Doctor" Target="Doctor_DoctorMName" Category="Contains" />
+    <Link Source="Doctor" Target="Doctor_DoctorLName" Category="Contains" />
+    <Link Source="Doctor" Target="Doctor_DoctorSex" Category="Contains" />
+    <Link Source="Doctor" Target="Doctor_DoctorStatus" Category="Contains" />
+    <Link Source="Doctor" Target="Doctor_DoctorType" Category="Contains" />
+    <Link Source="Doctor" Target="Doctor_DoctorDepartment" Category="Contains" />
+    <Link Source="Doctor" Target="Doctor_DoctorClinic" Category="Contains" />
+    <Link Source="Doctor" Target="Doctor_DoctorEmail" Category="Contains" />
+    <Link Source="Doctor" Target="Doctor_DoctorNotes" Category="Contains" />
+    <Link Source="Database" Target="DoctorClinic" Category="Contains" />
+    <Link Source="DoctorClinic" Target="DoctorClinic_ClinicID" Category="Contains" />
+    <Link Source="DoctorClinic" Target="DoctorClinic_Clinic" Category="Contains" />
+    <Link Source="Database" Target="DoctorDepartment" Category="Contains" />
+    <Link Source="DoctorDepartment" Target="DoctorDepartment_DepartmentID" Category="Contains" />
+    <Link Source="DoctorDepartment" Target="DoctorDepartment_Department" Category="Contains" />
+    <Link Source="Database" Target="DoctorStatus" Category="Contains" />
+    <Link Source="DoctorStatus" Target="DoctorStatus_StatusID" Category="Contains" />
+    <Link Source="DoctorStatus" Target="DoctorStatus_StatusType" Category="Contains" />
+    <Link Source="Database" Target="DoctorType" Category="Contains" />
+    <Link Source="DoctorType" Target="DoctorType_TypeID" Category="Contains" />
+    <Link Source="DoctorType" Target="DoctorType_Type" Category="Contains" />
+    <Link Source="Database" Target="Nurse" Category="Contains" />
+    <Link Source="Nurse" Target="Nurse_NurseID" Category="Contains" />
+    <Link Source="Nurse" Target="Nurse_NurseFName" Category="Contains" />
+    <Link Source="Nurse" Target="Nurse_NurseMName" Category="Contains" />
+    <Link Source="Nurse" Target="Nurse_NurseLName" Category="Contains" />
+    <Link Source="Nurse" Target="Nurse_NurseSex" Category="Contains" />
+    <Link Source="Nurse" Target="Nurse_NurseStatus" Category="Contains" />
+    <Link Source="Nurse" Target="Nurse_NurseType" Category="Contains" />
+    <Link Source="Nurse" Target="Nurse_NurseDepartment" Category="Contains" />
+    <Link Source="Nurse" Target="Nurse_NurseClinic" Category="Contains" />
+    <Link Source="Nurse" Target="Nurse_NurseEmail" Category="Contains" />
+    <Link Source="Nurse" Target="Nurse_NurseNotes" Category="Contains" />
+    <Link Source="Database" Target="NurseClinic" Category="Contains" />
+    <Link Source="NurseClinic" Target="NurseClinic_ClinicID" Category="Contains" />
+    <Link Source="NurseClinic" Target="NurseClinic_Clinic" Category="Contains" />
+    <Link Source="Database" Target="NurseDepartment" Category="Contains" />
+    <Link Source="NurseDepartment" Target="NurseDepartment_DepartmentID" Category="Contains" />
+    <Link Source="NurseDepartment" Target="NurseDepartment_Department" Category="Contains" />
+    <Link Source="Database" Target="NurseStatus" Category="Contains" />
+    <Link Source="NurseStatus" Target="NurseStatus_StatusID" Category="Contains" />
+    <Link Source="NurseStatus" Target="NurseStatus_StatusType" Category="Contains" />
+    <Link Source="Database" Target="NurseType" Category="Contains" />
+    <Link Source="NurseType" Target="NurseType_TypeID" Category="Contains" />
+    <Link Source="NurseType" Target="NurseType_Type" Category="Contains" />
+    <Link Source="Database" Target="ReviewedDoctor" Category="Contains" />
+    <Link Source="ReviewedDoctor" Target="ReviewedDoctor_ReviewID" Category="Contains" />
+    <Link Source="ReviewedDoctor" Target="ReviewedDoctor_ReviewedDoctor" Category="Contains" />
+    <Link Source="ReviewedDoctor" Target="ReviewedDoctor_ReviewedDoctorID" Category="Contains" />
+    <Link Source="ReviewedDoctor" Target="ReviewedDoctor_ReviewedYear" Category="Contains" />
+    <Link Source="ReviewedDoctor" Target="ReviewedDoctor_ReviewedMonth" Category="Contains" />
+    <Link Source="ReviewedDoctor" Target="ReviewedDoctor_ReviewDepartment" Category="Contains" />
+    <Link Source="ReviewedDoctor" Target="ReviewedDoctor_ReviewClinic" Category="Contains" />
+    <Link Source="ReviewedDoctor" Target="ReviewedDoctor_ReviewByDoctor" Category="Contains" />
+    <Link Source="ReviewedDoctor" Target="ReviewedDoctor_ReviewByDoctorID" Category="Contains" />
+    <Link Source="Database" Target="ReviewedNurse" Category="Contains" />
+    <Link Source="ReviewedNurse" Target="ReviewedNurse_ReviewID" Category="Contains" />
+    <Link Source="ReviewedNurse" Target="ReviewedNurse_ReviewedNurse" Category="Contains" />
+    <Link Source="ReviewedNurse" Target="ReviewedNurse_ReviewedNurseID" Category="Contains" />
+    <Link Source="ReviewedNurse" Target="ReviewedNurse_ReviewedYear" Category="Contains" />
+    <Link Source="ReviewedNurse" Target="ReviewedNurse_ReviewedMonth" Category="Contains" />
+    <Link Source="ReviewedNurse" Target="ReviewedNurse_ReviewDepartment" Category="Contains" />
+    <Link Source="ReviewedNurse" Target="ReviewedNurse_ReviewClinic" Category="Contains" />
+    <Link Source="ReviewedNurse" Target="ReviewedNurse_ReviewByNurse" Category="Contains" />
+    <Link Source="ReviewedNurse" Target="ReviewedNurse_ReviewByNurseID" Category="Contains" />
+  </Links>
+  <Styles>
+    <Style TargetType="Node" GroupLabel="Table" ValueLabel="True">
+      <Condition Expression="HasCategory('Table')" />
+      <Setter Property="Background" Value="#FFC0C0C0" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Schema" ValueLabel="True">
+      <Condition Expression="HasCategory('Schema')" />
+      <Setter Property="Background" Value="#FF7F9169" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Field Primary" ValueLabel="True">
+      <Condition Expression="HasCategory('Field Primary')" />
+      <Setter Property="Background" Value="#FF008000" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Field Optional" ValueLabel="True">
+      <Condition Expression="HasCategory('Field Optional')" />
+      <Setter Property="Background" Value="#FF808040" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Field Foreign" ValueLabel="True">
+      <Condition Expression="HasCategory('Field Foreign')" />
+      <Setter Property="Background" Value="#FF8080FF" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Field" ValueLabel="True">
+      <Condition Expression="HasCategory('Field')" />
+      <Setter Property="Background" Value="#FFC0A000" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Database" ValueLabel="True">
+      <Condition Expression="HasCategory('Database')" />
+      <Setter Property="Background" Value="#FFFFFFFF" />
+    </Style>
+  </Styles>
+</DirectedGraph>

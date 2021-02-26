@@ -1,0 +1,17 @@
+﻿-- Script Date: 2/5/2021 2:19 PM  - ErikEJ.SqlCeScripting version 3.5.2.86
+CREATE TABLE [Nurse] (
+  [NurseID] int IDENTITY (1,1) NOT NULL
+, [NurseFName] nvarchar(100) NOT NULL
+, [NurseMName] nvarchar(100) NULL
+, [NurseLName] nvarchar(100) NOT NULL
+, [NurseSex] nchar(100) NOT NULL
+, [NurseStatus] int NOT NULL
+, [NurseType] int NOT NULL
+, [NurseDepartment] int NOT NULL
+, [NurseClinic] int NOT NULL
+, [NurseEmail] nvarchar(100) NOT NULL
+, [NurseNotes] nvarchar(100) NULL
+);
+GO
+ALTER TABLE [Nurse] ADD CONSTRAINT [PK_Nurse] PRIMARY KEY ([NurseID]);
+GO

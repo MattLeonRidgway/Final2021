@@ -1,0 +1,96 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data.SQLite;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Final2021
+{
+    class Clinic:DBConnection
+    {
+        int clinicID;
+        string clinicString;
+   
+        public Clinic() { }
+        public Clinic(string clinic)
+        {
+            
+            this.clinicString = clinic;
+        }
+        public Clinic(int clinicID, string clinic)
+        {
+            this.clinicID = clinicID;
+            this.clinicString = clinic;
+        }
+
+        public int ClinicID { get => clinicID; set => clinicID = value; }
+        public string ClinicString { get => clinicString; set => clinicString = value; }
+
+        public void InsertClinic(string clinic)
+        {
+
+            try
+            {
+                DBopen();                
+                SQLiteCommand sql;
+                string sqlConnect = con.ToString();
+                sql = con.CreateCommand();
+                sql.CommandText = "INSERT INTO Clinic(Clinic) " +
+                "VALUES(clinic); ";
+                sql.ExecuteNonQuery();
+            }
+            catch
+            {
+                Console.WriteLine("Insert Clinic catch");
+            }
+            DBClose();
+        }// end insert clinic
+        // get a list of clinics 
+        public List<string> ViewClinic(List<string> clinicList)
+        {
+          
+            try
+            {
+                DBopen();
+                SQLiteDataReader sqlGet;
+                SQLiteCommand sqlCMD;
+                sqlCMD = con.CreateCommand();
+                sqlCMD.CommandText = "SELECT * FROM Clinic";
+                sqlGet = sqlCMD.ExecuteReader();
+                while (sqlGet.Read())
+                {
+                    string getClinic = sqlGet.GetString(11);
+                    clinicList.Add(getClinic);
+                }
+            }
+            catch
+            {
+                Console.WriteLine("View clinic catch");
+            }
+           DBClose();
+            return clinicList;
+        }// end ViewClinic()
+        public void UpdateClinic(int clinicID, string clinicType)
+        {
+
+            try
+            {
+                DBopen();
+                SQLiteCommand sqlUpdate;
+                sqlUpdate = con.CreateCommand();
+                sqlUpdate.CommandText = "UPDATE INTO Clinic WHERE ClinicID=clinicID(Clinic)" +
+                "VALUES(clinicType);";
+
+
+                sqlUpdate.ExecuteNonQuery();
+            }
+            catch
+            {
+                Console.WriteLine("Catch Update clinic");
+            }
+            DBClose();
+
+        }
+    }
+}

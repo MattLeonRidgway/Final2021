@@ -1,0 +1,111 @@
+﻿-- Script Date: 2/5/2021 4:07 PM  - ErikEJ.SqlCeScripting version 3.5.2.86
+-- Database information:
+-- Locale Identifier: 1033
+-- Encryption Mode: 
+-- Case Sensitive: False
+-- Database: C:\Users\scoob\OneDrive - Champlain College\Current courses\SDEV 360-81 C#\code\Final2021\PatientCompact.sdf
+-- ServerVersion: 4.0.8876.1
+-- DatabaseSize: 192 KB
+-- SpaceAvailable: 3.999 GB
+-- Created: 2/5/2021 2:18 PM
+
+-- User Table information:
+-- Number of tables: 12
+-- Doctor: 0 row(s)
+-- DoctorClinic: 0 row(s)
+-- DoctorDepartment: 0 row(s)
+-- DoctorStatus: 0 row(s)
+-- DoctorType: 0 row(s)
+-- Nurse: 0 row(s)
+-- NurseClinic: 0 row(s)
+-- NurseDepartment: 0 row(s)
+-- NurseStatus: 0 row(s)
+-- NurseType: 0 row(s)
+-- ReviewedDoctor: 0 row(s)
+-- ReviewedNurse: 0 row(s)
+
+SELECT 1;
+PRAGMA foreign_keys=OFF;
+BEGIN TRANSACTION;
+CREATE TABLE [ReviewedNurse] (
+  [ReviewID] INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL
+, [ReviewedNurse] nvarchar(100) NOT NULL COLLATE NOCASE
+, [ReviewedNurseID] int NOT NULL
+, [ReviewedYear] int NOT NULL
+, [ReviewedMonth] int NOT NULL
+, [ReviewDepartment] int NOT NULL
+, [ReviewClinic] int NOT NULL
+, [ReviewByNurse] nvarchar(100) NOT NULL COLLATE NOCASE
+, [ReviewByNurseID] int NOT NULL
+);
+CREATE TABLE [ReviewedDoctor] (
+  [ReviewID] INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL
+, [ReviewedDoctor] nvarchar(100) NOT NULL COLLATE NOCASE
+, [ReviewedDoctorID] int NOT NULL
+, [ReviewedYear] int NOT NULL
+, [ReviewedMonth] int NOT NULL
+, [ReviewDepartment] int NOT NULL
+, [ReviewClinic] int NOT NULL
+, [ReviewByDoctor] nvarchar(100) NOT NULL COLLATE NOCASE
+, [ReviewByDoctorID] int NOT NULL
+);
+CREATE TABLE [NurseType] (
+  [TypeID] INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL
+, [Type] nvarchar(100) NOT NULL COLLATE NOCASE
+);
+CREATE TABLE [NurseStatus] (
+  [StatusID] INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL
+, [StatusType] nvarchar(100) NOT NULL COLLATE NOCASE
+);
+CREATE TABLE [NurseDepartment] (
+  [DepartmentID] INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL
+, [Department] nvarchar(100) NOT NULL COLLATE NOCASE
+);
+CREATE TABLE [NurseClinic] (
+  [ClinicID] INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL
+, [Clinic] nvarchar(100) NOT NULL COLLATE NOCASE
+);
+CREATE TABLE [Nurse] (
+  [NurseID] INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL
+, [NurseFName] nvarchar(100) NOT NULL COLLATE NOCASE
+, [NurseMName] nvarchar(100) NULL COLLATE NOCASE
+, [NurseLName] nvarchar(100) NOT NULL COLLATE NOCASE
+, [NurseSex] nchar(100) NOT NULL COLLATE NOCASE
+, [NurseStatus] int NOT NULL
+, [NurseType] int NOT NULL
+, [NurseDepartment] int NOT NULL
+, [NurseClinic] int NOT NULL
+, [NurseEmail] nvarchar(100) NOT NULL COLLATE NOCASE
+, [NurseNotes] nvarchar(100) NULL COLLATE NOCASE
+);
+CREATE TABLE [DoctorType] (
+  [TypeID] INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL
+, [Type] nvarchar(100) NOT NULL COLLATE NOCASE
+);
+CREATE TABLE [DoctorStatus] (
+  [StatusID] INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL
+, [StatusType] nvarchar(100) NOT NULL COLLATE NOCASE
+);
+CREATE TABLE [DoctorDepartment] (
+  [DepartmentID] INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL
+, [Department] nvarchar(100) NOT NULL COLLATE NOCASE
+);
+CREATE TABLE [DoctorClinic] (
+  [ClinicID] INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL
+, [Clinic] nvarchar(100) NOT NULL COLLATE NOCASE
+);
+CREATE TABLE [Doctor] (
+  [DoctorID] INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL
+, [DoctorFName] nvarchar(100) NOT NULL COLLATE NOCASE
+, [DoctorMName] nvarchar(100) NULL COLLATE NOCASE
+, [DoctorLName] nvarchar(100) NOT NULL COLLATE NOCASE
+, [DoctorSex] nchar(100) NOT NULL COLLATE NOCASE
+, [DoctorStatus] int NOT NULL
+, [DoctorType] int NOT NULL
+, [DoctorDepartment] int NOT NULL
+, [DoctorClinic] int NOT NULL
+, [DoctorEmail] nvarchar(100) NOT NULL COLLATE NOCASE
+, [DoctorNotes] nvarchar(100) NULL COLLATE NOCASE
+);
+COMMIT;
+

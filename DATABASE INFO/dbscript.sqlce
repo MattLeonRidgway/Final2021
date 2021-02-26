@@ -1,0 +1,143 @@
+﻿-- Script Date: 2/5/2021 3:14 PM  - ErikEJ.SqlCeScripting version 3.5.2.86
+-- Database information:
+-- Locale Identifier: 1033
+-- Encryption Mode: 
+-- Case Sensitive: False
+-- Database: C:\Users\scoob\OneDrive - Champlain College\Current courses\SDEV 360-81 C#\code\Final2021\PatientCompact.sdf
+-- ServerVersion: 4.0.8876.1
+-- DatabaseSize: 192 KB
+-- SpaceAvailable: 3.999 GB
+-- Created: 2/5/2021 2:18 PM
+
+-- User Table information:
+-- Number of tables: 12
+-- Doctor: 0 row(s)
+-- DoctorClinic: 0 row(s)
+-- DoctorDepartment: 0 row(s)
+-- DoctorStatus: 0 row(s)
+-- DoctorType: 0 row(s)
+-- Nurse: 0 row(s)
+-- NurseClinic: 0 row(s)
+-- NurseDepartment: 0 row(s)
+-- NurseStatus: 0 row(s)
+-- NurseType: 0 row(s)
+-- ReviewedDoctor: 0 row(s)
+-- ReviewedNurse: 0 row(s)
+
+CREATE TABLE [ReviewedNurse] (
+  [ReviewID] int IDENTITY (1,1) NOT NULL
+, [ReviewedNurse] nvarchar(100) NOT NULL
+, [ReviewedNurseID] int NOT NULL
+, [ReviewedYear] int NOT NULL
+, [ReviewedMonth] int NOT NULL
+, [ReviewDepartment] int NOT NULL
+, [ReviewClinic] int NOT NULL
+, [ReviewByNurse] nvarchar(100) NOT NULL
+, [ReviewByNurseID] int NOT NULL
+);
+GO
+CREATE TABLE [ReviewedDoctor] (
+  [ReviewID] int IDENTITY (1,1) NOT NULL
+, [ReviewedDoctor] nvarchar(100) NOT NULL
+, [ReviewedDoctorID] int NOT NULL
+, [ReviewedYear] int NOT NULL
+, [ReviewedMonth] int NOT NULL
+, [ReviewDepartment] int NOT NULL
+, [ReviewClinic] int NOT NULL
+, [ReviewByDoctor] nvarchar(100) NOT NULL
+, [ReviewByDoctorID] int NOT NULL
+);
+GO
+CREATE TABLE [NurseType] (
+  [TypeID] int IDENTITY (1,1) NOT NULL
+, [Type] nvarchar(100) NOT NULL
+);
+GO
+CREATE TABLE [NurseStatus] (
+  [StatusID] int IDENTITY (1,1) NOT NULL
+, [StatusType] nvarchar(100) NOT NULL
+);
+GO
+CREATE TABLE [NurseDepartment] (
+  [DepartmentID] int IDENTITY (1,1) NOT NULL
+, [Department] nvarchar(100) NOT NULL
+);
+GO
+CREATE TABLE [NurseClinic] (
+  [ClinicID] int IDENTITY (1,1) NOT NULL
+, [Clinic] nvarchar(100) NOT NULL
+);
+GO
+CREATE TABLE [Nurse] (
+  [NurseID] int IDENTITY (1,1) NOT NULL
+, [NurseFName] nvarchar(100) NOT NULL
+, [NurseMName] nvarchar(100) NULL
+, [NurseLName] nvarchar(100) NOT NULL
+, [NurseSex] nchar(100) NOT NULL
+, [NurseStatus] int NOT NULL
+, [NurseType] int NOT NULL
+, [NurseDepartment] int NOT NULL
+, [NurseClinic] int NOT NULL
+, [NurseEmail] nvarchar(100) NOT NULL
+, [NurseNotes] nvarchar(100) NULL
+);
+GO
+CREATE TABLE [DoctorType] (
+  [TypeID] int IDENTITY (1,1) NOT NULL
+, [Type] nvarchar(100) NOT NULL
+);
+GO
+CREATE TABLE [DoctorStatus] (
+  [StatusID] int IDENTITY (1,1) NOT NULL
+, [StatusType] nvarchar(100) NOT NULL
+);
+GO
+CREATE TABLE [DoctorDepartment] (
+  [DepartmentID] int IDENTITY (1,1) NOT NULL
+, [Department] nvarchar(100) NOT NULL
+);
+GO
+CREATE TABLE [DoctorClinic] (
+  [ClinicID] int IDENTITY (1,1) NOT NULL
+, [Clinic] nvarchar(100) NOT NULL
+);
+GO
+CREATE TABLE [Doctor] (
+  [DoctorID] int IDENTITY (1,1) NOT NULL
+, [DoctorFName] nvarchar(100) NOT NULL
+, [DoctorMName] nvarchar(100) NULL
+, [DoctorLName] nvarchar(100) NOT NULL
+, [DoctorSex] nchar(100) NOT NULL
+, [DoctorStatus] int NOT NULL
+, [DoctorType] int NOT NULL
+, [DoctorDepartment] int NOT NULL
+, [DoctorClinic] int NOT NULL
+, [DoctorEmail] nvarchar(100) NOT NULL
+, [DoctorNotes] nvarchar(100) NULL
+);
+GO
+ALTER TABLE [ReviewedNurse] ADD CONSTRAINT [PK_ReviewedNurse] PRIMARY KEY ([ReviewID]);
+GO
+ALTER TABLE [ReviewedDoctor] ADD CONSTRAINT [PK_ReviewedDoctor] PRIMARY KEY ([ReviewID]);
+GO
+ALTER TABLE [NurseType] ADD CONSTRAINT [PK_NurseType] PRIMARY KEY ([TypeID]);
+GO
+ALTER TABLE [NurseStatus] ADD CONSTRAINT [PK_NurseStatus] PRIMARY KEY ([StatusID]);
+GO
+ALTER TABLE [NurseDepartment] ADD CONSTRAINT [PK_NurseDepartment] PRIMARY KEY ([DepartmentID]);
+GO
+ALTER TABLE [NurseClinic] ADD CONSTRAINT [PK_NurseClinic] PRIMARY KEY ([ClinicID]);
+GO
+ALTER TABLE [Nurse] ADD CONSTRAINT [PK_Nurse] PRIMARY KEY ([NurseID]);
+GO
+ALTER TABLE [DoctorType] ADD CONSTRAINT [PK_DoctorType] PRIMARY KEY ([TypeID]);
+GO
+ALTER TABLE [DoctorStatus] ADD CONSTRAINT [PK_DoctorStatus] PRIMARY KEY ([StatusID]);
+GO
+ALTER TABLE [DoctorDepartment] ADD CONSTRAINT [PK_DoctorDepartment] PRIMARY KEY ([DepartmentID]);
+GO
+ALTER TABLE [DoctorClinic] ADD CONSTRAINT [PK_DoctorClinic] PRIMARY KEY ([ClinicID]);
+GO
+ALTER TABLE [Doctor] ADD CONSTRAINT [PK_Doctor] PRIMARY KEY ([DoctorID]);
+GO
+

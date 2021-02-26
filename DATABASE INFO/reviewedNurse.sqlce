@@ -1,0 +1,15 @@
+﻿-- Script Date: 2/5/2021 2:41 PM  - ErikEJ.SqlCeScripting version 3.5.2.86
+CREATE TABLE [ReviewedNurse] (
+  [ReviewID] int IDENTITY (1,1) NOT NULL
+, [ReviewedNurse] nvarchar(100) NOT NULL
+, [ReviewedNurseID] int NOT NULL
+, [ReviewedYear] int NOT NULL
+, [ReviewedMonth] int NOT NULL
+, [ReviewDepartment] int NOT NULL
+, [ReviewClinic] int NOT NULL
+, [ReviewByNurse] nvarchar(100) NOT NULL
+, [ReviewByNurseID] int NOT NULL
+);
+GO
+ALTER TABLE [ReviewedNurse] ADD CONSTRAINT [PK_ReviewedNurse] PRIMARY KEY ([ReviewID]);
+GO
