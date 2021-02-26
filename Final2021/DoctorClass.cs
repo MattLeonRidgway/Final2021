@@ -55,21 +55,28 @@ namespace Final2021
             try
             {
                 DBopen();
-                SQLiteCommand sql;
-                string sqlConnect = con.ToString();
-                sql = con.CreateCommand();
-                sql.CommandText = "INSERT INTO Doctor(DoctorFName,DoctorMName,DoctorLName,DoctorSex,DoctorStatus,DoctorType,DoctorDepartment,DoctorClinic,DoctorEmail,DoctorNotes) " +
-                "VALUES(first,mid,last,sex,stats,type,depart,clinic,email,notes); ";
-                sql.ExecuteNonQuery();
+                SQLiteCommand insertCommand = new SQLiteCommand("INSERT INTO Doctor(DoctorFName, DoctorMName, DoctorLName, DoctorSex,DoctorStatus," +
+                    "DoctorType, DoctorDepartment,DoctorClinic, DoctorEmail,DoctorNotes)VALUES(?,?,?,?,?,?,?,?,?,?)", con);
+                insertCommand.Parameters.AddWithValue(first, FName);
+                insertCommand.Parameters.AddWithValue(mid, MName);
+                insertCommand.Parameters.AddWithValue(last, LName);
+                insertCommand.Parameters.AddWithValue(sex.ToString(), Sex);
+                insertCommand.Parameters.AddWithValue(type.ToString(), Type);
+                insertCommand.Parameters.AddWithValue(dep.ToString(), Department); 
+                insertCommand.Parameters.AddWithValue(clinic.ToString(),Clinic); 
+                insertCommand.Parameters.AddWithValue(email, Email);
+                insertCommand.Parameters.AddWithValue(notes, Notes);
+
+                insertCommand.ExecuteNonQuery();
             }
-            catch
+            catch (SQLiteException e)
             {
-                Console.WriteLine("Insert Doctor catch");
+                throw new Exception(e.Message);
             }
-            finally { 
-                DBClose(); 
+            finally
+            {
+                DBClose();
             }
-                
         }// end insert doctor
         // get a list of doctors from the database
         public List<string> ViewDoctor(List<string> doctorsList)

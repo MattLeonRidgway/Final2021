@@ -13,6 +13,8 @@ namespace Final2021
     public partial class Doctor : Form
     {
         DBConnection connection = new DBConnection();
+        DoctorClass doc = new DoctorClass();
+
         public Doctor()
         {
             InitializeComponent();
@@ -28,8 +30,21 @@ namespace Final2021
             this.statusTableAdapter.Fill(this.dataSetStatus.Status);
             // TODO: This line of code loads data into the 'dataSetClinic.Clinic' table. You can move, or remove it, as needed.
             this.clinicTableAdapter.Fill(this.dataSetClinic.Clinic);
-        
-      
+
+            string radioRuslt = null;
+            foreach (Control control in this.groupDxRdBtns.Controls)
+            {
+
+                if (control is RadioButton)
+                {
+                    RadioButton radioBtn = control as RadioButton;
+                    if (radioBtn.Checked)
+                    {
+                        radioRuslt = radioBtn.Text;
+                    }
+                }
+
+            }
 
         }
 
@@ -132,6 +147,50 @@ namespace Final2021
         }
 
         private void cmboxStatus_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            
+            if (ValidateClass.isValidString(txtBxFName.Text))
+            {
+                doc.FName = txtBxFName.Text;
+            }
+            else {
+                txtBxFName.Clear();
+                txtBxFName.AppendText("Invalid");
+            }
+            if (ValidateClass.isValidString(txtBxMName.Text))
+            {
+                doc.MName = txtBxMName.Text;
+            }
+            else
+            {
+                txtBxMName.Clear();
+                txtBxMName.AppendText("Invalid");
+            }
+            if (ValidateClass.isValidString(txtBxLName.Text))
+            {
+                doc.LName = txtBxLName.Text;
+            }
+            else
+            {
+                txtBxLName.Clear();
+                txtBxLName.AppendText("Invalid");
+            }
+          // sex
+          // Status
+          // Type
+          // Department
+          // Clinic
+          // Email
+          // Notes
+
+        }
+       
+        private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }

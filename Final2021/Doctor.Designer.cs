@@ -99,6 +99,7 @@ namespace Final2021
             this.statusTableAdapter = new Final2021.DataSetStatusTableAdapters.StatusTableAdapter();
             this.doctorTypeTableAdapter = new Final2021.DataSetDoctorTypeTableAdapters.DoctorTypeTableAdapter();
             this.departmentTableAdapter = new Final2021.DataSetDepartmentTableAdapters.DepartmentTableAdapter();
+            this.groupDxRdBtns = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.statusBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clinicBindingSource)).BeginInit();
@@ -111,6 +112,7 @@ namespace Final2021
             ((System.ComponentModel.ISupportInitialize)(this.dataSetDoctorType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.statusBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetStatus)).BeginInit();
+            this.groupDxRdBtns.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnHome
@@ -350,7 +352,7 @@ namespace Final2021
             // radioBtnFemale
             // 
             this.radioBtnFemale.AutoSize = true;
-            this.radioBtnFemale.Location = new System.Drawing.Point(150, 131);
+            this.radioBtnFemale.Location = new System.Drawing.Point(72, 16);
             this.radioBtnFemale.Name = "radioBtnFemale";
             this.radioBtnFemale.Size = new System.Drawing.Size(59, 17);
             this.radioBtnFemale.TabIndex = 101;
@@ -361,7 +363,7 @@ namespace Final2021
             // radioBtnMale
             // 
             this.radioBtnMale.AutoSize = true;
-            this.radioBtnMale.Location = new System.Drawing.Point(96, 131);
+            this.radioBtnMale.Location = new System.Drawing.Point(6, 16);
             this.radioBtnMale.Name = "radioBtnMale";
             this.radioBtnMale.Size = new System.Drawing.Size(48, 17);
             this.radioBtnMale.TabIndex = 100;
@@ -385,14 +387,14 @@ namespace Final2021
             // 
             // txtBxLName
             // 
-            this.txtBxLName.Location = new System.Drawing.Point(96, 105);
+            this.txtBxLName.Location = new System.Drawing.Point(96, 93);
             this.txtBxLName.Name = "txtBxLName";
             this.txtBxLName.Size = new System.Drawing.Size(197, 20);
             this.txtBxLName.TabIndex = 93;
             // 
             // txtBxMName
             // 
-            this.txtBxMName.Location = new System.Drawing.Point(96, 79);
+            this.txtBxMName.Location = new System.Drawing.Point(96, 67);
             this.txtBxMName.Name = "txtBxMName";
             this.txtBxMName.Size = new System.Drawing.Size(197, 20);
             this.txtBxMName.TabIndex = 92;
@@ -405,10 +407,11 @@ namespace Final2021
             this.btnAdd.TabIndex = 91;
             this.btnAdd.Text = "ADD";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // txtBxFName
             // 
-            this.txtBxFName.Location = new System.Drawing.Point(96, 53);
+            this.txtBxFName.Location = new System.Drawing.Point(96, 41);
             this.txtBxFName.Name = "txtBxFName";
             this.txtBxFName.Size = new System.Drawing.Size(197, 20);
             this.txtBxFName.TabIndex = 90;
@@ -470,7 +473,7 @@ namespace Final2021
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(8, 131);
+            this.label6.Location = new System.Drawing.Point(18, 135);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(25, 13);
             this.label6.TabIndex = 83;
@@ -479,7 +482,7 @@ namespace Final2021
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(8, 108);
+            this.label5.Location = new System.Drawing.Point(8, 96);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(58, 13);
             this.label5.TabIndex = 82;
@@ -488,7 +491,7 @@ namespace Final2021
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(8, 82);
+            this.label4.Location = new System.Drawing.Point(8, 70);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(69, 13);
             this.label4.TabIndex = 81;
@@ -497,7 +500,7 @@ namespace Final2021
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 60);
+            this.label3.Location = new System.Drawing.Point(9, 48);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(57, 13);
             this.label3.TabIndex = 80;
@@ -643,11 +646,23 @@ namespace Final2021
             // 
             this.departmentTableAdapter.ClearBeforeFill = true;
             // 
+            // groupDxRdBtns
+            // 
+            this.groupDxRdBtns.Controls.Add(this.radioBtnMale);
+            this.groupDxRdBtns.Controls.Add(this.radioBtnFemale);
+            this.groupDxRdBtns.Location = new System.Drawing.Point(96, 117);
+            this.groupDxRdBtns.Name = "groupDxRdBtns";
+            this.groupDxRdBtns.Size = new System.Drawing.Size(137, 36);
+            this.groupDxRdBtns.TabIndex = 138;
+            this.groupDxRdBtns.TabStop = false;
+            this.groupDxRdBtns.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
             // Doctor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(813, 455);
+            this.Controls.Add(this.groupDxRdBtns);
             this.Controls.Add(this.cmboxStatus);
             this.Controls.Add(this.cmboxType);
             this.Controls.Add(this.cmBoxDepartmnet);
@@ -681,8 +696,6 @@ namespace Final2021
             this.Controls.Add(this.label21);
             this.Controls.Add(this.label22);
             this.Controls.Add(this.label23);
-            this.Controls.Add(this.radioBtnFemale);
-            this.Controls.Add(this.radioBtnMale);
             this.Controls.Add(this.txtBxNotes);
             this.Controls.Add(this.txtBxEmail);
             this.Controls.Add(this.txtBxLName);
@@ -716,6 +729,8 @@ namespace Final2021
             ((System.ComponentModel.ISupportInitialize)(this.dataSetDoctorType)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.statusBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetStatus)).EndInit();
+            this.groupDxRdBtns.ResumeLayout(false);
+            this.groupDxRdBtns.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -795,5 +810,6 @@ namespace Final2021
         private DataSetDepartment dataSetDepartment;
         private System.Windows.Forms.BindingSource departmentBindingSource1;
         private DataSetDepartmentTableAdapters.DepartmentTableAdapter departmentTableAdapter;
+        private System.Windows.Forms.GroupBox groupDxRdBtns;
     }
 }

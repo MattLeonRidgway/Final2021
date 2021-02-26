@@ -52,6 +52,25 @@ namespace Final2021
             this.nurseTypeTableAdapter.Fill(this.dataSetNurseType.NurseType);
             // TODO: This line of code loads data into the 'dataSetStatus.Status' table. You can move, or remove it, as needed.
             this.statusTableAdapter.Fill(this.dataSetStatus.Status);
+            string radioRuslt = null;
+            foreach (Control control in this.groupDxRdBtns.Controls)
+            {
+
+                if (control is RadioButton)
+                {
+                    RadioButton radioBtn = control as RadioButton;
+                    if (radioBtn.Checked)
+                    {
+                        radioRuslt = radioBtn.Text;
+                    }
+                }
+
+            }
+
+        }
+
+        private void editAddNurse_Click(object sender, EventArgs e)
+        {
 
         }
     }

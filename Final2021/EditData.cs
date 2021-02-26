@@ -36,5 +36,10 @@ namespace Final2021
             home.Show();
             Hide();
         }
+
+        private void EditData_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

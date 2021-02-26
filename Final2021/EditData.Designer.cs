@@ -300,6 +300,7 @@ namespace Final2021
             this.Controls.Add(this.label1);
             this.Name = "EditData";
             this.Text = "EditData";
+            this.Load += new System.EventHandler(this.EditData_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
