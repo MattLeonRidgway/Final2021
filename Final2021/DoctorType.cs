@@ -32,13 +32,12 @@ namespace Final2021
             try
             {
                 DBopen();
-
                 SQLiteCommand insertCommand = new SQLiteCommand("INSERT INTO DoctorType(Type)VALUES(?)", con);
                 insertCommand.Parameters.AddWithValue(type, Type);
                 insertCommand.ExecuteNonQuery();
 
             }
-            catch (Exception e)
+            catch (SQLiteException e)
             {
                 throw new Exception(e.Message);
             }

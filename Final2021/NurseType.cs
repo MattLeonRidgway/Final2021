@@ -31,18 +31,18 @@ namespace Final2021
             try
             {
                 DBopen();
-                SQLiteCommand sql;
-                string sqlConnect = con.ToString();
-                sql = con.CreateCommand();
-                sql.CommandText = "INSERT INTO NurseType(Type) " +
-                "VALUES(type); ";
-                sql.ExecuteNonQuery();
+                SQLiteCommand insertCommand = new SQLiteCommand("INSERT INTO NurseType(Type)VALUES(?)", con);
+                insertCommand.Parameters.AddWithValue(type, Type);
+                insertCommand.ExecuteNonQuery();
             }
-            catch
+            catch (SQLiteException e)
             {
-                Console.WriteLine("Insert Type catch");
+                throw new Exception(e.Message);
             }
-            DBClose();
+            finally { 
+                 DBClose();
+            }
+          
         }// end insert Type
         // get a list Types 
        public List<string> ViewType( List<string> typeList)

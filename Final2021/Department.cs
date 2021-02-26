@@ -32,18 +32,19 @@ namespace Final2021
             try
             {
                 DBopen();
-                SQLiteCommand sql;
-                string sqlConnect = con.ToString();
-                sql = con.CreateCommand();
-                sql.CommandText = "INSERT INTO Department(Department) " +
-                "VALUES(depart); ";
-                sql.ExecuteNonQuery();
+                SQLiteCommand insertCommand = new SQLiteCommand("INSERT INTO Department(Department)VALUES(?)", con);
+                insertCommand.Parameters.AddWithValue(depart, DepartmentString);
+                insertCommand.ExecuteNonQuery();
+
             }
-            catch
+            catch (SQLiteException e)
             {
-                Console.WriteLine("Insert Department catch");
+                throw new Exception(e.Message);
             }
-            DBClose();
+            finally
+            {
+                DBClose();
+            }
         }// end insert department
         // get a list of departments
         public List<string> ViewDepartment(DBConnection conn, List<string> departList)

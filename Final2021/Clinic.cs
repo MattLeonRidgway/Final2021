@@ -26,25 +26,26 @@ namespace Final2021
 
         public int ClinicID { get => clinicID; set => clinicID = value; }
         public string ClinicString { get => clinicString; set => clinicString = value; }
-
+        // INSERT clinic WORKING
         public void InsertClinic(string clinic)
         {
 
             try
             {
-                DBopen();                
-                SQLiteCommand sql;
-                string sqlConnect = con.ToString();
-                sql = con.CreateCommand();
-                sql.CommandText = "INSERT INTO Clinic(Clinic) " +
-                "VALUES(clinic); ";
-                sql.ExecuteNonQuery();
+                DBopen();
+                SQLiteCommand insertCommand = new SQLiteCommand("INSERT INTO Clinic (Clinic)VALUES(?)", con);
+                insertCommand.Parameters.AddWithValue(clinic, ClinicString);
+                insertCommand.ExecuteNonQuery();
+
             }
-            catch
+            catch (SQLiteException e)
             {
-                Console.WriteLine("Insert Clinic catch");
+                throw new Exception(e.Message);
             }
-            DBClose();
+            finally
+            {
+                DBClose();
+            }
         }// end insert clinic
         // get a list of clinics 
         public List<string> ViewClinic(List<string> clinicList)

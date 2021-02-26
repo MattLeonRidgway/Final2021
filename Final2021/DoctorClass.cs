@@ -52,19 +52,24 @@ namespace Final2021
 
        public void InsertDoctor(string first, string mid, string last, char sex, int stat, int type, int dep, int clinic, string email, string notes){
 
-            try{
+            try
+            {
                 DBopen();
-                SQLiteCommand sql;            
+                SQLiteCommand sql;
                 string sqlConnect = con.ToString();
                 sql = con.CreateCommand();
                 sql.CommandText = "INSERT INTO Doctor(DoctorFName,DoctorMName,DoctorLName,DoctorSex,DoctorStatus,DoctorType,DoctorDepartment,DoctorClinic,DoctorEmail,DoctorNotes) " +
                 "VALUES(first,mid,last,sex,stats,type,depart,clinic,email,notes); ";
                 sql.ExecuteNonQuery();
             }
-            catch {
+            catch
+            {
                 Console.WriteLine("Insert Doctor catch");
             }
-            DBClose();     
+            finally { 
+                DBClose(); 
+            }
+                
         }// end insert doctor
         // get a list of doctors from the database
         public List<string> ViewDoctor(List<string> doctorsList)

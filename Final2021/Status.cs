@@ -35,7 +35,7 @@ namespace Final2021
                 insertCommand.Parameters.AddWithValue(sType, StatusType);
                 insertCommand.ExecuteNonQuery();
             }
-            catch (Exception e){
+            catch (SQLiteException e){
                 throw new Exception(e.Message);              
             }
             finally{ 
@@ -75,8 +75,7 @@ namespace Final2021
             try
             {
                 DBopen();
-                SQLiteCommand sqlUpdate =new SQLiteCommand("UPDATE Status SET [Type]=@type WHERE [StatusID]=@typeID",con);
-              
+                SQLiteCommand sqlUpdate =new SQLiteCommand("UPDATE Status SET [Type]=@type WHERE [StatusID]=@typeID",con);              
                 sqlUpdate.Parameters.Add(new SQLiteParameter("@typeID"));
                 sqlUpdate.Parameters.Add(new SQLiteParameter("@type"));
                 sqlUpdate.Parameters["@typeID"].Value = statusID;
@@ -86,7 +85,7 @@ namespace Final2021
             }
             catch (SQLiteException e)
             {
-                throw e;
+                throw new Exception(e.Message);
             }
             finally
             {
