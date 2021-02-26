@@ -13,6 +13,11 @@ namespace Final2021
 {
     public partial class AddData : Form        
     {ValidateClass validat=new ValidateClass();
+        Status stat = new Status();
+        DoctorType docType = new DoctorType();
+        NurseType nurType = new NurseType();
+        Department department = new Department();
+        Clinic clinic = new Clinic();
         public AddData()
         {
             InitializeComponent();
@@ -20,13 +25,12 @@ namespace Final2021
 
         private void btnStatus_Click(object sender, EventArgs e)
         {
-            string stat;
+            
             if (ValidateClass.isValidString(txtBxStatus.Text))
             {
-                stat = txtBxStatus.Text;
-                txtBxStatus.Clear();
-                Status status = new Status(stat);
-                status.InsertStatus(status.StatusType);
+                stat.StatusType = txtBxStatus.Text;
+                txtBxStatus.Clear();              
+                stat.InsertStatus(stat.StatusType);
             }
             else {
                 txtBxStatus.Clear();
@@ -37,13 +41,11 @@ namespace Final2021
 
         private void btnDoctorType_Click(object sender, EventArgs e)
         {
-            string type;
             if (ValidateClass.isValidString(txtBxDrType.Text))
             {
-                type = txtBxDrType.Text;
-                txtBxDrType.Clear();
-                DoctorType dType = new DoctorType(type);
-                dType.InsertDoctorType(dType.Type);
+                docType.Type = txtBxDrType.Text;
+                txtBxDrType.Clear();              
+                docType.InsertDoctorType(docType.Type);
             }
             else {
                 txtBxDrType.Clear();
@@ -53,13 +55,11 @@ namespace Final2021
 
         private void btnNurseType_Click(object sender, EventArgs e)
         {
-            string type;
             if (ValidateClass.isValidString(txtBxNurseType.Text))
             {
-                type = txtBxNurseType.Text;
-                txtBxNurseType.Clear();
-                NurseType nType = new NurseType(type);
-                nType.InsertNurseType(nType.Type);
+                nurType.Type= txtBxNurseType.Text;
+                txtBxNurseType.Clear();                
+                nurType.InsertNurseType(nurType.Type);
             }
             else {
                 txtBxNurseType.Clear();
@@ -70,13 +70,12 @@ namespace Final2021
 
         private void btnDepartment_Click(object sender, EventArgs e)
         {
-            string department;
+            
             if (ValidateClass.isValidString(txtBxDepartment.Text))
             {
-                department = txtBxDepartment.Text;
-                txtBxDepartment.Clear();
-                Department depart = new Department(department);
-                depart.InsertDepartment(depart.DepartmentString);
+                department.DepartmentString= txtBxDepartment.Text;
+                txtBxDepartment.Clear();              
+                department.InsertDepartment(department.DepartmentString);
             }
             else {
                 txtBxDepartment.Clear();
@@ -86,13 +85,12 @@ namespace Final2021
 
         private void btnClinic_Click(object sender, EventArgs e)
         {
-            string clinic;
+            
             if (ValidateClass.isValidString(txtBxClinic.Text))
             {
-                clinic = txtBxClinic.Text;
-                txtBxClinic.Clear();
-                Clinic clnc = new Clinic(clinic);
-                clnc.InsertClinic(clnc.ClinicString);
+                clinic.ClinicString = txtBxClinic.Text;
+                txtBxClinic.Clear();               
+                clinic.InsertClinic(clinic.ClinicString);
             }
             else {
                 txtBxClinic.Clear();

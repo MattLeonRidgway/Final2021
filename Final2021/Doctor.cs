@@ -153,6 +153,7 @@ namespace Final2021
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            bool check = true;
             
             if (ValidateClass.isValidString(txtBxFName.Text))
             {
@@ -161,6 +162,7 @@ namespace Final2021
             else {
                 txtBxFName.Clear();
                 txtBxFName.AppendText("Invalid");
+                check = false;
             }
             if (ValidateClass.isValidString(txtBxMName.Text))
             {
@@ -170,6 +172,7 @@ namespace Final2021
             {
                 txtBxMName.Clear();
                 txtBxMName.AppendText("Invalid");
+                check = false;
             }
             if (ValidateClass.isValidString(txtBxLName.Text))
             {
@@ -179,14 +182,61 @@ namespace Final2021
             {
                 txtBxLName.Clear();
                 txtBxLName.AppendText("Invalid");
+                check = false;
             }
-          // sex
-          // Status
-          // Type
-          // Department
-          // Clinic
-          // Email
-          // Notes
+            if (radioBtnMale.Checked | radioBtnFemale.Checked)
+            {
+                if (radioBtnMale.Checked) {
+                    doc.Sex = 'M';                  
+                }
+                if (radioBtnFemale.Checked) {
+                    doc.Sex = 'F';
+                }
+            }
+            else {
+                MessageBox.Show("You need to check a sex");
+                check = false;
+            }
+            if (ValidateClass.isValidEmail(txtBxEmail.Text)) {
+                doc.Email = txtBxEmail.Text;
+            }
+            else
+            {
+                txtBxEmail.Clear();
+                txtBxEmail.AppendText("Invalid");
+                check = false;
+            }
+            if (ValidateClass.isValidAlphanumeric(txtBxNotes.Text)) {
+                doc.Notes = txtBxNotes.Text;
+            }
+            else
+            {
+                txtBxNotes.Clear();
+                txtBxNotes.AppendText("Invalid");
+                check = false;
+            }
+            if (check)
+            {
+                doc.Status = Int32.Parse(cmboxStatus.SelectedValue.ToString());
+                doc.Type = Int32.Parse(cmboxType.SelectedValue.ToString());
+                doc.Department = Int32.Parse(cmBoxDepartmnet.SelectedValue.ToString());
+                doc.Clinic = Int32.Parse(cmboxClinic.SelectedValue.ToString());
+
+                doc.InsertDoctor(doc.FName, doc.MName, doc.LName, doc.Sex, doc.Status, doc.Type, doc.Department,
+                    doc.Clinic, doc.Email, doc.Notes);
+                txtBxEmail.Clear();
+                txtBxFName.Clear();
+                txtBxLName.Clear();
+                txtBxMName.Clear();
+                txtBxNotes.Clear();
+                radioBtnFemale.Checked = false;
+                radioBtnMale.Checked = false;
+            }
+            else {
+                MessageBox.Show("Correct Errors");
+            }
+           
+           
 
         }
        

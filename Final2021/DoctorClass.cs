@@ -50,22 +50,28 @@ namespace Final2021
         public int Department { get => department; set => department = value; }
         public int Clinic { get => clinic; set => clinic = value; }
 
-       public void InsertDoctor(string first, string mid, string last, char sex, int stat, int type, int dep, int clinic, string email, string notes){
+       public void InsertDoctor(string first, string mid, string last, char sex, int stat, int type, int dep, 
+           int clinic, string email, string notes){
 
             try
             {
                 DBopen();
-                SQLiteCommand insertCommand = new SQLiteCommand("INSERT INTO Doctor(DoctorFName, DoctorMName, DoctorLName, DoctorSex,DoctorStatus," +
-                    "DoctorType, DoctorDepartment,DoctorClinic, DoctorEmail,DoctorNotes)VALUES(?,?,?,?,?,?,?,?,?,?)", con);
-                insertCommand.Parameters.AddWithValue(first, FName);
-                insertCommand.Parameters.AddWithValue(mid, MName);
-                insertCommand.Parameters.AddWithValue(last, LName);
-                insertCommand.Parameters.AddWithValue(sex.ToString(), Sex);
-                insertCommand.Parameters.AddWithValue(type.ToString(), Type);
-                insertCommand.Parameters.AddWithValue(dep.ToString(), Department); 
-                insertCommand.Parameters.AddWithValue(clinic.ToString(),Clinic); 
-                insertCommand.Parameters.AddWithValue(email, Email);
-                insertCommand.Parameters.AddWithValue(notes, Notes);
+                SQLiteCommand insertCommand = new SQLiteCommand("INSERT INTO [Doctor] (DoctorFName, DoctorMName, DoctorLName, DoctorSex, DoctorStatus," +
+                    "DoctorType, DoctorDepartment, DoctorClinic, DoctorEmail, DoctorNotes)" +
+                   "VALUES(@fName,@mName,@lName,@sex,@stat,@type,@depart,@clinic,@email,@notes)", con);
+                // "VALUES(?,?,?,?,?,?,?,?,?,?)",con);
+                insertCommand.Parameters.Add(new SQLiteParameter("@fName",first));
+                insertCommand.Parameters.Add(new SQLiteParameter("@mName",mid));
+                insertCommand.Parameters.Add(new SQLiteParameter("@lName", last));
+                insertCommand.Parameters.Add(new SQLiteParameter("@sex", sex));
+                insertCommand.Parameters.Add(new SQLiteParameter("@stat", stat));
+                insertCommand.Parameters.Add(new SQLiteParameter("@type", type));
+                insertCommand.Parameters.Add(new SQLiteParameter("@depart", dep));
+                insertCommand.Parameters.Add(new SQLiteParameter("@clinic", clinic));
+                insertCommand.Parameters.Add(new SQLiteParameter("@email", email));
+                insertCommand.Parameters.Add(new SQLiteParameter("@notes", notes));
+
+            
 
                 insertCommand.ExecuteNonQuery();
             }

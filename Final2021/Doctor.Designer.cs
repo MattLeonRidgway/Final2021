@@ -547,6 +547,7 @@ namespace Final2021
             // 
             // cmboxClinic
             // 
+            this.cmboxClinic.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.clinicBindingSource, "ClinicID", true));
             this.cmboxClinic.DataSource = this.clinicBindingSource;
             this.cmboxClinic.DisplayMember = "Clinic";
             this.cmboxClinic.FormattingEnabled = true;
@@ -572,6 +573,7 @@ namespace Final2021
             // 
             // cmBoxDepartmnet
             // 
+            this.cmBoxDepartmnet.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.departmentBindingSource1, "DepartmentID", true));
             this.cmBoxDepartmnet.DataSource = this.departmentBindingSource1;
             this.cmBoxDepartmnet.DisplayMember = "Department";
             this.cmBoxDepartmnet.FormattingEnabled = true;
@@ -593,6 +595,7 @@ namespace Final2021
             // 
             // cmboxType
             // 
+            this.cmboxType.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.doctorTypeBindingSource1, "TypeID", true));
             this.cmboxType.DataSource = this.doctorTypeBindingSource1;
             this.cmboxType.DisplayMember = "Type";
             this.cmboxType.FormattingEnabled = true;
@@ -614,6 +617,7 @@ namespace Final2021
             // 
             // cmboxStatus
             // 
+            this.cmboxStatus.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.statusBindingSource1, "StatusID", true));
             this.cmboxStatus.DataSource = this.statusBindingSource1;
             this.cmboxStatus.DisplayMember = "StatusType";
             this.cmboxStatus.FormattingEnabled = true;
