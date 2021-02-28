@@ -1,13 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Final2021
 {
-    class NurseType:DBConnection
+    class NurseType : DBConnection
     {
         int id;
         string type;
@@ -26,7 +23,7 @@ namespace Final2021
 
         public int Id { get => id; set => id = value; }
         public string Type { get => type; set => type = value; }
-        public void InsertNurseType( string type)
+        public void InsertNurseType(string type)
         {
             try
             {
@@ -39,13 +36,14 @@ namespace Final2021
             {
                 throw new Exception(e.Message);
             }
-            finally { 
-                 DBClose();
+            finally
+            {
+                DBClose();
             }
-          
+
         }// end insert Type
-        // get a list Types 
-       public List<string> ViewType( List<string> typeList)
+         // get a list Types 
+        public List<string> ViewType(List<string> typeList)
         {
             DBopen();
             try
@@ -75,7 +73,7 @@ namespace Final2021
             {
                 DBopen();
                 SQLiteCommand sqlUpdate;
-                sqlUpdate =con.CreateCommand();
+                sqlUpdate = con.CreateCommand();
                 sqlUpdate.CommandText = "UPDATE INTO NurseType WHERE TypeID=typeID(Type)" +
                 "VALUES(type);";
                 sqlUpdate.ExecuteNonQuery();

@@ -51,16 +51,7 @@
               <Mapping SourceColumn="DepartmentID" DataSetColumn="DepartmentID" />
               <Mapping SourceColumn="Department" DataSetColumn="Department" />
             </Mappings>
-            <Sources>
-              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectName="&quot;main&quot;.Department" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT DepartmentID, Department FROM "main".Department</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </Sources>
+            <Sources />
           </TableAdapter>
         </Tables>
         <Sources />
@@ -70,7 +61,7 @@
   <xs:element name="DataSetDepartment" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DataSetDepartment" msprop:Generator_UserDSName="DataSetDepartment">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Department" msprop:Generator_TableClassName="DepartmentDataTable" msprop:Generator_TableVarName="tableDepartment" msprop:Generator_RowChangedName="DepartmentRowChanged" msprop:Generator_TablePropName="Department" msprop:Generator_RowDeletingName="DepartmentRowDeleting" msprop:Generator_RowChangingName="DepartmentRowChanging" msprop:Generator_RowEvHandlerName="DepartmentRowChangeEventHandler" msprop:Generator_RowDeletedName="DepartmentRowDeleted" msprop:Generator_RowClassName="DepartmentRow" msprop:Generator_UserTableName="Department" msprop:Generator_RowEvArgName="DepartmentRowChangeEvent">
+        <xs:element name="Department" msprop:Generator_TableClassName="DepartmentDataTable" msprop:Generator_TableVarName="tableDepartment" msprop:Generator_TablePropName="Department" msprop:Generator_RowDeletingName="DepartmentRowDeleting" msprop:Generator_RowChangingName="DepartmentRowChanging" msprop:Generator_RowEvHandlerName="DepartmentRowChangeEventHandler" msprop:Generator_RowDeletedName="DepartmentRowDeleted" msprop:Generator_UserTableName="Department" msprop:Generator_RowChangedName="DepartmentRowChanged" msprop:Generator_RowEvArgName="DepartmentRowChangeEvent" msprop:Generator_RowClassName="DepartmentRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="DepartmentID" msprop:Generator_ColumnVarNameInTable="columnDepartmentID" msprop:Generator_ColumnPropNameInRow="DepartmentID" msprop:Generator_ColumnPropNameInTable="DepartmentIDColumn" msprop:Generator_UserColumnName="DepartmentID" type="xs:long" />

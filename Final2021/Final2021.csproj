@@ -91,6 +91,16 @@
       <DependentUpon>AddData.cs</DependentUpon>
     </Compile>
     <Compile Include="Clinic.cs" />
+    <Compile Include="DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetDoctorFull.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetDoctorFull.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSetClinic.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -101,20 +111,25 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetDepartment.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSetDoctor.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetDoctor.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSetDoctorType.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetDoctorType.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSetNurse.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetNurse.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSetNurseType.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetNurseType.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DataSetStatus1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSetStatus1.xsd</DependentUpon>
     </Compile>
     <Compile Include="DBConnection.cs" />
     <Compile Include="Department.cs" />
@@ -196,6 +211,28 @@
       <Link>.editorconfig</Link>
     </None>
     <None Include="App.config" />
+    <None Include="DataSet.xsc">
+      <DependentUpon>DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet.xss">
+      <DependentUpon>DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetDoctorFull.xsc">
+      <DependentUpon>DataSetDoctorFull.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetDoctorFull.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetDoctorFull.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetDoctorFull.xss">
+      <DependentUpon>DataSetDoctorFull.xsd</DependentUpon>
+    </None>
     <None Include="DataSetClinic.xsc">
       <DependentUpon>DataSetClinic.xsd</DependentUpon>
     </None>
@@ -218,6 +255,17 @@
     <None Include="DataSetDepartment.xss">
       <DependentUpon>DataSetDepartment.xsd</DependentUpon>
     </None>
+    <None Include="DataSetDoctor.xsc">
+      <DependentUpon>DataSetDoctor.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetDoctor.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetDoctor.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetDoctor.xss">
+      <DependentUpon>DataSetDoctor.xsd</DependentUpon>
+    </None>
     <None Include="DataSetDoctorType.xsc">
       <DependentUpon>DataSetDoctorType.xsd</DependentUpon>
     </None>
@@ -229,6 +277,17 @@
     <None Include="DataSetDoctorType.xss">
       <DependentUpon>DataSetDoctorType.xsd</DependentUpon>
     </None>
+    <None Include="DataSetNurse.xsc">
+      <DependentUpon>DataSetNurse.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetNurse.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetNurse.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetNurse.xss">
+      <DependentUpon>DataSetNurse.xsd</DependentUpon>
+    </None>
     <None Include="DataSetNurseType.xsc">
       <DependentUpon>DataSetNurseType.xsd</DependentUpon>
     </None>
@@ -239,17 +298,6 @@
     </None>
     <None Include="DataSetNurseType.xss">
       <DependentUpon>DataSetNurseType.xsd</DependentUpon>
-    </None>
-    <None Include="DataSetStatus1.xsc">
-      <DependentUpon>DataSetStatus1.xsd</DependentUpon>
-    </None>
-    <None Include="DataSetStatus1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSetStatus1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DataSetStatus1.xss">
-      <DependentUpon>DataSetStatus1.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="PatientLite.db" />

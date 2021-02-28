@@ -20,17 +20,17 @@ namespace Final2021 {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("DataSetDepartment")]
+    [global::System.Xml.Serialization.XmlRootAttribute("DataSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class DataSetDepartment : global::System.Data.DataSet {
+    public partial class DataSet : global::System.Data.DataSet {
         
-        private DepartmentDataTable tableDepartment;
+        private StatusDataTable tableStatus;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public DataSetDepartment() {
+        public DataSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace Final2021 {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected DataSetDepartment(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected DataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace Final2021 {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["Department"] != null)) {
-                    base.Tables.Add(new DepartmentDataTable(ds.Tables["Department"]));
+                if ((ds.Tables["Status"] != null)) {
+                    base.Tables.Add(new StatusDataTable(ds.Tables["Status"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace Final2021 {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public DepartmentDataTable Department {
+        public StatusDataTable Status {
             get {
-                return this.tableDepartment;
+                return this.tableStatus;
             }
         }
         
@@ -127,7 +127,7 @@ namespace Final2021 {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            DataSetDepartment cln = ((DataSetDepartment)(base.Clone()));
+            DataSet cln = ((DataSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace Final2021 {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["Department"] != null)) {
-                    base.Tables.Add(new DepartmentDataTable(ds.Tables["Department"]));
+                if ((ds.Tables["Status"] != null)) {
+                    base.Tables.Add(new StatusDataTable(ds.Tables["Status"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace Final2021 {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableDepartment = ((DepartmentDataTable)(base.Tables["Department"]));
+            this.tableStatus = ((StatusDataTable)(base.Tables["Status"]));
             if ((initTable == true)) {
-                if ((this.tableDepartment != null)) {
-                    this.tableDepartment.InitVars();
+                if ((this.tableStatus != null)) {
+                    this.tableStatus.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace Final2021 {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "DataSetDepartment";
+            this.DataSetName = "DataSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/DataSetDepartment.xsd";
+            this.Namespace = "http://tempuri.org/DataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableDepartment = new DepartmentDataTable();
-            base.Tables.Add(this.tableDepartment);
+            this.tableStatus = new StatusDataTable();
+            base.Tables.Add(this.tableStatus);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeDepartment() {
+        private bool ShouldSerializeStatus() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace Final2021 {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            DataSetDepartment ds = new DataSetDepartment();
+            DataSet ds = new DataSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,23 +270,23 @@ namespace Final2021 {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void DepartmentRowChangeEventHandler(object sender, DepartmentRowChangeEvent e);
+        public delegate void StatusRowChangeEventHandler(object sender, StatusRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class DepartmentDataTable : global::System.Data.TypedTableBase<DepartmentRow> {
+        public partial class StatusDataTable : global::System.Data.TypedTableBase<StatusRow> {
             
-            private global::System.Data.DataColumn columnDepartmentID;
+            private global::System.Data.DataColumn columnStatusID;
             
-            private global::System.Data.DataColumn columnDepartment;
+            private global::System.Data.DataColumn columnStatusType;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DepartmentDataTable() {
-                this.TableName = "Department";
+            public StatusDataTable() {
+                this.TableName = "Status";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -294,7 +294,7 @@ namespace Final2021 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal DepartmentDataTable(global::System.Data.DataTable table) {
+            internal StatusDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -311,24 +311,24 @@ namespace Final2021 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected DepartmentDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected StatusDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn DepartmentIDColumn {
+            public global::System.Data.DataColumn StatusIDColumn {
                 get {
-                    return this.columnDepartmentID;
+                    return this.columnStatusID;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn DepartmentColumn {
+            public global::System.Data.DataColumn StatusTypeColumn {
                 get {
-                    return this.columnDepartment;
+                    return this.columnStatusType;
                 }
             }
             
@@ -343,53 +343,53 @@ namespace Final2021 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DepartmentRow this[int index] {
+            public StatusRow this[int index] {
                 get {
-                    return ((DepartmentRow)(this.Rows[index]));
+                    return ((StatusRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event DepartmentRowChangeEventHandler DepartmentRowChanging;
+            public event StatusRowChangeEventHandler StatusRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event DepartmentRowChangeEventHandler DepartmentRowChanged;
+            public event StatusRowChangeEventHandler StatusRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event DepartmentRowChangeEventHandler DepartmentRowDeleting;
+            public event StatusRowChangeEventHandler StatusRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event DepartmentRowChangeEventHandler DepartmentRowDeleted;
+            public event StatusRowChangeEventHandler StatusRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddDepartmentRow(DepartmentRow row) {
+            public void AddStatusRow(StatusRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DepartmentRow AddDepartmentRow(long DepartmentID, string Department) {
-                DepartmentRow rowDepartmentRow = ((DepartmentRow)(this.NewRow()));
+            public StatusRow AddStatusRow(long StatusID, string StatusType) {
+                StatusRow rowStatusRow = ((StatusRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        DepartmentID,
-                        Department};
-                rowDepartmentRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowDepartmentRow);
-                return rowDepartmentRow;
+                        StatusID,
+                        StatusType};
+                rowStatusRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowStatusRow);
+                return rowStatusRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DepartmentRow FindByDepartmentID(long DepartmentID) {
-                return ((DepartmentRow)(this.Rows.Find(new object[] {
-                            DepartmentID})));
+            public StatusRow FindByStatusID(long StatusID) {
+                return ((StatusRow)(this.Rows.Find(new object[] {
+                            StatusID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                DepartmentDataTable cln = ((DepartmentDataTable)(base.Clone()));
+                StatusDataTable cln = ((StatusDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -397,54 +397,54 @@ namespace Final2021 {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new DepartmentDataTable();
+                return new StatusDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columnDepartmentID = base.Columns["DepartmentID"];
-                this.columnDepartment = base.Columns["Department"];
+                this.columnStatusID = base.Columns["StatusID"];
+                this.columnStatusType = base.Columns["StatusType"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnDepartmentID = new global::System.Data.DataColumn("DepartmentID", typeof(long), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDepartmentID);
-                this.columnDepartment = new global::System.Data.DataColumn("Department", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDepartment);
+                this.columnStatusID = new global::System.Data.DataColumn("StatusID", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStatusID);
+                this.columnStatusType = new global::System.Data.DataColumn("StatusType", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStatusType);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnDepartmentID}, true));
-                this.columnDepartmentID.AllowDBNull = false;
-                this.columnDepartmentID.Unique = true;
-                this.columnDepartment.AllowDBNull = false;
+                                this.columnStatusID}, true));
+                this.columnStatusID.AllowDBNull = false;
+                this.columnStatusID.Unique = true;
+                this.columnStatusType.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DepartmentRow NewDepartmentRow() {
-                return ((DepartmentRow)(this.NewRow()));
+            public StatusRow NewStatusRow() {
+                return ((StatusRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new DepartmentRow(builder);
+                return new StatusRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(DepartmentRow);
+                return typeof(StatusRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.DepartmentRowChanged != null)) {
-                    this.DepartmentRowChanged(this, new DepartmentRowChangeEvent(((DepartmentRow)(e.Row)), e.Action));
+                if ((this.StatusRowChanged != null)) {
+                    this.StatusRowChanged(this, new StatusRowChangeEvent(((StatusRow)(e.Row)), e.Action));
                 }
             }
             
@@ -452,8 +452,8 @@ namespace Final2021 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.DepartmentRowChanging != null)) {
-                    this.DepartmentRowChanging(this, new DepartmentRowChangeEvent(((DepartmentRow)(e.Row)), e.Action));
+                if ((this.StatusRowChanging != null)) {
+                    this.StatusRowChanging(this, new StatusRowChangeEvent(((StatusRow)(e.Row)), e.Action));
                 }
             }
             
@@ -461,8 +461,8 @@ namespace Final2021 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.DepartmentRowDeleted != null)) {
-                    this.DepartmentRowDeleted(this, new DepartmentRowChangeEvent(((DepartmentRow)(e.Row)), e.Action));
+                if ((this.StatusRowDeleted != null)) {
+                    this.StatusRowDeleted(this, new StatusRowChangeEvent(((StatusRow)(e.Row)), e.Action));
                 }
             }
             
@@ -470,14 +470,14 @@ namespace Final2021 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.DepartmentRowDeleting != null)) {
-                    this.DepartmentRowDeleting(this, new DepartmentRowChangeEvent(((DepartmentRow)(e.Row)), e.Action));
+                if ((this.StatusRowDeleting != null)) {
+                    this.StatusRowDeleting(this, new StatusRowChangeEvent(((StatusRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveDepartmentRow(DepartmentRow row) {
+            public void RemoveStatusRow(StatusRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -486,7 +486,7 @@ namespace Final2021 {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DataSetDepartment ds = new DataSetDepartment();
+                DataSet ds = new DataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -504,7 +504,7 @@ namespace Final2021 {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "DepartmentDataTable";
+                attribute2.FixedValue = "StatusDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -548,36 +548,36 @@ namespace Final2021 {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class DepartmentRow : global::System.Data.DataRow {
+        public partial class StatusRow : global::System.Data.DataRow {
             
-            private DepartmentDataTable tableDepartment;
+            private StatusDataTable tableStatus;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal DepartmentRow(global::System.Data.DataRowBuilder rb) : 
+            internal StatusRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableDepartment = ((DepartmentDataTable)(this.Table));
+                this.tableStatus = ((StatusDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public long DepartmentID {
+            public long StatusID {
                 get {
-                    return ((long)(this[this.tableDepartment.DepartmentIDColumn]));
+                    return ((long)(this[this.tableStatus.StatusIDColumn]));
                 }
                 set {
-                    this[this.tableDepartment.DepartmentIDColumn] = value;
+                    this[this.tableStatus.StatusIDColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Department {
+            public string StatusType {
                 get {
-                    return ((string)(this[this.tableDepartment.DepartmentColumn]));
+                    return ((string)(this[this.tableStatus.StatusTypeColumn]));
                 }
                 set {
-                    this[this.tableDepartment.DepartmentColumn] = value;
+                    this[this.tableStatus.StatusTypeColumn] = value;
                 }
             }
         }
@@ -586,22 +586,22 @@ namespace Final2021 {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class DepartmentRowChangeEvent : global::System.EventArgs {
+        public class StatusRowChangeEvent : global::System.EventArgs {
             
-            private DepartmentRow eventRow;
+            private StatusRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DepartmentRowChangeEvent(DepartmentRow row, global::System.Data.DataRowAction action) {
+            public StatusRowChangeEvent(StatusRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DepartmentRow Row {
+            public StatusRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -617,7 +617,7 @@ namespace Final2021 {
         }
     }
 }
-namespace Final2021.DataSetDepartmentTableAdapters {
+namespace Final2021.DataSetTableAdapters {
     
     
     /// <summary>
@@ -629,7 +629,7 @@ namespace Final2021.DataSetDepartmentTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class DepartmentTableAdapter : global::System.ComponentModel.Component {
+    public partial class StatusTableAdapter : global::System.ComponentModel.Component {
         
         private global::Devart.Data.SQLite.SQLiteDataAdapter _adapter;
         
@@ -643,7 +643,7 @@ namespace Final2021.DataSetDepartmentTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public DepartmentTableAdapter() {
+        public StatusTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -740,80 +740,80 @@ namespace Final2021.DataSetDepartmentTableAdapters {
             this._adapter = new global::Devart.Data.SQLite.SQLiteDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Department";
-            tableMapping.ColumnMappings.Add("DepartmentID", "DepartmentID");
-            tableMapping.ColumnMappings.Add("Department", "Department");
+            tableMapping.DataSetTable = "Status";
+            tableMapping.ColumnMappings.Add("StatusID", "StatusID");
+            tableMapping.ColumnMappings.Add("StatusType", "StatusType");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::Devart.Data.SQLite.SQLiteCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM \"main\".\"Department\" WHERE ((\"DepartmentID\" = :Original_DepartmentID) " +
-                "AND (\"Department\" = :Original_Department))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM \"main\".\"Status\" WHERE ((\"StatusID\" = :Original_StatusID) AND (\"Status" +
+                "Type\" = :Original_StatusType))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::Devart.Data.SQLite.SQLiteParameter param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "Original_DepartmentID";
+            param.ParameterName = "Original_StatusID";
             param.DbType = global::System.Data.DbType.Int64;
             param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int64;
             param.IsNullable = true;
-            param.SourceColumn = "DepartmentID";
+            param.SourceColumn = "StatusID";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "Original_Department";
+            param.ParameterName = "Original_StatusType";
             param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
             param.IsNullable = true;
-            param.SourceColumn = "Department";
+            param.SourceColumn = "StatusType";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::Devart.Data.SQLite.SQLiteCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO \"main\".\"Department\" (\"DepartmentID\", \"Department\") VALUES (:Departmen" +
-                "tID, :Department)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO \"main\".\"Status\" (\"StatusID\", \"StatusType\") VALUES (:StatusID, :Status" +
+                "Type)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "DepartmentID";
+            param.ParameterName = "StatusID";
             param.DbType = global::System.Data.DbType.Int64;
             param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int64;
             param.IsNullable = true;
-            param.SourceColumn = "DepartmentID";
+            param.SourceColumn = "StatusID";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "Department";
+            param.ParameterName = "StatusType";
             param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
             param.IsNullable = true;
-            param.SourceColumn = "Department";
+            param.SourceColumn = "StatusType";
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::Devart.Data.SQLite.SQLiteCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE \"main\".\"Department\" SET \"DepartmentID\" = :DepartmentID, \"Department\" = :De" +
-                "partment WHERE ((\"DepartmentID\" = :Original_DepartmentID) AND (\"Department\" = :O" +
-                "riginal_Department))";
+            this._adapter.UpdateCommand.CommandText = "UPDATE \"main\".\"Status\" SET \"StatusID\" = :StatusID, \"StatusType\" = :StatusType WHE" +
+                "RE ((\"StatusID\" = :Original_StatusID) AND (\"StatusType\" = :Original_StatusType))" +
+                "";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "DepartmentID";
+            param.ParameterName = "StatusID";
             param.DbType = global::System.Data.DbType.Int64;
             param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int64;
             param.IsNullable = true;
-            param.SourceColumn = "DepartmentID";
+            param.SourceColumn = "StatusID";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "Department";
+            param.ParameterName = "StatusType";
             param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
             param.IsNullable = true;
-            param.SourceColumn = "Department";
+            param.SourceColumn = "StatusType";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "Original_DepartmentID";
+            param.ParameterName = "Original_StatusID";
             param.DbType = global::System.Data.DbType.Int64;
             param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int64;
             param.IsNullable = true;
-            param.SourceColumn = "DepartmentID";
+            param.SourceColumn = "StatusID";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "Original_Department";
+            param.ParameterName = "Original_StatusType";
             param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
             param.IsNullable = true;
-            param.SourceColumn = "Department";
+            param.SourceColumn = "StatusType";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
         }
@@ -831,7 +831,7 @@ namespace Final2021.DataSetDepartmentTableAdapters {
             this._commandCollection = new global::Devart.Data.SQLite.SQLiteCommand[1];
             this._commandCollection[0] = new global::Devart.Data.SQLite.SQLiteCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT DepartmentID, Department FROM \"main\".Department";
+            this._commandCollection[0].CommandText = "SELECT StatusID, StatusType FROM \"main\".Status";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -839,7 +839,7 @@ namespace Final2021.DataSetDepartmentTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DataSetDepartment.DepartmentDataTable dataTable) {
+        public virtual int Fill(DataSet.StatusDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -852,9 +852,9 @@ namespace Final2021.DataSetDepartmentTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DataSetDepartment.DepartmentDataTable GetData() {
+        public virtual DataSet.StatusDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DataSetDepartment.DepartmentDataTable dataTable = new DataSetDepartment.DepartmentDataTable();
+            DataSet.StatusDataTable dataTable = new DataSet.StatusDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -862,15 +862,15 @@ namespace Final2021.DataSetDepartmentTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DataSetDepartment.DepartmentDataTable dataTable) {
+        public virtual int Update(DataSet.StatusDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DataSetDepartment dataSet) {
-            return this.Adapter.Update(dataSet, "Department");
+        public virtual int Update(DataSet dataSet) {
+            return this.Adapter.Update(dataSet, "Status");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -892,13 +892,13 @@ namespace Final2021.DataSetDepartmentTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(long Original_DepartmentID, string Original_Department) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((long)(Original_DepartmentID));
-            if ((Original_Department == null)) {
-                throw new global::System.ArgumentNullException("Original_Department");
+        public virtual int Delete(long Original_StatusID, string Original_StatusType) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((long)(Original_StatusID));
+            if ((Original_StatusType == null)) {
+                throw new global::System.ArgumentNullException("Original_StatusType");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_Department));
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_StatusType));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -920,13 +920,13 @@ namespace Final2021.DataSetDepartmentTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(long DepartmentID, string Department) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((long)(DepartmentID));
-            if ((Department == null)) {
-                throw new global::System.ArgumentNullException("Department");
+        public virtual int Insert(long StatusID, string StatusType) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((long)(StatusID));
+            if ((StatusType == null)) {
+                throw new global::System.ArgumentNullException("StatusType");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Department));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(StatusType));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -948,20 +948,20 @@ namespace Final2021.DataSetDepartmentTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(long DepartmentID, string Department, long Original_DepartmentID, string Original_Department) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((long)(DepartmentID));
-            if ((Department == null)) {
-                throw new global::System.ArgumentNullException("Department");
+        public virtual int Update(long StatusID, string StatusType, long Original_StatusID, string Original_StatusType) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((long)(StatusID));
+            if ((StatusType == null)) {
+                throw new global::System.ArgumentNullException("StatusType");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Department));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(StatusType));
             }
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((long)(Original_DepartmentID));
-            if ((Original_Department == null)) {
-                throw new global::System.ArgumentNullException("Original_Department");
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((long)(Original_StatusID));
+            if ((Original_StatusType == null)) {
+                throw new global::System.ArgumentNullException("Original_StatusType");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Original_Department));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Original_StatusType));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -983,8 +983,8 @@ namespace Final2021.DataSetDepartmentTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Department, long Original_DepartmentID, string Original_Department) {
-            return this.Update(Original_DepartmentID, Department, Original_DepartmentID, Original_Department);
+        public virtual int Update(string StatusType, long Original_StatusID, string Original_StatusType) {
+            return this.Update(Original_StatusID, StatusType, Original_StatusID, Original_StatusType);
         }
     }
     
@@ -1000,7 +1000,7 @@ namespace Final2021.DataSetDepartmentTableAdapters {
         
         private UpdateOrderOption _updateOrder;
         
-        private DepartmentTableAdapter _departmentTableAdapter;
+        private StatusTableAdapter _statusTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -1022,12 +1022,12 @@ namespace Final2021.DataSetDepartmentTableAdapters {
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public DepartmentTableAdapter DepartmentTableAdapter {
+        public StatusTableAdapter StatusTableAdapter {
             get {
-                return this._departmentTableAdapter;
+                return this._statusTableAdapter;
             }
             set {
-                this._departmentTableAdapter = value;
+                this._statusTableAdapter = value;
             }
         }
         
@@ -1050,9 +1050,9 @@ namespace Final2021.DataSetDepartmentTableAdapters {
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._departmentTableAdapter != null) 
-                            && (this._departmentTableAdapter.Connection != null))) {
-                    return this._departmentTableAdapter.Connection;
+                if (((this._statusTableAdapter != null) 
+                            && (this._statusTableAdapter.Connection != null))) {
+                    return this._statusTableAdapter.Connection;
                 }
                 return null;
             }
@@ -1067,7 +1067,7 @@ namespace Final2021.DataSetDepartmentTableAdapters {
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._departmentTableAdapter != null)) {
+                if ((this._statusTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -1079,14 +1079,14 @@ namespace Final2021.DataSetDepartmentTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateUpdatedRows(DataSetDepartment dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(DataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._departmentTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Department.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._statusTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Status.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._departmentTableAdapter.Update(updatedRows));
+                    result = (result + this._statusTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -1098,13 +1098,13 @@ namespace Final2021.DataSetDepartmentTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateInsertedRows(DataSetDepartment dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(DataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._departmentTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Department.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._statusTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Status.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._departmentTableAdapter.Update(addedRows));
+                    result = (result + this._statusTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -1116,13 +1116,13 @@ namespace Final2021.DataSetDepartmentTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateDeletedRows(DataSetDepartment dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(DataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._departmentTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Department.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._statusTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Status.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._departmentTableAdapter.Update(deletedRows));
+                    result = (result + this._statusTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -1158,15 +1158,15 @@ namespace Final2021.DataSetDepartmentTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public virtual int UpdateAll(DataSetDepartment dataSet) {
+        public virtual int UpdateAll(DataSet dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._departmentTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._departmentTableAdapter.Connection) == false))) {
+            if (((this._statusTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._statusTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -1202,13 +1202,13 @@ namespace Final2021.DataSetDepartmentTableAdapters {
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._departmentTableAdapter != null)) {
-                    revertConnections.Add(this._departmentTableAdapter, this._departmentTableAdapter.Connection);
-                    this._departmentTableAdapter.Connection = ((global::Devart.Data.SQLite.SQLiteConnection)(workConnection));
-                    this._departmentTableAdapter.Transaction = ((global::System.Data.Common.DbTransaction)(workTransaction));
-                    if (this._departmentTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._departmentTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._departmentTableAdapter.Adapter);
+                if ((this._statusTableAdapter != null)) {
+                    revertConnections.Add(this._statusTableAdapter, this._statusTableAdapter.Connection);
+                    this._statusTableAdapter.Connection = ((global::Devart.Data.SQLite.SQLiteConnection)(workConnection));
+                    this._statusTableAdapter.Transaction = ((global::System.Data.Common.DbTransaction)(workTransaction));
+                    if (this._statusTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._statusTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._statusTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -1269,9 +1269,9 @@ namespace Final2021.DataSetDepartmentTableAdapters {
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._departmentTableAdapter != null)) {
-                    this._departmentTableAdapter.Connection = ((global::Devart.Data.SQLite.SQLiteConnection)(revertConnections[this._departmentTableAdapter]));
-                    this._departmentTableAdapter.Transaction = null;
+                if ((this._statusTableAdapter != null)) {
+                    this._statusTableAdapter.Connection = ((global::Devart.Data.SQLite.SQLiteConnection)(revertConnections[this._statusTableAdapter]));
+                    this._statusTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Final2021
@@ -22,12 +15,24 @@ namespace Final2021
 
         private void Doctor_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dataSetDoctor.Doctor' table. You can move, or remove it, as needed.
+            this.doctorTableAdapter.Fill(this.dataSetDoctor.Doctor);
+            // TODO: This line of code loads data into the 'dataSetClinic.Clinic' table. You can move, or remove it, as needed.
+            this.clinicTableAdapter.Fill(this.dataSetClinic.Clinic);
+            // TODO: This line of code loads data into the 'dataSetDepartment.Department' table. You can move, or remove it, as needed.
+            this.departmentTableAdapter.Fill(this.dataSetDepartment.Department);
+            // TODO: This line of code loads data into the 'dataSetDoctorType.DoctorType' table. You can move, or remove it, as needed.
+            this.doctorTypeTableAdapter.Fill(this.dataSetDoctorType.DoctorType);
+            // TODO: This line of code loads data into the 'dataSet.Status' table. You can move, or remove it, as needed.
+            this.statusTableAdapter.Fill(this.dataSet.Status);
+            // TODO: This line of code loads data into the 'dataSet.Doctor' table. You can move, or remove it, as needed.
+    
             // TODO: This line of code loads data into the 'dataSetDepartment.Department' table. You can move, or remove it, as needed.
             this.departmentTableAdapter.Fill(this.dataSetDepartment.Department);
             // TODO: This line of code loads data into the 'dataSetDoctorType.DoctorType' table. You can move, or remove it, as needed.
             this.doctorTypeTableAdapter.Fill(this.dataSetDoctorType.DoctorType);
             // TODO: This line of code loads data into the 'dataSetStatus.Status' table. You can move, or remove it, as needed.
-            this.statusTableAdapter.Fill(this.dataSetStatus.Status);
+    
             // TODO: This line of code loads data into the 'dataSetClinic.Clinic' table. You can move, or remove it, as needed.
             this.clinicTableAdapter.Fill(this.dataSetClinic.Clinic);
 
@@ -44,6 +49,18 @@ namespace Final2021
                     }
                 }
 
+            }// end groupDxRdButtons
+            string radioSex = null;
+            foreach (Control contrl in this.groupBxSexEDIT.Controls)
+            {
+                if (contrl is RadioButton)
+                {
+                    RadioButton radBtn = contrl as RadioButton;
+                    if (radBtn.Checked)
+                    {
+                        radioSex = radBtn.Text;
+                    }
+                }
             }
 
         }
@@ -70,81 +87,37 @@ namespace Final2021
 
         private void lstBxStatus_SelectedIndexChanged(object sender, EventArgs e)
         {
-          
+
         }
 
         private void cmboxStatus_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+
         }
 
         private void fillByToolStripButton_Click(object sender, EventArgs e)
         {
-         
+
         }
 
         private void fillByToolStripButton1_Click(object sender, EventArgs e)
         {
-   
+
         }
 
         private void fillByToolStripButton2_Click(object sender, EventArgs e)
         {
-           
+
 
         }
 
-        private void fillByToolStripButton3_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                this.clinicTableAdapter.FillBy(this.dataSetClinic.Clinic);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
+      
 
-        }
+      
 
-        private void fillByToolStripButton_Click_1(object sender, EventArgs e)
-        {
-            try
-            {
-                this.statusTableAdapter.FillBy(this.dataSetStatus.Status);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
+      
 
-        }
-
-        private void fillByToolStripButton1_Click_1(object sender, EventArgs e)
-        {
-            try
-            {
-                this.doctorTypeTableAdapter.FillBy(this.dataSetDoctorType.DoctorType);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
-        }
-
-        private void fillByToolStripButton2_Click_1(object sender, EventArgs e)
-        {
-            try
-            {
-                this.departmentTableAdapter.FillBy(this.dataSetDepartment.Department);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
-        }
+       
 
         private void cmboxStatus_SelectedIndexChanged_1(object sender, EventArgs e)
         {
@@ -154,12 +127,13 @@ namespace Final2021
         private void btnAdd_Click(object sender, EventArgs e)
         {
             bool check = true;
-            
+
             if (ValidateClass.isValidString(txtBxFName.Text))
             {
                 doc.FName = txtBxFName.Text;
             }
-            else {
+            else
+            {
                 txtBxFName.Clear();
                 txtBxFName.AppendText("Invalid");
                 check = false;
@@ -186,18 +160,22 @@ namespace Final2021
             }
             if (radioBtnMale.Checked | radioBtnFemale.Checked)
             {
-                if (radioBtnMale.Checked) {
-                    doc.Sex = 'M';                  
+                if (radioBtnMale.Checked)
+                {
+                    doc.Sex = 'M';
                 }
-                if (radioBtnFemale.Checked) {
+                if (radioBtnFemale.Checked)
+                {
                     doc.Sex = 'F';
                 }
             }
-            else {
+            else
+            {
                 MessageBox.Show("You need to check a sex");
                 check = false;
             }
-            if (ValidateClass.isValidEmail(txtBxEmail.Text)) {
+            if (ValidateClass.isValidEmail(txtBxEmail.Text))
+            {
                 doc.Email = txtBxEmail.Text;
             }
             else
@@ -206,7 +184,8 @@ namespace Final2021
                 txtBxEmail.AppendText("Invalid");
                 check = false;
             }
-            if (ValidateClass.isValidAlphanumeric(txtBxNotes.Text)) {
+            if (ValidateClass.isValidAlphanumeric(txtBxNotes.Text))
+            {
                 doc.Notes = txtBxNotes.Text;
             }
             else
@@ -232,14 +211,15 @@ namespace Final2021
                 radioBtnFemale.Checked = false;
                 radioBtnMale.Checked = false;
             }
-            else {
+            else
+            {
                 MessageBox.Show("Correct Errors");
             }
-           
-           
+
+
 
         }
-       
+
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 

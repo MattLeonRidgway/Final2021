@@ -20,17 +20,17 @@ namespace Final2021 {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("DataSetDepartment")]
+    [global::System.Xml.Serialization.XmlRootAttribute("DataSetDoctor")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class DataSetDepartment : global::System.Data.DataSet {
+    public partial class DataSetDoctor : global::System.Data.DataSet {
         
-        private DepartmentDataTable tableDepartment;
+        private DoctorDataTable tableDoctor;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public DataSetDepartment() {
+        public DataSetDoctor() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace Final2021 {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected DataSetDepartment(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected DataSetDoctor(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace Final2021 {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["Department"] != null)) {
-                    base.Tables.Add(new DepartmentDataTable(ds.Tables["Department"]));
+                if ((ds.Tables["Doctor"] != null)) {
+                    base.Tables.Add(new DoctorDataTable(ds.Tables["Doctor"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace Final2021 {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public DepartmentDataTable Department {
+        public DoctorDataTable Doctor {
             get {
-                return this.tableDepartment;
+                return this.tableDoctor;
             }
         }
         
@@ -127,7 +127,7 @@ namespace Final2021 {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            DataSetDepartment cln = ((DataSetDepartment)(base.Clone()));
+            DataSetDoctor cln = ((DataSetDoctor)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace Final2021 {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["Department"] != null)) {
-                    base.Tables.Add(new DepartmentDataTable(ds.Tables["Department"]));
+                if ((ds.Tables["Doctor"] != null)) {
+                    base.Tables.Add(new DoctorDataTable(ds.Tables["Doctor"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace Final2021 {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableDepartment = ((DepartmentDataTable)(base.Tables["Department"]));
+            this.tableDoctor = ((DoctorDataTable)(base.Tables["Doctor"]));
             if ((initTable == true)) {
-                if ((this.tableDepartment != null)) {
-                    this.tableDepartment.InitVars();
+                if ((this.tableDoctor != null)) {
+                    this.tableDoctor.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace Final2021 {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "DataSetDepartment";
+            this.DataSetName = "DataSetDoctor";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/DataSetDepartment.xsd";
+            this.Namespace = "http://tempuri.org/DataSetDoctor.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableDepartment = new DepartmentDataTable();
-            base.Tables.Add(this.tableDepartment);
+            this.tableDoctor = new DoctorDataTable();
+            base.Tables.Add(this.tableDoctor);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeDepartment() {
+        private bool ShouldSerializeDoctor() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace Final2021 {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            DataSetDepartment ds = new DataSetDepartment();
+            DataSetDoctor ds = new DataSetDoctor();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,23 +270,41 @@ namespace Final2021 {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void DepartmentRowChangeEventHandler(object sender, DepartmentRowChangeEvent e);
+        public delegate void DoctorRowChangeEventHandler(object sender, DoctorRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class DepartmentDataTable : global::System.Data.TypedTableBase<DepartmentRow> {
+        public partial class DoctorDataTable : global::System.Data.TypedTableBase<DoctorRow> {
             
-            private global::System.Data.DataColumn columnDepartmentID;
+            private global::System.Data.DataColumn columnDoctorID;
             
-            private global::System.Data.DataColumn columnDepartment;
+            private global::System.Data.DataColumn columnDoctorFName;
+            
+            private global::System.Data.DataColumn columnDoctorMName;
+            
+            private global::System.Data.DataColumn columnDoctorLName;
+            
+            private global::System.Data.DataColumn columnDoctorSex;
+            
+            private global::System.Data.DataColumn columnDoctorStatus;
+            
+            private global::System.Data.DataColumn columnDoctorType;
+            
+            private global::System.Data.DataColumn columnDoctorDepartment;
+            
+            private global::System.Data.DataColumn columnDoctorClinic;
+            
+            private global::System.Data.DataColumn columnDoctorEmail;
+            
+            private global::System.Data.DataColumn columnDoctorNotes;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DepartmentDataTable() {
-                this.TableName = "Department";
+            public DoctorDataTable() {
+                this.TableName = "Doctor";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -294,7 +312,7 @@ namespace Final2021 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal DepartmentDataTable(global::System.Data.DataTable table) {
+            internal DoctorDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -311,24 +329,96 @@ namespace Final2021 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected DepartmentDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected DoctorDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn DepartmentIDColumn {
+            public global::System.Data.DataColumn DoctorIDColumn {
                 get {
-                    return this.columnDepartmentID;
+                    return this.columnDoctorID;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn DepartmentColumn {
+            public global::System.Data.DataColumn DoctorFNameColumn {
                 get {
-                    return this.columnDepartment;
+                    return this.columnDoctorFName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DoctorMNameColumn {
+                get {
+                    return this.columnDoctorMName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DoctorLNameColumn {
+                get {
+                    return this.columnDoctorLName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DoctorSexColumn {
+                get {
+                    return this.columnDoctorSex;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DoctorStatusColumn {
+                get {
+                    return this.columnDoctorStatus;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DoctorTypeColumn {
+                get {
+                    return this.columnDoctorType;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DoctorDepartmentColumn {
+                get {
+                    return this.columnDoctorDepartment;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DoctorClinicColumn {
+                get {
+                    return this.columnDoctorClinic;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DoctorEmailColumn {
+                get {
+                    return this.columnDoctorEmail;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DoctorNotesColumn {
+                get {
+                    return this.columnDoctorNotes;
                 }
             }
             
@@ -343,53 +433,62 @@ namespace Final2021 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DepartmentRow this[int index] {
+            public DoctorRow this[int index] {
                 get {
-                    return ((DepartmentRow)(this.Rows[index]));
+                    return ((DoctorRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event DepartmentRowChangeEventHandler DepartmentRowChanging;
+            public event DoctorRowChangeEventHandler DoctorRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event DepartmentRowChangeEventHandler DepartmentRowChanged;
+            public event DoctorRowChangeEventHandler DoctorRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event DepartmentRowChangeEventHandler DepartmentRowDeleting;
+            public event DoctorRowChangeEventHandler DoctorRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event DepartmentRowChangeEventHandler DepartmentRowDeleted;
+            public event DoctorRowChangeEventHandler DoctorRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddDepartmentRow(DepartmentRow row) {
+            public void AddDoctorRow(DoctorRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DepartmentRow AddDepartmentRow(long DepartmentID, string Department) {
-                DepartmentRow rowDepartmentRow = ((DepartmentRow)(this.NewRow()));
+            public DoctorRow AddDoctorRow(long DoctorID, string DoctorFName, string DoctorMName, string DoctorLName, string DoctorSex, int DoctorStatus, int DoctorType, int DoctorDepartment, int DoctorClinic, string DoctorEmail, string DoctorNotes) {
+                DoctorRow rowDoctorRow = ((DoctorRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        DepartmentID,
-                        Department};
-                rowDepartmentRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowDepartmentRow);
-                return rowDepartmentRow;
+                        DoctorID,
+                        DoctorFName,
+                        DoctorMName,
+                        DoctorLName,
+                        DoctorSex,
+                        DoctorStatus,
+                        DoctorType,
+                        DoctorDepartment,
+                        DoctorClinic,
+                        DoctorEmail,
+                        DoctorNotes};
+                rowDoctorRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowDoctorRow);
+                return rowDoctorRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DepartmentRow FindByDepartmentID(long DepartmentID) {
-                return ((DepartmentRow)(this.Rows.Find(new object[] {
-                            DepartmentID})));
+            public DoctorRow FindByDoctorID(long DoctorID) {
+                return ((DoctorRow)(this.Rows.Find(new object[] {
+                            DoctorID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                DepartmentDataTable cln = ((DepartmentDataTable)(base.Clone()));
+                DoctorDataTable cln = ((DoctorDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -397,54 +496,88 @@ namespace Final2021 {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new DepartmentDataTable();
+                return new DoctorDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columnDepartmentID = base.Columns["DepartmentID"];
-                this.columnDepartment = base.Columns["Department"];
+                this.columnDoctorID = base.Columns["DoctorID"];
+                this.columnDoctorFName = base.Columns["DoctorFName"];
+                this.columnDoctorMName = base.Columns["DoctorMName"];
+                this.columnDoctorLName = base.Columns["DoctorLName"];
+                this.columnDoctorSex = base.Columns["DoctorSex"];
+                this.columnDoctorStatus = base.Columns["DoctorStatus"];
+                this.columnDoctorType = base.Columns["DoctorType"];
+                this.columnDoctorDepartment = base.Columns["DoctorDepartment"];
+                this.columnDoctorClinic = base.Columns["DoctorClinic"];
+                this.columnDoctorEmail = base.Columns["DoctorEmail"];
+                this.columnDoctorNotes = base.Columns["DoctorNotes"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnDepartmentID = new global::System.Data.DataColumn("DepartmentID", typeof(long), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDepartmentID);
-                this.columnDepartment = new global::System.Data.DataColumn("Department", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDepartment);
+                this.columnDoctorID = new global::System.Data.DataColumn("DoctorID", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDoctorID);
+                this.columnDoctorFName = new global::System.Data.DataColumn("DoctorFName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDoctorFName);
+                this.columnDoctorMName = new global::System.Data.DataColumn("DoctorMName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDoctorMName);
+                this.columnDoctorLName = new global::System.Data.DataColumn("DoctorLName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDoctorLName);
+                this.columnDoctorSex = new global::System.Data.DataColumn("DoctorSex", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDoctorSex);
+                this.columnDoctorStatus = new global::System.Data.DataColumn("DoctorStatus", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDoctorStatus);
+                this.columnDoctorType = new global::System.Data.DataColumn("DoctorType", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDoctorType);
+                this.columnDoctorDepartment = new global::System.Data.DataColumn("DoctorDepartment", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDoctorDepartment);
+                this.columnDoctorClinic = new global::System.Data.DataColumn("DoctorClinic", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDoctorClinic);
+                this.columnDoctorEmail = new global::System.Data.DataColumn("DoctorEmail", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDoctorEmail);
+                this.columnDoctorNotes = new global::System.Data.DataColumn("DoctorNotes", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDoctorNotes);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnDepartmentID}, true));
-                this.columnDepartmentID.AllowDBNull = false;
-                this.columnDepartmentID.Unique = true;
-                this.columnDepartment.AllowDBNull = false;
+                                this.columnDoctorID}, true));
+                this.columnDoctorID.AllowDBNull = false;
+                this.columnDoctorID.Unique = true;
+                this.columnDoctorFName.AllowDBNull = false;
+                this.columnDoctorLName.AllowDBNull = false;
+                this.columnDoctorSex.AllowDBNull = false;
+                this.columnDoctorStatus.AllowDBNull = false;
+                this.columnDoctorType.AllowDBNull = false;
+                this.columnDoctorDepartment.AllowDBNull = false;
+                this.columnDoctorClinic.AllowDBNull = false;
+                this.columnDoctorEmail.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DepartmentRow NewDepartmentRow() {
-                return ((DepartmentRow)(this.NewRow()));
+            public DoctorRow NewDoctorRow() {
+                return ((DoctorRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new DepartmentRow(builder);
+                return new DoctorRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(DepartmentRow);
+                return typeof(DoctorRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.DepartmentRowChanged != null)) {
-                    this.DepartmentRowChanged(this, new DepartmentRowChangeEvent(((DepartmentRow)(e.Row)), e.Action));
+                if ((this.DoctorRowChanged != null)) {
+                    this.DoctorRowChanged(this, new DoctorRowChangeEvent(((DoctorRow)(e.Row)), e.Action));
                 }
             }
             
@@ -452,8 +585,8 @@ namespace Final2021 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.DepartmentRowChanging != null)) {
-                    this.DepartmentRowChanging(this, new DepartmentRowChangeEvent(((DepartmentRow)(e.Row)), e.Action));
+                if ((this.DoctorRowChanging != null)) {
+                    this.DoctorRowChanging(this, new DoctorRowChangeEvent(((DoctorRow)(e.Row)), e.Action));
                 }
             }
             
@@ -461,8 +594,8 @@ namespace Final2021 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.DepartmentRowDeleted != null)) {
-                    this.DepartmentRowDeleted(this, new DepartmentRowChangeEvent(((DepartmentRow)(e.Row)), e.Action));
+                if ((this.DoctorRowDeleted != null)) {
+                    this.DoctorRowDeleted(this, new DoctorRowChangeEvent(((DoctorRow)(e.Row)), e.Action));
                 }
             }
             
@@ -470,14 +603,14 @@ namespace Final2021 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.DepartmentRowDeleting != null)) {
-                    this.DepartmentRowDeleting(this, new DepartmentRowChangeEvent(((DepartmentRow)(e.Row)), e.Action));
+                if ((this.DoctorRowDeleting != null)) {
+                    this.DoctorRowDeleting(this, new DoctorRowChangeEvent(((DoctorRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveDepartmentRow(DepartmentRow row) {
+            public void RemoveDoctorRow(DoctorRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -486,7 +619,7 @@ namespace Final2021 {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DataSetDepartment ds = new DataSetDepartment();
+                DataSetDoctor ds = new DataSetDoctor();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -504,7 +637,7 @@ namespace Final2021 {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "DepartmentDataTable";
+                attribute2.FixedValue = "DoctorDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -548,37 +681,170 @@ namespace Final2021 {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class DepartmentRow : global::System.Data.DataRow {
+        public partial class DoctorRow : global::System.Data.DataRow {
             
-            private DepartmentDataTable tableDepartment;
+            private DoctorDataTable tableDoctor;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal DepartmentRow(global::System.Data.DataRowBuilder rb) : 
+            internal DoctorRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableDepartment = ((DepartmentDataTable)(this.Table));
+                this.tableDoctor = ((DoctorDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public long DepartmentID {
+            public long DoctorID {
                 get {
-                    return ((long)(this[this.tableDepartment.DepartmentIDColumn]));
+                    return ((long)(this[this.tableDoctor.DoctorIDColumn]));
                 }
                 set {
-                    this[this.tableDepartment.DepartmentIDColumn] = value;
+                    this[this.tableDoctor.DoctorIDColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Department {
+            public string DoctorFName {
                 get {
-                    return ((string)(this[this.tableDepartment.DepartmentColumn]));
+                    return ((string)(this[this.tableDoctor.DoctorFNameColumn]));
                 }
                 set {
-                    this[this.tableDepartment.DepartmentColumn] = value;
+                    this[this.tableDoctor.DoctorFNameColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string DoctorMName {
+                get {
+                    try {
+                        return ((string)(this[this.tableDoctor.DoctorMNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DoctorMName\' in table \'Doctor\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDoctor.DoctorMNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string DoctorLName {
+                get {
+                    return ((string)(this[this.tableDoctor.DoctorLNameColumn]));
+                }
+                set {
+                    this[this.tableDoctor.DoctorLNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string DoctorSex {
+                get {
+                    return ((string)(this[this.tableDoctor.DoctorSexColumn]));
+                }
+                set {
+                    this[this.tableDoctor.DoctorSexColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int DoctorStatus {
+                get {
+                    return ((int)(this[this.tableDoctor.DoctorStatusColumn]));
+                }
+                set {
+                    this[this.tableDoctor.DoctorStatusColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int DoctorType {
+                get {
+                    return ((int)(this[this.tableDoctor.DoctorTypeColumn]));
+                }
+                set {
+                    this[this.tableDoctor.DoctorTypeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int DoctorDepartment {
+                get {
+                    return ((int)(this[this.tableDoctor.DoctorDepartmentColumn]));
+                }
+                set {
+                    this[this.tableDoctor.DoctorDepartmentColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int DoctorClinic {
+                get {
+                    return ((int)(this[this.tableDoctor.DoctorClinicColumn]));
+                }
+                set {
+                    this[this.tableDoctor.DoctorClinicColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string DoctorEmail {
+                get {
+                    return ((string)(this[this.tableDoctor.DoctorEmailColumn]));
+                }
+                set {
+                    this[this.tableDoctor.DoctorEmailColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string DoctorNotes {
+                get {
+                    try {
+                        return ((string)(this[this.tableDoctor.DoctorNotesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DoctorNotes\' in table \'Doctor\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDoctor.DoctorNotesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDoctorMNameNull() {
+                return this.IsNull(this.tableDoctor.DoctorMNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDoctorMNameNull() {
+                this[this.tableDoctor.DoctorMNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDoctorNotesNull() {
+                return this.IsNull(this.tableDoctor.DoctorNotesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDoctorNotesNull() {
+                this[this.tableDoctor.DoctorNotesColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -586,22 +852,22 @@ namespace Final2021 {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class DepartmentRowChangeEvent : global::System.EventArgs {
+        public class DoctorRowChangeEvent : global::System.EventArgs {
             
-            private DepartmentRow eventRow;
+            private DoctorRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DepartmentRowChangeEvent(DepartmentRow row, global::System.Data.DataRowAction action) {
+            public DoctorRowChangeEvent(DoctorRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DepartmentRow Row {
+            public DoctorRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -617,7 +883,7 @@ namespace Final2021 {
         }
     }
 }
-namespace Final2021.DataSetDepartmentTableAdapters {
+namespace Final2021.DataSetDoctorTableAdapters {
     
     
     /// <summary>
@@ -629,7 +895,7 @@ namespace Final2021.DataSetDepartmentTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class DepartmentTableAdapter : global::System.ComponentModel.Component {
+    public partial class DoctorTableAdapter : global::System.ComponentModel.Component {
         
         private global::Devart.Data.SQLite.SQLiteDataAdapter _adapter;
         
@@ -643,7 +909,7 @@ namespace Final2021.DataSetDepartmentTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public DepartmentTableAdapter() {
+        public DoctorTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -740,80 +1006,371 @@ namespace Final2021.DataSetDepartmentTableAdapters {
             this._adapter = new global::Devart.Data.SQLite.SQLiteDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Department";
-            tableMapping.ColumnMappings.Add("DepartmentID", "DepartmentID");
-            tableMapping.ColumnMappings.Add("Department", "Department");
+            tableMapping.DataSetTable = "Doctor";
+            tableMapping.ColumnMappings.Add("DoctorID", "DoctorID");
+            tableMapping.ColumnMappings.Add("DoctorFName", "DoctorFName");
+            tableMapping.ColumnMappings.Add("DoctorMName", "DoctorMName");
+            tableMapping.ColumnMappings.Add("DoctorLName", "DoctorLName");
+            tableMapping.ColumnMappings.Add("DoctorSex", "DoctorSex");
+            tableMapping.ColumnMappings.Add("DoctorStatus", "DoctorStatus");
+            tableMapping.ColumnMappings.Add("DoctorType", "DoctorType");
+            tableMapping.ColumnMappings.Add("DoctorDepartment", "DoctorDepartment");
+            tableMapping.ColumnMappings.Add("DoctorClinic", "DoctorClinic");
+            tableMapping.ColumnMappings.Add("DoctorEmail", "DoctorEmail");
+            tableMapping.ColumnMappings.Add("DoctorNotes", "DoctorNotes");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::Devart.Data.SQLite.SQLiteCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM \"main\".\"Department\" WHERE ((\"DepartmentID\" = :Original_DepartmentID) " +
-                "AND (\"Department\" = :Original_Department))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM ""main"".""Doctor"" WHERE ((""DoctorID"" = :Original_DoctorID) AND (""DoctorFName"" = :Original_DoctorFName) AND ((:IsNull_DoctorMName = 1 AND ""DoctorMName"" IS NULL) OR (""DoctorMName"" = :Original_DoctorMName)) AND (""DoctorLName"" = :Original_DoctorLName) AND (""DoctorSex"" = :Original_DoctorSex) AND (""DoctorStatus"" = :Original_DoctorStatus) AND (""DoctorType"" = :Original_DoctorType) AND (""DoctorDepartment"" = :Original_DoctorDepartment) AND (""DoctorClinic"" = :Original_DoctorClinic) AND (""DoctorEmail"" = :Original_DoctorEmail) AND ((:IsNull_DoctorNotes = 1 AND ""DoctorNotes"" IS NULL) OR (""DoctorNotes"" = :Original_DoctorNotes)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::Devart.Data.SQLite.SQLiteParameter param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "Original_DepartmentID";
+            param.ParameterName = "Original_DoctorID";
             param.DbType = global::System.Data.DbType.Int64;
             param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int64;
             param.IsNullable = true;
-            param.SourceColumn = "DepartmentID";
+            param.SourceColumn = "DoctorID";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "Original_Department";
+            param.ParameterName = "Original_DoctorFName";
             param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
             param.IsNullable = true;
-            param.SourceColumn = "Department";
+            param.SourceColumn = "DoctorFName";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Devart.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "IsNull_DoctorMName";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "DoctorMName";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Devart.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "Original_DoctorMName";
+            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
+            param.IsNullable = true;
+            param.SourceColumn = "DoctorMName";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Devart.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "Original_DoctorLName";
+            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
+            param.IsNullable = true;
+            param.SourceColumn = "DoctorLName";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Devart.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "Original_DoctorSex";
+            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
+            param.IsNullable = true;
+            param.SourceColumn = "DoctorSex";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Devart.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "Original_DoctorStatus";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "DoctorStatus";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Devart.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "Original_DoctorType";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "DoctorType";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Devart.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "Original_DoctorDepartment";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "DoctorDepartment";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Devart.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "Original_DoctorClinic";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "DoctorClinic";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Devart.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "Original_DoctorEmail";
+            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
+            param.IsNullable = true;
+            param.SourceColumn = "DoctorEmail";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Devart.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "IsNull_DoctorNotes";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "DoctorNotes";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Devart.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "Original_DoctorNotes";
+            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
+            param.IsNullable = true;
+            param.SourceColumn = "DoctorNotes";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::Devart.Data.SQLite.SQLiteCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO \"main\".\"Department\" (\"DepartmentID\", \"Department\") VALUES (:Departmen" +
-                "tID, :Department)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO ""main"".""Doctor"" (""DoctorID"", ""DoctorFName"", ""DoctorMName"", ""DoctorLName"", ""DoctorSex"", ""DoctorStatus"", ""DoctorType"", ""DoctorDepartment"", ""DoctorClinic"", ""DoctorEmail"", ""DoctorNotes"") VALUES (:DoctorID, :DoctorFName, :DoctorMName, :DoctorLName, :DoctorSex, :DoctorStatus, :DoctorType, :DoctorDepartment, :DoctorClinic, :DoctorEmail, :DoctorNotes)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "DepartmentID";
+            param.ParameterName = "DoctorID";
             param.DbType = global::System.Data.DbType.Int64;
             param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int64;
             param.IsNullable = true;
-            param.SourceColumn = "DepartmentID";
+            param.SourceColumn = "DoctorID";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "Department";
+            param.ParameterName = "DoctorFName";
             param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
             param.IsNullable = true;
-            param.SourceColumn = "Department";
+            param.SourceColumn = "DoctorFName";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Devart.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "DoctorMName";
+            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
+            param.IsNullable = true;
+            param.SourceColumn = "DoctorMName";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Devart.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "DoctorLName";
+            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
+            param.IsNullable = true;
+            param.SourceColumn = "DoctorLName";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Devart.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "DoctorSex";
+            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
+            param.IsNullable = true;
+            param.SourceColumn = "DoctorSex";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Devart.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "DoctorStatus";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "DoctorStatus";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Devart.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "DoctorType";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "DoctorType";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Devart.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "DoctorDepartment";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "DoctorDepartment";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Devart.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "DoctorClinic";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "DoctorClinic";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Devart.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "DoctorEmail";
+            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
+            param.IsNullable = true;
+            param.SourceColumn = "DoctorEmail";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Devart.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "DoctorNotes";
+            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
+            param.IsNullable = true;
+            param.SourceColumn = "DoctorNotes";
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::Devart.Data.SQLite.SQLiteCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE \"main\".\"Department\" SET \"DepartmentID\" = :DepartmentID, \"Department\" = :De" +
-                "partment WHERE ((\"DepartmentID\" = :Original_DepartmentID) AND (\"Department\" = :O" +
-                "riginal_Department))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE ""main"".""Doctor"" SET ""DoctorID"" = :DoctorID, ""DoctorFName"" = :DoctorFName, ""DoctorMName"" = :DoctorMName, ""DoctorLName"" = :DoctorLName, ""DoctorSex"" = :DoctorSex, ""DoctorStatus"" = :DoctorStatus, ""DoctorType"" = :DoctorType, ""DoctorDepartment"" = :DoctorDepartment, ""DoctorClinic"" = :DoctorClinic, ""DoctorEmail"" = :DoctorEmail, ""DoctorNotes"" = :DoctorNotes WHERE ((""DoctorID"" = :Original_DoctorID) AND (""DoctorFName"" = :Original_DoctorFName) AND ((:IsNull_DoctorMName = 1 AND ""DoctorMName"" IS NULL) OR (""DoctorMName"" = :Original_DoctorMName)) AND (""DoctorLName"" = :Original_DoctorLName) AND (""DoctorSex"" = :Original_DoctorSex) AND (""DoctorStatus"" = :Original_DoctorStatus) AND (""DoctorType"" = :Original_DoctorType) AND (""DoctorDepartment"" = :Original_DoctorDepartment) AND (""DoctorClinic"" = :Original_DoctorClinic) AND (""DoctorEmail"" = :Original_DoctorEmail) AND ((:IsNull_DoctorNotes = 1 AND ""DoctorNotes"" IS NULL) OR (""DoctorNotes"" = :Original_DoctorNotes)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "DepartmentID";
+            param.ParameterName = "DoctorID";
             param.DbType = global::System.Data.DbType.Int64;
             param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int64;
             param.IsNullable = true;
-            param.SourceColumn = "DepartmentID";
+            param.SourceColumn = "DoctorID";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "Department";
+            param.ParameterName = "DoctorFName";
             param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
             param.IsNullable = true;
-            param.SourceColumn = "Department";
+            param.SourceColumn = "DoctorFName";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "Original_DepartmentID";
+            param.ParameterName = "DoctorMName";
+            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
+            param.IsNullable = true;
+            param.SourceColumn = "DoctorMName";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "DoctorLName";
+            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
+            param.IsNullable = true;
+            param.SourceColumn = "DoctorLName";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "DoctorSex";
+            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
+            param.IsNullable = true;
+            param.SourceColumn = "DoctorSex";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "DoctorStatus";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "DoctorStatus";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "DoctorType";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "DoctorType";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "DoctorDepartment";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "DoctorDepartment";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "DoctorClinic";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "DoctorClinic";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "DoctorEmail";
+            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
+            param.IsNullable = true;
+            param.SourceColumn = "DoctorEmail";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "DoctorNotes";
+            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
+            param.IsNullable = true;
+            param.SourceColumn = "DoctorNotes";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "Original_DoctorID";
             param.DbType = global::System.Data.DbType.Int64;
             param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int64;
             param.IsNullable = true;
-            param.SourceColumn = "DepartmentID";
+            param.SourceColumn = "DoctorID";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "Original_Department";
+            param.ParameterName = "Original_DoctorFName";
             param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
             param.IsNullable = true;
-            param.SourceColumn = "Department";
+            param.SourceColumn = "DoctorFName";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "IsNull_DoctorMName";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "DoctorMName";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "Original_DoctorMName";
+            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
+            param.IsNullable = true;
+            param.SourceColumn = "DoctorMName";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "Original_DoctorLName";
+            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
+            param.IsNullable = true;
+            param.SourceColumn = "DoctorLName";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "Original_DoctorSex";
+            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
+            param.IsNullable = true;
+            param.SourceColumn = "DoctorSex";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "Original_DoctorStatus";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "DoctorStatus";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "Original_DoctorType";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "DoctorType";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "Original_DoctorDepartment";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "DoctorDepartment";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "Original_DoctorClinic";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "DoctorClinic";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "Original_DoctorEmail";
+            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
+            param.IsNullable = true;
+            param.SourceColumn = "DoctorEmail";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "IsNull_DoctorNotes";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "DoctorNotes";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "Original_DoctorNotes";
+            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
+            param.IsNullable = true;
+            param.SourceColumn = "DoctorNotes";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
         }
@@ -831,7 +1388,9 @@ namespace Final2021.DataSetDepartmentTableAdapters {
             this._commandCollection = new global::Devart.Data.SQLite.SQLiteCommand[1];
             this._commandCollection[0] = new global::Devart.Data.SQLite.SQLiteCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT DepartmentID, Department FROM \"main\".Department";
+            this._commandCollection[0].CommandText = "SELECT DoctorID, DoctorFName, DoctorMName, DoctorLName, DoctorSex, DoctorStatus, " +
+                "DoctorType, DoctorDepartment, DoctorClinic, DoctorEmail, DoctorNotes FROM \"main\"" +
+                ".Doctor";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -839,7 +1398,7 @@ namespace Final2021.DataSetDepartmentTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DataSetDepartment.DepartmentDataTable dataTable) {
+        public virtual int Fill(DataSetDoctor.DoctorDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -852,9 +1411,9 @@ namespace Final2021.DataSetDepartmentTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DataSetDepartment.DepartmentDataTable GetData() {
+        public virtual DataSetDoctor.DoctorDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DataSetDepartment.DepartmentDataTable dataTable = new DataSetDepartment.DepartmentDataTable();
+            DataSetDoctor.DoctorDataTable dataTable = new DataSetDoctor.DoctorDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -862,15 +1421,15 @@ namespace Final2021.DataSetDepartmentTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DataSetDepartment.DepartmentDataTable dataTable) {
+        public virtual int Update(DataSetDoctor.DoctorDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DataSetDepartment dataSet) {
-            return this.Adapter.Update(dataSet, "Department");
+        public virtual int Update(DataSetDoctor dataSet) {
+            return this.Adapter.Update(dataSet, "Doctor");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -892,13 +1451,51 @@ namespace Final2021.DataSetDepartmentTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(long Original_DepartmentID, string Original_Department) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((long)(Original_DepartmentID));
-            if ((Original_Department == null)) {
-                throw new global::System.ArgumentNullException("Original_Department");
+        public virtual int Delete(long Original_DoctorID, string Original_DoctorFName, string Original_DoctorMName, string Original_DoctorLName, string Original_DoctorSex, int Original_DoctorStatus, int Original_DoctorType, int Original_DoctorDepartment, int Original_DoctorClinic, string Original_DoctorEmail, string Original_DoctorNotes) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((long)(Original_DoctorID));
+            if ((Original_DoctorFName == null)) {
+                throw new global::System.ArgumentNullException("Original_DoctorFName");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_Department));
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_DoctorFName));
+            }
+            if ((Original_DoctorMName == null)) {
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_DoctorMName));
+            }
+            if ((Original_DoctorLName == null)) {
+                throw new global::System.ArgumentNullException("Original_DoctorLName");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_DoctorLName));
+            }
+            if ((Original_DoctorSex == null)) {
+                throw new global::System.ArgumentNullException("Original_DoctorSex");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_DoctorSex));
+            }
+            this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_DoctorStatus));
+            this.Adapter.DeleteCommand.Parameters[7].Value = ((int)(Original_DoctorType));
+            this.Adapter.DeleteCommand.Parameters[8].Value = ((int)(Original_DoctorDepartment));
+            this.Adapter.DeleteCommand.Parameters[9].Value = ((int)(Original_DoctorClinic));
+            if ((Original_DoctorEmail == null)) {
+                throw new global::System.ArgumentNullException("Original_DoctorEmail");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_DoctorEmail));
+            }
+            if ((Original_DoctorNotes == null)) {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((string)(Original_DoctorNotes));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -920,13 +1517,47 @@ namespace Final2021.DataSetDepartmentTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(long DepartmentID, string Department) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((long)(DepartmentID));
-            if ((Department == null)) {
-                throw new global::System.ArgumentNullException("Department");
+        public virtual int Insert(long DoctorID, string DoctorFName, string DoctorMName, string DoctorLName, string DoctorSex, int DoctorStatus, int DoctorType, int DoctorDepartment, int DoctorClinic, string DoctorEmail, string DoctorNotes) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((long)(DoctorID));
+            if ((DoctorFName == null)) {
+                throw new global::System.ArgumentNullException("DoctorFName");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Department));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(DoctorFName));
+            }
+            if ((DoctorMName == null)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(DoctorMName));
+            }
+            if ((DoctorLName == null)) {
+                throw new global::System.ArgumentNullException("DoctorLName");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(DoctorLName));
+            }
+            if ((DoctorSex == null)) {
+                throw new global::System.ArgumentNullException("DoctorSex");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(DoctorSex));
+            }
+            this.Adapter.InsertCommand.Parameters[5].Value = ((int)(DoctorStatus));
+            this.Adapter.InsertCommand.Parameters[6].Value = ((int)(DoctorType));
+            this.Adapter.InsertCommand.Parameters[7].Value = ((int)(DoctorDepartment));
+            this.Adapter.InsertCommand.Parameters[8].Value = ((int)(DoctorClinic));
+            if ((DoctorEmail == null)) {
+                throw new global::System.ArgumentNullException("DoctorEmail");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(DoctorEmail));
+            }
+            if ((DoctorNotes == null)) {
+                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(DoctorNotes));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -948,20 +1579,114 @@ namespace Final2021.DataSetDepartmentTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(long DepartmentID, string Department, long Original_DepartmentID, string Original_Department) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((long)(DepartmentID));
-            if ((Department == null)) {
-                throw new global::System.ArgumentNullException("Department");
+        public virtual int Update(
+                    long DoctorID, 
+                    string DoctorFName, 
+                    string DoctorMName, 
+                    string DoctorLName, 
+                    string DoctorSex, 
+                    int DoctorStatus, 
+                    int DoctorType, 
+                    int DoctorDepartment, 
+                    int DoctorClinic, 
+                    string DoctorEmail, 
+                    string DoctorNotes, 
+                    long Original_DoctorID, 
+                    string Original_DoctorFName, 
+                    string Original_DoctorMName, 
+                    string Original_DoctorLName, 
+                    string Original_DoctorSex, 
+                    int Original_DoctorStatus, 
+                    int Original_DoctorType, 
+                    int Original_DoctorDepartment, 
+                    int Original_DoctorClinic, 
+                    string Original_DoctorEmail, 
+                    string Original_DoctorNotes) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((long)(DoctorID));
+            if ((DoctorFName == null)) {
+                throw new global::System.ArgumentNullException("DoctorFName");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Department));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(DoctorFName));
             }
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((long)(Original_DepartmentID));
-            if ((Original_Department == null)) {
-                throw new global::System.ArgumentNullException("Original_Department");
+            if ((DoctorMName == null)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Original_Department));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(DoctorMName));
+            }
+            if ((DoctorLName == null)) {
+                throw new global::System.ArgumentNullException("DoctorLName");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(DoctorLName));
+            }
+            if ((DoctorSex == null)) {
+                throw new global::System.ArgumentNullException("DoctorSex");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(DoctorSex));
+            }
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(DoctorStatus));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(DoctorType));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(DoctorDepartment));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(DoctorClinic));
+            if ((DoctorEmail == null)) {
+                throw new global::System.ArgumentNullException("DoctorEmail");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(DoctorEmail));
+            }
+            if ((DoctorNotes == null)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(DoctorNotes));
+            }
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((long)(Original_DoctorID));
+            if ((Original_DoctorFName == null)) {
+                throw new global::System.ArgumentNullException("Original_DoctorFName");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_DoctorFName));
+            }
+            if ((Original_DoctorMName == null)) {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_DoctorMName));
+            }
+            if ((Original_DoctorLName == null)) {
+                throw new global::System.ArgumentNullException("Original_DoctorLName");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_DoctorLName));
+            }
+            if ((Original_DoctorSex == null)) {
+                throw new global::System.ArgumentNullException("Original_DoctorSex");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_DoctorSex));
+            }
+            this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(Original_DoctorStatus));
+            this.Adapter.UpdateCommand.Parameters[18].Value = ((int)(Original_DoctorType));
+            this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(Original_DoctorDepartment));
+            this.Adapter.UpdateCommand.Parameters[20].Value = ((int)(Original_DoctorClinic));
+            if ((Original_DoctorEmail == null)) {
+                throw new global::System.ArgumentNullException("Original_DoctorEmail");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(Original_DoctorEmail));
+            }
+            if ((Original_DoctorNotes == null)) {
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(Original_DoctorNotes));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -983,8 +1708,29 @@ namespace Final2021.DataSetDepartmentTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Department, long Original_DepartmentID, string Original_Department) {
-            return this.Update(Original_DepartmentID, Department, Original_DepartmentID, Original_Department);
+        public virtual int Update(
+                    string DoctorFName, 
+                    string DoctorMName, 
+                    string DoctorLName, 
+                    string DoctorSex, 
+                    int DoctorStatus, 
+                    int DoctorType, 
+                    int DoctorDepartment, 
+                    int DoctorClinic, 
+                    string DoctorEmail, 
+                    string DoctorNotes, 
+                    long Original_DoctorID, 
+                    string Original_DoctorFName, 
+                    string Original_DoctorMName, 
+                    string Original_DoctorLName, 
+                    string Original_DoctorSex, 
+                    int Original_DoctorStatus, 
+                    int Original_DoctorType, 
+                    int Original_DoctorDepartment, 
+                    int Original_DoctorClinic, 
+                    string Original_DoctorEmail, 
+                    string Original_DoctorNotes) {
+            return this.Update(Original_DoctorID, DoctorFName, DoctorMName, DoctorLName, DoctorSex, DoctorStatus, DoctorType, DoctorDepartment, DoctorClinic, DoctorEmail, DoctorNotes, Original_DoctorID, Original_DoctorFName, Original_DoctorMName, Original_DoctorLName, Original_DoctorSex, Original_DoctorStatus, Original_DoctorType, Original_DoctorDepartment, Original_DoctorClinic, Original_DoctorEmail, Original_DoctorNotes);
         }
     }
     
@@ -1000,7 +1746,7 @@ namespace Final2021.DataSetDepartmentTableAdapters {
         
         private UpdateOrderOption _updateOrder;
         
-        private DepartmentTableAdapter _departmentTableAdapter;
+        private DoctorTableAdapter _doctorTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -1022,12 +1768,12 @@ namespace Final2021.DataSetDepartmentTableAdapters {
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public DepartmentTableAdapter DepartmentTableAdapter {
+        public DoctorTableAdapter DoctorTableAdapter {
             get {
-                return this._departmentTableAdapter;
+                return this._doctorTableAdapter;
             }
             set {
-                this._departmentTableAdapter = value;
+                this._doctorTableAdapter = value;
             }
         }
         
@@ -1050,9 +1796,9 @@ namespace Final2021.DataSetDepartmentTableAdapters {
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._departmentTableAdapter != null) 
-                            && (this._departmentTableAdapter.Connection != null))) {
-                    return this._departmentTableAdapter.Connection;
+                if (((this._doctorTableAdapter != null) 
+                            && (this._doctorTableAdapter.Connection != null))) {
+                    return this._doctorTableAdapter.Connection;
                 }
                 return null;
             }
@@ -1067,7 +1813,7 @@ namespace Final2021.DataSetDepartmentTableAdapters {
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._departmentTableAdapter != null)) {
+                if ((this._doctorTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -1079,14 +1825,14 @@ namespace Final2021.DataSetDepartmentTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateUpdatedRows(DataSetDepartment dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(DataSetDoctor dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._departmentTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Department.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._doctorTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Doctor.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._departmentTableAdapter.Update(updatedRows));
+                    result = (result + this._doctorTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -1098,13 +1844,13 @@ namespace Final2021.DataSetDepartmentTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateInsertedRows(DataSetDepartment dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(DataSetDoctor dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._departmentTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Department.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._doctorTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Doctor.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._departmentTableAdapter.Update(addedRows));
+                    result = (result + this._doctorTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -1116,13 +1862,13 @@ namespace Final2021.DataSetDepartmentTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateDeletedRows(DataSetDepartment dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(DataSetDoctor dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._departmentTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Department.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._doctorTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Doctor.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._departmentTableAdapter.Update(deletedRows));
+                    result = (result + this._doctorTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -1158,15 +1904,15 @@ namespace Final2021.DataSetDepartmentTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public virtual int UpdateAll(DataSetDepartment dataSet) {
+        public virtual int UpdateAll(DataSetDoctor dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._departmentTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._departmentTableAdapter.Connection) == false))) {
+            if (((this._doctorTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._doctorTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -1202,13 +1948,13 @@ namespace Final2021.DataSetDepartmentTableAdapters {
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._departmentTableAdapter != null)) {
-                    revertConnections.Add(this._departmentTableAdapter, this._departmentTableAdapter.Connection);
-                    this._departmentTableAdapter.Connection = ((global::Devart.Data.SQLite.SQLiteConnection)(workConnection));
-                    this._departmentTableAdapter.Transaction = ((global::System.Data.Common.DbTransaction)(workTransaction));
-                    if (this._departmentTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._departmentTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._departmentTableAdapter.Adapter);
+                if ((this._doctorTableAdapter != null)) {
+                    revertConnections.Add(this._doctorTableAdapter, this._doctorTableAdapter.Connection);
+                    this._doctorTableAdapter.Connection = ((global::Devart.Data.SQLite.SQLiteConnection)(workConnection));
+                    this._doctorTableAdapter.Transaction = ((global::System.Data.Common.DbTransaction)(workTransaction));
+                    if (this._doctorTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._doctorTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._doctorTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -1269,9 +2015,9 @@ namespace Final2021.DataSetDepartmentTableAdapters {
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._departmentTableAdapter != null)) {
-                    this._departmentTableAdapter.Connection = ((global::Devart.Data.SQLite.SQLiteConnection)(revertConnections[this._departmentTableAdapter]));
-                    this._departmentTableAdapter.Transaction = null;
+                if ((this._doctorTableAdapter != null)) {
+                    this._doctorTableAdapter.Connection = ((global::Devart.Data.SQLite.SQLiteConnection)(revertConnections[this._doctorTableAdapter]));
+                    this._doctorTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

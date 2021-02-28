@@ -51,16 +51,7 @@
               <Mapping SourceColumn="ClinicID" DataSetColumn="ClinicID" />
               <Mapping SourceColumn="Clinic" DataSetColumn="Clinic" />
             </Mappings>
-            <Sources>
-              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectName="&quot;main&quot;.Clinic" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT ClinicID, Clinic FROM "main".Clinic</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </Sources>
+            <Sources />
           </TableAdapter>
         </Tables>
         <Sources />
@@ -70,7 +61,7 @@
   <xs:element name="DataSetClinic" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DataSetClinic" msprop:Generator_UserDSName="DataSetClinic">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Clinic" msprop:Generator_TableClassName="ClinicDataTable" msprop:Generator_TableVarName="tableClinic" msprop:Generator_RowChangedName="ClinicRowChanged" msprop:Generator_TablePropName="Clinic" msprop:Generator_RowDeletingName="ClinicRowDeleting" msprop:Generator_RowChangingName="ClinicRowChanging" msprop:Generator_RowEvHandlerName="ClinicRowChangeEventHandler" msprop:Generator_RowDeletedName="ClinicRowDeleted" msprop:Generator_RowClassName="ClinicRow" msprop:Generator_UserTableName="Clinic" msprop:Generator_RowEvArgName="ClinicRowChangeEvent">
+        <xs:element name="Clinic" msprop:Generator_TableClassName="ClinicDataTable" msprop:Generator_TableVarName="tableClinic" msprop:Generator_TablePropName="Clinic" msprop:Generator_RowDeletingName="ClinicRowDeleting" msprop:Generator_RowChangingName="ClinicRowChanging" msprop:Generator_RowEvHandlerName="ClinicRowChangeEventHandler" msprop:Generator_RowDeletedName="ClinicRowDeleted" msprop:Generator_UserTableName="Clinic" msprop:Generator_RowChangedName="ClinicRowChanged" msprop:Generator_RowEvArgName="ClinicRowChangeEvent" msprop:Generator_RowClassName="ClinicRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ClinicID" msprop:Generator_ColumnVarNameInTable="columnClinicID" msprop:Generator_ColumnPropNameInRow="ClinicID" msprop:Generator_ColumnPropNameInTable="ClinicIDColumn" msprop:Generator_UserColumnName="ClinicID" type="xs:long" />

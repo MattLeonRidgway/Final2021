@@ -1,17 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Final2021
 {
-    class DoctorType: DBConnection
+    class DoctorType : DBConnection
     {
         int id;
         string type;
-       
+
         public DoctorType() { }
 
         public DoctorType(int id, string type)
@@ -21,7 +18,7 @@ namespace Final2021
         }
         public DoctorType(string type)
         {
-            
+
             this.type = type;
         }
 
@@ -41,15 +38,16 @@ namespace Final2021
             {
                 throw new Exception(e.Message);
             }
-            finally { 
+            finally
+            {
                 DBClose();
             }
-       
+
         }// end insert Type
         // get a list Types 
-        public List<string> ViewType( List<string> typeList)
+        public List<string> ViewType(List<string> typeList)
         {
-          
+
             try
             {
                 DBopen();
@@ -71,7 +69,7 @@ namespace Final2021
             DBClose();
             return typeList;
         }// end View type
-        public void UpdateType( int typeID, string type)
+        public void UpdateType(int typeID, string type)
         {
             try
             {
@@ -86,10 +84,11 @@ namespace Final2021
             {
                 Console.WriteLine("Catch Update type");
             }
-            finally { 
-            DBClose();
+            finally
+            {
+                DBClose();
             }
-            
+
         }
     }
 }

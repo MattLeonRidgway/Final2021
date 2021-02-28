@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data.SQLite;
 // Doctor table info:
 // Doctor DoctorID 
@@ -18,14 +15,15 @@ using System.Data.SQLite;
 // DoctorNotes string
 namespace Final2021
 {
-    class DoctorClass :DBConnection
+    class DoctorClass : DBConnection
     {
         string fName, mName, lName, email, notes;
         char sex;
-        int status, type, department, clinic;          
+        int status, type, department, clinic;
         public DoctorClass() { }
 
-        public DoctorClass(string fName, string mName, string lName, string email, string notes, char sex, int status, int type, int department, int clinic){
+        public DoctorClass(string fName, string mName, string lName, string email, string notes, char sex, int status, int type, int department, int clinic)
+        {
 
             this.fName = fName;
             this.mName = mName;
@@ -50,8 +48,9 @@ namespace Final2021
         public int Department { get => department; set => department = value; }
         public int Clinic { get => clinic; set => clinic = value; }
 
-       public void InsertDoctor(string first, string mid, string last, char sex, int stat, int type, int dep, 
-           int clinic, string email, string notes){
+        public void InsertDoctor(string first, string mid, string last, char sex, int stat, int type, int dep,
+            int clinic, string email, string notes)
+        {
 
             try
             {
@@ -60,8 +59,8 @@ namespace Final2021
                     "DoctorType, DoctorDepartment, DoctorClinic, DoctorEmail, DoctorNotes)" +
                    "VALUES(@fName,@mName,@lName,@sex,@stat,@type,@depart,@clinic,@email,@notes)", con);
                 // "VALUES(?,?,?,?,?,?,?,?,?,?)",con);
-                insertCommand.Parameters.Add(new SQLiteParameter("@fName",first));
-                insertCommand.Parameters.Add(new SQLiteParameter("@mName",mid));
+                insertCommand.Parameters.Add(new SQLiteParameter("@fName", first));
+                insertCommand.Parameters.Add(new SQLiteParameter("@mName", mid));
                 insertCommand.Parameters.Add(new SQLiteParameter("@lName", last));
                 insertCommand.Parameters.Add(new SQLiteParameter("@sex", sex));
                 insertCommand.Parameters.Add(new SQLiteParameter("@stat", stat));
@@ -71,7 +70,7 @@ namespace Final2021
                 insertCommand.Parameters.Add(new SQLiteParameter("@email", email));
                 insertCommand.Parameters.Add(new SQLiteParameter("@notes", notes));
 
-            
+
 
                 insertCommand.ExecuteNonQuery();
             }
@@ -86,9 +85,10 @@ namespace Final2021
         }// end insert doctor
         // get a list of doctors from the database
         public List<string> ViewDoctor(List<string> doctorsList)
-        {  
-           
-            try{
+        {
+
+            try
+            {
                 DBopen();
                 SQLiteDataReader sqlGet;
                 SQLiteCommand sqlCMD;
@@ -101,29 +101,33 @@ namespace Final2021
                     doctorsList.Add(getDoc);
                 }
             }
-            catch {
+            catch
+            {
                 Console.WriteLine("View Doctors catch");
             }
             DBClose();
-            return doctorsList;           
+            return doctorsList;
 
 
         }// end ViewDoctor()
-        public void UpdateDoctor(int dID, string first, string mid, string last, char sex, int stat, int type, int dep, int clinic, string email, string notes) {
+        public void UpdateDoctor(int dID, string first, string mid, string last, char sex, int stat, int type, int dep, int clinic, string email, string notes)
+        {
 
-            try{
+            try
+            {
                 DBopen();
                 SQLiteCommand sqlUpdate;
-                sqlUpdate =con.CreateCommand();
+                sqlUpdate = con.CreateCommand();
                 sqlUpdate.CommandText = "UPDATE INTO doctor WHERE dID=DoctorID(DoctorFName,DoctorMName,DoctorLName,DoctorSex,DoctorStatus,DoctorType,DoctorDepartment,DoctorClinic,DoctorEmail,DoctorNotes) " +
                 "VALUES(first,mid,last,sex,stats,type,depart,clinic,email,notes);";
                 sqlUpdate.ExecuteNonQuery();
             }
-            catch { 
-            
+            catch
+            {
+
             }
             DBClose();
-            
+
         }
     }
 }

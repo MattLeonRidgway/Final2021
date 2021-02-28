@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="DataSetStatus" targetNamespace="http://tempuri.org/DataSetStatus1.xsd" xmlns:mstns="http://tempuri.org/DataSetStatus1.xsd" xmlns="http://tempuri.org/DataSetStatus1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+<xs:schema id="DataSet" targetNamespace="http://tempuri.org/DataSet.xsd" xmlns:mstns="http://tempuri.org/DataSet.xsd" xmlns="http://tempuri.org/DataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
@@ -51,26 +51,17 @@
               <Mapping SourceColumn="StatusID" DataSetColumn="StatusID" />
               <Mapping SourceColumn="StatusType" DataSetColumn="StatusType" />
             </Mappings>
-            <Sources>
-              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectName="&quot;main&quot;.Status" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT StatusID, StatusType FROM "main".Status</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </Sources>
+            <Sources />
           </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="DataSetStatus" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DataSetStatus" msprop:Generator_UserDSName="DataSetStatus">
+  <xs:element name="DataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DataSet" msprop:Generator_UserDSName="DataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Status" msprop:Generator_TableClassName="StatusDataTable" msprop:Generator_TableVarName="tableStatus" msprop:Generator_RowChangedName="StatusRowChanged" msprop:Generator_TablePropName="Status" msprop:Generator_RowDeletingName="StatusRowDeleting" msprop:Generator_RowChangingName="StatusRowChanging" msprop:Generator_RowEvHandlerName="StatusRowChangeEventHandler" msprop:Generator_RowDeletedName="StatusRowDeleted" msprop:Generator_RowClassName="StatusRow" msprop:Generator_UserTableName="Status" msprop:Generator_RowEvArgName="StatusRowChangeEvent">
+        <xs:element name="Status" msprop:Generator_TableClassName="StatusDataTable" msprop:Generator_TableVarName="tableStatus" msprop:Generator_TablePropName="Status" msprop:Generator_RowDeletingName="StatusRowDeleting" msprop:Generator_RowChangingName="StatusRowChanging" msprop:Generator_RowEvHandlerName="StatusRowChangeEventHandler" msprop:Generator_RowDeletedName="StatusRowDeleted" msprop:Generator_UserTableName="Status" msprop:Generator_RowChangedName="StatusRowChanged" msprop:Generator_RowEvArgName="StatusRowChangeEvent" msprop:Generator_RowClassName="StatusRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="StatusID" msprop:Generator_ColumnVarNameInTable="columnStatusID" msprop:Generator_ColumnPropNameInRow="StatusID" msprop:Generator_ColumnPropNameInTable="StatusIDColumn" msprop:Generator_UserColumnName="StatusID" type="xs:long" />

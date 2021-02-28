@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data.SQLite;
 /**
  *  DBConnection class opens and closes the database connection
@@ -19,11 +15,13 @@ namespace Final2021
         public SQLiteCommand sqlCom = new SQLiteCommand();
 
         public SQLiteConnection con = new SQLiteConnection(@"Data Source= C:\Users\scoob\OneDrive - Champlain College\Current courses\SDEV 360-81 C#\code\Final2021\PatientLite.db; Version=3; Compress=true;");
-        
-        public DBConnection() {
-       
+
+        public DBConnection()
+        {
+
         }// end connection 
-        public void DBopen() {
+        public void DBopen()
+        {
             // Try to open sqlConn
             try
             {
@@ -32,20 +30,22 @@ namespace Final2021
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Connection Error",ex);
+                Console.WriteLine("Connection Error", ex);
             }
         }
-        public void DBClose() {
+        public void DBClose()
+        {
             try
             {
                 con.Close();
             }
             catch (Exception ex)
             {
-                Console.WriteLine("DB could not be disconnected",ex);
+                Console.WriteLine("DB could not be disconnected", ex);
             }
         }// Close the connection
-        public void Query(string query) {
+        public void Query(string query)
+        {
 
             DBopen();
             con.Open();
@@ -53,7 +53,7 @@ namespace Final2021
             sqlCom.CommandText = query;
             sqlCom.ExecuteNonQuery();
             con.Close();
-            
+
         }
 
 

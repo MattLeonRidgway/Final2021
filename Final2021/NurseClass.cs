@@ -1,13 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Final2021
 {
-    class NurseClass: DBConnection
+    class NurseClass : DBConnection
     {
         string fName, mName, lName, email, notes;
         char sex;
@@ -43,32 +40,48 @@ namespace Final2021
         public void InsertNurse(string first, string mid, string last, char sex, int stat, int type, int dep, int clinic, string email, string notes)
         {
 
+
             try
             {
                 DBopen();
-                SQLiteCommand sql;
-                string sqlConnect = con.ToString();
-                sql = con.CreateCommand();
-                sql.CommandText = "INSERT INTO Nurse(NurseFName,NurseMName,NurseLName,NurseSex,NurseStatus,NurseType,NurseDepartment,NurseClinic,NurseEmail,NurseNotes) " +
-                "VALUES(first,mid,last,sex,stats,type,depart,clinic,email,notes); ";
-                sql.ExecuteNonQuery();
+                SQLiteCommand insertCommand = new SQLiteCommand("INSERT INTO [Nurse] (NurseFName, NurseMName, NurseLName, NurseSex, NurseStatus," +
+                    "NurseType, NurseDepartment, NurseClinic, NurseEmail, NurseNotes)" +
+                   "VALUES(@fName,@mName,@lName,@sex,@stat,@type,@depart,@clinic,@email,@notes)", con);
+                // "VALUES(?,?,?,?,?,?,?,?,?,?)",con);
+                insertCommand.Parameters.Add(new SQLiteParameter("@fName", first));
+                insertCommand.Parameters.Add(new SQLiteParameter("@mName", mid));
+                insertCommand.Parameters.Add(new SQLiteParameter("@lName", last));
+                insertCommand.Parameters.Add(new SQLiteParameter("@sex", sex));
+                insertCommand.Parameters.Add(new SQLiteParameter("@stat", stat));
+                insertCommand.Parameters.Add(new SQLiteParameter("@type", type));
+                insertCommand.Parameters.Add(new SQLiteParameter("@depart", dep));
+                insertCommand.Parameters.Add(new SQLiteParameter("@clinic", clinic));
+                insertCommand.Parameters.Add(new SQLiteParameter("@email", email));
+                insertCommand.Parameters.Add(new SQLiteParameter("@notes", notes));
+
+
+
+                insertCommand.ExecuteNonQuery();
             }
-            catch
+            catch (SQLiteException e)
             {
-                Console.WriteLine("Insert Nurse catch");
+                throw new Exception(e.Message);
             }
-            DBClose();
+            finally
+            {
+                DBClose();
+            }
         }// end insert nurse
         // get a list of nurses from the database
         public List<string> ViewNurse(List<string> nurseList)
         {
-            
+
             try
             {
                 DBopen();
                 SQLiteDataReader sqlGet;
                 SQLiteCommand sqlCMD;
-                sqlCMD =con.CreateCommand();
+                sqlCMD = con.CreateCommand();
                 sqlCMD.CommandText = "SELECT * FROM Nurse";
                 sqlGet = sqlCMD.ExecuteReader();
                 while (sqlGet.Read())
@@ -81,7 +94,7 @@ namespace Final2021
             {
                 Console.WriteLine("View nurse catch");
             }
-           DBClose();
+            DBClose();
             return nurseList;
 
 

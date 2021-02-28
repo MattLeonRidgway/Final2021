@@ -1,21 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Final2021
 {
-    class Department: DBConnection
+    class Department : DBConnection
     {
         int departmentID;
         string departmentString;
-        
+
         public Department() { }
         public Department(string departmentString)
         {
-            
+
             this.departmentString = departmentString;
         }
         public Department(int departmentID, string departmentString)
@@ -49,7 +46,7 @@ namespace Final2021
         // get a list of departments
         public List<string> ViewDepartment(DBConnection conn, List<string> departList)
         {
-           DBopen();
+            DBopen();
             try
             {
                 SQLiteDataReader sqlGet;

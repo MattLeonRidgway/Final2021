@@ -1,21 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Final2021
 {
-    class Clinic:DBConnection
+    class Clinic : DBConnection
     {
         int clinicID;
         string clinicString;
-   
+
         public Clinic() { }
         public Clinic(string clinic)
         {
-            
+
             this.clinicString = clinic;
         }
         public Clinic(int clinicID, string clinic)
@@ -50,7 +47,7 @@ namespace Final2021
         // get a list of clinics 
         public List<string> ViewClinic(List<string> clinicList)
         {
-          
+
             try
             {
                 DBopen();
@@ -69,7 +66,7 @@ namespace Final2021
             {
                 Console.WriteLine("View clinic catch");
             }
-           DBClose();
+            DBClose();
             return clinicList;
         }// end ViewClinic()
         public void UpdateClinic(int clinicID, string clinicType)

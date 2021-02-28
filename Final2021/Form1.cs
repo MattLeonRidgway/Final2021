@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Final2021
@@ -44,7 +37,7 @@ namespace Final2021
 
         private void btnNurseRev_Click(object sender, EventArgs e)
         {
-           NurseReview nreview = new NurseReview();
+            NurseReview nreview = new NurseReview();
             nreview.Show();
             Hide();
         }
@@ -52,7 +45,7 @@ namespace Final2021
         private void btnDocAddEdit_Click(object sender, EventArgs e)
         {
             Doctor doc = new Doctor();
-           doc.Show();
+            doc.Show();
             Hide();
         }
 
@@ -72,7 +65,7 @@ namespace Final2021
 
         private void btnEditInfo_Click(object sender, EventArgs e)
         {
-           EditData edit = new EditData();
+            EditData edit = new EditData();
             edit.Show();
             Hide();
         }

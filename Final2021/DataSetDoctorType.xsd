@@ -51,16 +51,7 @@
               <Mapping SourceColumn="TypeID" DataSetColumn="TypeID" />
               <Mapping SourceColumn="Type" DataSetColumn="Type" />
             </Mappings>
-            <Sources>
-              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectName="&quot;main&quot;.DoctorType" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT TypeID, Type FROM "main".DoctorType</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </Sources>
+            <Sources />
           </TableAdapter>
         </Tables>
         <Sources />
@@ -70,7 +61,7 @@
   <xs:element name="DataSetDoctorType" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DataSetDoctorType" msprop:Generator_UserDSName="DataSetDoctorType">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="DoctorType" msprop:Generator_TableClassName="DoctorTypeDataTable" msprop:Generator_TableVarName="tableDoctorType" msprop:Generator_RowChangedName="DoctorTypeRowChanged" msprop:Generator_TablePropName="DoctorType" msprop:Generator_RowDeletingName="DoctorTypeRowDeleting" msprop:Generator_RowChangingName="DoctorTypeRowChanging" msprop:Generator_RowEvHandlerName="DoctorTypeRowChangeEventHandler" msprop:Generator_RowDeletedName="DoctorTypeRowDeleted" msprop:Generator_RowClassName="DoctorTypeRow" msprop:Generator_UserTableName="DoctorType" msprop:Generator_RowEvArgName="DoctorTypeRowChangeEvent">
+        <xs:element name="DoctorType" msprop:Generator_TableClassName="DoctorTypeDataTable" msprop:Generator_TableVarName="tableDoctorType" msprop:Generator_TablePropName="DoctorType" msprop:Generator_RowDeletingName="DoctorTypeRowDeleting" msprop:Generator_RowChangingName="DoctorTypeRowChanging" msprop:Generator_RowEvHandlerName="DoctorTypeRowChangeEventHandler" msprop:Generator_RowDeletedName="DoctorTypeRowDeleted" msprop:Generator_UserTableName="DoctorType" msprop:Generator_RowChangedName="DoctorTypeRowChanged" msprop:Generator_RowEvArgName="DoctorTypeRowChangeEvent" msprop:Generator_RowClassName="DoctorTypeRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="TypeID" msprop:Generator_ColumnVarNameInTable="columnTypeID" msprop:Generator_ColumnPropNameInRow="TypeID" msprop:Generator_ColumnPropNameInTable="TypeIDColumn" msprop:Generator_UserColumnName="TypeID" type="xs:long" />

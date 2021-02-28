@@ -29,6 +29,7 @@ namespace Final2021
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnStatus = new System.Windows.Forms.Button();
@@ -43,16 +44,28 @@ namespace Final2021
             this.btnExit = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
-            this.lstBxStatus = new System.Windows.Forms.ListBox();
-            this.lstBxDoctorType = new System.Windows.Forms.ListBox();
-            this.lstBxNurseType = new System.Windows.Forms.ListBox();
-            this.lstBxDepartment = new System.Windows.Forms.ListBox();
-            this.lstBxClinic = new System.Windows.Forms.ListBox();
             this.txtBxStatus = new System.Windows.Forms.TextBox();
             this.txtBxDoctorType = new System.Windows.Forms.TextBox();
             this.txtBxNurseType = new System.Windows.Forms.TextBox();
             this.txtBxDepartment = new System.Windows.Forms.TextBox();
             this.txtBxClinic = new System.Windows.Forms.TextBox();
+            this.cmboxStatus = new System.Windows.Forms.ComboBox();
+            this.cmboxDoctorType = new System.Windows.Forms.ComboBox();
+            this.cmBoxDepartmnet = new System.Windows.Forms.ComboBox();
+            this.cmboxClinic = new System.Windows.Forms.ComboBox();
+            this.cmBxNurseType = new System.Windows.Forms.ComboBox();
+           
+            this.doctorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+        
+            this.doctorBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetNurseType = new Final2021.DataSetNurseType();
+            this.nurseTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nurseTypeTableAdapter = new Final2021.DataSetNurseTypeTableAdapters.NurseTypeTableAdapter();
+   
+            ((System.ComponentModel.ISupportInitialize)(this.doctorBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.doctorBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetNurseType)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nurseTypeBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -69,7 +82,7 @@ namespace Final2021
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(38, 116);
+            this.label2.Location = new System.Drawing.Point(38, 110);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(69, 16);
             this.label2.TabIndex = 1;
@@ -89,7 +102,7 @@ namespace Final2021
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(23, 169);
+            this.label3.Location = new System.Drawing.Point(23, 165);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(94, 16);
             this.label3.TabIndex = 4;
@@ -194,46 +207,6 @@ namespace Final2021
             this.btnHome.UseVisualStyleBackColor = true;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
-            // lstBxStatus
-            // 
-            this.lstBxStatus.FormattingEnabled = true;
-            this.lstBxStatus.Location = new System.Drawing.Point(123, 109);
-            this.lstBxStatus.Name = "lstBxStatus";
-            this.lstBxStatus.Size = new System.Drawing.Size(220, 30);
-            this.lstBxStatus.TabIndex = 19;
-            // 
-            // lstBxDoctorType
-            // 
-            this.lstBxDoctorType.FormattingEnabled = true;
-            this.lstBxDoctorType.Location = new System.Drawing.Point(123, 161);
-            this.lstBxDoctorType.Name = "lstBxDoctorType";
-            this.lstBxDoctorType.Size = new System.Drawing.Size(220, 30);
-            this.lstBxDoctorType.TabIndex = 20;
-            // 
-            // lstBxNurseType
-            // 
-            this.lstBxNurseType.FormattingEnabled = true;
-            this.lstBxNurseType.Location = new System.Drawing.Point(123, 202);
-            this.lstBxNurseType.Name = "lstBxNurseType";
-            this.lstBxNurseType.Size = new System.Drawing.Size(220, 30);
-            this.lstBxNurseType.TabIndex = 21;
-            // 
-            // lstBxDepartment
-            // 
-            this.lstBxDepartment.FormattingEnabled = true;
-            this.lstBxDepartment.Location = new System.Drawing.Point(123, 244);
-            this.lstBxDepartment.Name = "lstBxDepartment";
-            this.lstBxDepartment.Size = new System.Drawing.Size(220, 30);
-            this.lstBxDepartment.TabIndex = 22;
-            // 
-            // lstBxClinic
-            // 
-            this.lstBxClinic.FormattingEnabled = true;
-            this.lstBxClinic.Location = new System.Drawing.Point(123, 290);
-            this.lstBxClinic.Name = "lstBxClinic";
-            this.lstBxClinic.Size = new System.Drawing.Size(220, 30);
-            this.lstBxClinic.TabIndex = 23;
-            // 
             // txtBxStatus
             // 
             this.txtBxStatus.Location = new System.Drawing.Point(370, 109);
@@ -269,21 +242,105 @@ namespace Final2021
             this.txtBxClinic.Size = new System.Drawing.Size(155, 20);
             this.txtBxClinic.TabIndex = 28;
             // 
+            // cmboxStatus
+            // 
+            this.cmboxStatus.DisplayMember = "StatusType";
+            this.cmboxStatus.FormattingEnabled = true;
+            this.cmboxStatus.Location = new System.Drawing.Point(145, 108);
+            this.cmboxStatus.Name = "cmboxStatus";
+            this.cmboxStatus.Size = new System.Drawing.Size(197, 21);
+            this.cmboxStatus.TabIndex = 138;
+            this.cmboxStatus.ValueMember = "StatusID";
+            // 
+            // cmboxDoctorType
+            // 
+            this.cmboxDoctorType.DisplayMember = "Type";
+            this.cmboxDoctorType.FormattingEnabled = true;
+            this.cmboxDoctorType.Location = new System.Drawing.Point(145, 165);
+            this.cmboxDoctorType.Name = "cmboxDoctorType";
+            this.cmboxDoctorType.Size = new System.Drawing.Size(197, 21);
+            this.cmboxDoctorType.TabIndex = 139;
+            this.cmboxDoctorType.ValueMember = "TypeID";
+            // 
+            // cmBoxDepartmnet
+            // 
+            this.cmBoxDepartmnet.DisplayMember = "Department";
+            this.cmBoxDepartmnet.FormattingEnabled = true;
+            this.cmBoxDepartmnet.Location = new System.Drawing.Point(145, 256);
+            this.cmBoxDepartmnet.Name = "cmBoxDepartmnet";
+            this.cmBoxDepartmnet.Size = new System.Drawing.Size(197, 21);
+            this.cmBoxDepartmnet.TabIndex = 140;
+            this.cmBoxDepartmnet.ValueMember = "DepartmentID";
+            // 
+            // cmboxClinic
+            // 
+            this.cmboxClinic.DisplayMember = "Clinic";
+            this.cmboxClinic.FormattingEnabled = true;
+            this.cmboxClinic.Location = new System.Drawing.Point(145, 294);
+            this.cmboxClinic.Name = "cmboxClinic";
+            this.cmboxClinic.Size = new System.Drawing.Size(197, 21);
+            this.cmboxClinic.TabIndex = 141;
+            this.cmboxClinic.ValueMember = "ClinicID";
+            // 
+            // cmBxNurseType
+            // 
+            this.cmBxNurseType.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.nurseTypeBindingSource, "TypeID", true));
+            this.cmBxNurseType.DataSource = this.nurseTypeBindingSource;
+            this.cmBxNurseType.DisplayMember = "Type";
+            this.cmBxNurseType.FormattingEnabled = true;
+            this.cmBxNurseType.Location = new System.Drawing.Point(145, 206);
+            this.cmBxNurseType.Name = "cmBxNurseType";
+            this.cmBxNurseType.Size = new System.Drawing.Size(197, 21);
+            this.cmBxNurseType.TabIndex = 142;
+            this.cmBxNurseType.ValueMember = "TypeID";
+            // 
+            // dataSet
+            // 
+
+            // 
+            // doctorBindingSource
+            // 
+            this.doctorBindingSource.DataMember = "Doctor";
+
+            // 
+            // doctorTableAdapter
+            // 
+      
+            // 
+            // doctorBindingSource1
+            // 
+            this.doctorBindingSource1.DataMember = "Doctor";
+          
+            // 
+            // dataSetNurseType
+            // 
+            this.dataSetNurseType.DataSetName = "DataSetNurseType";
+            this.dataSetNurseType.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // nurseTypeBindingSource
+            // 
+            this.nurseTypeBindingSource.DataMember = "NurseType";
+            this.nurseTypeBindingSource.DataSource = this.dataSetNurseType;
+            // 
+            // nurseTypeTableAdapter
+            // 
+            this.nurseTypeTableAdapter.ClearBeforeFill = true;
+            // 
             // EditData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cmBxNurseType);
+            this.Controls.Add(this.cmboxClinic);
+            this.Controls.Add(this.cmBoxDepartmnet);
+            this.Controls.Add(this.cmboxDoctorType);
+            this.Controls.Add(this.cmboxStatus);
             this.Controls.Add(this.txtBxClinic);
             this.Controls.Add(this.txtBxDepartment);
             this.Controls.Add(this.txtBxNurseType);
             this.Controls.Add(this.txtBxDoctorType);
             this.Controls.Add(this.txtBxStatus);
-            this.Controls.Add(this.lstBxClinic);
-            this.Controls.Add(this.lstBxDepartment);
-            this.Controls.Add(this.lstBxNurseType);
-            this.Controls.Add(this.lstBxDoctorType);
-            this.Controls.Add(this.lstBxStatus);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnHome);
@@ -301,6 +358,10 @@ namespace Final2021
             this.Name = "EditData";
             this.Text = "EditData";
             this.Load += new System.EventHandler(this.EditData_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.doctorBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.doctorBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetNurseType)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nurseTypeBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -322,15 +383,22 @@ namespace Final2021
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnHome;
-        private System.Windows.Forms.ListBox lstBxStatus;
-        private System.Windows.Forms.ListBox lstBxDoctorType;
-        private System.Windows.Forms.ListBox lstBxNurseType;
-        private System.Windows.Forms.ListBox lstBxDepartment;
-        private System.Windows.Forms.ListBox lstBxClinic;
         private System.Windows.Forms.TextBox txtBxStatus;
         private System.Windows.Forms.TextBox txtBxDoctorType;
         private System.Windows.Forms.TextBox txtBxNurseType;
         private System.Windows.Forms.TextBox txtBxDepartment;
         private System.Windows.Forms.TextBox txtBxClinic;
+        private System.Windows.Forms.ComboBox cmboxStatus;
+        private System.Windows.Forms.ComboBox cmboxDoctorType;
+        private System.Windows.Forms.ComboBox cmBoxDepartmnet;
+        private System.Windows.Forms.ComboBox cmboxClinic;
+        private System.Windows.Forms.ComboBox cmBxNurseType;
+
+        private System.Windows.Forms.BindingSource doctorBindingSource;
+
+        private System.Windows.Forms.BindingSource doctorBindingSource1;
+        private DataSetNurseType dataSetNurseType;
+        private System.Windows.Forms.BindingSource nurseTypeBindingSource;
+        private DataSetNurseTypeTableAdapters.NurseTypeTableAdapter nurseTypeTableAdapter;
     }
 }

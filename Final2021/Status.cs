@@ -1,49 +1,51 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Final2021
 {
-    class Status: DBConnection
+    class Status : DBConnection
     {
         string statusType;
-        int statusID;    
+        int statusID;
         // Empty default Constructor
         public Status() { }
         // Full Constructor
-        public Status(string status, int statusID){
+        public Status(string status, int statusID)
+        {
             this.statusType = status;
             this.statusID = statusID;
         }
         // Constructor for only statusType
-        public Status(string status){
+        public Status(string status)
+        {
             this.statusType = status;
-            
+
         }
         public string StatusType { get => statusType; set => statusType = value; }
         public int StatusID { get => statusID; set => statusID = value; }
         // Insert into database statusType TESTED WORKING
         public void InsertStatus(string sType)
         {
-           
-            try{ 
+
+            try
+            {
                 DBopen();
-                SQLiteCommand insertCommand= new SQLiteCommand("INSERT INTO Status(StatusType)VALUES(?)",con);                
+                SQLiteCommand insertCommand = new SQLiteCommand("INSERT INTO Status(StatusType)VALUES(?)", con);
                 insertCommand.Parameters.AddWithValue(sType, StatusType);
                 insertCommand.ExecuteNonQuery();
             }
-            catch (SQLiteException e){
-                throw new Exception(e.Message);              
+            catch (SQLiteException e)
+            {
+                throw new Exception(e.Message);
             }
-            finally{ 
+            finally
+            {
                 DBClose();
             }
 
-           
-           
+
+
         }// end insert status
         // get a list of status 
         public List<string> ViewStatus(List<string> statusList)
@@ -69,13 +71,13 @@ namespace Final2021
             DBClose();
             return statusList;
         }// end ViewStatus()
-       public void UpdateStatus(int statusID, string sType)
+        public void UpdateStatus(int statusID, string sType)
         {
 
             try
             {
                 DBopen();
-                SQLiteCommand sqlUpdate =new SQLiteCommand("UPDATE Status SET [Type]=@type WHERE [StatusID]=@typeID",con);              
+                SQLiteCommand sqlUpdate = new SQLiteCommand("UPDATE Status SET [Type]=@type WHERE [StatusID]=@typeID", con);
                 sqlUpdate.Parameters.Add(new SQLiteParameter("@typeID"));
                 sqlUpdate.Parameters.Add(new SQLiteParameter("@type"));
                 sqlUpdate.Parameters["@typeID"].Value = statusID;
@@ -91,7 +93,7 @@ namespace Final2021
             {
                 DBClose();
             }
-          
+
         }
     }
 }

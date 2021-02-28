@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
+﻿using System.Text.RegularExpressions;
 
 namespace Final2021
 {
     class ValidateClass
     {
 
-      
+
         //check string for ONLY letters
         public static bool isValidString(string input)
         {
