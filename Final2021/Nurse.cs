@@ -39,24 +39,15 @@ namespace Final2021
 
         private void Nurse_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dataSetNurse.Nurse' table. You can move, or remove it, as needed.
-            this.nurseTableAdapter.Fill(this.dataSetNurse.Nurse);
-            // TODO: This line of code loads data into the 'dataSetClinic.Clinic' table. You can move, or remove it, as needed.
-            this.clinicTableAdapter.Fill(this.dataSetClinic.Clinic);
-            // TODO: This line of code loads data into the 'dataSetDepartment.Department' table. You can move, or remove it, as needed.
-            this.departmentTableAdapter.Fill(this.dataSetDepartment.Department);
+            // TODO: This line of code loads data into the 'dataSetNurseClinic.Clinic' table. You can move, or remove it, as needed.
+            this.clinicTableAdapter.Fill(this.dataSetNurseClinic.Clinic);
+            // TODO: This line of code loads data into the 'dataSetNurseDepartment.Department' table. You can move, or remove it, as needed.
+            this.departmentTableAdapter.Fill(this.dataSetNurseDepartment.Department);
             // TODO: This line of code loads data into the 'dataSetNurseType.NurseType' table. You can move, or remove it, as needed.
             this.nurseTypeTableAdapter.Fill(this.dataSetNurseType.NurseType);
-            // TODO: This line of code loads data into the 'dataSet.Status' table. You can move, or remove it, as needed.
-            this.statusTableAdapter.Fill(this.dataSet.Status);
-            // TODO: This line of code loads data into the 'dataSetClinic.Clinic' table. You can move, or remove it, as needed.
-            this.clinicTableAdapter.Fill(this.dataSetClinic.Clinic);
-            // TODO: This line of code loads data into the 'dataSetDepartment.Department' table. You can move, or remove it, as needed.
-            this.departmentTableAdapter.Fill(this.dataSetDepartment.Department);
-            // TODO: This line of code loads data into the 'dataSetNurseType.NurseType' table. You can move, or remove it, as needed.
-            this.nurseTypeTableAdapter.Fill(this.dataSetNurseType.NurseType);
-            // TODO: This line of code loads data into the 'dataSetStatus.Status' table. You can move, or remove it, as needed.
-       
+            // TODO: This line of code loads data into the 'dataSetNurseStatus.Status' table. You can move, or remove it, as needed.
+            this.statusTableAdapter.Fill(this.dataSetNurseStatus.Status);
+
             string radioRuslt = null;
             foreach (Control control in this.groupDxRdBtns.Controls)
             {

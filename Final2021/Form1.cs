@@ -42,7 +42,7 @@ namespace Final2021
             Hide();
         }
 
-        private void btnDocAddEdit_Click(object sender, EventArgs e)
+        private void btnDocAdd_Click(object sender, EventArgs e)
         {
             Doctor doc = new Doctor();
             doc.Show();
@@ -67,6 +67,20 @@ namespace Final2021
         {
             EditData edit = new EditData();
             edit.Show();
+            Hide();
+        }
+
+        private void btnDoctorEdit_Click(object sender, EventArgs e)
+        {
+            DoctorEdit docEdit = new DoctorEdit();
+            docEdit.Show();
+            Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            NurseEdit nurseEdit = new NurseEdit();
+            nurseEdit.Show();
             Hide();
         }
     }

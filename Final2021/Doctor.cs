@@ -15,26 +15,14 @@ namespace Final2021
 
         private void Doctor_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dataSetDoctor.Doctor' table. You can move, or remove it, as needed.
-            this.doctorTableAdapter.Fill(this.dataSetDoctor.Doctor);
-            // TODO: This line of code loads data into the 'dataSetClinic.Clinic' table. You can move, or remove it, as needed.
-            this.clinicTableAdapter.Fill(this.dataSetClinic.Clinic);
-            // TODO: This line of code loads data into the 'dataSetDepartment.Department' table. You can move, or remove it, as needed.
-            this.departmentTableAdapter.Fill(this.dataSetDepartment.Department);
+            // TODO: This line of code loads data into the 'dataSetDoctorAddClinic.Clinic' table. You can move, or remove it, as needed.
+            this.clinicTableAdapter.Fill(this.dataSetDoctorAddClinic.Clinic);
+            // TODO: This line of code loads data into the 'dataSetDepartmentAddDoctor.Department' table. You can move, or remove it, as needed.
+            this.departmentTableAdapter.Fill(this.dataSetDepartmentAddDoctor.Department);
             // TODO: This line of code loads data into the 'dataSetDoctorType.DoctorType' table. You can move, or remove it, as needed.
             this.doctorTypeTableAdapter.Fill(this.dataSetDoctorType.DoctorType);
-            // TODO: This line of code loads data into the 'dataSet.Status' table. You can move, or remove it, as needed.
-            this.statusTableAdapter.Fill(this.dataSet.Status);
-            // TODO: This line of code loads data into the 'dataSet.Doctor' table. You can move, or remove it, as needed.
-    
-            // TODO: This line of code loads data into the 'dataSetDepartment.Department' table. You can move, or remove it, as needed.
-            this.departmentTableAdapter.Fill(this.dataSetDepartment.Department);
-            // TODO: This line of code loads data into the 'dataSetDoctorType.DoctorType' table. You can move, or remove it, as needed.
-            this.doctorTypeTableAdapter.Fill(this.dataSetDoctorType.DoctorType);
-            // TODO: This line of code loads data into the 'dataSetStatus.Status' table. You can move, or remove it, as needed.
-    
-            // TODO: This line of code loads data into the 'dataSetClinic.Clinic' table. You can move, or remove it, as needed.
-            this.clinicTableAdapter.Fill(this.dataSetClinic.Clinic);
+            // TODO: This line of code loads data into the 'dataSetDoctorStatusAdd.Status' table. You can move, or remove it, as needed.
+            this.statusTableAdapter.Fill(this.dataSetDoctorStatusAdd.Status);
 
             string radioRuslt = null;
             foreach (Control control in this.groupDxRdBtns.Controls)
@@ -50,18 +38,7 @@ namespace Final2021
                 }
 
             }// end groupDxRdButtons
-            string radioSex = null;
-            foreach (Control contrl in this.groupBxSexEDIT.Controls)
-            {
-                if (contrl is RadioButton)
-                {
-                    RadioButton radBtn = contrl as RadioButton;
-                    if (radBtn.Checked)
-                    {
-                        radioSex = radBtn.Text;
-                    }
-                }
-            }
+        
 
         }
 

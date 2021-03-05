@@ -32,11 +32,28 @@ namespace Final2021
 
         private void EditData_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dataSetNurseType.NurseType' table. You can move, or remove it, as needed.
-            this.nurseTypeTableAdapter.Fill(this.dataSetNurseType.NurseType);
-            // TODO: This line of code loads data into the 'dataSet.Doctor' table. You can move, or remove it, as needed.
-     
+            // TODO: This line of code loads data into the 'dataSetEditDataDoctorType.DoctorType' table. You can move, or remove it, as needed.
+            this.doctorTypeTableAdapter1.Fill(this.dataSetEditDataDoctorType.DoctorType);
+            // TODO: This line of code loads data into the 'dataSetEditClinic.Clinic' table. You can move, or remove it, as needed.
+            this.clinicTableAdapter.Fill(this.dataSetEditClinic.Clinic);
+            // TODO: This line of code loads data into the 'dataSetEditDepartment.Department' table. You can move, or remove it, as needed.
+            this.departmentTableAdapter.Fill(this.dataSetEditDepartment.Department);
+            // TODO: This line of code loads data into the 'dataSetEditNurseType.NurseType' table. You can move, or remove it, as needed.
+            this.nurseTypeTableAdapter.Fill(this.dataSetEditNurseType.NurseType);
+            // TODO: This line of code loads data into the 'dataSetEditDoctorType.DoctorType' table. You can move, or remove it, as needed.      
+            // TODO: This line of code loads data into the 'dataSetEditStaus.Status' table. You can move, or remove it, as needed.
+            this.statusTableAdapter.Fill(this.dataSetEditStaus.Status);
 
+
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            txtBxClinic.Clear();
+            txtBxDepartment.Clear();
+            txtBxDoctorType.Clear();
+            txtBxNurseType.Clear();
+            txtBxStatus.Clear();
         }
     }
 }

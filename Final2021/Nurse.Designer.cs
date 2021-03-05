@@ -50,74 +50,35 @@ namespace Final2021
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnFillInEDIT = new System.Windows.Forms.Button();
-            this.label24 = new System.Windows.Forms.Label();
-            this.radioBtnEditFemale = new System.Windows.Forms.RadioButton();
-            this.radioBtnEditMale = new System.Windows.Forms.RadioButton();
-            this.txtBxEditNote = new System.Windows.Forms.TextBox();
-            this.txtBxEditEmail = new System.Windows.Forms.TextBox();
-            this.txtBxEditLName = new System.Windows.Forms.TextBox();
-            this.txtBxEditMName = new System.Windows.Forms.TextBox();
-            this.btnEditSAVE = new System.Windows.Forms.Button();
-            this.txtBxEditFName = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
             this.btnHome = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.cmboxStatus = new System.Windows.Forms.ComboBox();
-            this.statusBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSet = new Final2021.DataSet();
             this.cmboxType = new System.Windows.Forms.ComboBox();
-            this.nurseTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSetNurseType = new Final2021.DataSetNurseType();
             this.cmboxDepartment = new System.Windows.Forms.ComboBox();
-            this.departmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSetDepartmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSetDepartment = new Final2021.DataSetDepartment();
             this.cmboxClinic = new System.Windows.Forms.ComboBox();
-            this.clinicBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSetClinic = new Final2021.DataSetClinic();
             this.groupDxRdBtns = new System.Windows.Forms.GroupBox();
-            this.dataSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.statusTableAdapter = new Final2021.DataSetTableAdapters.StatusTableAdapter();
-            this.nurseTypeTableAdapter = new Final2021.DataSetNurseTypeTableAdapters.NurseTypeTableAdapter();
-            this.departmentTableAdapter = new Final2021.DataSetDepartmentTableAdapters.DepartmentTableAdapter();
-            this.clinicTableAdapter = new Final2021.DataSetClinicTableAdapters.ClinicTableAdapter();
-            this.groupBxSexEDIT = new System.Windows.Forms.GroupBox();
-            this.cmBxClinicEDIT = new System.Windows.Forms.ComboBox();
-            this.cmBxDepartEDIT = new System.Windows.Forms.ComboBox();
-            this.cmBxTypeEDIT = new System.Windows.Forms.ComboBox();
-            this.cmBxStatusEDIT = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dataSetNurse = new Final2021.DataSetNurse();
-            this.nurseBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.nurseTableAdapter = new Final2021.DataSetNurseTableAdapters.NurseTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.statusBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nurseTypeBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetNurseType)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetDepartmentBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetDepartment)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clinicBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetClinic)).BeginInit();
+            this.dataSetNurseStatus = new Final2021.DataSet.DataSetNurseStatus();
+            this.statusBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.statusTableAdapter = new Final2021.DataSet.DataSetNurseStatusTableAdapters.StatusTableAdapter();
+            this.dataSetNurseType = new Final2021.DataSet.DataSetNurseType();
+            this.nurseTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nurseTypeTableAdapter = new Final2021.DataSet.DataSetNurseTypeTableAdapters.NurseTypeTableAdapter();
+            this.dataSetNurseDepartment = new Final2021.DataSet.DataSetNurseDepartment();
+            this.departmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.departmentTableAdapter = new Final2021.DataSet.DataSetNurseDepartmentTableAdapters.DepartmentTableAdapter();
+            this.dataSetNurseClinic = new Final2021.DataSet.DataSetNurseClinic();
+            this.clinicBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.clinicTableAdapter = new Final2021.DataSet.DataSetNurseClinicTableAdapters.ClinicTableAdapter();
             this.groupDxRdBtns.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetBindingSource1)).BeginInit();
-            this.groupBxSexEDIT.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetNurse)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nurseBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetNurseStatus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statusBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetNurseType)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nurseTypeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetNurseDepartment)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetNurseClinic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clinicBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // radioBtnFemale
@@ -144,35 +105,35 @@ namespace Final2021
             // 
             // txtBxNote
             // 
-            this.txtBxNote.Location = new System.Drawing.Point(89, 303);
+            this.txtBxNote.Location = new System.Drawing.Point(342, 324);
             this.txtBxNote.Name = "txtBxNote";
             this.txtBxNote.Size = new System.Drawing.Size(197, 20);
             this.txtBxNote.TabIndex = 42;
             // 
             // txtBxEmail
             // 
-            this.txtBxEmail.Location = new System.Drawing.Point(89, 276);
+            this.txtBxEmail.Location = new System.Drawing.Point(342, 297);
             this.txtBxEmail.Name = "txtBxEmail";
             this.txtBxEmail.Size = new System.Drawing.Size(197, 20);
             this.txtBxEmail.TabIndex = 41;
             // 
             // txtBxLName
             // 
-            this.txtBxLName.Location = new System.Drawing.Point(91, 100);
+            this.txtBxLName.Location = new System.Drawing.Point(344, 121);
             this.txtBxLName.Name = "txtBxLName";
             this.txtBxLName.Size = new System.Drawing.Size(197, 20);
             this.txtBxLName.TabIndex = 40;
             // 
             // txtBxMName
             // 
-            this.txtBxMName.Location = new System.Drawing.Point(91, 74);
+            this.txtBxMName.Location = new System.Drawing.Point(344, 95);
             this.txtBxMName.Name = "txtBxMName";
             this.txtBxMName.Size = new System.Drawing.Size(197, 20);
             this.txtBxMName.TabIndex = 39;
             // 
             // editAddNurse
             // 
-            this.editAddNurse.Location = new System.Drawing.Point(106, 339);
+            this.editAddNurse.Location = new System.Drawing.Point(388, 350);
             this.editAddNurse.Name = "editAddNurse";
             this.editAddNurse.Size = new System.Drawing.Size(75, 23);
             this.editAddNurse.TabIndex = 38;
@@ -182,7 +143,7 @@ namespace Final2021
             // 
             // txtBxFName
             // 
-            this.txtBxFName.Location = new System.Drawing.Point(91, 48);
+            this.txtBxFName.Location = new System.Drawing.Point(344, 69);
             this.txtBxFName.Name = "txtBxFName";
             this.txtBxFName.Size = new System.Drawing.Size(197, 20);
             this.txtBxFName.TabIndex = 37;
@@ -190,7 +151,7 @@ namespace Final2021
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(4, 303);
+            this.label12.Location = new System.Drawing.Point(257, 324);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(35, 13);
             this.label12.TabIndex = 36;
@@ -199,7 +160,7 @@ namespace Final2021
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(4, 276);
+            this.label11.Location = new System.Drawing.Point(257, 297);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(32, 13);
             this.label11.TabIndex = 35;
@@ -208,7 +169,7 @@ namespace Final2021
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(4, 247);
+            this.label10.Location = new System.Drawing.Point(257, 268);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(32, 13);
             this.label10.TabIndex = 34;
@@ -217,7 +178,7 @@ namespace Final2021
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(4, 221);
+            this.label9.Location = new System.Drawing.Point(257, 242);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(62, 13);
             this.label9.TabIndex = 33;
@@ -226,7 +187,7 @@ namespace Final2021
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(3, 196);
+            this.label8.Location = new System.Drawing.Point(256, 217);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(31, 13);
             this.label8.TabIndex = 32;
@@ -235,7 +196,7 @@ namespace Final2021
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(2, 166);
+            this.label7.Location = new System.Drawing.Point(255, 187);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(37, 13);
             this.label7.TabIndex = 31;
@@ -244,7 +205,7 @@ namespace Final2021
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(14, 135);
+            this.label6.Location = new System.Drawing.Point(267, 156);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(25, 13);
             this.label6.TabIndex = 30;
@@ -253,7 +214,7 @@ namespace Final2021
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(3, 103);
+            this.label5.Location = new System.Drawing.Point(256, 124);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(58, 13);
             this.label5.TabIndex = 29;
@@ -262,7 +223,7 @@ namespace Final2021
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 77);
+            this.label4.Location = new System.Drawing.Point(256, 98);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(69, 13);
             this.label4.TabIndex = 28;
@@ -271,7 +232,7 @@ namespace Final2021
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(4, 55);
+            this.label3.Location = new System.Drawing.Point(257, 76);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(57, 13);
             this.label3.TabIndex = 27;
@@ -281,7 +242,7 @@ namespace Final2021
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(129, 18);
+            this.label2.Location = new System.Drawing.Point(388, 34);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 24);
             this.label2.TabIndex = 26;
@@ -291,195 +252,11 @@ namespace Final2021
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(337, 18);
+            this.label1.Location = new System.Drawing.Point(191, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(123, 42);
             this.label1.TabIndex = 25;
             this.label1.Text = "Nurse";
-            // 
-            // btnFillInEDIT
-            // 
-            this.btnFillInEDIT.Location = new System.Drawing.Point(599, 55);
-            this.btnFillInEDIT.Name = "btnFillInEDIT";
-            this.btnFillInEDIT.Size = new System.Drawing.Size(75, 23);
-            this.btnFillInEDIT.TabIndex = 76;
-            this.btnFillInEDIT.Text = "Fill In";
-            this.btnFillInEDIT.UseVisualStyleBackColor = true;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(574, 18);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(100, 13);
-            this.label24.TabIndex = 75;
-            this.label24.Text = "Select Nurse to edit";
-            // 
-            // radioBtnEditFemale
-            // 
-            this.radioBtnEditFemale.AutoSize = true;
-            this.radioBtnEditFemale.Location = new System.Drawing.Point(87, 3);
-            this.radioBtnEditFemale.Name = "radioBtnEditFemale";
-            this.radioBtnEditFemale.Size = new System.Drawing.Size(59, 17);
-            this.radioBtnEditFemale.TabIndex = 73;
-            this.radioBtnEditFemale.TabStop = true;
-            this.radioBtnEditFemale.Text = "Female";
-            this.radioBtnEditFemale.UseVisualStyleBackColor = true;
-            // 
-            // radioBtnEditMale
-            // 
-            this.radioBtnEditMale.AutoSize = true;
-            this.radioBtnEditMale.Location = new System.Drawing.Point(6, 3);
-            this.radioBtnEditMale.Name = "radioBtnEditMale";
-            this.radioBtnEditMale.Size = new System.Drawing.Size(48, 17);
-            this.radioBtnEditMale.TabIndex = 72;
-            this.radioBtnEditMale.TabStop = true;
-            this.radioBtnEditMale.Text = "Male";
-            this.radioBtnEditMale.UseVisualStyleBackColor = true;
-            // 
-            // txtBxEditNote
-            // 
-            this.txtBxEditNote.Location = new System.Drawing.Point(559, 334);
-            this.txtBxEditNote.Name = "txtBxEditNote";
-            this.txtBxEditNote.Size = new System.Drawing.Size(209, 20);
-            this.txtBxEditNote.TabIndex = 67;
-            // 
-            // txtBxEditEmail
-            // 
-            this.txtBxEditEmail.Location = new System.Drawing.Point(559, 307);
-            this.txtBxEditEmail.Name = "txtBxEditEmail";
-            this.txtBxEditEmail.Size = new System.Drawing.Size(209, 20);
-            this.txtBxEditEmail.TabIndex = 66;
-            // 
-            // txtBxEditLName
-            // 
-            this.txtBxEditLName.Location = new System.Drawing.Point(559, 159);
-            this.txtBxEditLName.Name = "txtBxEditLName";
-            this.txtBxEditLName.Size = new System.Drawing.Size(209, 20);
-            this.txtBxEditLName.TabIndex = 65;
-            // 
-            // txtBxEditMName
-            // 
-            this.txtBxEditMName.Location = new System.Drawing.Point(559, 133);
-            this.txtBxEditMName.Name = "txtBxEditMName";
-            this.txtBxEditMName.Size = new System.Drawing.Size(209, 20);
-            this.txtBxEditMName.TabIndex = 64;
-            // 
-            // btnEditSAVE
-            // 
-            this.btnEditSAVE.Location = new System.Drawing.Point(603, 369);
-            this.btnEditSAVE.Name = "btnEditSAVE";
-            this.btnEditSAVE.Size = new System.Drawing.Size(75, 23);
-            this.btnEditSAVE.TabIndex = 63;
-            this.btnEditSAVE.Text = "Save";
-            this.btnEditSAVE.UseVisualStyleBackColor = true;
-            // 
-            // txtBxEditFName
-            // 
-            this.txtBxEditFName.Location = new System.Drawing.Point(559, 107);
-            this.txtBxEditFName.Name = "txtBxEditFName";
-            this.txtBxEditFName.Size = new System.Drawing.Size(209, 20);
-            this.txtBxEditFName.TabIndex = 62;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(474, 334);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(35, 13);
-            this.label13.TabIndex = 61;
-            this.label13.Text = "Notes";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(474, 307);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(32, 13);
-            this.label14.TabIndex = 60;
-            this.label14.Text = "Email";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(474, 285);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(32, 13);
-            this.label15.TabIndex = 59;
-            this.label15.Text = "Clinic";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(474, 259);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(62, 13);
-            this.label16.TabIndex = 58;
-            this.label16.Text = "Department";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(471, 233);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(31, 13);
-            this.label17.TabIndex = 57;
-            this.label17.Text = "Type";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(471, 210);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(37, 13);
-            this.label18.TabIndex = 56;
-            this.label18.Text = "Status";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(477, 191);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(25, 13);
-            this.label19.TabIndex = 55;
-            this.label19.Text = "Sex";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(471, 162);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(58, 13);
-            this.label20.TabIndex = 54;
-            this.label20.Text = "Last Name";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(471, 136);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(69, 13);
-            this.label21.TabIndex = 53;
-            this.label21.Text = "Middle Name";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(472, 114);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(57, 13);
-            this.label22.TabIndex = 52;
-            this.label22.Text = "First Name";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(608, 79);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(56, 24);
-            this.label23.TabIndex = 51;
-            this.label23.Text = "EDIT";
             // 
             // btnHome
             // 
@@ -493,7 +270,7 @@ namespace Final2021
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(91, 415);
+            this.btnExit.Location = new System.Drawing.Point(713, 415);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 23);
             this.btnExit.TabIndex = 80;
@@ -503,7 +280,7 @@ namespace Final2021
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(357, 385);
+            this.btnCancel.Location = new System.Drawing.Point(388, 379);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 79;
@@ -515,221 +292,116 @@ namespace Final2021
             this.cmboxStatus.DataSource = this.statusBindingSource;
             this.cmboxStatus.DisplayMember = "StatusType";
             this.cmboxStatus.FormattingEnabled = true;
-            this.cmboxStatus.Location = new System.Drawing.Point(91, 162);
+            this.cmboxStatus.Location = new System.Drawing.Point(344, 183);
             this.cmboxStatus.Name = "cmboxStatus";
             this.cmboxStatus.Size = new System.Drawing.Size(197, 21);
             this.cmboxStatus.TabIndex = 81;
             this.cmboxStatus.ValueMember = "StatusID";
-            // 
-            // statusBindingSource
-            // 
-            this.statusBindingSource.DataMember = "Status";
-            this.statusBindingSource.DataSource = this.dataSetBindingSource;
-            // 
-            // dataSetBindingSource
-            // 
-            this.dataSetBindingSource.DataSource = this.dataSet;
-            this.dataSetBindingSource.Position = 0;
-            // 
-            // dataSet
-            // 
-            this.dataSet.DataSetName = "DataSet";
-            this.dataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // cmboxType
             // 
             this.cmboxType.DataSource = this.nurseTypeBindingSource;
             this.cmboxType.DisplayMember = "Type";
             this.cmboxType.FormattingEnabled = true;
-            this.cmboxType.Location = new System.Drawing.Point(89, 196);
+            this.cmboxType.Location = new System.Drawing.Point(342, 217);
             this.cmboxType.Name = "cmboxType";
             this.cmboxType.Size = new System.Drawing.Size(197, 21);
             this.cmboxType.TabIndex = 82;
             this.cmboxType.ValueMember = "TypeID";
-            // 
-            // nurseTypeBindingSource
-            // 
-            this.nurseTypeBindingSource.DataMember = "NurseType";
-            this.nurseTypeBindingSource.DataSource = this.dataSetNurseType;
-            // 
-            // dataSetNurseType
-            // 
-            this.dataSetNurseType.DataSetName = "DataSetNurseType";
-            this.dataSetNurseType.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // cmboxDepartment
             // 
             this.cmboxDepartment.DataSource = this.departmentBindingSource;
             this.cmboxDepartment.DisplayMember = "Department";
             this.cmboxDepartment.FormattingEnabled = true;
-            this.cmboxDepartment.Location = new System.Drawing.Point(91, 223);
+            this.cmboxDepartment.Location = new System.Drawing.Point(344, 244);
             this.cmboxDepartment.Name = "cmboxDepartment";
             this.cmboxDepartment.Size = new System.Drawing.Size(197, 21);
             this.cmboxDepartment.TabIndex = 83;
             this.cmboxDepartment.ValueMember = "DepartmentID";
-            // 
-            // departmentBindingSource
-            // 
-            this.departmentBindingSource.DataMember = "Department";
-            this.departmentBindingSource.DataSource = this.dataSetDepartmentBindingSource;
-            // 
-            // dataSetDepartmentBindingSource
-            // 
-            this.dataSetDepartmentBindingSource.DataSource = this.dataSetDepartment;
-            this.dataSetDepartmentBindingSource.Position = 0;
-            // 
-            // dataSetDepartment
-            // 
-            this.dataSetDepartment.DataSetName = "DataSetDepartment";
-            this.dataSetDepartment.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // cmboxClinic
             // 
             this.cmboxClinic.DataSource = this.clinicBindingSource;
             this.cmboxClinic.DisplayMember = "Clinic";
             this.cmboxClinic.FormattingEnabled = true;
-            this.cmboxClinic.Location = new System.Drawing.Point(91, 249);
+            this.cmboxClinic.Location = new System.Drawing.Point(344, 270);
             this.cmboxClinic.Name = "cmboxClinic";
             this.cmboxClinic.Size = new System.Drawing.Size(197, 21);
             this.cmboxClinic.TabIndex = 84;
             this.cmboxClinic.ValueMember = "ClinicID";
             // 
-            // clinicBindingSource
-            // 
-            this.clinicBindingSource.DataMember = "Clinic";
-            this.clinicBindingSource.DataSource = this.dataSetClinic;
-            // 
-            // dataSetClinic
-            // 
-            this.dataSetClinic.DataSetName = "DataSetClinic";
-            this.dataSetClinic.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // groupDxRdBtns
             // 
             this.groupDxRdBtns.Controls.Add(this.radioBtnMale);
             this.groupDxRdBtns.Controls.Add(this.radioBtnFemale);
-            this.groupDxRdBtns.Location = new System.Drawing.Point(91, 121);
+            this.groupDxRdBtns.Location = new System.Drawing.Point(344, 142);
             this.groupDxRdBtns.Name = "groupDxRdBtns";
             this.groupDxRdBtns.Size = new System.Drawing.Size(137, 36);
             this.groupDxRdBtns.TabIndex = 139;
             this.groupDxRdBtns.TabStop = false;
             // 
-            // dataSetBindingSource1
+            // dataSetNurseStatus
             // 
-            this.dataSetBindingSource1.DataSource = this.dataSet;
-            this.dataSetBindingSource1.Position = 0;
+            this.dataSetNurseStatus.DataSetName = "DataSetNurseStatus";
+            this.dataSetNurseStatus.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // statusBindingSource
+            // 
+            this.statusBindingSource.DataMember = "Status";
+            this.statusBindingSource.DataSource = this.dataSetNurseStatus;
             // 
             // statusTableAdapter
             // 
             this.statusTableAdapter.ClearBeforeFill = true;
             // 
+            // dataSetNurseType
+            // 
+            this.dataSetNurseType.DataSetName = "DataSetNurseType";
+            this.dataSetNurseType.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // nurseTypeBindingSource
+            // 
+            this.nurseTypeBindingSource.DataMember = "NurseType";
+            this.nurseTypeBindingSource.DataSource = this.dataSetNurseType;
+            // 
             // nurseTypeTableAdapter
             // 
             this.nurseTypeTableAdapter.ClearBeforeFill = true;
+            // 
+            // dataSetNurseDepartment
+            // 
+            this.dataSetNurseDepartment.DataSetName = "DataSetNurseDepartment";
+            this.dataSetNurseDepartment.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // departmentBindingSource
+            // 
+            this.departmentBindingSource.DataMember = "Department";
+            this.departmentBindingSource.DataSource = this.dataSetNurseDepartment;
             // 
             // departmentTableAdapter
             // 
             this.departmentTableAdapter.ClearBeforeFill = true;
             // 
+            // dataSetNurseClinic
+            // 
+            this.dataSetNurseClinic.DataSetName = "DataSetNurseClinic";
+            this.dataSetNurseClinic.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // clinicBindingSource
+            // 
+            this.clinicBindingSource.DataMember = "Clinic";
+            this.clinicBindingSource.DataSource = this.dataSetNurseClinic;
+            // 
             // clinicTableAdapter
             // 
             this.clinicTableAdapter.ClearBeforeFill = true;
-            // 
-            // groupBxSexEDIT
-            // 
-            this.groupBxSexEDIT.Controls.Add(this.radioBtnEditMale);
-            this.groupBxSexEDIT.Controls.Add(this.radioBtnEditFemale);
-            this.groupBxSexEDIT.Location = new System.Drawing.Point(559, 182);
-            this.groupBxSexEDIT.Name = "groupBxSexEDIT";
-            this.groupBxSexEDIT.Size = new System.Drawing.Size(152, 19);
-            this.groupBxSexEDIT.TabIndex = 140;
-            this.groupBxSexEDIT.TabStop = false;
-            // 
-            // cmBxClinicEDIT
-            // 
-            this.cmBxClinicEDIT.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.clinicBindingSource, "ClinicID", true));
-            this.cmBxClinicEDIT.DataSource = this.clinicBindingSource;
-            this.cmBxClinicEDIT.DisplayMember = "Clinic";
-            this.cmBxClinicEDIT.FormattingEnabled = true;
-            this.cmBxClinicEDIT.Location = new System.Drawing.Point(559, 282);
-            this.cmBxClinicEDIT.Name = "cmBxClinicEDIT";
-            this.cmBxClinicEDIT.Size = new System.Drawing.Size(197, 21);
-            this.cmBxClinicEDIT.TabIndex = 144;
-            this.cmBxClinicEDIT.ValueMember = "ClinicID";
-            // 
-            // cmBxDepartEDIT
-            // 
-            this.cmBxDepartEDIT.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.departmentBindingSource, "DepartmentID", true));
-            this.cmBxDepartEDIT.DataSource = this.departmentBindingSource;
-            this.cmBxDepartEDIT.DisplayMember = "Department";
-            this.cmBxDepartEDIT.FormattingEnabled = true;
-            this.cmBxDepartEDIT.Location = new System.Drawing.Point(559, 257);
-            this.cmBxDepartEDIT.Name = "cmBxDepartEDIT";
-            this.cmBxDepartEDIT.Size = new System.Drawing.Size(197, 21);
-            this.cmBxDepartEDIT.TabIndex = 143;
-            this.cmBxDepartEDIT.ValueMember = "DepartmentID";
-            // 
-            // cmBxTypeEDIT
-            // 
-            this.cmBxTypeEDIT.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.nurseTypeBindingSource, "TypeID", true));
-            this.cmBxTypeEDIT.DataSource = this.nurseTypeBindingSource;
-            this.cmBxTypeEDIT.DisplayMember = "Type";
-            this.cmBxTypeEDIT.FormattingEnabled = true;
-            this.cmBxTypeEDIT.Location = new System.Drawing.Point(557, 232);
-            this.cmBxTypeEDIT.Name = "cmBxTypeEDIT";
-            this.cmBxTypeEDIT.Size = new System.Drawing.Size(197, 21);
-            this.cmBxTypeEDIT.TabIndex = 142;
-            this.cmBxTypeEDIT.ValueMember = "TypeID";
-            // 
-            // cmBxStatusEDIT
-            // 
-            this.cmBxStatusEDIT.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.statusBindingSource, "StatusID", true));
-            this.cmBxStatusEDIT.DataSource = this.statusBindingSource;
-            this.cmBxStatusEDIT.DisplayMember = "StatusType";
-            this.cmBxStatusEDIT.FormattingEnabled = true;
-            this.cmBxStatusEDIT.Location = new System.Drawing.Point(559, 207);
-            this.cmBxStatusEDIT.Name = "cmBxStatusEDIT";
-            this.cmBxStatusEDIT.Size = new System.Drawing.Size(197, 21);
-            this.cmBxStatusEDIT.TabIndex = 141;
-            this.cmBxStatusEDIT.ValueMember = "StatusID";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.nurseBindingSource, "NurseID", true));
-            this.comboBox1.DataSource = this.nurseBindingSource;
-            this.comboBox1.DisplayMember = "NurseEmail";
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(527, 33);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(251, 21);
-            this.comboBox1.TabIndex = 145;
-            this.comboBox1.ValueMember = "NurseID";
-            // 
-            // dataSetNurse
-            // 
-            this.dataSetNurse.DataSetName = "DataSetNurse";
-            this.dataSetNurse.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // nurseBindingSource
-            // 
-            this.nurseBindingSource.DataMember = "Nurse";
-            this.nurseBindingSource.DataSource = this.dataSetNurse;
-            // 
-            // nurseTableAdapter
-            // 
-            this.nurseTableAdapter.ClearBeforeFill = true;
             // 
             // Nurse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.cmBxClinicEDIT);
-            this.Controls.Add(this.cmBxDepartEDIT);
-            this.Controls.Add(this.cmBxTypeEDIT);
-            this.Controls.Add(this.cmBxStatusEDIT);
-            this.Controls.Add(this.groupBxSexEDIT);
             this.Controls.Add(this.groupDxRdBtns);
             this.Controls.Add(this.cmboxClinic);
             this.Controls.Add(this.cmboxDepartment);
@@ -738,25 +410,6 @@ namespace Final2021
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnHome);
-            this.Controls.Add(this.btnFillInEDIT);
-            this.Controls.Add(this.label24);
-            this.Controls.Add(this.txtBxEditNote);
-            this.Controls.Add(this.txtBxEditEmail);
-            this.Controls.Add(this.txtBxEditLName);
-            this.Controls.Add(this.txtBxEditMName);
-            this.Controls.Add(this.btnEditSAVE);
-            this.Controls.Add(this.txtBxEditFName);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.label15);
-            this.Controls.Add(this.label16);
-            this.Controls.Add(this.label17);
-            this.Controls.Add(this.label18);
-            this.Controls.Add(this.label19);
-            this.Controls.Add(this.label20);
-            this.Controls.Add(this.label21);
-            this.Controls.Add(this.label22);
-            this.Controls.Add(this.label23);
             this.Controls.Add(this.txtBxNote);
             this.Controls.Add(this.txtBxEmail);
             this.Controls.Add(this.txtBxLName);
@@ -778,23 +431,16 @@ namespace Final2021
             this.Name = "Nurse";
             this.Text = "Nurse";
             this.Load += new System.EventHandler(this.Nurse_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.statusBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nurseTypeBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetNurseType)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetDepartmentBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetDepartment)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clinicBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetClinic)).EndInit();
             this.groupDxRdBtns.ResumeLayout(false);
             this.groupDxRdBtns.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetBindingSource1)).EndInit();
-            this.groupBxSexEDIT.ResumeLayout(false);
-            this.groupBxSexEDIT.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetNurse)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nurseBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetNurseStatus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statusBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetNurseType)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nurseTypeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetNurseDepartment)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetNurseClinic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clinicBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -822,27 +468,6 @@ namespace Final2021
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnFillInEDIT;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.RadioButton radioBtnEditFemale;
-        private System.Windows.Forms.RadioButton radioBtnEditMale;
-        private System.Windows.Forms.TextBox txtBxEditNote;
-        private System.Windows.Forms.TextBox txtBxEditEmail;
-        private System.Windows.Forms.TextBox txtBxEditLName;
-        private System.Windows.Forms.TextBox txtBxEditMName;
-        private System.Windows.Forms.Button btnEditSAVE;
-        private System.Windows.Forms.TextBox txtBxEditFName;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnCancel;
@@ -852,31 +477,20 @@ namespace Final2021
         private System.Windows.Forms.ComboBox cmboxDepartment;
         private System.Windows.Forms.ComboBox cmboxClinic;
 
-        private DataSetClinic dataSetClinic;
+     
 
         private System.Windows.Forms.GroupBox groupDxRdBtns;
-        private System.Windows.Forms.BindingSource dataSetBindingSource1;
-        private DataSet dataSet;
-        private System.Windows.Forms.BindingSource dataSetBindingSource;
+        private DataSet.DataSetNurseStatus dataSetNurseStatus;
         private System.Windows.Forms.BindingSource statusBindingSource;
-        private DataSetTableAdapters.StatusTableAdapter statusTableAdapter;
-        private DataSetNurseType dataSetNurseType;
+        private DataSet.DataSetNurseStatusTableAdapters.StatusTableAdapter statusTableAdapter;
+        private DataSet.DataSetNurseType dataSetNurseType;
         private System.Windows.Forms.BindingSource nurseTypeBindingSource;
-        private DataSetNurseTypeTableAdapters.NurseTypeTableAdapter nurseTypeTableAdapter;
-        private System.Windows.Forms.BindingSource dataSetDepartmentBindingSource;
-        private DataSetDepartment dataSetDepartment;
+        private DataSet.DataSetNurseTypeTableAdapters.NurseTypeTableAdapter nurseTypeTableAdapter;
+        private DataSet.DataSetNurseDepartment dataSetNurseDepartment;
         private System.Windows.Forms.BindingSource departmentBindingSource;
-        private DataSetDepartmentTableAdapters.DepartmentTableAdapter departmentTableAdapter;
+        private DataSet.DataSetNurseDepartmentTableAdapters.DepartmentTableAdapter departmentTableAdapter;
+        private DataSet.DataSetNurseClinic dataSetNurseClinic;
         private System.Windows.Forms.BindingSource clinicBindingSource;
-        private DataSetClinicTableAdapters.ClinicTableAdapter clinicTableAdapter;
-        private System.Windows.Forms.GroupBox groupBxSexEDIT;
-        private System.Windows.Forms.ComboBox cmBxClinicEDIT;
-        private System.Windows.Forms.ComboBox cmBxDepartEDIT;
-        private System.Windows.Forms.ComboBox cmBxTypeEDIT;
-        private System.Windows.Forms.ComboBox cmBxStatusEDIT;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private DataSetNurse dataSetNurse;
-        private System.Windows.Forms.BindingSource nurseBindingSource;
-        private DataSetNurseTableAdapters.NurseTableAdapter nurseTableAdapter;
+        private DataSet.DataSetNurseClinicTableAdapters.ClinicTableAdapter clinicTableAdapter;
     }
 }

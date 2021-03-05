@@ -50,22 +50,38 @@ namespace Final2021
             this.txtBxDepartment = new System.Windows.Forms.TextBox();
             this.txtBxClinic = new System.Windows.Forms.TextBox();
             this.cmboxStatus = new System.Windows.Forms.ComboBox();
+            this.statusBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetEditStaus = new Final2021.DataSet.DataSetEditStaus();
             this.cmboxDoctorType = new System.Windows.Forms.ComboBox();
+            this.doctorTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cmBoxDepartmnet = new System.Windows.Forms.ComboBox();
+            this.departmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetEditDepartment = new Final2021.DataSet.DataSetEditDepartment();
             this.cmboxClinic = new System.Windows.Forms.ComboBox();
+            this.clinicBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetEditClinic = new Final2021.DataSet.DataSetEditClinic();
             this.cmBxNurseType = new System.Windows.Forms.ComboBox();
-           
-            this.doctorBindingSource = new System.Windows.Forms.BindingSource(this.components);
-        
-            this.doctorBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSetNurseType = new Final2021.DataSetNurseType();
             this.nurseTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.nurseTypeTableAdapter = new Final2021.DataSetNurseTypeTableAdapters.NurseTypeTableAdapter();
-   
-            ((System.ComponentModel.ISupportInitialize)(this.doctorBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.doctorBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetNurseType)).BeginInit();
+            this.dataSetEditNurseType = new Final2021.DataSet.DataSetEditNurseType();
+            this.statusTableAdapter = new Final2021.DataSet.DataSetEditStausTableAdapters.StatusTableAdapter();
+            this.doctorTypeTableAdapter = new Final2021.DataSet.DataSetEditDoctorTypeTableAdapters.DoctorTypeTableAdapter();
+            this.nurseTypeTableAdapter = new Final2021.DataSet.DataSetEditNurseTypeTableAdapters.NurseTypeTableAdapter();
+            this.departmentTableAdapter = new Final2021.DataSet.DataSetEditDepartmentTableAdapters.DepartmentTableAdapter();
+            this.clinicTableAdapter = new Final2021.DataSet.DataSetEditClinicTableAdapters.ClinicTableAdapter();
+            this.dataSetEditDataDoctorType = new Final2021.DataSet.DataSetEditDataDoctorType();
+            this.doctorTypeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.doctorTypeTableAdapter1 = new Final2021.DataSet.DataSetEditDataDoctorTypeTableAdapters.DoctorTypeTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.statusBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetEditStaus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.doctorTypeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetEditDepartment)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clinicBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetEditClinic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nurseTypeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetEditNurseType)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetEditDataDoctorType)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.doctorTypeBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -196,6 +212,7 @@ namespace Final2021
             this.btnCancel.TabIndex = 17;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnHome
             // 
@@ -244,6 +261,7 @@ namespace Final2021
             // 
             // cmboxStatus
             // 
+            this.cmboxStatus.DataSource = this.statusBindingSource;
             this.cmboxStatus.DisplayMember = "StatusType";
             this.cmboxStatus.FormattingEnabled = true;
             this.cmboxStatus.Location = new System.Drawing.Point(145, 108);
@@ -252,8 +270,19 @@ namespace Final2021
             this.cmboxStatus.TabIndex = 138;
             this.cmboxStatus.ValueMember = "StatusID";
             // 
+            // statusBindingSource
+            // 
+            this.statusBindingSource.DataMember = "Status";
+            this.statusBindingSource.DataSource = this.dataSetEditStaus;
+            // 
+            // dataSetEditStaus
+            // 
+            this.dataSetEditStaus.DataSetName = "DataSetEditStaus";
+            this.dataSetEditStaus.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // cmboxDoctorType
             // 
+            this.cmboxDoctorType.DataSource = this.doctorTypeBindingSource1;
             this.cmboxDoctorType.DisplayMember = "Type";
             this.cmboxDoctorType.FormattingEnabled = true;
             this.cmboxDoctorType.Location = new System.Drawing.Point(145, 165);
@@ -264,6 +293,7 @@ namespace Final2021
             // 
             // cmBoxDepartmnet
             // 
+            this.cmBoxDepartmnet.DataSource = this.departmentBindingSource;
             this.cmBoxDepartmnet.DisplayMember = "Department";
             this.cmBoxDepartmnet.FormattingEnabled = true;
             this.cmBoxDepartmnet.Location = new System.Drawing.Point(145, 256);
@@ -272,8 +302,19 @@ namespace Final2021
             this.cmBoxDepartmnet.TabIndex = 140;
             this.cmBoxDepartmnet.ValueMember = "DepartmentID";
             // 
+            // departmentBindingSource
+            // 
+            this.departmentBindingSource.DataMember = "Department";
+            this.departmentBindingSource.DataSource = this.dataSetEditDepartment;
+            // 
+            // dataSetEditDepartment
+            // 
+            this.dataSetEditDepartment.DataSetName = "DataSetEditDepartment";
+            this.dataSetEditDepartment.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // cmboxClinic
             // 
+            this.cmboxClinic.DataSource = this.clinicBindingSource;
             this.cmboxClinic.DisplayMember = "Clinic";
             this.cmboxClinic.FormattingEnabled = true;
             this.cmboxClinic.Location = new System.Drawing.Point(145, 294);
@@ -282,9 +323,18 @@ namespace Final2021
             this.cmboxClinic.TabIndex = 141;
             this.cmboxClinic.ValueMember = "ClinicID";
             // 
+            // clinicBindingSource
+            // 
+            this.clinicBindingSource.DataMember = "Clinic";
+            this.clinicBindingSource.DataSource = this.dataSetEditClinic;
+            // 
+            // dataSetEditClinic
+            // 
+            this.dataSetEditClinic.DataSetName = "DataSetEditClinic";
+            this.dataSetEditClinic.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // cmBxNurseType
             // 
-            this.cmBxNurseType.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.nurseTypeBindingSource, "TypeID", true));
             this.cmBxNurseType.DataSource = this.nurseTypeBindingSource;
             this.cmBxNurseType.DisplayMember = "Type";
             this.cmBxNurseType.FormattingEnabled = true;
@@ -294,37 +344,49 @@ namespace Final2021
             this.cmBxNurseType.TabIndex = 142;
             this.cmBxNurseType.ValueMember = "TypeID";
             // 
-            // dataSet
-            // 
-
-            // 
-            // doctorBindingSource
-            // 
-            this.doctorBindingSource.DataMember = "Doctor";
-
-            // 
-            // doctorTableAdapter
-            // 
-      
-            // 
-            // doctorBindingSource1
-            // 
-            this.doctorBindingSource1.DataMember = "Doctor";
-          
-            // 
-            // dataSetNurseType
-            // 
-            this.dataSetNurseType.DataSetName = "DataSetNurseType";
-            this.dataSetNurseType.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // nurseTypeBindingSource
             // 
             this.nurseTypeBindingSource.DataMember = "NurseType";
-            this.nurseTypeBindingSource.DataSource = this.dataSetNurseType;
+            this.nurseTypeBindingSource.DataSource = this.dataSetEditNurseType;
+            // 
+            // dataSetEditNurseType
+            // 
+            this.dataSetEditNurseType.DataSetName = "DataSetEditNurseType";
+            this.dataSetEditNurseType.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // statusTableAdapter
+            // 
+            this.statusTableAdapter.ClearBeforeFill = true;
+            // 
+            // doctorTypeTableAdapter
+            // 
+            this.doctorTypeTableAdapter.ClearBeforeFill = true;
             // 
             // nurseTypeTableAdapter
             // 
             this.nurseTypeTableAdapter.ClearBeforeFill = true;
+            // 
+            // departmentTableAdapter
+            // 
+            this.departmentTableAdapter.ClearBeforeFill = true;
+            // 
+            // clinicTableAdapter
+            // 
+            this.clinicTableAdapter.ClearBeforeFill = true;
+            // 
+            // dataSetEditDataDoctorType
+            // 
+            this.dataSetEditDataDoctorType.DataSetName = "DataSetEditDataDoctorType";
+            this.dataSetEditDataDoctorType.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // doctorTypeBindingSource1
+            // 
+            this.doctorTypeBindingSource1.DataMember = "DoctorType";
+            this.doctorTypeBindingSource1.DataSource = this.dataSetEditDataDoctorType;
+            // 
+            // doctorTypeTableAdapter1
+            // 
+            this.doctorTypeTableAdapter1.ClearBeforeFill = true;
             // 
             // EditData
             // 
@@ -358,10 +420,17 @@ namespace Final2021
             this.Name = "EditData";
             this.Text = "EditData";
             this.Load += new System.EventHandler(this.EditData_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.doctorBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.doctorBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetNurseType)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statusBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetEditStaus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.doctorTypeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetEditDepartment)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clinicBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetEditClinic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nurseTypeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetEditNurseType)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetEditDataDoctorType)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.doctorTypeBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -393,12 +462,23 @@ namespace Final2021
         private System.Windows.Forms.ComboBox cmBoxDepartmnet;
         private System.Windows.Forms.ComboBox cmboxClinic;
         private System.Windows.Forms.ComboBox cmBxNurseType;
-
-        private System.Windows.Forms.BindingSource doctorBindingSource;
-
-        private System.Windows.Forms.BindingSource doctorBindingSource1;
-        private DataSetNurseType dataSetNurseType;
+        private DataSet.DataSetEditStaus dataSetEditStaus;
+        private System.Windows.Forms.BindingSource statusBindingSource;
+        private DataSet.DataSetEditStausTableAdapters.StatusTableAdapter statusTableAdapter;
+     
+        private System.Windows.Forms.BindingSource doctorTypeBindingSource;
+        private DataSet.DataSetEditDoctorTypeTableAdapters.DoctorTypeTableAdapter doctorTypeTableAdapter;
+        private DataSet.DataSetEditNurseType dataSetEditNurseType;
         private System.Windows.Forms.BindingSource nurseTypeBindingSource;
-        private DataSetNurseTypeTableAdapters.NurseTypeTableAdapter nurseTypeTableAdapter;
+        private DataSet.DataSetEditNurseTypeTableAdapters.NurseTypeTableAdapter nurseTypeTableAdapter;
+        private DataSet.DataSetEditDepartment dataSetEditDepartment;
+        private System.Windows.Forms.BindingSource departmentBindingSource;
+        private DataSet.DataSetEditDepartmentTableAdapters.DepartmentTableAdapter departmentTableAdapter;
+        private DataSet.DataSetEditClinic dataSetEditClinic;
+        private System.Windows.Forms.BindingSource clinicBindingSource;
+        private DataSet.DataSetEditClinicTableAdapters.ClinicTableAdapter clinicTableAdapter;
+        private DataSet.DataSetEditDataDoctorType dataSetEditDataDoctorType;
+        private System.Windows.Forms.BindingSource doctorTypeBindingSource1;
+        private DataSet.DataSetEditDataDoctorTypeTableAdapters.DoctorTypeTableAdapter doctorTypeTableAdapter1;
     }
 }
