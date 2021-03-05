@@ -75,19 +75,24 @@ namespace Final2021
             try
             {
                 DBopen();
-                SQLiteCommand sqlUpdate;
-                sqlUpdate = con.CreateCommand();
-                sqlUpdate.CommandText = "UPDATE INTO Clinic WHERE ClinicID=clinicID(Clinic)" +
-                "VALUES(clinicType);";
+                SQLiteCommand sqlUpdate =new SQLiteCommand("UPDATE Clinic SET Clinic=@clinic WHERE ClinicID=@iD", con);
+                sqlUpdate.Parameters.Add(new SQLiteParameter("@iD"));
+                sqlUpdate.Parameters.Add(new SQLiteParameter("@clinic"));
+                sqlUpdate.Parameters["@iD"].Value = clinicID;
+                sqlUpdate.Parameters["@clinic"].Value = clinicType;
 
-
+              
                 sqlUpdate.ExecuteNonQuery();
             }
-            catch
+            catch (SQLiteException e)
             {
-                Console.WriteLine("Catch Update clinic");
+                throw new Exception(e.Message);
             }
-            DBClose();
+            finally
+            {
+                DBClose();
+
+            }
 
         }
     }

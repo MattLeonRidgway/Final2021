@@ -3,8 +3,10 @@ using System.Windows.Forms;
 
 namespace Final2021
 {
-    public partial class EditData : Form
+    public partial class EditData : Form          
     {
+       
+   
         public EditData()
         {
             InitializeComponent();
@@ -43,6 +45,7 @@ namespace Final2021
             // TODO: This line of code loads data into the 'dataSetEditDoctorType.DoctorType' table. You can move, or remove it, as needed.      
             // TODO: This line of code loads data into the 'dataSetEditStaus.Status' table. You can move, or remove it, as needed.
             this.statusTableAdapter.Fill(this.dataSetEditStaus.Status);
+         
 
 
         }
@@ -54,6 +57,84 @@ namespace Final2021
             txtBxDoctorType.Clear();
             txtBxNurseType.Clear();
             txtBxStatus.Clear();
+        }
+
+        private void btnStatus_Click(object sender, EventArgs e)
+        {
+            Status status = new Status();
+            if (ValidateClass.isValidString(txtBxStatus.Text)) {
+                status.StatusType = txtBxStatus.Text;
+                status.StatusID = Int32.Parse(cmboxStatus.SelectedValue.ToString());
+                status.UpdateStatus(status.StatusID, status.StatusType);
+                txtBxStatus.Clear();
+
+            }
+            else
+            {
+                MessageBox.Show("Correct Errors");
+            }
+
+        }
+
+        private void btnDoctorType_Click(object sender, EventArgs e)
+        {
+            DoctorType docType = new DoctorType();
+            if (ValidateClass.isValidString(txtBxDoctorType.Text)) {
+                docType.Type = txtBxDoctorType.Text;
+                docType.Id = Int32.Parse(cmboxDoctorType.SelectedValue.ToString());
+                docType.UpdateType(docType.Id,docType.Type);
+                txtBxDoctorType.Clear();
+            }
+            else
+            {
+                MessageBox.Show("Correct Errors");
+            }
+        }
+
+        private void btnNurseType_Click(object sender, EventArgs e)
+        {
+            NurseType nurseType = new NurseType();
+            if (ValidateClass.isValidString(txtBxNurseType.Text)) {
+                nurseType.Type = txtBxNurseType.Text;
+                nurseType.Id = Int32.Parse(cmBxNurseType.SelectedValue.ToString());
+                nurseType.UpdateType(nurseType.Id,nurseType.Type);
+                txtBxNurseType.Clear();
+            }
+            else
+            {
+                MessageBox.Show("Correct Errors");
+            }
+        }
+
+        private void btnDepartment_Click(object sender, EventArgs e)
+        {
+            Department department = new Department();
+            if (ValidateClass.isValidString(txtBxDepartment.Text)) {
+                department.DepartmentString = txtBxDepartment.Text;
+                department.DepartmentID = Int32.Parse(cmBoxDepartmnet.SelectedValue.ToString());
+                department.UpdateDepartment(department.DepartmentID,department.DepartmentString);
+                txtBxDepartment.Clear();
+            }
+            else
+            {
+                MessageBox.Show("Correct Errors");
+            }
+        }
+
+        private void btnClinic_Click(object sender, EventArgs e)
+        {
+            Clinic clinic = new Clinic();
+            if (ValidateClass.isValidString(txtBxClinic.Text)) {
+                clinic.ClinicString = txtBxClinic.Text;
+                clinic.ClinicID = Int32.Parse(cmboxClinic.SelectedValue.ToString());
+                clinic.UpdateClinic(clinic.ClinicID,clinic.ClinicString);
+                txtBxClinic.Clear();
+
+            }
+            else
+            {
+                MessageBox.Show("Correct Errors");
+            }
         }
     }
 }

@@ -53,6 +53,8 @@ namespace Final2021
             this.statusBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSetEditStaus = new Final2021.DataSet.DataSetEditStaus();
             this.cmboxDoctorType = new System.Windows.Forms.ComboBox();
+            this.doctorTypeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetEditDataDoctorType = new Final2021.DataSet.DataSetEditDataDoctorType();
             this.doctorTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cmBoxDepartmnet = new System.Windows.Forms.ComboBox();
             this.departmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -68,11 +70,11 @@ namespace Final2021
             this.nurseTypeTableAdapter = new Final2021.DataSet.DataSetEditNurseTypeTableAdapters.NurseTypeTableAdapter();
             this.departmentTableAdapter = new Final2021.DataSet.DataSetEditDepartmentTableAdapters.DepartmentTableAdapter();
             this.clinicTableAdapter = new Final2021.DataSet.DataSetEditClinicTableAdapters.ClinicTableAdapter();
-            this.dataSetEditDataDoctorType = new Final2021.DataSet.DataSetEditDataDoctorType();
-            this.doctorTypeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.doctorTypeTableAdapter1 = new Final2021.DataSet.DataSetEditDataDoctorTypeTableAdapters.DoctorTypeTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.statusBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetEditStaus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.doctorTypeBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetEditDataDoctorType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.doctorTypeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetEditDepartment)).BeginInit();
@@ -80,8 +82,6 @@ namespace Final2021
             ((System.ComponentModel.ISupportInitialize)(this.dataSetEditClinic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nurseTypeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetEditNurseType)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetEditDataDoctorType)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.doctorTypeBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -113,6 +113,7 @@ namespace Final2021
             this.btnStatus.TabIndex = 3;
             this.btnStatus.Text = "Save Status";
             this.btnStatus.UseVisualStyleBackColor = true;
+            this.btnStatus.Click += new System.EventHandler(this.btnStatus_Click);
             // 
             // label3
             // 
@@ -133,6 +134,7 @@ namespace Final2021
             this.btnDoctorType.TabIndex = 6;
             this.btnDoctorType.Text = "Save Doctor Type";
             this.btnDoctorType.UseVisualStyleBackColor = true;
+            this.btnDoctorType.Click += new System.EventHandler(this.btnDoctorType_Click);
             // 
             // label4
             // 
@@ -153,6 +155,7 @@ namespace Final2021
             this.btnNurseType.TabIndex = 9;
             this.btnNurseType.Text = "Save Nurse Type";
             this.btnNurseType.UseVisualStyleBackColor = true;
+            this.btnNurseType.Click += new System.EventHandler(this.btnNurseType_Click);
             // 
             // label5
             // 
@@ -173,6 +176,7 @@ namespace Final2021
             this.btnDepartment.TabIndex = 11;
             this.btnDepartment.Text = "Save Department";
             this.btnDepartment.UseVisualStyleBackColor = true;
+            this.btnDepartment.Click += new System.EventHandler(this.btnDepartment_Click);
             // 
             // label6
             // 
@@ -193,6 +197,7 @@ namespace Final2021
             this.btnClinic.TabIndex = 14;
             this.btnClinic.Text = "Save Clinic";
             this.btnClinic.UseVisualStyleBackColor = true;
+            this.btnClinic.Click += new System.EventHandler(this.btnClinic_Click);
             // 
             // btnExit
             // 
@@ -291,6 +296,16 @@ namespace Final2021
             this.cmboxDoctorType.TabIndex = 139;
             this.cmboxDoctorType.ValueMember = "TypeID";
             // 
+            // doctorTypeBindingSource1
+            // 
+            this.doctorTypeBindingSource1.DataMember = "DoctorType";
+            this.doctorTypeBindingSource1.DataSource = this.dataSetEditDataDoctorType;
+            // 
+            // dataSetEditDataDoctorType
+            // 
+            this.dataSetEditDataDoctorType.DataSetName = "DataSetEditDataDoctorType";
+            this.dataSetEditDataDoctorType.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // cmBoxDepartmnet
             // 
             this.cmBoxDepartmnet.DataSource = this.departmentBindingSource;
@@ -374,16 +389,6 @@ namespace Final2021
             // 
             this.clinicTableAdapter.ClearBeforeFill = true;
             // 
-            // dataSetEditDataDoctorType
-            // 
-            this.dataSetEditDataDoctorType.DataSetName = "DataSetEditDataDoctorType";
-            this.dataSetEditDataDoctorType.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // doctorTypeBindingSource1
-            // 
-            this.doctorTypeBindingSource1.DataMember = "DoctorType";
-            this.doctorTypeBindingSource1.DataSource = this.dataSetEditDataDoctorType;
-            // 
             // doctorTypeTableAdapter1
             // 
             this.doctorTypeTableAdapter1.ClearBeforeFill = true;
@@ -422,6 +427,8 @@ namespace Final2021
             this.Load += new System.EventHandler(this.EditData_Load);
             ((System.ComponentModel.ISupportInitialize)(this.statusBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetEditStaus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.doctorTypeBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetEditDataDoctorType)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.doctorTypeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetEditDepartment)).EndInit();
@@ -429,8 +436,6 @@ namespace Final2021
             ((System.ComponentModel.ISupportInitialize)(this.dataSetEditClinic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nurseTypeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetEditNurseType)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetEditDataDoctorType)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.doctorTypeBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

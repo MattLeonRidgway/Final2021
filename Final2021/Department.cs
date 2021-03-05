@@ -72,17 +72,23 @@ namespace Final2021
             try
             {
                 DBopen();
-                SQLiteCommand sqlUpdate;
-                sqlUpdate = con.CreateCommand();
-                sqlUpdate.CommandText = "UPDATE INTO Department WHERE DepartmentID=departmentID(Department)" +
-                "VALUES(departmentType);";
+                SQLiteCommand sqlUpdate = new SQLiteCommand("UPDATE Department SET Department=@department WHERE DepartmentID=@iD", con);
+                sqlUpdate.Parameters.Add(new SQLiteParameter("@iD"));
+                sqlUpdate.Parameters.Add(new SQLiteParameter("@department"));
+                sqlUpdate.Parameters["@iD"].Value = departmentID;
+                sqlUpdate.Parameters["@department"].Value = departmentType;
+
                 sqlUpdate.ExecuteNonQuery();
             }
-            catch
+            catch (SQLiteException e)
             {
-                Console.WriteLine("Catch Update department");
+                throw new Exception(e.Message);
             }
-            DBClose();
+            finally
+            {
+                DBClose();
+
+            }
         }
     }
 }

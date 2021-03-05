@@ -74,21 +74,23 @@ namespace Final2021
             try
             {
                 DBopen();
-                SQLiteCommand sqlUpdate;
-                sqlUpdate = con.CreateCommand();
-                sqlUpdate.CommandText = "UPDATE INTO DoctorType WHERE TypeID=typeID(Type)" +
-                "VALUES(type);";
+                SQLiteCommand sqlUpdate = new SQLiteCommand("UPDATE DoctorType SET Type=@type WHERE TypeID=@iD", con);
+                sqlUpdate.Parameters.Add(new SQLiteParameter("@iD"));
+                sqlUpdate.Parameters.Add(new SQLiteParameter("@type"));
+                sqlUpdate.Parameters["@iD"].Value = typeID;
+                sqlUpdate.Parameters["@type"].Value = type;
+
                 sqlUpdate.ExecuteNonQuery();
             }
-            catch
+            catch (SQLiteException e)
             {
-                Console.WriteLine("Catch Update type");
+                throw new Exception(e.Message);
             }
             finally
             {
                 DBClose();
-            }
 
+            }
         }
     }
 }

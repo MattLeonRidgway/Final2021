@@ -77,10 +77,10 @@ namespace Final2021
             try
             {
                 DBopen();
-                SQLiteCommand sqlUpdate = new SQLiteCommand("UPDATE Status SET [Type]=@type WHERE [StatusID]=@typeID", con);
-                sqlUpdate.Parameters.Add(new SQLiteParameter("@typeID"));
+                SQLiteCommand sqlUpdate = new SQLiteCommand("UPDATE Status SET StatusType=@type WHERE StatusID=@iD", con);
+                sqlUpdate.Parameters.Add(new SQLiteParameter("@iD"));
                 sqlUpdate.Parameters.Add(new SQLiteParameter("@type"));
-                sqlUpdate.Parameters["@typeID"].Value = statusID;
+                sqlUpdate.Parameters["@iD"].Value = statusID;
                 sqlUpdate.Parameters["@type"].Value = sType;
 
                 sqlUpdate.ExecuteNonQuery();
@@ -92,6 +92,7 @@ namespace Final2021
             finally
             {
                 DBClose();
+                
             }
 
         }
