@@ -34,8 +34,6 @@ namespace Final2021
             this.btnHome = new System.Windows.Forms.Button();
             this.lstBxNurseRev = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lstBxMonth = new System.Windows.Forms.ListBox();
             this.btnSelectSave = new System.Windows.Forms.Button();
             this.btnGenerate = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
@@ -90,23 +88,6 @@ namespace Final2021
             this.label1.Size = new System.Drawing.Size(93, 13);
             this.label1.TabIndex = 7;
             this.label1.Text = "Nurse Review List";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(166, 346);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(130, 13);
-            this.label2.TabIndex = 17;
-            this.label2.Text = "Select Number of Months ";
-            // 
-            // lstBxMonth
-            // 
-            this.lstBxMonth.FormattingEnabled = true;
-            this.lstBxMonth.Location = new System.Drawing.Point(314, 345);
-            this.lstBxMonth.Name = "lstBxMonth";
-            this.lstBxMonth.Size = new System.Drawing.Size(29, 30);
-            this.lstBxMonth.TabIndex = 16;
             // 
             // btnSelectSave
             // 
@@ -190,8 +171,6 @@ namespace Final2021
             this.Controls.Add(this.lstBxDepart);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.lstBxMonth);
             this.Controls.Add(this.btnSelectSave);
             this.Controls.Add(this.btnGenerate);
             this.Controls.Add(this.button5);
@@ -213,8 +192,6 @@ namespace Final2021
         private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.ListBox lstBxNurseRev;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ListBox lstBxMonth;
         private System.Windows.Forms.Button btnSelectSave;
         private System.Windows.Forms.Button btnGenerate;
         private System.Windows.Forms.Button btnExit;

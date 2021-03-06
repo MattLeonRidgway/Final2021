@@ -36,8 +36,6 @@ namespace Final2021
             this.btnHome = new System.Windows.Forms.Button();
             this.btnEmail = new System.Windows.Forms.Button();
             this.btnSaveForms = new System.Windows.Forms.Button();
-            this.lstBxMonths = new System.Windows.Forms.ListBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.lstBxDepart = new System.Windows.Forms.ListBox();
@@ -71,6 +69,7 @@ namespace Final2021
             this.btnGenerate.TabIndex = 2;
             this.btnGenerate.Text = "Generate";
             this.btnGenerate.UseVisualStyleBackColor = true;
+            this.btnGenerate.Click += new System.EventHandler(this.btnGenerate_Click);
             // 
             // btnSelectSave
             // 
@@ -108,23 +107,6 @@ namespace Final2021
             this.btnSaveForms.TabIndex = 6;
             this.btnSaveForms.Text = "Save Forms";
             this.btnSaveForms.UseVisualStyleBackColor = true;
-            // 
-            // lstBxMonths
-            // 
-            this.lstBxMonths.FormattingEnabled = true;
-            this.lstBxMonths.Location = new System.Drawing.Point(322, 349);
-            this.lstBxMonths.Name = "lstBxMonths";
-            this.lstBxMonths.Size = new System.Drawing.Size(29, 30);
-            this.lstBxMonths.TabIndex = 7;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(174, 350);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(130, 13);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Select Number of Months ";
             // 
             // btnCancel
             // 
@@ -191,8 +173,6 @@ namespace Final2021
             this.Controls.Add(this.lstBxDepart);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.lstBxMonths);
             this.Controls.Add(this.btnSaveForms);
             this.Controls.Add(this.btnEmail);
             this.Controls.Add(this.btnHome);
@@ -216,8 +196,6 @@ namespace Final2021
         private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.Button btnEmail;
         private System.Windows.Forms.Button btnSaveForms;
-        private System.Windows.Forms.ListBox lstBxMonths;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.ListBox lstBxDepart;

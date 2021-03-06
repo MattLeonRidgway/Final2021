@@ -94,7 +94,10 @@ namespace Final2021
             {
                 Console.WriteLine("View nurse catch");
             }
-            DBClose();
+            finally { 
+              DBClose();
+            }
+          
             return nurseList;
 
 

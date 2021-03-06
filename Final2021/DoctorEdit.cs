@@ -12,6 +12,7 @@ namespace Final2021
 {
     public partial class DoctorEdit : Form
     {
+        DoctorClass doc = new DoctorClass();
         public DoctorEdit()
         {
             InitializeComponent();
@@ -71,6 +72,22 @@ namespace Final2021
             this.statusTableAdapter.Fill(this.dataSetEditDoctorStatus.Status);
             // TODO: This line of code loads data into the 'dataSetEditSelect.Doctor' table. You can move, or remove it, as needed.
             this.doctorTableAdapter.Fill(this.dataSetEditSelect.Doctor);
+
+        }
+
+        private void btnFillInSELECTEDDoc_Click(object sender, EventArgs e)
+        {//doc.Status = Int32.Parse(cmboxStatus.SelectedValue.ToString());
+            int getDocID = Int32.Parse(cmBoxSelectDoctor.SelectedValue.ToString());
+            doc.getDoctor(getDocID);
+            txtBxFNameEDIT.Text = doc.FName;
+            txtBxMNameEDIT.Text = doc.MName;
+            txtBxLNameEDIT.Text = doc.LName;
+
+            cmBxStatusEDIT.SelectedIndex = doc.Status;
+            cmBxTypeEDIT.SelectedIndex = doc.Type;
+            cmBxDepartmentEDIT.SelectedIndex = doc.Department;
+
+
 
         }
     }

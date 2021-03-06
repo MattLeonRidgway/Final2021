@@ -70,8 +70,6 @@ namespace Final2021
                 insertCommand.Parameters.Add(new SQLiteParameter("@email", email));
                 insertCommand.Parameters.Add(new SQLiteParameter("@notes", notes));
 
-
-
                 insertCommand.ExecuteNonQuery();
             }
             catch (SQLiteException e)
@@ -83,6 +81,45 @@ namespace Final2021
                 DBClose();
             }
         }// end insert doctor
+        //get a Doctor
+        public void getDoctor(int docID) {
+            // need to test
+            try {
+                DBopen();
+                SQLiteCommand sqlCMD;              
+                SQLiteDataReader sqlGet;
+
+                sqlCMD = con.CreateCommand();
+                sqlCMD.CommandText="SELECT * FROM Doctor WHERE DoctorID=@ID";
+                sqlCMD.Parameters.AddWithValue("@ID",docID);
+                sqlGet =sqlCMD.ExecuteReader();
+
+                while (sqlGet.Read())
+                {
+                   FName = sqlGet.GetString(2);
+                   MName = sqlGet.GetString(3);
+                   LName = sqlGet.GetString(4);
+                   Sex = sqlGet.GetChar(5);
+                   Status =sqlGet.GetInt32(6);
+                   Type = sqlGet.GetInt32(7);
+                   Department = sqlGet.GetInt32(8);
+                   // Errors here 
+                  // Clinic = sqlGet.GetInt32(9);
+                  // Email = sqlGet.GetString(10);
+                  // Notes = sqlGet.GetString(11);
+                }
+            }//end try
+            catch (SQLiteException e)
+            {
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                DBClose();
+            }
+           
+
+        }
         // get a list of doctors from the database
         public List<string> ViewDoctor(List<string> doctorsList)
         {
@@ -105,7 +142,10 @@ namespace Final2021
             {
                 Console.WriteLine("View Doctors catch");
             }
-            DBClose();
+            finally { 
+              DBClose();
+            }
+          
             return doctorsList;
 
 

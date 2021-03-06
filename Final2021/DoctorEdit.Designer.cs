@@ -35,10 +35,18 @@ namespace Final2021
             this.btnHome = new System.Windows.Forms.Button();
             this.btnEDITSave = new System.Windows.Forms.Button();
             this.cmBxStatusEDIT = new System.Windows.Forms.ComboBox();
+            this.statusBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetEditDoctorStatus = new Final2021.DataSet.DataSetEditDoctorStatus();
             this.cmBxTypeEDIT = new System.Windows.Forms.ComboBox();
+            this.doctorTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetEditDoctorType = new Final2021.DataSet.DataSetEditDoctorType();
             this.cmBxDepartmentEDIT = new System.Windows.Forms.ComboBox();
+            this.departmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetEditDoctorDepartment = new Final2021.DataSet.DataSetEditDoctorDepartment();
             this.cmBxClinicEDIT = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.clinicBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetEditDoctorClinic = new Final2021.DataSet.DataSetEditDoctorClinic();
+            this.cmBoxSelectDoctor = new System.Windows.Forms.ComboBox();
             this.doctorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSetEditSelect = new Final2021.DataSet.DataSetEditSelect();
             this.groupBxSexEDIT = new System.Windows.Forms.GroupBox();
@@ -65,30 +73,22 @@ namespace Final2021
             this.label1 = new System.Windows.Forms.Label();
             this.dataSet1 = new System.Data.DataSet();
             this.doctorTableAdapter = new Final2021.DataSet.DataSetEditSelectTableAdapters.DoctorTableAdapter();
-            this.dataSetEditDoctorStatus = new Final2021.DataSet.DataSetEditDoctorStatus();
-            this.statusBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.statusTableAdapter = new Final2021.DataSet.DataSetEditDoctorStatusTableAdapters.StatusTableAdapter();
-            this.dataSetEditDoctorType = new Final2021.DataSet.DataSetEditDoctorType();
-            this.doctorTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.doctorTypeTableAdapter = new Final2021.DataSet.DataSetEditDoctorTypeTableAdapters.DoctorTypeTableAdapter();
-            this.dataSetEditDoctorDepartment = new Final2021.DataSet.DataSetEditDoctorDepartment();
-            this.departmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.departmentTableAdapter = new Final2021.DataSet.DataSetEditDoctorDepartmentTableAdapters.DepartmentTableAdapter();
-            this.dataSetEditDoctorClinic = new Final2021.DataSet.DataSetEditDoctorClinic();
-            this.clinicBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.clinicTableAdapter = new Final2021.DataSet.DataSetEditDoctorClinicTableAdapters.ClinicTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.statusBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetEditDoctorStatus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.doctorTypeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetEditDoctorType)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetEditDoctorDepartment)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clinicBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetEditDoctorClinic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.doctorBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetEditSelect)).BeginInit();
             this.groupBxSexEDIT.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetEditDoctorStatus)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.statusBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetEditDoctorType)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.doctorTypeBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetEditDoctorDepartment)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetEditDoctorClinic)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clinicBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnExit
@@ -141,6 +141,16 @@ namespace Final2021
             this.cmBxStatusEDIT.TabIndex = 172;
             this.cmBxStatusEDIT.ValueMember = "StatusID";
             // 
+            // statusBindingSource
+            // 
+            this.statusBindingSource.DataMember = "Status";
+            this.statusBindingSource.DataSource = this.dataSetEditDoctorStatus;
+            // 
+            // dataSetEditDoctorStatus
+            // 
+            this.dataSetEditDoctorStatus.DataSetName = "DataSetEditDoctorStatus";
+            this.dataSetEditDoctorStatus.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // cmBxTypeEDIT
             // 
             this.cmBxTypeEDIT.DataSource = this.doctorTypeBindingSource;
@@ -151,6 +161,16 @@ namespace Final2021
             this.cmBxTypeEDIT.Size = new System.Drawing.Size(197, 21);
             this.cmBxTypeEDIT.TabIndex = 171;
             this.cmBxTypeEDIT.ValueMember = "TypeID";
+            // 
+            // doctorTypeBindingSource
+            // 
+            this.doctorTypeBindingSource.DataMember = "DoctorType";
+            this.doctorTypeBindingSource.DataSource = this.dataSetEditDoctorType;
+            // 
+            // dataSetEditDoctorType
+            // 
+            this.dataSetEditDoctorType.DataSetName = "DataSetEditDoctorType";
+            this.dataSetEditDoctorType.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // cmBxDepartmentEDIT
             // 
@@ -163,6 +183,16 @@ namespace Final2021
             this.cmBxDepartmentEDIT.TabIndex = 170;
             this.cmBxDepartmentEDIT.ValueMember = "DepartmentID";
             // 
+            // departmentBindingSource
+            // 
+            this.departmentBindingSource.DataMember = "Department";
+            this.departmentBindingSource.DataSource = this.dataSetEditDoctorDepartment;
+            // 
+            // dataSetEditDoctorDepartment
+            // 
+            this.dataSetEditDoctorDepartment.DataSetName = "DataSetEditDoctorDepartment";
+            this.dataSetEditDoctorDepartment.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // cmBxClinicEDIT
             // 
             this.cmBxClinicEDIT.DataSource = this.clinicBindingSource;
@@ -174,16 +204,26 @@ namespace Final2021
             this.cmBxClinicEDIT.TabIndex = 169;
             this.cmBxClinicEDIT.ValueMember = "ClinicID";
             // 
-            // comboBox1
+            // clinicBindingSource
             // 
-            this.comboBox1.DataSource = this.doctorBindingSource;
-            this.comboBox1.DisplayMember = "DoctorEmail";
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(12, 24);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(207, 21);
-            this.comboBox1.TabIndex = 168;
-            this.comboBox1.ValueMember = "DoctorID";
+            this.clinicBindingSource.DataMember = "Clinic";
+            this.clinicBindingSource.DataSource = this.dataSetEditDoctorClinic;
+            // 
+            // dataSetEditDoctorClinic
+            // 
+            this.dataSetEditDoctorClinic.DataSetName = "DataSetEditDoctorClinic";
+            this.dataSetEditDoctorClinic.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // cmBoxSelectDoctor
+            // 
+            this.cmBoxSelectDoctor.DataSource = this.doctorBindingSource;
+            this.cmBoxSelectDoctor.DisplayMember = "DoctorEmail";
+            this.cmBoxSelectDoctor.FormattingEnabled = true;
+            this.cmBoxSelectDoctor.Location = new System.Drawing.Point(12, 24);
+            this.cmBoxSelectDoctor.Name = "cmBoxSelectDoctor";
+            this.cmBoxSelectDoctor.Size = new System.Drawing.Size(207, 21);
+            this.cmBoxSelectDoctor.TabIndex = 168;
+            this.cmBoxSelectDoctor.ValueMember = "DoctorID";
             // 
             // doctorBindingSource
             // 
@@ -235,6 +275,7 @@ namespace Final2021
             this.btnFillInSELECTEDDoc.TabIndex = 166;
             this.btnFillInSELECTEDDoc.Text = "Fill In";
             this.btnFillInSELECTEDDoc.UseVisualStyleBackColor = true;
+            this.btnFillInSELECTEDDoc.Click += new System.EventHandler(this.btnFillInSELECTEDDoc_Click);
             // 
             // label24
             // 
@@ -398,57 +439,17 @@ namespace Final2021
             // 
             this.doctorTableAdapter.ClearBeforeFill = true;
             // 
-            // dataSetEditDoctorStatus
-            // 
-            this.dataSetEditDoctorStatus.DataSetName = "DataSetEditDoctorStatus";
-            this.dataSetEditDoctorStatus.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // statusBindingSource
-            // 
-            this.statusBindingSource.DataMember = "Status";
-            this.statusBindingSource.DataSource = this.dataSetEditDoctorStatus;
-            // 
             // statusTableAdapter
             // 
             this.statusTableAdapter.ClearBeforeFill = true;
-            // 
-            // dataSetEditDoctorType
-            // 
-            this.dataSetEditDoctorType.DataSetName = "DataSetEditDoctorType";
-            this.dataSetEditDoctorType.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // doctorTypeBindingSource
-            // 
-            this.doctorTypeBindingSource.DataMember = "DoctorType";
-            this.doctorTypeBindingSource.DataSource = this.dataSetEditDoctorType;
             // 
             // doctorTypeTableAdapter
             // 
             this.doctorTypeTableAdapter.ClearBeforeFill = true;
             // 
-            // dataSetEditDoctorDepartment
-            // 
-            this.dataSetEditDoctorDepartment.DataSetName = "DataSetEditDoctorDepartment";
-            this.dataSetEditDoctorDepartment.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // departmentBindingSource
-            // 
-            this.departmentBindingSource.DataMember = "Department";
-            this.departmentBindingSource.DataSource = this.dataSetEditDoctorDepartment;
-            // 
             // departmentTableAdapter
             // 
             this.departmentTableAdapter.ClearBeforeFill = true;
-            // 
-            // dataSetEditDoctorClinic
-            // 
-            this.dataSetEditDoctorClinic.DataSetName = "DataSetEditDoctorClinic";
-            this.dataSetEditDoctorClinic.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // clinicBindingSource
-            // 
-            this.clinicBindingSource.DataMember = "Clinic";
-            this.clinicBindingSource.DataSource = this.dataSetEditDoctorClinic;
             // 
             // clinicTableAdapter
             // 
@@ -464,7 +465,7 @@ namespace Final2021
             this.Controls.Add(this.cmBxTypeEDIT);
             this.Controls.Add(this.cmBxDepartmentEDIT);
             this.Controls.Add(this.cmBxClinicEDIT);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmBoxSelectDoctor);
             this.Controls.Add(this.groupBxSexEDIT);
             this.Controls.Add(this.btnFillInSELECTEDDoc);
             this.Controls.Add(this.label24);
@@ -491,19 +492,19 @@ namespace Final2021
             this.Name = "DoctorEdit";
             this.Text = "DoctorEdit";
             this.Load += new System.EventHandler(this.DoctorEdit_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.statusBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetEditDoctorStatus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.doctorTypeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetEditDoctorType)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetEditDoctorDepartment)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clinicBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetEditDoctorClinic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.doctorBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetEditSelect)).EndInit();
             this.groupBxSexEDIT.ResumeLayout(false);
             this.groupBxSexEDIT.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetEditDoctorStatus)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.statusBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetEditDoctorType)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.doctorTypeBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetEditDoctorDepartment)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetEditDoctorClinic)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clinicBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -519,7 +520,7 @@ namespace Final2021
         private System.Windows.Forms.ComboBox cmBxTypeEDIT;
         private System.Windows.Forms.ComboBox cmBxDepartmentEDIT;
         private System.Windows.Forms.ComboBox cmBxClinicEDIT;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmBoxSelectDoctor;
         private System.Windows.Forms.GroupBox groupBxSexEDIT;
         private System.Windows.Forms.RadioButton radioBtnMaleEDIT;
         private System.Windows.Forms.RadioButton radioBtnFemaleEDIt;
