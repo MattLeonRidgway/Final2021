@@ -12,6 +12,7 @@ namespace Final2021
 {
     public partial class NurseEdit : Form
     {
+        NurseClass nur = new NurseClass();
         public NurseEdit()
         {
             InitializeComponent();
@@ -48,17 +49,60 @@ namespace Final2021
 
         private void NurseEdit_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dataSetNurseEditClinic.Clinic' table. You can move, or remove it, as needed.
-            this.clinicTableAdapter.Fill(this.dataSetNurseEditClinic.Clinic);
-            // TODO: This line of code loads data into the 'dataSetNurseEditDepartment.Department' table. You can move, or remove it, as needed.
-            this.departmentTableAdapter.Fill(this.dataSetNurseEditDepartment.Department);
-            // TODO: This line of code loads data into the 'dataSetNurseEditType.NurseType' table. You can move, or remove it, as needed.
-            this.nurseTypeTableAdapter.Fill(this.dataSetNurseEditType.NurseType);
+            // TODO: This line of code loads data into the 'dataSetEditNurseClinic.Clinic' table. You can move, or remove it, as needed.
+            this.clinicTableAdapter.Fill(this.dataSetEditNurseClinic.Clinic);
+            // TODO: This line of code loads data into the 'dataSetEditNurseDepartment.Department' table. You can move, or remove it, as needed.
+            this.departmentTableAdapter.Fill(this.dataSetEditNurseDepartment.Department);
+            // TODO: This line of code loads data into the 'dataSetEditNurseType.NurseType' table. You can move, or remove it, as needed.
+            this.nurseTypeTableAdapter.Fill(this.dataSetEditNurseType.NurseType);
             // TODO: This line of code loads data into the 'dataSetNurseEditStatus.Status' table. You can move, or remove it, as needed.
             this.statusTableAdapter.Fill(this.dataSetNurseEditStatus.Status);
             // TODO: This line of code loads data into the 'dataSetSelectNurse.Nurse' table. You can move, or remove it, as needed.
             this.nurseTableAdapter.Fill(this.dataSetSelectNurse.Nurse);
 
+
+
+        }
+
+        private void btnFillInEDIT_Click(object sender, EventArgs e)
+        {
+            int getNurseID = Int32.Parse(cmBxSelectNurse.SelectedValue.ToString());
+            
+            nur.getNurse(getNurseID);
+            txtBxEditFName.Text = nur.FName;
+            txtBxEditMName.Text = nur.MName;
+            txtBxEditLName.Text = nur.LName;         
+
+            cmBxTypeEDIT.SelectedIndex = nur.Type;
+            cmBxDepartEDIT.SelectedIndex = nur.Department;
+            cmBxClinicEDIT.SelectedIndex = nur.Clinic;
+
+            txtBxEditEmail.Text = nur.Email;
+            txtBxEditNote.Text = nur.Notes;
+        }
+
+        private void btnDeleteSelected_Click(object sender, EventArgs e)
+        {
+
+            
+        }
+
+        private void btnNurseDelete_Click(object sender, EventArgs e)
+        {
+            string nurse = "Deleted Nurse "+cmBxSelectNurse.Text;
+            if (MessageBox.Show("Confirm?", nurse, MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                nur.deleteNurse(cmBxSelectNurse.SelectedIndex);
+                //refresh dataset for combo box
+                this.nurseTableAdapter.Fill(this.dataSetSelectNurse.Nurse);
+                cmBxSelectNurse.Refresh();
+
+            }
+            else
+            {
+                this.Activate();
+            }
+            
         }
     }
 }

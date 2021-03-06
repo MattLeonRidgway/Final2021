@@ -39,29 +39,15 @@ namespace Final2021
 
         private void Nurse_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dataSetNurseClinic.Clinic' table. You can move, or remove it, as needed.
-            this.clinicTableAdapter.Fill(this.dataSetNurseClinic.Clinic);
-            // TODO: This line of code loads data into the 'dataSetNurseDepartment.Department' table. You can move, or remove it, as needed.
-            this.departmentTableAdapter.Fill(this.dataSetNurseDepartment.Department);
-            // TODO: This line of code loads data into the 'dataSetNurseType.NurseType' table. You can move, or remove it, as needed.
-            this.nurseTypeTableAdapter.Fill(this.dataSetNurseType.NurseType);
-            // TODO: This line of code loads data into the 'dataSetNurseStatus.Status' table. You can move, or remove it, as needed.
-            this.statusTableAdapter.Fill(this.dataSetNurseStatus.Status);
+            // TODO: This line of code loads data into the 'dataSetNurseClinicAdd.Clinic' table. You can move, or remove it, as needed.
+            this.clinicTableAdapter.Fill(this.dataSetNurseClinicAdd.Clinic);
+            // TODO: This line of code loads data into the 'dataSetNurseDepartmentAdd.Department' table. You can move, or remove it, as needed.
+            this.departmentTableAdapter.Fill(this.dataSetNurseDepartmentAdd.Department);
+            // TODO: This line of code loads data into the 'dataSetNurseTypeAdd.NurseType' table. You can move, or remove it, as needed.
+            this.nurseTypeTableAdapter.Fill(this.dataSetNurseTypeAdd.NurseType);
+            // TODO: This line of code loads data into the 'dataSetNurseAddStatus.Status' table. You can move, or remove it, as needed.
+            this.statusTableAdapter.Fill(this.dataSetNurseAddStatus.Status);
 
-            string radioRuslt = null;
-            foreach (Control control in this.groupDxRdBtns.Controls)
-            {
-
-                if (control is RadioButton)
-                {
-                    RadioButton radioBtn = control as RadioButton;
-                    if (radioBtn.Checked)
-                    {
-                        radioRuslt = radioBtn.Text;
-                    }
-                }
-
-            }
 
         }
 
@@ -101,22 +87,7 @@ namespace Final2021
                 txtBxLName.AppendText("Invalid");
                 check = false;
             }
-            if (radioBtnMale.Checked | radioBtnFemale.Checked)
-            {
-                if (radioBtnMale.Checked)
-                {
-                    nurse.Sex = 'M';
-                }
-                if (radioBtnFemale.Checked)
-                {
-                    nurse.Sex = 'F';
-                }
-            }
-            else
-            {
-                MessageBox.Show("You need to check a sex");
-                check = false;
-            }
+            
             if (ValidateClass.isValidEmail(txtBxEmail.Text))
             {
                 nurse.Email = txtBxEmail.Text;
@@ -144,15 +115,14 @@ namespace Final2021
                 nurse.Department = Int32.Parse(cmboxDepartment.SelectedValue.ToString());
                 nurse.Clinic = Int32.Parse(cmboxClinic.SelectedValue.ToString());
 
-                nurse.InsertNurse(nurse.FName, nurse.MName, nurse.LName, nurse.Sex, nurse.Status, nurse.Type, nurse.Department,
+                nurse.InsertNurse(nurse.FName, nurse.MName, nurse.LName, nurse.Status, nurse.Type, nurse.Department,
                     nurse.Clinic, nurse.Email, nurse.Notes);
                 txtBxEmail.Clear();
                 txtBxFName.Clear();
                 txtBxLName.Clear();
                 txtBxMName.Clear();
                 txtBxNote.Clear();
-                radioBtnFemale.Checked = false;
-                radioBtnMale.Checked = false;
+              
             }
             else
             {

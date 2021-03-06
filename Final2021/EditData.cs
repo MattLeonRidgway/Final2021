@@ -34,18 +34,17 @@ namespace Final2021
 
         private void EditData_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dataSetEditDataDoctorType.DoctorType' table. You can move, or remove it, as needed.
-            this.doctorTypeTableAdapter1.Fill(this.dataSetEditDataDoctorType.DoctorType);
-            // TODO: This line of code loads data into the 'dataSetEditClinic.Clinic' table. You can move, or remove it, as needed.
-            this.clinicTableAdapter.Fill(this.dataSetEditClinic.Clinic);
-            // TODO: This line of code loads data into the 'dataSetEditDepartment.Department' table. You can move, or remove it, as needed.
-            this.departmentTableAdapter.Fill(this.dataSetEditDepartment.Department);
-            // TODO: This line of code loads data into the 'dataSetEditNurseType.NurseType' table. You can move, or remove it, as needed.
-            this.nurseTypeTableAdapter.Fill(this.dataSetEditNurseType.NurseType);
-            // TODO: This line of code loads data into the 'dataSetEditDoctorType.DoctorType' table. You can move, or remove it, as needed.      
-            // TODO: This line of code loads data into the 'dataSetEditStaus.Status' table. You can move, or remove it, as needed.
-            this.statusTableAdapter.Fill(this.dataSetEditStaus.Status);
-         
+            // TODO: This line of code loads data into the 'dataSetEditClinicData.Clinic' table. You can move, or remove it, as needed.
+            this.clinicTableAdapter.Fill(this.dataSetEditClinicData.Clinic);
+            // TODO: This line of code loads data into the 'dataSetEditDepartmentDATA.Department' table. You can move, or remove it, as needed.
+            this.departmentTableAdapter.Fill(this.dataSetEditDepartmentDATA.Department);
+            // TODO: This line of code loads data into the 'dataSetEditNurseTypeData.NurseType' table. You can move, or remove it, as needed.
+            this.nurseTypeTableAdapter.Fill(this.dataSetEditNurseTypeData.NurseType);
+            // TODO: This line of code loads data into the 'dataSetEditDoctorTypeData.DoctorType' table. You can move, or remove it, as needed.
+            this.doctorTypeTableAdapter.Fill(this.dataSetEditDoctorTypeData.DoctorType);
+            // TODO: This line of code loads data into the 'dataSetEDITStatus.Status' table. You can move, or remove it, as needed.
+            this.statusTableAdapter.Fill(this.dataSetEDITStatus.Status);
+
 
 
         }
@@ -67,12 +66,15 @@ namespace Final2021
                 status.StatusID = Int32.Parse(cmboxStatus.SelectedValue.ToString());
                 status.UpdateStatus(status.StatusID, status.StatusType);
                 txtBxStatus.Clear();
+                this.statusTableAdapter.Fill(this.dataSetEDITStatus.Status);
+                cmboxStatus.Refresh();
 
             }
             else
             {
                 MessageBox.Show("Correct Errors");
             }
+           
 
         }
 
@@ -84,11 +86,14 @@ namespace Final2021
                 docType.Id = Int32.Parse(cmboxDoctorType.SelectedValue.ToString());
                 docType.UpdateType(docType.Id,docType.Type);
                 txtBxDoctorType.Clear();
+                this.doctorTypeTableAdapter.Fill(this.dataSetEditDoctorTypeData.DoctorType);
+                cmboxDoctorType.Refresh();
             }
             else
             {
                 MessageBox.Show("Correct Errors");
             }
+       
         }
 
         private void btnNurseType_Click(object sender, EventArgs e)
@@ -99,11 +104,14 @@ namespace Final2021
                 nurseType.Id = Int32.Parse(cmBxNurseType.SelectedValue.ToString());
                 nurseType.UpdateType(nurseType.Id,nurseType.Type);
                 txtBxNurseType.Clear();
+                this.nurseTypeTableAdapter.Fill(this.dataSetEditNurseTypeData.NurseType);
+                cmBxNurseType.Refresh();
             }
             else
             {
                 MessageBox.Show("Correct Errors");
             }
+    
         }
 
         private void btnDepartment_Click(object sender, EventArgs e)
@@ -114,11 +122,14 @@ namespace Final2021
                 department.DepartmentID = Int32.Parse(cmBoxDepartmnet.SelectedValue.ToString());
                 department.UpdateDepartment(department.DepartmentID,department.DepartmentString);
                 txtBxDepartment.Clear();
+                this.departmentTableAdapter.Fill(this.dataSetEditDepartmentDATA.Department);
+                cmBoxDepartmnet.Refresh();
             }
             else
             {
                 MessageBox.Show("Correct Errors");
             }
+           
         }
 
         private void btnClinic_Click(object sender, EventArgs e)
@@ -129,12 +140,15 @@ namespace Final2021
                 clinic.ClinicID = Int32.Parse(cmboxClinic.SelectedValue.ToString());
                 clinic.UpdateClinic(clinic.ClinicID,clinic.ClinicString);
                 txtBxClinic.Clear();
+                this.clinicTableAdapter.Fill(this.dataSetEditClinicData.Clinic);
+                cmboxClinic.Refresh();
 
             }
             else
             {
                 MessageBox.Show("Correct Errors");
             }
+           
         }
     }
 }

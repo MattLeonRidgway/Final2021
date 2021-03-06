@@ -17,17 +17,7 @@ namespace Final2021
         {
             InitializeComponent();
         }
-      //  string radioSex = null;
-        //    foreach (Control contrl in this.groupDxRdBtns.Controls)
-          //  {
-            //    if (contrl is RadioButton)
-              //  {
-                //    RadioButton radBtn = contrl as RadioButton;
-                  //  if (radBtn.Checked)
-                   // {
-                    //    radioSex = radBtn.Text;
-                   // }
-            //}
+     
     
         private void btnHome_Click(object sender, EventArgs e)
         {
@@ -62,21 +52,22 @@ namespace Final2021
 
         private void DoctorEdit_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dataSetSelectDoctor.Doctor' table. You can move, or remove it, as needed.
+            this.doctorTableAdapter.Fill(this.dataSetSelectDoctor.Doctor);
             // TODO: This line of code loads data into the 'dataSetEditDoctorClinic.Clinic' table. You can move, or remove it, as needed.
             this.clinicTableAdapter.Fill(this.dataSetEditDoctorClinic.Clinic);
             // TODO: This line of code loads data into the 'dataSetEditDoctorDepartment.Department' table. You can move, or remove it, as needed.
             this.departmentTableAdapter.Fill(this.dataSetEditDoctorDepartment.Department);
             // TODO: This line of code loads data into the 'dataSetEditDoctorType.DoctorType' table. You can move, or remove it, as needed.
             this.doctorTypeTableAdapter.Fill(this.dataSetEditDoctorType.DoctorType);
-            // TODO: This line of code loads data into the 'dataSetEditDoctorStatus.Status' table. You can move, or remove it, as needed.
-            this.statusTableAdapter.Fill(this.dataSetEditDoctorStatus.Status);
-            // TODO: This line of code loads data into the 'dataSetEditSelect.Doctor' table. You can move, or remove it, as needed.
-            this.doctorTableAdapter.Fill(this.dataSetEditSelect.Doctor);
+            // TODO: This line of code loads data into the 'dataSetDoctorEditStatus.Status' table. You can move, or remove it, as needed.
+            this.statusTableAdapter.Fill(this.dataSetDoctorEditStatus.Status);
+
 
         }
 
         private void btnFillInSELECTEDDoc_Click(object sender, EventArgs e)
-        {//doc.Status = Int32.Parse(cmboxStatus.SelectedValue.ToString());
+        {
             int getDocID = Int32.Parse(cmBoxSelectDoctor.SelectedValue.ToString());
             doc.getDoctor(getDocID);
             txtBxFNameEDIT.Text = doc.FName;
@@ -86,7 +77,32 @@ namespace Final2021
             cmBxStatusEDIT.SelectedIndex = doc.Status;
             cmBxTypeEDIT.SelectedIndex = doc.Type;
             cmBxDepartmentEDIT.SelectedIndex = doc.Department;
+            cmBxClinicEDIT.SelectedIndex = doc.Clinic;
+            txtBxEmailEDIT.Text = doc.Email;
+            txtBxNoteEDIT.Text = doc.Notes;
 
+        }
+
+        private void btnDeleteSelected_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void btnDoctorDelete_Click(object sender, EventArgs e)
+        {
+            string doctor = "Deleted Nurse "+cmBoxSelectDoctor.Text;
+
+            if (MessageBox.Show("Confirm?", doctor, MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {               
+                doc.deleteDoctor(cmBoxSelectDoctor.SelectedIndex);
+                //refresh dataset for combo box
+                this.doctorTableAdapter.Fill(this.dataSetSelectDoctor.Doctor);
+                cmBoxSelectDoctor.Refresh();
+            }
+            else
+            {
+                this.Activate();
+            }
 
 
         }

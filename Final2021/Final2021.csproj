@@ -92,75 +92,35 @@
       <DependentUpon>AddData.cs</DependentUpon>
     </Compile>
     <Compile Include="Clinic.cs" />
-    <Compile Include="DataSet\DataSetEditDataDoctorType.Designer.cs">
+    <Compile Include="DataSet\DataSetClinic.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DataSetEditDataDoctorType.xsd</DependentUpon>
+      <DependentUpon>DataSetClinic.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DataSet\DataSetEditClinic.Designer.cs">
+    <Compile Include="DataSet\DataSetDepartment.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DataSetEditClinic.xsd</DependentUpon>
+      <DependentUpon>DataSetDepartment.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DataSet\DataSetEditDepartment.Designer.cs">
+    <Compile Include="DataSet\DataSetDoctorEditStatus.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DataSetEditDepartment.xsd</DependentUpon>
+      <DependentUpon>DataSetDoctorEditStatus.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DataSet\DataSetEditNurseType.Designer.cs">
+    <Compile Include="DataSet\DataSetDoctorType.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DataSetEditNurseType.xsd</DependentUpon>
+      <DependentUpon>DataSetDoctorType.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DataSet\DataSetEditStaus.Designer.cs">
+    <Compile Include="DataSet\DataSetEditClinicData.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DataSetEditStaus.xsd</DependentUpon>
+      <DependentUpon>DataSetEditClinicData.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DataSet\DataSetNurseEditClinic.Designer.cs">
+    <Compile Include="DataSet\DataSetEditDepartmentDATA.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DataSetNurseEditClinic.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DataSet\DataSetNurseEditDepartment.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSetNurseEditDepartment.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DataSet\DataSetNurseEditStatus.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSetNurseEditStatus.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DataSet\DataSetNurseEditType.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSetNurseEditType.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DataSet\DataSetSelectNurse.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSetSelectNurse.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DataSet\DataSetNurseClinic.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSetNurseClinic.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DataSet\DataSetNurseDepartment.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSetNurseDepartment.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DataSet\DataSetNurseStatus.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSetNurseStatus.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DataSet\DataSetNurseType.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSetNurseType.xsd</DependentUpon>
+      <DependentUpon>DataSetEditDepartmentDATA.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataSet\DataSetEditDoctorClinic.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -172,40 +132,80 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetEditDoctorDepartment.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DataSet\DataSetEditDoctorStatus.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSetEditDoctorStatus.xsd</DependentUpon>
-    </Compile>
     <Compile Include="DataSet\DataSetEditDoctorType.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetEditDoctorType.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DataSet\DataSetEditSelect.Designer.cs">
+    <Compile Include="DataSet\DataSetEditDoctorTypeData.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DataSetEditSelect.xsd</DependentUpon>
+      <DependentUpon>DataSetEditDoctorTypeData.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DataSet\DataSetDepartmentAddDoctor.Designer.cs">
-      <DependentUpon>DataSetDepartmentAddDoctor.xsd</DependentUpon>
+    <Compile Include="DataSet\DataSetEditNurseClinic.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetEditNurseClinic.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DataSet\DataSetDoctorAddClinic.Designer.cs">
-      <DependentUpon>DataSetDoctorAddClinic.xsd</DependentUpon>
+    <Compile Include="DataSet\DataSetEditNurseDepartment.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetEditNurseDepartment.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DataSet\DataSetDoctorStatusAdd.Designer.cs">
+    <Compile Include="DataSet\DataSetEditNurseType.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DataSetDoctorStatusAdd.xsd</DependentUpon>
+      <DependentUpon>DataSetEditNurseType.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DataSet\DataSetDoctorType.Designer.cs">
-      <DependentUpon>DataSetDoctorType.xsd</DependentUpon>
+    <Compile Include="DataSet\DataSetEditNurseTypeData.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetEditNurseTypeData.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\DataSetEDITStatus.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetEDITStatus.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\DataSetNurseAddStatus.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetNurseAddStatus.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\DataSetNurseClinicAdd.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetNurseClinicAdd.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\DataSetNurseDepartmentAdd.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetNurseDepartmentAdd.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\DataSetNurseEditStatus.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetNurseEditStatus.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\DataSetNurseTypeAdd.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetNurseTypeAdd.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\DataSetSelectDoctor.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetSelectDoctor.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\DataSetSelectNurse.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetSelectNurse.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\DataSetStatus1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetStatus1.xsd</DependentUpon>
     </Compile>
     <Compile Include="DBConnection.cs" />
     <Compile Include="Department.cs" />
@@ -305,159 +305,71 @@
       <Link>.editorconfig</Link>
     </None>
     <None Include="App.config" />
-    <None Include="DataSet\DataSetEditDataDoctorType.xsc">
-      <DependentUpon>DataSetEditDataDoctorType.xsd</DependentUpon>
+    <None Include="DataSet\DataSetClinic.xsc">
+      <DependentUpon>DataSetClinic.xsd</DependentUpon>
     </None>
-    <None Include="DataSet\DataSetEditDataDoctorType.xsd">
+    <None Include="DataSet\DataSetClinic.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSetEditDataDoctorType.Designer.cs</LastGenOutput>
+      <LastGenOutput>DataSetClinic.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="DataSet\DataSetEditDataDoctorType.xss">
-      <DependentUpon>DataSetEditDataDoctorType.xsd</DependentUpon>
+    <None Include="DataSet\DataSetClinic.xss">
+      <DependentUpon>DataSetClinic.xsd</DependentUpon>
     </None>
-    <None Include="DataSet\DataSetEditClinic.xsc">
-      <DependentUpon>DataSetEditClinic.xsd</DependentUpon>
+    <None Include="DataSet\DataSetDepartment.xsc">
+      <DependentUpon>DataSetDepartment.xsd</DependentUpon>
     </None>
-    <None Include="DataSet\DataSetEditClinic.xsd">
+    <None Include="DataSet\DataSetDepartment.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSetEditClinic.Designer.cs</LastGenOutput>
+      <LastGenOutput>DataSetDepartment.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="DataSet\DataSetEditClinic.xss">
-      <DependentUpon>DataSetEditClinic.xsd</DependentUpon>
+    <None Include="DataSet\DataSetDepartment.xss">
+      <DependentUpon>DataSetDepartment.xsd</DependentUpon>
     </None>
-    <None Include="DataSet\DataSetEditDepartment.xsc">
-      <DependentUpon>DataSetEditDepartment.xsd</DependentUpon>
+    <None Include="DataSet\DataSetDoctorEditStatus.xsc">
+      <DependentUpon>DataSetDoctorEditStatus.xsd</DependentUpon>
     </None>
-    <None Include="DataSet\DataSetEditDepartment.xsd">
+    <None Include="DataSet\DataSetDoctorEditStatus.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSetEditDepartment.Designer.cs</LastGenOutput>
+      <LastGenOutput>DataSetDoctorEditStatus.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="DataSet\DataSetEditDepartment.xss">
-      <DependentUpon>DataSetEditDepartment.xsd</DependentUpon>
+    <None Include="DataSet\DataSetDoctorEditStatus.xss">
+      <DependentUpon>DataSetDoctorEditStatus.xsd</DependentUpon>
     </None>
-    <None Include="DataSet\DataSetEditNurseType.xsc">
-      <DependentUpon>DataSetEditNurseType.xsd</DependentUpon>
+    <None Include="DataSet\DataSetDoctorType.xsc">
+      <DependentUpon>DataSetDoctorType.xsd</DependentUpon>
     </None>
-    <None Include="DataSet\DataSetEditNurseType.xsd">
+    <None Include="DataSet\DataSetDoctorType.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSetEditNurseType.Designer.cs</LastGenOutput>
+      <LastGenOutput>DataSetDoctorType.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="DataSet\DataSetEditNurseType.xss">
-      <DependentUpon>DataSetEditNurseType.xsd</DependentUpon>
+    <None Include="DataSet\DataSetDoctorType.xss">
+      <DependentUpon>DataSetDoctorType.xsd</DependentUpon>
     </None>
-    <None Include="DataSet\DataSetEditStaus.xsc">
-      <DependentUpon>DataSetEditStaus.xsd</DependentUpon>
+    <None Include="DataSet\DataSetEditClinicData.xsc">
+      <DependentUpon>DataSetEditClinicData.xsd</DependentUpon>
     </None>
-    <None Include="DataSet\DataSetEditStaus.xsd">
+    <None Include="DataSet\DataSetEditClinicData.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSetEditStaus.Designer.cs</LastGenOutput>
+      <LastGenOutput>DataSetEditClinicData.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="DataSet\DataSetEditStaus.xss">
-      <DependentUpon>DataSetEditStaus.xsd</DependentUpon>
+    <None Include="DataSet\DataSetEditClinicData.xss">
+      <DependentUpon>DataSetEditClinicData.xsd</DependentUpon>
     </None>
-    <None Include="DataSet\DataSetNurseEditClinic.xsc">
-      <DependentUpon>DataSetNurseEditClinic.xsd</DependentUpon>
+    <None Include="DataSet\DataSetEditDepartmentDATA.xsc">
+      <DependentUpon>DataSetEditDepartmentDATA.xsd</DependentUpon>
     </None>
-    <None Include="DataSet\DataSetNurseEditClinic.xsd">
+    <None Include="DataSet\DataSetEditDepartmentDATA.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSetNurseEditClinic.Designer.cs</LastGenOutput>
+      <LastGenOutput>DataSetEditDepartmentDATA.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="DataSet\DataSetNurseEditClinic.xss">
-      <DependentUpon>DataSetNurseEditClinic.xsd</DependentUpon>
-    </None>
-    <None Include="DataSet\DataSetNurseEditDepartment.xsc">
-      <DependentUpon>DataSetNurseEditDepartment.xsd</DependentUpon>
-    </None>
-    <None Include="DataSet\DataSetNurseEditDepartment.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSetNurseEditDepartment.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DataSet\DataSetNurseEditDepartment.xss">
-      <DependentUpon>DataSetNurseEditDepartment.xsd</DependentUpon>
-    </None>
-    <None Include="DataSet\DataSetNurseEditStatus.xsc">
-      <DependentUpon>DataSetNurseEditStatus.xsd</DependentUpon>
-    </None>
-    <None Include="DataSet\DataSetNurseEditStatus.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSetNurseEditStatus.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DataSet\DataSetNurseEditStatus.xss">
-      <DependentUpon>DataSetNurseEditStatus.xsd</DependentUpon>
-    </None>
-    <None Include="DataSet\DataSetNurseEditType.xsc">
-      <DependentUpon>DataSetNurseEditType.xsd</DependentUpon>
-    </None>
-    <None Include="DataSet\DataSetNurseEditType.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSetNurseEditType.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DataSet\DataSetNurseEditType.xss">
-      <DependentUpon>DataSetNurseEditType.xsd</DependentUpon>
-    </None>
-    <None Include="DataSet\DataSetSelectNurse.xsc">
-      <DependentUpon>DataSetSelectNurse.xsd</DependentUpon>
-    </None>
-    <None Include="DataSet\DataSetSelectNurse.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSetSelectNurse.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DataSet\DataSetSelectNurse.xss">
-      <DependentUpon>DataSetSelectNurse.xsd</DependentUpon>
-    </None>
-    <None Include="DataSet\DataSetNurseClinic.xsc">
-      <DependentUpon>DataSetNurseClinic.xsd</DependentUpon>
-    </None>
-    <None Include="DataSet\DataSetNurseClinic.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSetNurseClinic.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DataSet\DataSetNurseClinic.xss">
-      <DependentUpon>DataSetNurseClinic.xsd</DependentUpon>
-    </None>
-    <None Include="DataSet\DataSetNurseDepartment.xsc">
-      <DependentUpon>DataSetNurseDepartment.xsd</DependentUpon>
-    </None>
-    <None Include="DataSet\DataSetNurseDepartment.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSetNurseDepartment.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DataSet\DataSetNurseDepartment.xss">
-      <DependentUpon>DataSetNurseDepartment.xsd</DependentUpon>
-    </None>
-    <None Include="DataSet\DataSetNurseStatus.xsc">
-      <DependentUpon>DataSetNurseStatus.xsd</DependentUpon>
-    </None>
-    <None Include="DataSet\DataSetNurseStatus.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSetNurseStatus.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DataSet\DataSetNurseStatus.xss">
-      <DependentUpon>DataSetNurseStatus.xsd</DependentUpon>
-    </None>
-    <None Include="DataSet\DataSetNurseType.xsc">
-      <DependentUpon>DataSetNurseType.xsd</DependentUpon>
-    </None>
-    <None Include="DataSet\DataSetNurseType.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSetNurseType.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DataSet\DataSetNurseType.xss">
-      <DependentUpon>DataSetNurseType.xsd</DependentUpon>
+    <None Include="DataSet\DataSetEditDepartmentDATA.xss">
+      <DependentUpon>DataSetEditDepartmentDATA.xsd</DependentUpon>
     </None>
     <None Include="DataSet\DataSetEditDoctorClinic.xsc">
       <DependentUpon>DataSetEditDoctorClinic.xsd</DependentUpon>
@@ -481,17 +393,6 @@
     <None Include="DataSet\DataSetEditDoctorDepartment.xss">
       <DependentUpon>DataSetEditDoctorDepartment.xsd</DependentUpon>
     </None>
-    <None Include="DataSet\DataSetEditDoctorStatus.xsc">
-      <DependentUpon>DataSetEditDoctorStatus.xsd</DependentUpon>
-    </None>
-    <None Include="DataSet\DataSetEditDoctorStatus.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSetEditDoctorStatus.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DataSet\DataSetEditDoctorStatus.xss">
-      <DependentUpon>DataSetEditDoctorStatus.xsd</DependentUpon>
-    </None>
     <None Include="DataSet\DataSetEditDoctorType.xsc">
       <DependentUpon>DataSetEditDoctorType.xsd</DependentUpon>
     </None>
@@ -503,60 +404,159 @@
     <None Include="DataSet\DataSetEditDoctorType.xss">
       <DependentUpon>DataSetEditDoctorType.xsd</DependentUpon>
     </None>
-    <None Include="DataSet\DataSetEditSelect.xsc">
-      <DependentUpon>DataSetEditSelect.xsd</DependentUpon>
+    <None Include="DataSet\DataSetEditDoctorTypeData.xsc">
+      <DependentUpon>DataSetEditDoctorTypeData.xsd</DependentUpon>
     </None>
-    <None Include="DataSet\DataSetEditSelect.xsd">
+    <None Include="DataSet\DataSetEditDoctorTypeData.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSetEditSelect.Designer.cs</LastGenOutput>
+      <LastGenOutput>DataSetEditDoctorTypeData.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="DataSet\DataSetEditSelect.xss">
-      <DependentUpon>DataSetEditSelect.xsd</DependentUpon>
+    <None Include="DataSet\DataSetEditDoctorTypeData.xss">
+      <DependentUpon>DataSetEditDoctorTypeData.xsd</DependentUpon>
     </None>
-    <None Include="DataSet\DataSetDepartmentAddDoctor.xsc">
-      <DependentUpon>DataSetDepartmentAddDoctor.xsd</DependentUpon>
+    <None Include="DataSet\DataSetEditNurseClinic.xsc">
+      <DependentUpon>DataSetEditNurseClinic.xsd</DependentUpon>
     </None>
-    <None Include="DataSet\DataSetDepartmentAddDoctor.xsd">
+    <None Include="DataSet\DataSetEditNurseClinic.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSetDepartmentAddDoctor.Designer.cs</LastGenOutput>
+      <LastGenOutput>DataSetEditNurseClinic.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="DataSet\DataSetDepartmentAddDoctor.xss">
-      <DependentUpon>DataSetDepartmentAddDoctor.xsd</DependentUpon>
+    <None Include="DataSet\DataSetEditNurseClinic.xss">
+      <DependentUpon>DataSetEditNurseClinic.xsd</DependentUpon>
     </None>
-    <None Include="DataSet\DataSetDoctorAddClinic.xsc">
-      <DependentUpon>DataSetDoctorAddClinic.xsd</DependentUpon>
+    <None Include="DataSet\DataSetEditNurseDepartment.xsc">
+      <DependentUpon>DataSetEditNurseDepartment.xsd</DependentUpon>
     </None>
-    <None Include="DataSet\DataSetDoctorAddClinic.xsd">
+    <None Include="DataSet\DataSetEditNurseDepartment.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSetDoctorAddClinic.Designer.cs</LastGenOutput>
+      <LastGenOutput>DataSetEditNurseDepartment.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="DataSet\DataSetDoctorAddClinic.xss">
-      <DependentUpon>DataSetDoctorAddClinic.xsd</DependentUpon>
+    <None Include="DataSet\DataSetEditNurseDepartment.xss">
+      <DependentUpon>DataSetEditNurseDepartment.xsd</DependentUpon>
     </None>
-    <None Include="DataSet\DataSetDoctorStatusAdd.xsc">
-      <DependentUpon>DataSetDoctorStatusAdd.xsd</DependentUpon>
+    <None Include="DataSet\DataSetEditNurseType.xsc">
+      <DependentUpon>DataSetEditNurseType.xsd</DependentUpon>
     </None>
-    <None Include="DataSet\DataSetDoctorStatusAdd.xsd">
+    <None Include="DataSet\DataSetEditNurseType.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSetDoctorStatusAdd.Designer.cs</LastGenOutput>
+      <LastGenOutput>DataSetEditNurseType.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="DataSet\DataSetDoctorStatusAdd.xss">
-      <DependentUpon>DataSetDoctorStatusAdd.xsd</DependentUpon>
+    <None Include="DataSet\DataSetEditNurseType.xss">
+      <DependentUpon>DataSetEditNurseType.xsd</DependentUpon>
     </None>
-    <None Include="DataSet\DataSetDoctorType.xsc">
-      <DependentUpon>DataSetDoctorType.xsd</DependentUpon>
+    <None Include="DataSet\DataSetEditNurseTypeData.xsc">
+      <DependentUpon>DataSetEditNurseTypeData.xsd</DependentUpon>
     </None>
-    <None Include="DataSet\DataSetDoctorType.xsd">
+    <None Include="DataSet\DataSetEditNurseTypeData.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSetDoctorType.Designer.cs</LastGenOutput>
+      <LastGenOutput>DataSetEditNurseTypeData.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="DataSet\DataSetDoctorType.xss">
-      <DependentUpon>DataSetDoctorType.xsd</DependentUpon>
+    <None Include="DataSet\DataSetEditNurseTypeData.xss">
+      <DependentUpon>DataSetEditNurseTypeData.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\DataSetEDITStatus.xsc">
+      <DependentUpon>DataSetEDITStatus.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\DataSetEDITStatus.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetEDITStatus.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\DataSetEDITStatus.xss">
+      <DependentUpon>DataSetEDITStatus.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\DataSetNurseAddStatus.xsc">
+      <DependentUpon>DataSetNurseAddStatus.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\DataSetNurseAddStatus.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetNurseAddStatus.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\DataSetNurseAddStatus.xss">
+      <DependentUpon>DataSetNurseAddStatus.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\DataSetNurseClinicAdd.xsc">
+      <DependentUpon>DataSetNurseClinicAdd.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\DataSetNurseClinicAdd.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetNurseClinicAdd.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\DataSetNurseClinicAdd.xss">
+      <DependentUpon>DataSetNurseClinicAdd.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\DataSetNurseDepartmentAdd.xsc">
+      <DependentUpon>DataSetNurseDepartmentAdd.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\DataSetNurseDepartmentAdd.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetNurseDepartmentAdd.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\DataSetNurseDepartmentAdd.xss">
+      <DependentUpon>DataSetNurseDepartmentAdd.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\DataSetNurseEditStatus.xsc">
+      <DependentUpon>DataSetNurseEditStatus.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\DataSetNurseEditStatus.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetNurseEditStatus.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\DataSetNurseEditStatus.xss">
+      <DependentUpon>DataSetNurseEditStatus.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\DataSetNurseTypeAdd.xsc">
+      <DependentUpon>DataSetNurseTypeAdd.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\DataSetNurseTypeAdd.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetNurseTypeAdd.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\DataSetNurseTypeAdd.xss">
+      <DependentUpon>DataSetNurseTypeAdd.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\DataSetSelectDoctor.xsc">
+      <DependentUpon>DataSetSelectDoctor.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\DataSetSelectDoctor.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetSelectDoctor.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\DataSetSelectDoctor.xss">
+      <DependentUpon>DataSetSelectDoctor.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\DataSetSelectNurse.xsc">
+      <DependentUpon>DataSetSelectNurse.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\DataSetSelectNurse.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetSelectNurse.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\DataSetSelectNurse.xss">
+      <DependentUpon>DataSetSelectNurse.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\DataSetStatus1.xsc">
+      <DependentUpon>DataSetStatus1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\DataSetStatus1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetStatus1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\DataSetStatus1.xss">
+      <DependentUpon>DataSetStatus1.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="PatientLite.db" />
@@ -586,6 +586,7 @@
     <Analyzer Include="..\packages\Microsoft.NetFramework.Analyzers.3.3.2\analyzers\dotnet\cs\Microsoft.NetFramework.Analyzers.dll" />
     <Analyzer Include="..\packages\Microsoft.NetFramework.Analyzers.3.3.2\analyzers\dotnet\cs\Microsoft.NetFramework.CSharp.Analyzers.dll" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

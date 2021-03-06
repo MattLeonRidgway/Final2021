@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="DataSetDoctorType" targetNamespace="http://tempuri.org/DataSetDoctorType.xsd" xmlns:mstns="http://tempuri.org/DataSetDoctorType.xsd" xmlns="http://tempuri.org/DataSetDoctorType.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+<xs:schema id="DataSetEditDoctorTypeData" targetNamespace="http://tempuri.org/DataSetEditDoctorTypeData.xsd" xmlns:mstns="http://tempuri.org/DataSetEditDoctorTypeData.xsd" xmlns="http://tempuri.org/DataSetEditDoctorTypeData.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
@@ -58,7 +58,7 @@
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="DataSetDoctorType" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DataSetDoctorType" msprop:Generator_UserDSName="DataSetDoctorType">
+  <xs:element name="DataSetEditDoctorTypeData" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DataSetEditDoctorTypeData" msprop:Generator_UserDSName="DataSetEditDoctorTypeData">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element name="DoctorType" msprop:Generator_TableClassName="DoctorTypeDataTable" msprop:Generator_TableVarName="tableDoctorType" msprop:Generator_TablePropName="DoctorType" msprop:Generator_RowDeletingName="DoctorTypeRowDeleting" msprop:Generator_RowChangingName="DoctorTypeRowChanging" msprop:Generator_RowEvHandlerName="DoctorTypeRowChangeEventHandler" msprop:Generator_RowDeletedName="DoctorTypeRowDeleted" msprop:Generator_UserTableName="DoctorType" msprop:Generator_RowChangedName="DoctorTypeRowChanged" msprop:Generator_RowEvArgName="DoctorTypeRowChangeEvent" msprop:Generator_RowClassName="DoctorTypeRow">

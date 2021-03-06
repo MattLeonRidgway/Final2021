@@ -15,30 +15,17 @@ namespace Final2021
 
         private void Doctor_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dataSetDoctorAddClinic.Clinic' table. You can move, or remove it, as needed.
-            this.clinicTableAdapter.Fill(this.dataSetDoctorAddClinic.Clinic);
-            // TODO: This line of code loads data into the 'dataSetDepartmentAddDoctor.Department' table. You can move, or remove it, as needed.
-            this.departmentTableAdapter.Fill(this.dataSetDepartmentAddDoctor.Department);
+            // TODO: This line of code loads data into the 'dataSetClinic.Clinic' table. You can move, or remove it, as needed.
+            this.clinicTableAdapter.Fill(this.dataSetClinic.Clinic);
+            // TODO: This line of code loads data into the 'dataSetDepartment.Department' table. You can move, or remove it, as needed.
+            this.departmentTableAdapter.Fill(this.dataSetDepartment.Department);
             // TODO: This line of code loads data into the 'dataSetDoctorType.DoctorType' table. You can move, or remove it, as needed.
             this.doctorTypeTableAdapter.Fill(this.dataSetDoctorType.DoctorType);
-            // TODO: This line of code loads data into the 'dataSetDoctorStatusAdd.Status' table. You can move, or remove it, as needed.
-            this.statusTableAdapter.Fill(this.dataSetDoctorStatusAdd.Status);
+            // TODO: This line of code loads data into the 'dataSetStatus.Status' table. You can move, or remove it, as needed.
+            this.statusTableAdapter.Fill(this.dataSetStatus.Status);
 
-            string radioRuslt = null;
-            foreach (Control control in this.groupDxRdBtns.Controls)
-            {
 
-                if (control is RadioButton)
-                {
-                    RadioButton radioBtn = control as RadioButton;
-                    if (radioBtn.Checked)
-                    {
-                        radioRuslt = radioBtn.Text;
-                    }
-                }
 
-            }// end groupDxRdButtons
-        
 
         }
 
@@ -135,22 +122,7 @@ namespace Final2021
                 txtBxLName.AppendText("Invalid");
                 check = false;
             }
-            if (radioBtnMale.Checked | radioBtnFemale.Checked)
-            {
-                if (radioBtnMale.Checked)
-                {
-                    doc.Sex = 'M';
-                }
-                if (radioBtnFemale.Checked)
-                {
-                    doc.Sex = 'F';
-                }
-            }
-            else
-            {
-                MessageBox.Show("You need to check a sex");
-                check = false;
-            }
+           
             if (ValidateClass.isValidEmail(txtBxEmail.Text))
             {
                 doc.Email = txtBxEmail.Text;
@@ -178,15 +150,14 @@ namespace Final2021
                 doc.Department = Int32.Parse(cmBoxDepartmnet.SelectedValue.ToString());
                 doc.Clinic = Int32.Parse(cmboxClinic.SelectedValue.ToString());
 
-                doc.InsertDoctor(doc.FName, doc.MName, doc.LName, doc.Sex, doc.Status, doc.Type, doc.Department,
+                doc.InsertDoctor(doc.FName, doc.MName, doc.LName, doc.Status, doc.Type, doc.Department,
                     doc.Clinic, doc.Email, doc.Notes);
                 txtBxEmail.Clear();
                 txtBxFName.Clear();
                 txtBxLName.Clear();
                 txtBxMName.Clear();
                 txtBxNotes.Clear();
-                radioBtnFemale.Checked = false;
-                radioBtnMale.Checked = false;
+             
             }
             else
             {

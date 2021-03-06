@@ -42,6 +42,19 @@ namespace Final2021
             }
             return validateEmail;
         }
+        // is Int
+        public static bool isValidInt(string input)
+        {
+            bool validateInt = true;
+            if (string.IsNullOrEmpty(input))// Validate for empty text box
+                validateInt = false;
+            else
+            {
+                validateInt = true;
+
+            }
+            return validateInt;
+        }
 
     }
 }

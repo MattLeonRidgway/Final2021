@@ -20,17 +20,17 @@ namespace Final2021.DataSet {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("DataSetSelectNurse")]
+    [global::System.Xml.Serialization.XmlRootAttribute("DataSetEditDepartmentDATA")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class DataSetSelectNurse : global::System.Data.DataSet {
+    public partial class DataSetEditDepartmentDATA : global::System.Data.DataSet {
         
-        private NurseDataTable tableNurse;
+        private DepartmentDataTable tableDepartment;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public DataSetSelectNurse() {
+        public DataSetEditDepartmentDATA() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace Final2021.DataSet {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected DataSetSelectNurse(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected DataSetEditDepartmentDATA(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace Final2021.DataSet {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["Nurse"] != null)) {
-                    base.Tables.Add(new NurseDataTable(ds.Tables["Nurse"]));
+                if ((ds.Tables["Department"] != null)) {
+                    base.Tables.Add(new DepartmentDataTable(ds.Tables["Department"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace Final2021.DataSet {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public NurseDataTable Nurse {
+        public DepartmentDataTable Department {
             get {
-                return this.tableNurse;
+                return this.tableDepartment;
             }
         }
         
@@ -127,7 +127,7 @@ namespace Final2021.DataSet {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            DataSetSelectNurse cln = ((DataSetSelectNurse)(base.Clone()));
+            DataSetEditDepartmentDATA cln = ((DataSetEditDepartmentDATA)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace Final2021.DataSet {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["Nurse"] != null)) {
-                    base.Tables.Add(new NurseDataTable(ds.Tables["Nurse"]));
+                if ((ds.Tables["Department"] != null)) {
+                    base.Tables.Add(new DepartmentDataTable(ds.Tables["Department"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace Final2021.DataSet {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableNurse = ((NurseDataTable)(base.Tables["Nurse"]));
+            this.tableDepartment = ((DepartmentDataTable)(base.Tables["Department"]));
             if ((initTable == true)) {
-                if ((this.tableNurse != null)) {
-                    this.tableNurse.InitVars();
+                if ((this.tableDepartment != null)) {
+                    this.tableDepartment.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace Final2021.DataSet {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "DataSetSelectNurse";
+            this.DataSetName = "DataSetEditDepartmentDATA";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/DataSetSelectNurse.xsd";
+            this.Namespace = "http://tempuri.org/DataSetEditDepartmentDATA.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableNurse = new NurseDataTable();
-            base.Tables.Add(this.tableNurse);
+            this.tableDepartment = new DepartmentDataTable();
+            base.Tables.Add(this.tableDepartment);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeNurse() {
+        private bool ShouldSerializeDepartment() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace Final2021.DataSet {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            DataSetSelectNurse ds = new DataSetSelectNurse();
+            DataSetEditDepartmentDATA ds = new DataSetEditDepartmentDATA();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,39 +270,23 @@ namespace Final2021.DataSet {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void NurseRowChangeEventHandler(object sender, NurseRowChangeEvent e);
+        public delegate void DepartmentRowChangeEventHandler(object sender, DepartmentRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class NurseDataTable : global::System.Data.TypedTableBase<NurseRow> {
+        public partial class DepartmentDataTable : global::System.Data.TypedTableBase<DepartmentRow> {
             
-            private global::System.Data.DataColumn columnNurseID;
+            private global::System.Data.DataColumn columnDepartmentID;
             
-            private global::System.Data.DataColumn columnNurseFName;
-            
-            private global::System.Data.DataColumn columnNurseMName;
-            
-            private global::System.Data.DataColumn columnNurseLName;
-            
-            private global::System.Data.DataColumn columnNurseStatus;
-            
-            private global::System.Data.DataColumn columnNurseType;
-            
-            private global::System.Data.DataColumn columnNurseDepartment;
-            
-            private global::System.Data.DataColumn columnNurseClinic;
-            
-            private global::System.Data.DataColumn columnNurseEmail;
-            
-            private global::System.Data.DataColumn columnNurseNotes;
+            private global::System.Data.DataColumn columnDepartment;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public NurseDataTable() {
-                this.TableName = "Nurse";
+            public DepartmentDataTable() {
+                this.TableName = "Department";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -310,7 +294,7 @@ namespace Final2021.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal NurseDataTable(global::System.Data.DataTable table) {
+            internal DepartmentDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -327,88 +311,24 @@ namespace Final2021.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected NurseDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected DepartmentDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn NurseIDColumn {
+            public global::System.Data.DataColumn DepartmentIDColumn {
                 get {
-                    return this.columnNurseID;
+                    return this.columnDepartmentID;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn NurseFNameColumn {
+            public global::System.Data.DataColumn DepartmentColumn {
                 get {
-                    return this.columnNurseFName;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn NurseMNameColumn {
-                get {
-                    return this.columnNurseMName;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn NurseLNameColumn {
-                get {
-                    return this.columnNurseLName;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn NurseStatusColumn {
-                get {
-                    return this.columnNurseStatus;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn NurseTypeColumn {
-                get {
-                    return this.columnNurseType;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn NurseDepartmentColumn {
-                get {
-                    return this.columnNurseDepartment;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn NurseClinicColumn {
-                get {
-                    return this.columnNurseClinic;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn NurseEmailColumn {
-                get {
-                    return this.columnNurseEmail;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn NurseNotesColumn {
-                get {
-                    return this.columnNurseNotes;
+                    return this.columnDepartment;
                 }
             }
             
@@ -423,61 +343,53 @@ namespace Final2021.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public NurseRow this[int index] {
+            public DepartmentRow this[int index] {
                 get {
-                    return ((NurseRow)(this.Rows[index]));
+                    return ((DepartmentRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event NurseRowChangeEventHandler NurseRowChanging;
+            public event DepartmentRowChangeEventHandler DepartmentRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event NurseRowChangeEventHandler NurseRowChanged;
+            public event DepartmentRowChangeEventHandler DepartmentRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event NurseRowChangeEventHandler NurseRowDeleting;
+            public event DepartmentRowChangeEventHandler DepartmentRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event NurseRowChangeEventHandler NurseRowDeleted;
+            public event DepartmentRowChangeEventHandler DepartmentRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddNurseRow(NurseRow row) {
+            public void AddDepartmentRow(DepartmentRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public NurseRow AddNurseRow(long NurseID, string NurseFName, string NurseMName, string NurseLName, int NurseStatus, int NurseType, int NurseDepartment, int NurseClinic, string NurseEmail, string NurseNotes) {
-                NurseRow rowNurseRow = ((NurseRow)(this.NewRow()));
+            public DepartmentRow AddDepartmentRow(long DepartmentID, string Department) {
+                DepartmentRow rowDepartmentRow = ((DepartmentRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        NurseID,
-                        NurseFName,
-                        NurseMName,
-                        NurseLName,
-                        NurseStatus,
-                        NurseType,
-                        NurseDepartment,
-                        NurseClinic,
-                        NurseEmail,
-                        NurseNotes};
-                rowNurseRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowNurseRow);
-                return rowNurseRow;
+                        DepartmentID,
+                        Department};
+                rowDepartmentRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowDepartmentRow);
+                return rowDepartmentRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public NurseRow FindByNurseID(long NurseID) {
-                return ((NurseRow)(this.Rows.Find(new object[] {
-                            NurseID})));
+            public DepartmentRow FindByDepartmentID(long DepartmentID) {
+                return ((DepartmentRow)(this.Rows.Find(new object[] {
+                            DepartmentID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                NurseDataTable cln = ((NurseDataTable)(base.Clone()));
+                DepartmentDataTable cln = ((DepartmentDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -485,84 +397,54 @@ namespace Final2021.DataSet {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new NurseDataTable();
+                return new DepartmentDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columnNurseID = base.Columns["NurseID"];
-                this.columnNurseFName = base.Columns["NurseFName"];
-                this.columnNurseMName = base.Columns["NurseMName"];
-                this.columnNurseLName = base.Columns["NurseLName"];
-                this.columnNurseStatus = base.Columns["NurseStatus"];
-                this.columnNurseType = base.Columns["NurseType"];
-                this.columnNurseDepartment = base.Columns["NurseDepartment"];
-                this.columnNurseClinic = base.Columns["NurseClinic"];
-                this.columnNurseEmail = base.Columns["NurseEmail"];
-                this.columnNurseNotes = base.Columns["NurseNotes"];
+                this.columnDepartmentID = base.Columns["DepartmentID"];
+                this.columnDepartment = base.Columns["Department"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnNurseID = new global::System.Data.DataColumn("NurseID", typeof(long), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNurseID);
-                this.columnNurseFName = new global::System.Data.DataColumn("NurseFName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNurseFName);
-                this.columnNurseMName = new global::System.Data.DataColumn("NurseMName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNurseMName);
-                this.columnNurseLName = new global::System.Data.DataColumn("NurseLName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNurseLName);
-                this.columnNurseStatus = new global::System.Data.DataColumn("NurseStatus", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNurseStatus);
-                this.columnNurseType = new global::System.Data.DataColumn("NurseType", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNurseType);
-                this.columnNurseDepartment = new global::System.Data.DataColumn("NurseDepartment", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNurseDepartment);
-                this.columnNurseClinic = new global::System.Data.DataColumn("NurseClinic", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNurseClinic);
-                this.columnNurseEmail = new global::System.Data.DataColumn("NurseEmail", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNurseEmail);
-                this.columnNurseNotes = new global::System.Data.DataColumn("NurseNotes", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNurseNotes);
+                this.columnDepartmentID = new global::System.Data.DataColumn("DepartmentID", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDepartmentID);
+                this.columnDepartment = new global::System.Data.DataColumn("Department", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDepartment);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnNurseID}, true));
-                this.columnNurseID.AllowDBNull = false;
-                this.columnNurseID.Unique = true;
-                this.columnNurseFName.AllowDBNull = false;
-                this.columnNurseLName.AllowDBNull = false;
-                this.columnNurseStatus.AllowDBNull = false;
-                this.columnNurseType.AllowDBNull = false;
-                this.columnNurseDepartment.AllowDBNull = false;
-                this.columnNurseClinic.AllowDBNull = false;
-                this.columnNurseEmail.AllowDBNull = false;
+                                this.columnDepartmentID}, true));
+                this.columnDepartmentID.AllowDBNull = false;
+                this.columnDepartmentID.Unique = true;
+                this.columnDepartment.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public NurseRow NewNurseRow() {
-                return ((NurseRow)(this.NewRow()));
+            public DepartmentRow NewDepartmentRow() {
+                return ((DepartmentRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new NurseRow(builder);
+                return new DepartmentRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(NurseRow);
+                return typeof(DepartmentRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.NurseRowChanged != null)) {
-                    this.NurseRowChanged(this, new NurseRowChangeEvent(((NurseRow)(e.Row)), e.Action));
+                if ((this.DepartmentRowChanged != null)) {
+                    this.DepartmentRowChanged(this, new DepartmentRowChangeEvent(((DepartmentRow)(e.Row)), e.Action));
                 }
             }
             
@@ -570,8 +452,8 @@ namespace Final2021.DataSet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.NurseRowChanging != null)) {
-                    this.NurseRowChanging(this, new NurseRowChangeEvent(((NurseRow)(e.Row)), e.Action));
+                if ((this.DepartmentRowChanging != null)) {
+                    this.DepartmentRowChanging(this, new DepartmentRowChangeEvent(((DepartmentRow)(e.Row)), e.Action));
                 }
             }
             
@@ -579,8 +461,8 @@ namespace Final2021.DataSet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.NurseRowDeleted != null)) {
-                    this.NurseRowDeleted(this, new NurseRowChangeEvent(((NurseRow)(e.Row)), e.Action));
+                if ((this.DepartmentRowDeleted != null)) {
+                    this.DepartmentRowDeleted(this, new DepartmentRowChangeEvent(((DepartmentRow)(e.Row)), e.Action));
                 }
             }
             
@@ -588,14 +470,14 @@ namespace Final2021.DataSet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.NurseRowDeleting != null)) {
-                    this.NurseRowDeleting(this, new NurseRowChangeEvent(((NurseRow)(e.Row)), e.Action));
+                if ((this.DepartmentRowDeleting != null)) {
+                    this.DepartmentRowDeleting(this, new DepartmentRowChangeEvent(((DepartmentRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveNurseRow(NurseRow row) {
+            public void RemoveDepartmentRow(DepartmentRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -604,7 +486,7 @@ namespace Final2021.DataSet {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DataSetSelectNurse ds = new DataSetSelectNurse();
+                DataSetEditDepartmentDATA ds = new DataSetEditDepartmentDATA();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -622,7 +504,7 @@ namespace Final2021.DataSet {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "NurseDataTable";
+                attribute2.FixedValue = "DepartmentDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -666,159 +548,37 @@ namespace Final2021.DataSet {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class NurseRow : global::System.Data.DataRow {
+        public partial class DepartmentRow : global::System.Data.DataRow {
             
-            private NurseDataTable tableNurse;
+            private DepartmentDataTable tableDepartment;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal NurseRow(global::System.Data.DataRowBuilder rb) : 
+            internal DepartmentRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableNurse = ((NurseDataTable)(this.Table));
+                this.tableDepartment = ((DepartmentDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public long NurseID {
+            public long DepartmentID {
                 get {
-                    return ((long)(this[this.tableNurse.NurseIDColumn]));
+                    return ((long)(this[this.tableDepartment.DepartmentIDColumn]));
                 }
                 set {
-                    this[this.tableNurse.NurseIDColumn] = value;
+                    this[this.tableDepartment.DepartmentIDColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string NurseFName {
+            public string Department {
                 get {
-                    return ((string)(this[this.tableNurse.NurseFNameColumn]));
+                    return ((string)(this[this.tableDepartment.DepartmentColumn]));
                 }
                 set {
-                    this[this.tableNurse.NurseFNameColumn] = value;
+                    this[this.tableDepartment.DepartmentColumn] = value;
                 }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string NurseMName {
-                get {
-                    try {
-                        return ((string)(this[this.tableNurse.NurseMNameColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'NurseMName\' in table \'Nurse\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNurse.NurseMNameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string NurseLName {
-                get {
-                    return ((string)(this[this.tableNurse.NurseLNameColumn]));
-                }
-                set {
-                    this[this.tableNurse.NurseLNameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int NurseStatus {
-                get {
-                    return ((int)(this[this.tableNurse.NurseStatusColumn]));
-                }
-                set {
-                    this[this.tableNurse.NurseStatusColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int NurseType {
-                get {
-                    return ((int)(this[this.tableNurse.NurseTypeColumn]));
-                }
-                set {
-                    this[this.tableNurse.NurseTypeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int NurseDepartment {
-                get {
-                    return ((int)(this[this.tableNurse.NurseDepartmentColumn]));
-                }
-                set {
-                    this[this.tableNurse.NurseDepartmentColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int NurseClinic {
-                get {
-                    return ((int)(this[this.tableNurse.NurseClinicColumn]));
-                }
-                set {
-                    this[this.tableNurse.NurseClinicColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string NurseEmail {
-                get {
-                    return ((string)(this[this.tableNurse.NurseEmailColumn]));
-                }
-                set {
-                    this[this.tableNurse.NurseEmailColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string NurseNotes {
-                get {
-                    try {
-                        return ((string)(this[this.tableNurse.NurseNotesColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'NurseNotes\' in table \'Nurse\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNurse.NurseNotesColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsNurseMNameNull() {
-                return this.IsNull(this.tableNurse.NurseMNameColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetNurseMNameNull() {
-                this[this.tableNurse.NurseMNameColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsNurseNotesNull() {
-                return this.IsNull(this.tableNurse.NurseNotesColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetNurseNotesNull() {
-                this[this.tableNurse.NurseNotesColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -826,22 +586,22 @@ namespace Final2021.DataSet {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class NurseRowChangeEvent : global::System.EventArgs {
+        public class DepartmentRowChangeEvent : global::System.EventArgs {
             
-            private NurseRow eventRow;
+            private DepartmentRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public NurseRowChangeEvent(NurseRow row, global::System.Data.DataRowAction action) {
+            public DepartmentRowChangeEvent(DepartmentRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public NurseRow Row {
+            public DepartmentRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -857,7 +617,7 @@ namespace Final2021.DataSet {
         }
     }
 }
-namespace Final2021.DataSet.DataSetSelectNurseTableAdapters {
+namespace Final2021.DataSet.DataSetEditDepartmentDATATableAdapters {
     
     
     /// <summary>
@@ -869,7 +629,7 @@ namespace Final2021.DataSet.DataSetSelectNurseTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class NurseTableAdapter : global::System.ComponentModel.Component {
+    public partial class DepartmentTableAdapter : global::System.ComponentModel.Component {
         
         private global::Devart.Data.SQLite.SQLiteDataAdapter _adapter;
         
@@ -883,7 +643,7 @@ namespace Final2021.DataSet.DataSetSelectNurseTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public NurseTableAdapter() {
+        public DepartmentTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -980,344 +740,80 @@ namespace Final2021.DataSet.DataSetSelectNurseTableAdapters {
             this._adapter = new global::Devart.Data.SQLite.SQLiteDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Nurse";
-            tableMapping.ColumnMappings.Add("NurseID", "NurseID");
-            tableMapping.ColumnMappings.Add("NurseFName", "NurseFName");
-            tableMapping.ColumnMappings.Add("NurseMName", "NurseMName");
-            tableMapping.ColumnMappings.Add("NurseLName", "NurseLName");
-            tableMapping.ColumnMappings.Add("NurseStatus", "NurseStatus");
-            tableMapping.ColumnMappings.Add("NurseType", "NurseType");
-            tableMapping.ColumnMappings.Add("NurseDepartment", "NurseDepartment");
-            tableMapping.ColumnMappings.Add("NurseClinic", "NurseClinic");
-            tableMapping.ColumnMappings.Add("NurseEmail", "NurseEmail");
-            tableMapping.ColumnMappings.Add("NurseNotes", "NurseNotes");
+            tableMapping.DataSetTable = "Department";
+            tableMapping.ColumnMappings.Add("DepartmentID", "DepartmentID");
+            tableMapping.ColumnMappings.Add("Department", "Department");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::Devart.Data.SQLite.SQLiteCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM ""main"".""Nurse"" WHERE ((""NurseID"" = :Original_NurseID) AND (""NurseFName"" = :Original_NurseFName) AND ((:IsNull_NurseMName = 1 AND ""NurseMName"" IS NULL) OR (""NurseMName"" = :Original_NurseMName)) AND (""NurseLName"" = :Original_NurseLName) AND (""NurseStatus"" = :Original_NurseStatus) AND (""NurseType"" = :Original_NurseType) AND (""NurseDepartment"" = :Original_NurseDepartment) AND (""NurseClinic"" = :Original_NurseClinic) AND (""NurseEmail"" = :Original_NurseEmail) AND ((:IsNull_NurseNotes = 1 AND ""NurseNotes"" IS NULL) OR (""NurseNotes"" = :Original_NurseNotes)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM \"main\".\"Department\" WHERE ((\"DepartmentID\" = :Original_DepartmentID) " +
+                "AND (\"Department\" = :Original_Department))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::Devart.Data.SQLite.SQLiteParameter param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "Original_NurseID";
+            param.ParameterName = "Original_DepartmentID";
             param.DbType = global::System.Data.DbType.Int64;
             param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int64;
             param.IsNullable = true;
-            param.SourceColumn = "NurseID";
+            param.SourceColumn = "DepartmentID";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "Original_NurseFName";
+            param.ParameterName = "Original_Department";
             param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
             param.IsNullable = true;
-            param.SourceColumn = "NurseFName";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "IsNull_NurseMName";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "NurseMName";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "Original_NurseMName";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "NurseMName";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "Original_NurseLName";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "NurseLName";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "Original_NurseStatus";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "NurseStatus";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "Original_NurseType";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "NurseType";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "Original_NurseDepartment";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "NurseDepartment";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "Original_NurseClinic";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "NurseClinic";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "Original_NurseEmail";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "NurseEmail";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "IsNull_NurseNotes";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "NurseNotes";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "Original_NurseNotes";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "NurseNotes";
+            param.SourceColumn = "Department";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::Devart.Data.SQLite.SQLiteCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO ""main"".""Nurse"" (""NurseID"", ""NurseFName"", ""NurseMName"", ""NurseLName"", ""NurseStatus"", ""NurseType"", ""NurseDepartment"", ""NurseClinic"", ""NurseEmail"", ""NurseNotes"") VALUES (:NurseID, :NurseFName, :NurseMName, :NurseLName, :NurseStatus, :NurseType, :NurseDepartment, :NurseClinic, :NurseEmail, :NurseNotes)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO \"main\".\"Department\" (\"DepartmentID\", \"Department\") VALUES (:Departmen" +
+                "tID, :Department)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "NurseID";
+            param.ParameterName = "DepartmentID";
             param.DbType = global::System.Data.DbType.Int64;
             param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int64;
             param.IsNullable = true;
-            param.SourceColumn = "NurseID";
+            param.SourceColumn = "DepartmentID";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "NurseFName";
+            param.ParameterName = "Department";
             param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
             param.IsNullable = true;
-            param.SourceColumn = "NurseFName";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "NurseMName";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "NurseMName";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "NurseLName";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "NurseLName";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "NurseStatus";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "NurseStatus";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "NurseType";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "NurseType";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "NurseDepartment";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "NurseDepartment";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "NurseClinic";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "NurseClinic";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "NurseEmail";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "NurseEmail";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "NurseNotes";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "NurseNotes";
+            param.SourceColumn = "Department";
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::Devart.Data.SQLite.SQLiteCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE ""main"".""Nurse"" SET ""NurseID"" = :NurseID, ""NurseFName"" = :NurseFName, ""NurseMName"" = :NurseMName, ""NurseLName"" = :NurseLName, ""NurseStatus"" = :NurseStatus, ""NurseType"" = :NurseType, ""NurseDepartment"" = :NurseDepartment, ""NurseClinic"" = :NurseClinic, ""NurseEmail"" = :NurseEmail, ""NurseNotes"" = :NurseNotes WHERE ((""NurseID"" = :Original_NurseID) AND (""NurseFName"" = :Original_NurseFName) AND ((:IsNull_NurseMName = 1 AND ""NurseMName"" IS NULL) OR (""NurseMName"" = :Original_NurseMName)) AND (""NurseLName"" = :Original_NurseLName) AND (""NurseStatus"" = :Original_NurseStatus) AND (""NurseType"" = :Original_NurseType) AND (""NurseDepartment"" = :Original_NurseDepartment) AND (""NurseClinic"" = :Original_NurseClinic) AND (""NurseEmail"" = :Original_NurseEmail) AND ((:IsNull_NurseNotes = 1 AND ""NurseNotes"" IS NULL) OR (""NurseNotes"" = :Original_NurseNotes)))";
+            this._adapter.UpdateCommand.CommandText = "UPDATE \"main\".\"Department\" SET \"DepartmentID\" = :DepartmentID, \"Department\" = :De" +
+                "partment WHERE ((\"DepartmentID\" = :Original_DepartmentID) AND (\"Department\" = :O" +
+                "riginal_Department))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "NurseID";
+            param.ParameterName = "DepartmentID";
             param.DbType = global::System.Data.DbType.Int64;
             param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int64;
             param.IsNullable = true;
-            param.SourceColumn = "NurseID";
+            param.SourceColumn = "DepartmentID";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "NurseFName";
+            param.ParameterName = "Department";
             param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
             param.IsNullable = true;
-            param.SourceColumn = "NurseFName";
+            param.SourceColumn = "Department";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "NurseMName";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "NurseMName";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "NurseLName";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "NurseLName";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "NurseStatus";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "NurseStatus";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "NurseType";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "NurseType";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "NurseDepartment";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "NurseDepartment";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "NurseClinic";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "NurseClinic";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "NurseEmail";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "NurseEmail";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "NurseNotes";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "NurseNotes";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "Original_NurseID";
+            param.ParameterName = "Original_DepartmentID";
             param.DbType = global::System.Data.DbType.Int64;
             param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int64;
             param.IsNullable = true;
-            param.SourceColumn = "NurseID";
+            param.SourceColumn = "DepartmentID";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "Original_NurseFName";
+            param.ParameterName = "Original_Department";
             param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
             param.IsNullable = true;
-            param.SourceColumn = "NurseFName";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "IsNull_NurseMName";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "NurseMName";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "Original_NurseMName";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "NurseMName";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "Original_NurseLName";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "NurseLName";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "Original_NurseStatus";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "NurseStatus";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "Original_NurseType";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "NurseType";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "Original_NurseDepartment";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "NurseDepartment";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "Original_NurseClinic";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "NurseClinic";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "Original_NurseEmail";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "NurseEmail";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "IsNull_NurseNotes";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "NurseNotes";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "Original_NurseNotes";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "NurseNotes";
+            param.SourceColumn = "Department";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
         }
@@ -1335,8 +831,7 @@ namespace Final2021.DataSet.DataSetSelectNurseTableAdapters {
             this._commandCollection = new global::Devart.Data.SQLite.SQLiteCommand[1];
             this._commandCollection[0] = new global::Devart.Data.SQLite.SQLiteCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT NurseID, NurseFName, NurseMName, NurseLName, NurseStatus, NurseType, Nurse" +
-                "Department, NurseClinic, NurseEmail, NurseNotes FROM \"main\".Nurse";
+            this._commandCollection[0].CommandText = "SELECT DepartmentID, Department FROM \"main\".Department";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1344,7 +839,7 @@ namespace Final2021.DataSet.DataSetSelectNurseTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DataSetSelectNurse.NurseDataTable dataTable) {
+        public virtual int Fill(DataSetEditDepartmentDATA.DepartmentDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1357,9 +852,9 @@ namespace Final2021.DataSet.DataSetSelectNurseTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DataSetSelectNurse.NurseDataTable GetData() {
+        public virtual DataSetEditDepartmentDATA.DepartmentDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DataSetSelectNurse.NurseDataTable dataTable = new DataSetSelectNurse.NurseDataTable();
+            DataSetEditDepartmentDATA.DepartmentDataTable dataTable = new DataSetEditDepartmentDATA.DepartmentDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1367,15 +862,15 @@ namespace Final2021.DataSet.DataSetSelectNurseTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DataSetSelectNurse.NurseDataTable dataTable) {
+        public virtual int Update(DataSetEditDepartmentDATA.DepartmentDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DataSetSelectNurse dataSet) {
-            return this.Adapter.Update(dataSet, "Nurse");
+        public virtual int Update(DataSetEditDepartmentDATA dataSet) {
+            return this.Adapter.Update(dataSet, "Department");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1397,45 +892,13 @@ namespace Final2021.DataSet.DataSetSelectNurseTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(long Original_NurseID, string Original_NurseFName, string Original_NurseMName, string Original_NurseLName, int Original_NurseStatus, int Original_NurseType, int Original_NurseDepartment, int Original_NurseClinic, string Original_NurseEmail, string Original_NurseNotes) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((long)(Original_NurseID));
-            if ((Original_NurseFName == null)) {
-                throw new global::System.ArgumentNullException("Original_NurseFName");
+        public virtual int Delete(long Original_DepartmentID, string Original_Department) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((long)(Original_DepartmentID));
+            if ((Original_Department == null)) {
+                throw new global::System.ArgumentNullException("Original_Department");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_NurseFName));
-            }
-            if ((Original_NurseMName == null)) {
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_NurseMName));
-            }
-            if ((Original_NurseLName == null)) {
-                throw new global::System.ArgumentNullException("Original_NurseLName");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_NurseLName));
-            }
-            this.Adapter.DeleteCommand.Parameters[5].Value = ((int)(Original_NurseStatus));
-            this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_NurseType));
-            this.Adapter.DeleteCommand.Parameters[7].Value = ((int)(Original_NurseDepartment));
-            this.Adapter.DeleteCommand.Parameters[8].Value = ((int)(Original_NurseClinic));
-            if ((Original_NurseEmail == null)) {
-                throw new global::System.ArgumentNullException("Original_NurseEmail");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((string)(Original_NurseEmail));
-            }
-            if ((Original_NurseNotes == null)) {
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((string)(Original_NurseNotes));
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_Department));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1457,41 +920,13 @@ namespace Final2021.DataSet.DataSetSelectNurseTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(long NurseID, string NurseFName, string NurseMName, string NurseLName, int NurseStatus, int NurseType, int NurseDepartment, int NurseClinic, string NurseEmail, string NurseNotes) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((long)(NurseID));
-            if ((NurseFName == null)) {
-                throw new global::System.ArgumentNullException("NurseFName");
+        public virtual int Insert(long DepartmentID, string Department) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((long)(DepartmentID));
+            if ((Department == null)) {
+                throw new global::System.ArgumentNullException("Department");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(NurseFName));
-            }
-            if ((NurseMName == null)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(NurseMName));
-            }
-            if ((NurseLName == null)) {
-                throw new global::System.ArgumentNullException("NurseLName");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(NurseLName));
-            }
-            this.Adapter.InsertCommand.Parameters[4].Value = ((int)(NurseStatus));
-            this.Adapter.InsertCommand.Parameters[5].Value = ((int)(NurseType));
-            this.Adapter.InsertCommand.Parameters[6].Value = ((int)(NurseDepartment));
-            this.Adapter.InsertCommand.Parameters[7].Value = ((int)(NurseClinic));
-            if ((NurseEmail == null)) {
-                throw new global::System.ArgumentNullException("NurseEmail");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(NurseEmail));
-            }
-            if ((NurseNotes == null)) {
-                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(NurseNotes));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Department));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1513,100 +948,20 @@ namespace Final2021.DataSet.DataSetSelectNurseTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    long NurseID, 
-                    string NurseFName, 
-                    string NurseMName, 
-                    string NurseLName, 
-                    int NurseStatus, 
-                    int NurseType, 
-                    int NurseDepartment, 
-                    int NurseClinic, 
-                    string NurseEmail, 
-                    string NurseNotes, 
-                    long Original_NurseID, 
-                    string Original_NurseFName, 
-                    string Original_NurseMName, 
-                    string Original_NurseLName, 
-                    int Original_NurseStatus, 
-                    int Original_NurseType, 
-                    int Original_NurseDepartment, 
-                    int Original_NurseClinic, 
-                    string Original_NurseEmail, 
-                    string Original_NurseNotes) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((long)(NurseID));
-            if ((NurseFName == null)) {
-                throw new global::System.ArgumentNullException("NurseFName");
+        public virtual int Update(long DepartmentID, string Department, long Original_DepartmentID, string Original_Department) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((long)(DepartmentID));
+            if ((Department == null)) {
+                throw new global::System.ArgumentNullException("Department");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(NurseFName));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Department));
             }
-            if ((NurseMName == null)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(NurseMName));
-            }
-            if ((NurseLName == null)) {
-                throw new global::System.ArgumentNullException("NurseLName");
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((long)(Original_DepartmentID));
+            if ((Original_Department == null)) {
+                throw new global::System.ArgumentNullException("Original_Department");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(NurseLName));
-            }
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(NurseStatus));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(NurseType));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(NurseDepartment));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(NurseClinic));
-            if ((NurseEmail == null)) {
-                throw new global::System.ArgumentNullException("NurseEmail");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(NurseEmail));
-            }
-            if ((NurseNotes == null)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(NurseNotes));
-            }
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((long)(Original_NurseID));
-            if ((Original_NurseFName == null)) {
-                throw new global::System.ArgumentNullException("Original_NurseFName");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_NurseFName));
-            }
-            if ((Original_NurseMName == null)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_NurseMName));
-            }
-            if ((Original_NurseLName == null)) {
-                throw new global::System.ArgumentNullException("Original_NurseLName");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_NurseLName));
-            }
-            this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(Original_NurseStatus));
-            this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(Original_NurseType));
-            this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(Original_NurseDepartment));
-            this.Adapter.UpdateCommand.Parameters[18].Value = ((int)(Original_NurseClinic));
-            if ((Original_NurseEmail == null)) {
-                throw new global::System.ArgumentNullException("Original_NurseEmail");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_NurseEmail));
-            }
-            if ((Original_NurseNotes == null)) {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(Original_NurseNotes));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Original_Department));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1628,27 +983,8 @@ namespace Final2021.DataSet.DataSetSelectNurseTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    string NurseFName, 
-                    string NurseMName, 
-                    string NurseLName, 
-                    int NurseStatus, 
-                    int NurseType, 
-                    int NurseDepartment, 
-                    int NurseClinic, 
-                    string NurseEmail, 
-                    string NurseNotes, 
-                    long Original_NurseID, 
-                    string Original_NurseFName, 
-                    string Original_NurseMName, 
-                    string Original_NurseLName, 
-                    int Original_NurseStatus, 
-                    int Original_NurseType, 
-                    int Original_NurseDepartment, 
-                    int Original_NurseClinic, 
-                    string Original_NurseEmail, 
-                    string Original_NurseNotes) {
-            return this.Update(Original_NurseID, NurseFName, NurseMName, NurseLName, NurseStatus, NurseType, NurseDepartment, NurseClinic, NurseEmail, NurseNotes, Original_NurseID, Original_NurseFName, Original_NurseMName, Original_NurseLName, Original_NurseStatus, Original_NurseType, Original_NurseDepartment, Original_NurseClinic, Original_NurseEmail, Original_NurseNotes);
+        public virtual int Update(string Department, long Original_DepartmentID, string Original_Department) {
+            return this.Update(Original_DepartmentID, Department, Original_DepartmentID, Original_Department);
         }
     }
     
@@ -1664,7 +1000,7 @@ namespace Final2021.DataSet.DataSetSelectNurseTableAdapters {
         
         private UpdateOrderOption _updateOrder;
         
-        private NurseTableAdapter _nurseTableAdapter;
+        private DepartmentTableAdapter _departmentTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -1686,12 +1022,12 @@ namespace Final2021.DataSet.DataSetSelectNurseTableAdapters {
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public NurseTableAdapter NurseTableAdapter {
+        public DepartmentTableAdapter DepartmentTableAdapter {
             get {
-                return this._nurseTableAdapter;
+                return this._departmentTableAdapter;
             }
             set {
-                this._nurseTableAdapter = value;
+                this._departmentTableAdapter = value;
             }
         }
         
@@ -1714,9 +1050,9 @@ namespace Final2021.DataSet.DataSetSelectNurseTableAdapters {
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._nurseTableAdapter != null) 
-                            && (this._nurseTableAdapter.Connection != null))) {
-                    return this._nurseTableAdapter.Connection;
+                if (((this._departmentTableAdapter != null) 
+                            && (this._departmentTableAdapter.Connection != null))) {
+                    return this._departmentTableAdapter.Connection;
                 }
                 return null;
             }
@@ -1731,7 +1067,7 @@ namespace Final2021.DataSet.DataSetSelectNurseTableAdapters {
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._nurseTableAdapter != null)) {
+                if ((this._departmentTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -1743,14 +1079,14 @@ namespace Final2021.DataSet.DataSetSelectNurseTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateUpdatedRows(DataSetSelectNurse dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(DataSetEditDepartmentDATA dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._nurseTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Nurse.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._departmentTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Department.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._nurseTableAdapter.Update(updatedRows));
+                    result = (result + this._departmentTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -1762,13 +1098,13 @@ namespace Final2021.DataSet.DataSetSelectNurseTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateInsertedRows(DataSetSelectNurse dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(DataSetEditDepartmentDATA dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._nurseTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Nurse.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._departmentTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Department.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._nurseTableAdapter.Update(addedRows));
+                    result = (result + this._departmentTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -1780,13 +1116,13 @@ namespace Final2021.DataSet.DataSetSelectNurseTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateDeletedRows(DataSetSelectNurse dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(DataSetEditDepartmentDATA dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._nurseTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Nurse.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._departmentTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Department.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._nurseTableAdapter.Update(deletedRows));
+                    result = (result + this._departmentTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -1822,15 +1158,15 @@ namespace Final2021.DataSet.DataSetSelectNurseTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public virtual int UpdateAll(DataSetSelectNurse dataSet) {
+        public virtual int UpdateAll(DataSetEditDepartmentDATA dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._nurseTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._nurseTableAdapter.Connection) == false))) {
+            if (((this._departmentTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._departmentTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -1866,13 +1202,13 @@ namespace Final2021.DataSet.DataSetSelectNurseTableAdapters {
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._nurseTableAdapter != null)) {
-                    revertConnections.Add(this._nurseTableAdapter, this._nurseTableAdapter.Connection);
-                    this._nurseTableAdapter.Connection = ((global::Devart.Data.SQLite.SQLiteConnection)(workConnection));
-                    this._nurseTableAdapter.Transaction = ((global::System.Data.Common.DbTransaction)(workTransaction));
-                    if (this._nurseTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._nurseTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._nurseTableAdapter.Adapter);
+                if ((this._departmentTableAdapter != null)) {
+                    revertConnections.Add(this._departmentTableAdapter, this._departmentTableAdapter.Connection);
+                    this._departmentTableAdapter.Connection = ((global::Devart.Data.SQLite.SQLiteConnection)(workConnection));
+                    this._departmentTableAdapter.Transaction = ((global::System.Data.Common.DbTransaction)(workTransaction));
+                    if (this._departmentTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._departmentTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._departmentTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -1933,9 +1269,9 @@ namespace Final2021.DataSet.DataSetSelectNurseTableAdapters {
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._nurseTableAdapter != null)) {
-                    this._nurseTableAdapter.Connection = ((global::Devart.Data.SQLite.SQLiteConnection)(revertConnections[this._nurseTableAdapter]));
-                    this._nurseTableAdapter.Transaction = null;
+                if ((this._departmentTableAdapter != null)) {
+                    this._departmentTableAdapter.Connection = ((global::Devart.Data.SQLite.SQLiteConnection)(revertConnections[this._departmentTableAdapter]));
+                    this._departmentTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

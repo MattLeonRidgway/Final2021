@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SQLite;
 // Doctor table info:
 // Doctor DoctorID 
 // DoctorFName string
 // DoctorMName string
 // DoctorLName string
-// DoctorSex char M,F
 // DoctorStatus int
 // DoctorType int
 // DoctorDepartment int
@@ -18,11 +18,11 @@ namespace Final2021
     class DoctorClass : DBConnection
     {
         string fName, mName, lName, email, notes;
-        char sex;
+
         int status, type, department, clinic;
         public DoctorClass() { }
 
-        public DoctorClass(string fName, string mName, string lName, string email, string notes, char sex, int status, int type, int department, int clinic)
+        public DoctorClass(string fName, string mName, string lName, string email, string notes, int status, int type, int department, int clinic)
         {
 
             this.fName = fName;
@@ -30,7 +30,7 @@ namespace Final2021
             this.lName = lName;
             this.email = email;
             this.notes = notes;
-            this.sex = sex;
+         
             this.status = status;
             this.type = type;
             this.department = department;
@@ -42,27 +42,27 @@ namespace Final2021
         public string LName { get => lName; set => lName = value; }
         public string Email { get => email; set => email = value; }
         public string Notes { get => notes; set => notes = value; }
-        public char Sex { get => sex; set => sex = value; }
+      
         public int Status { get => status; set => status = value; }
         public int Type { get => type; set => type = value; }
         public int Department { get => department; set => department = value; }
         public int Clinic { get => clinic; set => clinic = value; }
 
-        public void InsertDoctor(string first, string mid, string last, char sex, int stat, int type, int dep,
+        public void InsertDoctor(string first, string mid, string last, int stat, int type, int dep,
             int clinic, string email, string notes)
         {
 
             try
             {
                 DBopen();
-                SQLiteCommand insertCommand = new SQLiteCommand("INSERT INTO [Doctor] (DoctorFName, DoctorMName, DoctorLName, DoctorSex, DoctorStatus," +
+                SQLiteCommand insertCommand = new SQLiteCommand("INSERT INTO [Doctor] (DoctorFName, DoctorMName, DoctorLName, DoctorStatus," +
                     "DoctorType, DoctorDepartment, DoctorClinic, DoctorEmail, DoctorNotes)" +
-                   "VALUES(@fName,@mName,@lName,@sex,@stat,@type,@depart,@clinic,@email,@notes)", con);
-                // "VALUES(?,?,?,?,?,?,?,?,?,?)",con);
+                   "VALUES(@fName,@mName,@lName,@stat,@type,@depart,@clinic,@email,@notes)", con);
+                // "VALUES(?,?,?,?,?,?,?,?,?)",con);
                 insertCommand.Parameters.Add(new SQLiteParameter("@fName", first));
                 insertCommand.Parameters.Add(new SQLiteParameter("@mName", mid));
                 insertCommand.Parameters.Add(new SQLiteParameter("@lName", last));
-                insertCommand.Parameters.Add(new SQLiteParameter("@sex", sex));
+     
                 insertCommand.Parameters.Add(new SQLiteParameter("@stat", stat));
                 insertCommand.Parameters.Add(new SQLiteParameter("@type", type));
                 insertCommand.Parameters.Add(new SQLiteParameter("@depart", dep));
@@ -82,32 +82,42 @@ namespace Final2021
             }
         }// end insert doctor
         //get a Doctor
-        public void getDoctor(int docID) {
+ 
+
+            public void getDoctor(int docID) {
             // need to test
             try {
                 DBopen();
-                SQLiteCommand sqlCMD;              
-                SQLiteDataReader sqlGet;
-
+                SQLiteCommand sqlCMD;        
                 sqlCMD = con.CreateCommand();
                 sqlCMD.CommandText="SELECT * FROM Doctor WHERE DoctorID=@ID";
-                sqlCMD.Parameters.AddWithValue("@ID",docID);
-                sqlGet =sqlCMD.ExecuteReader();
+                sqlCMD.Parameters.Add(new SQLiteParameter("@ID",docID));
 
-                while (sqlGet.Read())
-                {
-                   FName = sqlGet.GetString(2);
-                   MName = sqlGet.GetString(3);
-                   LName = sqlGet.GetString(4);
-                   Sex = sqlGet.GetChar(5);
-                   Status =sqlGet.GetInt32(6);
-                   Type = sqlGet.GetInt32(7);
-                   Department = sqlGet.GetInt32(8);
-                   // Errors here 
-                  // Clinic = sqlGet.GetInt32(9);
-                  // Email = sqlGet.GetString(10);
-                  // Notes = sqlGet.GetString(11);
-                }
+                SQLiteDataReader sqlGet = sqlCMD.ExecuteReader();
+               
+               
+                    while (sqlGet.Read())
+                    {                  
+                 
+                    FName = sqlGet.GetString(1);
+                    MName = sqlGet.GetString(2);
+                        LName = sqlGet.GetString(3);
+       
+                        Status = sqlGet.GetInt32(4);
+                        Type = sqlGet.GetInt32(5);
+                        Department = sqlGet.GetInt32(6);
+                    
+                      Clinic = sqlGet.GetInt16(7);
+                        Email = sqlGet.GetString(8);
+                        Notes = sqlGet.GetString(9);
+                  
+
+
+                    }
+                
+
+
+
             }//end try
             catch (SQLiteException e)
             {
@@ -120,6 +130,30 @@ namespace Final2021
            
 
         }
+        // Delete Doctor
+        public void deleteDoctor(int docID) {
+            try
+            {
+                DBopen();
+                SQLiteCommand sqlCMD;
+                sqlCMD = con.CreateCommand();
+                sqlCMD.CommandText = "DELETE FROM Doctor WHERE DoctorID=@ID";
+                sqlCMD.Parameters.Add(new SQLiteParameter("@ID", docID));
+
+                sqlCMD.ExecuteNonQuery();
+
+            }//end try
+            catch (SQLiteException e)
+            {
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                DBClose();
+            }
+
+        }
+        // End Delete Doctor
         // get a list of doctors from the database
         public List<string> ViewDoctor(List<string> doctorsList)
         {
@@ -150,7 +184,7 @@ namespace Final2021
 
 
         }// end ViewDoctor()
-        public void UpdateDoctor(int dID, string first, string mid, string last, char sex, int stat, int type, int dep, int clinic, string email, string notes)
+        public void UpdateDoctor(int dID, string first, string mid, string last, int stat, int type, int dep, int clinic, string email, string notes)
         {
 
             try
@@ -158,8 +192,8 @@ namespace Final2021
                 DBopen();
                 SQLiteCommand sqlUpdate;
                 sqlUpdate = con.CreateCommand();
-                sqlUpdate.CommandText = "UPDATE INTO doctor WHERE dID=DoctorID(DoctorFName,DoctorMName,DoctorLName,DoctorSex,DoctorStatus,DoctorType,DoctorDepartment,DoctorClinic,DoctorEmail,DoctorNotes) " +
-                "VALUES(first,mid,last,sex,stats,type,depart,clinic,email,notes);";
+                sqlUpdate.CommandText = "UPDATE INTO doctor WHERE dID=DoctorID(DoctorFName,DoctorMName,DoctorLName,DoctorStatus,DoctorType,DoctorDepartment,DoctorClinic,DoctorEmail,DoctorNotes) " +
+                "VALUES(first,mid,last,stats,type,depart,clinic,email,notes);";
                 sqlUpdate.ExecuteNonQuery();
             }
             catch
