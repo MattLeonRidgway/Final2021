@@ -126,32 +126,36 @@ namespace Final2021
 
         }
         // End Delete Nurse
-        // get a list of nurses from the database
-        public List<string> ViewNurse(List<string> nurseList)
+        // get a list of nurses from the database WHERE departmentID
+        public List<string> ViewNurse(int department)
         {//not tested
-
+            List<string> nurseList = new List<string>();
             try
             {
+
                 DBopen();
-                SQLiteDataReader sqlGet;
                 SQLiteCommand sqlCMD;
                 sqlCMD = con.CreateCommand();
-                sqlCMD.CommandText = "SELECT * FROM Nurse";
-                sqlGet = sqlCMD.ExecuteReader();
+                sqlCMD.CommandText = "SELECT * FROM Nurse WHERE NurseDepartment=@departID";
+                sqlCMD.Parameters.Add(new SQLiteParameter("@departID", department));
+
+                SQLiteDataReader sqlGet = sqlCMD.ExecuteReader();
+
                 while (sqlGet.Read())
                 {
-                    string getNurse = sqlGet.GetString(9);
-                    nurseList.Add(getNurse);
+                   
+                    nurseList.Add(sqlGet.GetString(8));
                 }
             }
-            catch
+            catch (SQLiteException e)
             {
-                Console.WriteLine("View nurse catch");
+                throw new Exception(e.Message);
             }
-            finally { 
-              DBClose();
+            finally
+            {
+                DBClose();
             }
-          
+
             return nurseList;
 
 

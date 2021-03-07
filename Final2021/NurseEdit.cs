@@ -7,7 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+/* Edit Nurse
+ * Select a Nurse click Fill In the text boxes and combo boxes get info from DB and fills them in
+ * Once the text boxes and combo boxes have been edited click save UPDATES the DB.
+ * Select a Nurse click Delete will delete the selected nurse from data base.
+ * Create a nurseClass 
+ * Clear button clears text boxes
+ * Exit button will exit the program
+ * Home gets the user to the home form
+ */
 namespace Final2021
 {
     public partial class NurseEdit : Form
@@ -20,7 +28,7 @@ namespace Final2021
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
-        {
+        {// Clear text boxes
             txtBxEditEmail.Clear();
             txtBxEditFName.Clear();
             txtBxEditLName.Clear();
@@ -29,7 +37,7 @@ namespace Final2021
         }
 
         private void btnExit_Click(object sender, EventArgs e)
-        {
+        {// Message box to confirm exit
             if (MessageBox.Show("Confirm?", "Close Application", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 MessageBox.Show("The application closed  successfully.", "Closed", MessageBoxButtons.OK);
@@ -42,33 +50,26 @@ namespace Final2021
         }
 
         private void btnHome_Click(object sender, EventArgs e)
-        {
+        {// Takes the user home and hides the current form
             Form1 home = new Form1();
             home.Show();
             Hide();
         }
 
         private void NurseEdit_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'dataSetEditNurseClinic.Clinic' table. You can move, or remove it, as needed.
-            this.clinicTableAdapter.Fill(this.dataSetEditNurseClinic.Clinic);
-            // TODO: This line of code loads data into the 'dataSetEditNurseDepartment.Department' table. You can move, or remove it, as needed.
-            this.departmentTableAdapter.Fill(this.dataSetEditNurseDepartment.Department);
-            // TODO: This line of code loads data into the 'dataSetEditNurseType.NurseType' table. You can move, or remove it, as needed.
+        {// Loads the datasets when the form loads
+            
+            this.clinicTableAdapter.Fill(this.dataSetEditNurseClinic.Clinic);       
+            this.departmentTableAdapter.Fill(this.dataSetEditNurseDepartment.Department);          
             this.nurseTypeTableAdapter.Fill(this.dataSetEditNurseType.NurseType);
-            // TODO: This line of code loads data into the 'dataSetNurseEditStatus.Status' table. You can move, or remove it, as needed.
             this.statusTableAdapter.Fill(this.dataSetNurseEditStatus.Status);
-            // TODO: This line of code loads data into the 'dataSetSelectNurse.Nurse' table. You can move, or remove it, as needed.
             this.nurseTableAdapter.Fill(this.dataSetSelectNurse.Nurse);
-
-
-
         }
 
         private void btnFillInEDIT_Click(object sender, EventArgs e)
-        {
+        {// get the ID from the combo box Select Nurse
             int getNurseID = Int32.Parse(cmBxSelectNurse.SelectedValue.ToString());
-            
+            // Calls getNurse sends the nurse ID
             nur.getNurse(getNurseID);
             txtBxEditFName.Text = nur.FName;
             txtBxEditMName.Text = nur.MName;
@@ -80,24 +81,22 @@ namespace Final2021
 
             txtBxEditEmail.Text = nur.Email;
             txtBxEditNote.Text = nur.Notes;
-            //refresh dataset
+            //refresh dataset and combo box on button click
             this.nurseTableAdapter.Fill(this.dataSetSelectNurse.Nurse);
             cmBxSelectNurse.Refresh();
 
         }
 
         private void btnDeleteSelected_Click(object sender, EventArgs e)
-        {
-
-            
+        {            
         }
 
         private void btnNurseDelete_Click(object sender, EventArgs e)
-        {
+        {// Select Nurse message box confirm delete
             string nurse = "Deleted Nurse "+cmBxSelectNurse.Text;
             if (MessageBox.Show("Confirm?", nurse, MessageBoxButtons.YesNo) == DialogResult.Yes)
             {  
-              
+              // sends nurse ID to deleteNurse
                 nur.deleteNurse(Int32.Parse(cmBxSelectNurse.SelectedValue.ToString()));
                 //refresh dataset for combo box
                 this.nurseTableAdapter.Fill(this.dataSetSelectNurse.Nurse);
@@ -112,8 +111,9 @@ namespace Final2021
         }
 
         private void btnEditSAVE_Click(object sender, EventArgs e)
-        {
+        {// UPDATE
             bool check = false;
+            // Check text boxes for valid string send error on invalid
             if (ValidateClass.isValidString(txtBxEditFName.Text))
             {
                 nur.FName = txtBxEditFName.Text;
@@ -146,6 +146,7 @@ namespace Final2021
                 MessageBox.Show("Last Name Error");
                 check = false;
             }
+            // check email using regex in ValidateClass
             if (ValidateClass.isValidEmail(txtBxEditEmail.Text))
             {
                 nur.Email= txtBxEditEmail.Text;
@@ -168,12 +169,14 @@ namespace Final2021
                 MessageBox.Show("Notes Error");
                 check = false;
             }
+            // fills in NurseClass
             if (check) {
                 nur.Status = Int32.Parse(cmBoxEDITStatus.SelectedValue.ToString());
                 nur.Type = Int32.Parse(cmBxTypeEDIT.SelectedValue.ToString());
                 nur.Department = Int32.Parse(cmBxDepartEDIT.SelectedValue.ToString());
                 nur.Clinic = Int32.Parse(cmBxClinicEDIT.SelectedValue.ToString());   
                 int nID = Int32.Parse(cmBxSelectNurse.SelectedValue.ToString());
+                // sends values to UPDATE
                 nur.UpdateNurse(nID, nur.FName, nur.MName, nur.LName, nur.Status, nur.Type, nur.Department, nur.Clinic, nur.Email, nur.Notes);
 
                 txtBxEditEmail.Clear();

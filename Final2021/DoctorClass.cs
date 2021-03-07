@@ -16,10 +16,12 @@ using System.Data.SQLite;
 namespace Final2021
 {
     class DoctorClass : DBConnection
-    {
+    {// Doctor extends DBConnection
+        // Variables
         string fName, mName, lName, email, notes;
 
         int status, type, department, clinic;
+        // Empty Constructor
         public DoctorClass() { }
 
         public DoctorClass(string fName, string mName, string lName, string email, string notes, int status, int type, int department, int clinic)
@@ -35,7 +37,7 @@ namespace Final2021
             this.department = department;
             this.clinic = clinic;
         }
-
+        // Get and Set
         public string FName { get => fName; set => fName = value; }
         public string MName { get => mName; set => mName = value; }
         public string LName { get => lName; set => lName = value; }
@@ -45,18 +47,18 @@ namespace Final2021
         public int Type { get => type; set => type = value; }
         public int Department { get => department; set => department = value; }
         public int Clinic { get => clinic; set => clinic = value; }
-
+        // Insert Doctor
         public void InsertDoctor(string first, string mid, string last, int stat, int type, int dep,
             int clinic, string email, string notes)
         {
 
             try
-            {
+            {// INSERT sql statement
                 DBopen();
                 SQLiteCommand insertCommand = new SQLiteCommand("INSERT INTO [Doctor] (DoctorFName, DoctorMName, DoctorLName, DoctorStatus," +
                     "DoctorType, DoctorDepartment, DoctorClinic, DoctorEmail, DoctorNotes)" +
                    "VALUES(@fName,@mName,@lName,@stat,@type,@depart,@clinic,@email,@notes)", con);
-             
+             // Parameters
                 insertCommand.Parameters.Add(new SQLiteParameter("@fName", first));
                 insertCommand.Parameters.Add(new SQLiteParameter("@mName", mid));
                 insertCommand.Parameters.Add(new SQLiteParameter("@lName", last));     
@@ -66,7 +68,7 @@ namespace Final2021
                 insertCommand.Parameters.Add(new SQLiteParameter("@clinic", clinic));
                 insertCommand.Parameters.Add(new SQLiteParameter("@email", email));
                 insertCommand.Parameters.Add(new SQLiteParameter("@notes", notes));
-
+                // Execute 
                 insertCommand.ExecuteNonQuery();
             }
             catch (SQLiteException e)
@@ -82,7 +84,7 @@ namespace Final2021
  
 
             public void getDoctor(int docID) {
-            // need to test
+            // get the doctor using ID
             try {
                 DBopen();
                 SQLiteCommand sqlCMD;        
@@ -138,32 +140,36 @@ namespace Final2021
 
         }
         // End Delete Doctor
-        // get a list of doctors from the database
-        public List<string> ViewDoctor(List<string> doctorsList)
-        { 
+        // get a list of doctors from the database WHERE departmentID
+        public List<string> ViewDoctor(int department)
+        {
+            List<string> doctorList = new List<string>();
             try
             {
                 DBopen();
-                SQLiteDataReader sqlGet;
                 SQLiteCommand sqlCMD;
                 sqlCMD = con.CreateCommand();
-                sqlCMD.CommandText = "SELECT * FROM Doctor";
-                sqlGet = sqlCMD.ExecuteReader();
+                sqlCMD.CommandText = "SELECT * FROM Doctor WHERE DoctorDepartment=@departID";
+                sqlCMD.Parameters.Add(new SQLiteParameter("@departID", department));
+
+                SQLiteDataReader sqlGet = sqlCMD.ExecuteReader();
+
                 while (sqlGet.Read())
                 {
-                    string getDoc = sqlGet.GetString(10);
-                    doctorsList.Add(getDoc);
+                   
+                    doctorList.Add(sqlGet.GetString(8));
                 }
             }
-            catch
+            catch (SQLiteException e)
             {
-                Console.WriteLine("View Doctors catch");
+                throw new Exception(e.Message);
             }
-            finally { 
-              DBClose();
+            finally
+            {
+                DBClose();
             }
-          
-            return doctorsList;
+
+            return doctorList;
 
 
         }// end ViewDoctor()

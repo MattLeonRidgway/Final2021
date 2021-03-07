@@ -20,7 +20,7 @@ namespace Final2021
      
     
         private void btnHome_Click(object sender, EventArgs e)
-        {
+        {// Hides current form and shows the home form
 
             Form1 home = new Form1();
             home.Show();
@@ -28,7 +28,7 @@ namespace Final2021
         }
 
         private void btnExit_Click(object sender, EventArgs e)
-        {
+        {// Message box confirm message for exit
             if (MessageBox.Show("Confirm?", "Close Application", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 MessageBox.Show("The application closed  successfully.", "Closed", MessageBoxButtons.OK);
@@ -41,7 +41,7 @@ namespace Final2021
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
-        {
+        {// Clears Text boxes
             txtBxEmailEDIT.Clear();
             txtBxFNameEDIT.Clear();
             txtBxLNameEDIT.Clear();
@@ -51,16 +51,12 @@ namespace Final2021
         }
 
         private void DoctorEdit_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'dataSetSelectDoctor.Doctor' table. You can move, or remove it, as needed.
-            this.doctorTableAdapter.Fill(this.dataSetSelectDoctor.Doctor);
-            // TODO: This line of code loads data into the 'dataSetEditDoctorClinic.Clinic' table. You can move, or remove it, as needed.
-            this.clinicTableAdapter.Fill(this.dataSetEditDoctorClinic.Clinic);
-            // TODO: This line of code loads data into the 'dataSetEditDoctorDepartment.Department' table. You can move, or remove it, as needed.
-            this.departmentTableAdapter.Fill(this.dataSetEditDoctorDepartment.Department);
-            // TODO: This line of code loads data into the 'dataSetEditDoctorType.DoctorType' table. You can move, or remove it, as needed.
-            this.doctorTypeTableAdapter.Fill(this.dataSetEditDoctorType.DoctorType);
-            // TODO: This line of code loads data into the 'dataSetDoctorEditStatus.Status' table. You can move, or remove it, as needed.
+        {// Datasets on load form
+           
+            this.doctorTableAdapter.Fill(this.dataSetSelectDoctor.Doctor);       
+            this.clinicTableAdapter.Fill(this.dataSetEditDoctorClinic.Clinic);          
+            this.departmentTableAdapter.Fill(this.dataSetEditDoctorDepartment.Department);       
+            this.doctorTypeTableAdapter.Fill(this.dataSetEditDoctorType.DoctorType);     
             this.statusTableAdapter.Fill(this.dataSetDoctorEditStatus.Status);
 
 

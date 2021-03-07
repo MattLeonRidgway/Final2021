@@ -4,7 +4,7 @@ using System.Windows.Forms;
 namespace Final2021
 {
     public partial class DoctorReview : Form
-    {
+    { DoctorClass doc = new DoctorClass();
         public DoctorReview()
         {
             InitializeComponent();
@@ -37,6 +37,14 @@ namespace Final2021
 
         private void btnGenerate_Click(object sender, EventArgs e)
         {
+            int department = Int32.Parse(lstBxDepart.SelectedValue.ToString());
+            lstBxDocREv.DataSource = doc.ViewDoctor(department);
+        }
+
+        private void DoctorReview_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'dataSetReviewDoctorDepartment.Department' table. You can move, or remove it, as needed.
+            this.departmentTableAdapter.Fill(this.dataSetReviewDoctorDepartment.Department);
 
         }
     }

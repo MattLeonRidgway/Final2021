@@ -29,19 +29,20 @@ namespace Final2021
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.lstBxDocREv = new System.Windows.Forms.ListBox();
             this.btnGenerate = new System.Windows.Forms.Button();
-            this.btnSelectSave = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
-            this.btnEmail = new System.Windows.Forms.Button();
-            this.btnSaveForms = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.lstBxDepart = new System.Windows.Forms.ListBox();
-            this.lstBxClinic = new System.Windows.Forms.ListBox();
+            this.departmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetReviewDoctorDepartment = new Final2021.DataSet.DataSetReviewDoctorDepartment();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.departmentTableAdapter = new Final2021.DataSet.DataSetReviewDoctorDepartmentTableAdapters.DepartmentTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetReviewDoctorDepartment)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -63,22 +64,13 @@ namespace Final2021
             // 
             // btnGenerate
             // 
-            this.btnGenerate.Location = new System.Drawing.Point(370, 349);
+            this.btnGenerate.Location = new System.Drawing.Point(33, 260);
             this.btnGenerate.Name = "btnGenerate";
             this.btnGenerate.Size = new System.Drawing.Size(76, 41);
             this.btnGenerate.TabIndex = 2;
-            this.btnGenerate.Text = "Generate";
+            this.btnGenerate.Text = "Show Doctor";
             this.btnGenerate.UseVisualStyleBackColor = true;
             this.btnGenerate.Click += new System.EventHandler(this.btnGenerate_Click);
-            // 
-            // btnSelectSave
-            // 
-            this.btnSelectSave.Location = new System.Drawing.Point(481, 349);
-            this.btnSelectSave.Name = "btnSelectSave";
-            this.btnSelectSave.Size = new System.Drawing.Size(103, 41);
-            this.btnSelectSave.TabIndex = 3;
-            this.btnSelectSave.Text = "Select and Save";
-            this.btnSelectSave.UseVisualStyleBackColor = true;
             // 
             // btnHome
             // 
@@ -89,24 +81,6 @@ namespace Final2021
             this.btnHome.Text = "HOME";
             this.btnHome.UseVisualStyleBackColor = true;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
-            // 
-            // btnEmail
-            // 
-            this.btnEmail.Location = new System.Drawing.Point(695, 320);
-            this.btnEmail.Name = "btnEmail";
-            this.btnEmail.Size = new System.Drawing.Size(75, 23);
-            this.btnEmail.TabIndex = 5;
-            this.btnEmail.Text = "Email Forms";
-            this.btnEmail.UseVisualStyleBackColor = true;
-            // 
-            // btnSaveForms
-            // 
-            this.btnSaveForms.Location = new System.Drawing.Point(695, 280);
-            this.btnSaveForms.Name = "btnSaveForms";
-            this.btnSaveForms.Size = new System.Drawing.Size(75, 23);
-            this.btnSaveForms.TabIndex = 6;
-            this.btnSaveForms.Text = "Save Forms";
-            this.btnSaveForms.UseVisualStyleBackColor = true;
             // 
             // btnCancel
             // 
@@ -129,19 +103,24 @@ namespace Final2021
             // 
             // lstBxDepart
             // 
+            this.lstBxDepart.DataSource = this.departmentBindingSource;
+            this.lstBxDepart.DisplayMember = "Department";
             this.lstBxDepart.FormattingEnabled = true;
             this.lstBxDepart.Location = new System.Drawing.Point(33, 224);
             this.lstBxDepart.Name = "lstBxDepart";
             this.lstBxDepart.Size = new System.Drawing.Size(120, 30);
             this.lstBxDepart.TabIndex = 11;
+            this.lstBxDepart.ValueMember = "DepartmentID";
             // 
-            // lstBxClinic
+            // departmentBindingSource
             // 
-            this.lstBxClinic.FormattingEnabled = true;
-            this.lstBxClinic.Location = new System.Drawing.Point(33, 311);
-            this.lstBxClinic.Name = "lstBxClinic";
-            this.lstBxClinic.Size = new System.Drawing.Size(120, 30);
-            this.lstBxClinic.TabIndex = 12;
+            this.departmentBindingSource.DataMember = "Department";
+            this.departmentBindingSource.DataSource = this.dataSetReviewDoctorDepartment;
+            // 
+            // dataSetReviewDoctorDepartment
+            // 
+            this.dataSetReviewDoctorDepartment.DataSetName = "DataSetReviewDoctorDepartment";
+            this.dataSetReviewDoctorDepartment.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label3
             // 
@@ -153,35 +132,28 @@ namespace Final2021
             this.label3.Text = "Select Department";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // label4
+            // departmentTableAdapter
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(33, 289);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 13);
-            this.label4.TabIndex = 14;
-            this.label4.Text = "Select Clinic";
+            this.departmentTableAdapter.ClearBeforeFill = true;
             // 
             // DoctorReview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.lstBxClinic);
             this.Controls.Add(this.lstBxDepart);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnSaveForms);
-            this.Controls.Add(this.btnEmail);
             this.Controls.Add(this.btnHome);
-            this.Controls.Add(this.btnSelectSave);
             this.Controls.Add(this.btnGenerate);
             this.Controls.Add(this.lstBxDocREv);
             this.Controls.Add(this.label1);
             this.Name = "DoctorReview";
             this.Text = "DoctorReview";
+            this.Load += new System.EventHandler(this.DoctorReview_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetReviewDoctorDepartment)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -192,15 +164,13 @@ namespace Final2021
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox lstBxDocREv;
         private System.Windows.Forms.Button btnGenerate;
-        private System.Windows.Forms.Button btnSelectSave;
         private System.Windows.Forms.Button btnHome;
-        private System.Windows.Forms.Button btnEmail;
-        private System.Windows.Forms.Button btnSaveForms;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.ListBox lstBxDepart;
-        private System.Windows.Forms.ListBox lstBxClinic;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private DataSet.DataSetReviewDoctorDepartment dataSetReviewDoctorDepartment;
+        private System.Windows.Forms.BindingSource departmentBindingSource;
+        private DataSet.DataSetReviewDoctorDepartmentTableAdapters.DepartmentTableAdapter departmentTableAdapter;
     }
 }

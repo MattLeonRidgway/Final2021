@@ -92,6 +92,16 @@
       <DependentUpon>AddData.cs</DependentUpon>
     </Compile>
     <Compile Include="Clinic.cs" />
+    <Compile Include="DataSet\DataSetReviewDepartmentNurse.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetReviewDepartmentNurse.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\DataSetReviewDoctorDepartment.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetReviewDoctorDepartment.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSet\DataSetClinic.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -305,6 +315,28 @@
       <Link>.editorconfig</Link>
     </None>
     <None Include="App.config" />
+    <None Include="DataSet\DataSetReviewDepartmentNurse.xsc">
+      <DependentUpon>DataSetReviewDepartmentNurse.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\DataSetReviewDepartmentNurse.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetReviewDepartmentNurse.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\DataSetReviewDepartmentNurse.xss">
+      <DependentUpon>DataSetReviewDepartmentNurse.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\DataSetReviewDoctorDepartment.xsc">
+      <DependentUpon>DataSetReviewDoctorDepartment.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\DataSetReviewDoctorDepartment.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetReviewDoctorDepartment.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\DataSetReviewDoctorDepartment.xss">
+      <DependentUpon>DataSetReviewDoctorDepartment.xsd</DependentUpon>
+    </None>
     <None Include="DataSet\DataSetClinic.xsc">
       <DependentUpon>DataSetClinic.xsd</DependentUpon>
     </None>
