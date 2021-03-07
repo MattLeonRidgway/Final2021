@@ -92,8 +92,9 @@ namespace Final2021
             string doctor = "Deleted Doctor "+cmBoxSelectDoctor.Text;
 
             if (MessageBox.Show("Confirm?", doctor, MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {               
-                doc.deleteDoctor(cmBoxSelectDoctor.SelectedIndex);
+            {
+                
+                doc.deleteDoctor(Int32.Parse(cmBoxSelectDoctor.SelectedValue.ToString()));
                 //refresh dataset for combo box
                 this.doctorTableAdapter.Fill(this.dataSetSelectDoctor.Doctor);
                 cmBoxSelectDoctor.Refresh();
@@ -170,8 +171,8 @@ namespace Final2021
                 doc.Type = Int32.Parse(cmBxTypeEDIT.SelectedValue.ToString());
                 doc.Department = Int32.Parse(cmBxDepartmentEDIT.SelectedValue.ToString());
                 doc.Clinic = Int32.Parse(cmBxClinicEDIT.SelectedValue.ToString());
-
-                doc.UpdateDoctor(cmBoxSelectDoctor.SelectedIndex, doc.FName, doc.MName, doc.LName, doc.Status, doc.Type, doc.Department, doc.Clinic,
+                int docID = Int32.Parse(cmBoxSelectDoctor.SelectedValue.ToString());
+                doc.UpdateDoctor(docID, doc.FName, doc.MName, doc.LName, doc.Status, doc.Type, doc.Department, doc.Clinic,
                     doc.Email, doc.Notes);
 
                 txtBxNoteEDIT.Clear();

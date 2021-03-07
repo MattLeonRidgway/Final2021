@@ -96,8 +96,9 @@ namespace Final2021
         {
             string nurse = "Deleted Nurse "+cmBxSelectNurse.Text;
             if (MessageBox.Show("Confirm?", nurse, MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                nur.deleteNurse(cmBxSelectNurse.SelectedIndex);
+            {  
+              
+                nur.deleteNurse(Int32.Parse(cmBxSelectNurse.SelectedValue.ToString()));
                 //refresh dataset for combo box
                 this.nurseTableAdapter.Fill(this.dataSetSelectNurse.Nurse);
                 cmBxSelectNurse.Refresh();
@@ -171,9 +172,9 @@ namespace Final2021
                 nur.Status = Int32.Parse(cmBoxEDITStatus.SelectedValue.ToString());
                 nur.Type = Int32.Parse(cmBxTypeEDIT.SelectedValue.ToString());
                 nur.Department = Int32.Parse(cmBxDepartEDIT.SelectedValue.ToString());
-                nur.Clinic = Int32.Parse(cmBxClinicEDIT.SelectedValue.ToString());
-
-                nur.UpdateNurse(cmBxSelectNurse.SelectedIndex, nur.FName, nur.MName, nur.LName, nur.Status, nur.Type, nur.Department, nur.Clinic, nur.Email, nur.Notes);
+                nur.Clinic = Int32.Parse(cmBxClinicEDIT.SelectedValue.ToString());   
+                int nID = Int32.Parse(cmBxSelectNurse.SelectedValue.ToString());
+                nur.UpdateNurse(nID, nur.FName, nur.MName, nur.LName, nur.Status, nur.Type, nur.Department, nur.Clinic, nur.Email, nur.Notes);
 
                 txtBxEditEmail.Clear();
                 txtBxEditFName.Clear();
