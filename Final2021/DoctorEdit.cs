@@ -73,7 +73,6 @@ namespace Final2021
             txtBxFNameEDIT.Text = doc.FName;
             txtBxMNameEDIT.Text = doc.MName;
             txtBxLNameEDIT.Text = doc.LName;
-
             cmBxStatusEDIT.SelectedIndex = doc.Status;
             cmBxTypeEDIT.SelectedIndex = doc.Type;
             cmBxDepartmentEDIT.SelectedIndex = doc.Department;
@@ -90,7 +89,7 @@ namespace Final2021
 
         private void btnDoctorDelete_Click(object sender, EventArgs e)
         {
-            string doctor = "Deleted Nurse "+cmBoxSelectDoctor.Text;
+            string doctor = "Deleted Doctor "+cmBoxSelectDoctor.Text;
 
             if (MessageBox.Show("Confirm?", doctor, MessageBoxButtons.YesNo) == DialogResult.Yes)
             {               
@@ -104,6 +103,11 @@ namespace Final2021
                 this.Activate();
             }
 
+
+        }
+
+        private void btnEDITSave_Click(object sender, EventArgs e)
+        {
 
         }
     }

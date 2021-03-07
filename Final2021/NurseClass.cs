@@ -35,15 +35,13 @@ namespace Final2021
 
         public void InsertNurse(string first, string mid, string last, int stat, int type, int dep, int clinic, string email, string notes)
         {
-
-
-            try
+         try
             {
                 DBopen();
                 SQLiteCommand insertCommand = new SQLiteCommand("INSERT INTO [Nurse] (NurseFName, NurseMName, NurseLName, NurseStatus," +
                     "NurseType, NurseDepartment, NurseClinic, NurseEmail, NurseNotes)" +
                    "VALUES(@fName,@mName,@lName,@stat,@type,@depart,@clinic,@email,@notes)", con);
-                // "VALUES(?,?,?,?,?,?,?,?,?)",con);
+              
                 insertCommand.Parameters.Add(new SQLiteParameter("@fName", first));
                 insertCommand.Parameters.Add(new SQLiteParameter("@mName", mid));
                 insertCommand.Parameters.Add(new SQLiteParameter("@lName", last));        
@@ -53,8 +51,6 @@ namespace Final2021
                 insertCommand.Parameters.Add(new SQLiteParameter("@clinic", clinic));
                 insertCommand.Parameters.Add(new SQLiteParameter("@email", email));
                 insertCommand.Parameters.Add(new SQLiteParameter("@notes", notes));
-
-
 
                 insertCommand.ExecuteNonQuery();
             }
@@ -70,12 +66,10 @@ namespace Final2021
          // get Nurse Get
         public void getNurse(int nurseID)
         {
-           
-            try
+           try
             {
                 DBopen();
                 SQLiteCommand sqlCMD;
-
                 sqlCMD = con.CreateCommand();
                 sqlCMD.CommandText = "SELECT * FROM Nurse WHERE NurseID=@ID";
                 sqlCMD.Parameters.Add(new SQLiteParameter("@ID", nurseID));
@@ -84,16 +78,13 @@ namespace Final2021
 
                 while (sqlGet.Read())
                 {
-
                     FName = sqlGet.GetString(1);
                     MName = sqlGet.GetString(2);
-                    LName = sqlGet.GetString(3);
-                    
+                    LName = sqlGet.GetString(3);                    
                     Status = sqlGet.GetInt32(4);
                     Type = sqlGet.GetInt32(5);
                     Department = sqlGet.GetInt32(6);                  
                     Clinic = sqlGet.GetInt16(7);
-
                     Email = sqlGet.GetString(8);
                     Notes = sqlGet.GetString(9);
                 }
@@ -166,25 +157,37 @@ namespace Final2021
 
 
         }// end ViewNurse()
+        // UPDATE nurse
         public void UpdateNurse(int nID, string first, string mid, string last, int stat, int type, int dep, int clinic, string email, string notes)
         {
             try
             {
                 DBopen();
-                SQLiteCommand sqlUpdate;
-                sqlUpdate = con.CreateCommand();
-                sqlUpdate.CommandText = "UPDATE INTO Nurse WHERE nID=NurseID(NurseFName,NurseMName,NurseLName,NurseStatus,NurseType,NurseDepartment,NurseClinic,NurseEmail,NurseNotes)" +
-                "VALUES(first,mid,last,stats,type,depart,clinic,email,notes);";
+                SQLiteCommand sqlUpdate =new SQLiteCommand( "UPDATE Nurse SET NurseID=@ID, NurseFName=@fName,NurseMName=@mName,NurseLName=@lName," +
+                    "NurseStatus=@status,NurseType=@type,NurseDepartment=@depart,NurseClinic=@clinic,NurseEmail=@email,NurseNotes=@note " +
+                    "WHERE NurseID=@ID", con);
+                sqlUpdate.Parameters.Add(new SQLiteParameter("@ID",nID));
+                sqlUpdate.Parameters.Add(new SQLiteParameter("@fName",first));
+                sqlUpdate.Parameters.Add(new SQLiteParameter("@mName", mid));
+                sqlUpdate.Parameters.Add(new SQLiteParameter("@lName",last));
+                sqlUpdate.Parameters.Add(new SQLiteParameter("@status",stat));
+                sqlUpdate.Parameters.Add(new SQLiteParameter("@type",type));
+                sqlUpdate.Parameters.Add(new SQLiteParameter("@depart",dep));
+                sqlUpdate.Parameters.Add(new SQLiteParameter("@clinic",clinic));
+                sqlUpdate.Parameters.Add(new SQLiteParameter("@email",email));
+                sqlUpdate.Parameters.Add(new SQLiteParameter("@note",notes));
+     
                 sqlUpdate.ExecuteNonQuery();
             }
-            catch
+            catch (SQLiteException e)
             {
-                Console.WriteLine("Catch Update nurse");
+                throw new Exception(e.Message);
             }
             finally { 
                 DBClose();
             }
            
         }
+        // end UPDATE nurse 
     }
 }

@@ -13,6 +13,7 @@ namespace Final2021
     public partial class NurseEdit : Form
     {
         NurseClass nur = new NurseClass();
+
         public NurseEdit()
         {
             InitializeComponent();
@@ -79,6 +80,10 @@ namespace Final2021
 
             txtBxEditEmail.Text = nur.Email;
             txtBxEditNote.Text = nur.Notes;
+            //refresh dataset
+            this.nurseTableAdapter.Fill(this.dataSetSelectNurse.Nurse);
+            cmBxSelectNurse.Refresh();
+
         }
 
         private void btnDeleteSelected_Click(object sender, EventArgs e)
@@ -103,6 +108,80 @@ namespace Final2021
                 this.Activate();
             }
             
+        }
+
+        private void btnEditSAVE_Click(object sender, EventArgs e)
+        {
+            bool check = false;
+            if (ValidateClass.isValidString(txtBxEditFName.Text))
+            {
+                nur.FName = txtBxEditFName.Text;
+                check = true;
+            }
+            else {
+                txtBxEditFName.Clear();
+                MessageBox.Show("First Name Error");
+                check = false;
+            }
+            if (ValidateClass.isValidString(txtBxEditMName.Text))
+            {
+                nur.MName = txtBxEditMName.Text;
+                check = true;
+            }
+            else
+            {
+                txtBxEditMName.Clear();
+                MessageBox.Show("Middle Name Error");
+                check = false;
+            }
+            if (ValidateClass.isValidString(txtBxEditLName.Text))
+            {
+                nur.LName = txtBxEditLName.Text;
+                check = true;
+            }
+            else
+            {
+                txtBxEditLName.Clear();
+                MessageBox.Show("Last Name Error");
+                check = false;
+            }
+            if (ValidateClass.isValidEmail(txtBxEditEmail.Text))
+            {
+                nur.Email= txtBxEditEmail.Text;
+                check = true;
+            }
+            else
+            {
+                txtBxEditEmail.Clear();
+                MessageBox.Show("Email Error");
+                check = false;
+            }
+            if (ValidateClass.isValidString(txtBxEditNote.Text))
+            {
+                nur.Notes= txtBxEditNote.Text;
+                check = true;
+            }
+            else
+            {
+                txtBxEditNote.Clear();
+                MessageBox.Show("Notes Error");
+                check = false;
+            }
+            if (check) {
+                nur.Status = Int32.Parse(cmBoxEDITStatus.SelectedValue.ToString());
+                nur.Type = Int32.Parse(cmBxTypeEDIT.SelectedValue.ToString());
+                nur.Department = Int32.Parse(cmBxDepartEDIT.SelectedValue.ToString());
+                nur.Clinic = Int32.Parse(cmBxClinicEDIT.SelectedValue.ToString());
+
+                nur.UpdateNurse(cmBxSelectNurse.SelectedIndex, nur.FName, nur.MName, nur.LName, nur.Status, nur.Type, nur.Department, nur.Clinic, nur.Email, nur.Notes);
+
+                txtBxEditEmail.Clear();
+                txtBxEditFName.Clear();
+                txtBxEditLName.Clear();
+                txtBxEditMName.Clear();
+                txtBxEditNote.Clear();
+
+            }
         }
     }
 }

@@ -34,16 +34,12 @@ namespace Final2021
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
             this.btnEDITSave = new System.Windows.Forms.Button();
-            this.cmBxStatusEDIT = new System.Windows.Forms.ComboBox();
             this.statusBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSetDoctorEditStatus = new Final2021.DataSet.DataSetDoctorEditStatus();
-            this.cmBxTypeEDIT = new System.Windows.Forms.ComboBox();
             this.doctorTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSetEditDoctorType = new Final2021.DataSet.DataSetEditDoctorType();
-            this.cmBxDepartmentEDIT = new System.Windows.Forms.ComboBox();
             this.departmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSetEditDoctorDepartment = new Final2021.DataSet.DataSetEditDoctorDepartment();
-            this.cmBxClinicEDIT = new System.Windows.Forms.ComboBox();
             this.clinicBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSetEditDoctorClinic = new Final2021.DataSet.DataSetEditDoctorClinic();
             this.cmBoxSelectDoctor = new System.Windows.Forms.ComboBox();
@@ -58,10 +54,6 @@ namespace Final2021
             this.txtBxFNameEDIT = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
@@ -76,6 +68,14 @@ namespace Final2021
             this.clinicTableAdapter = new Final2021.DataSet.DataSetEditDoctorClinicTableAdapters.ClinicTableAdapter();
             this.doctorTableAdapter = new Final2021.DataSet.DataSetSelectDoctorTableAdapters.DoctorTableAdapter();
             this.btnDoctorDelete = new System.Windows.Forms.Button();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.cmBxClinicEDIT = new System.Windows.Forms.ComboBox();
+            this.cmBxDepartmentEDIT = new System.Windows.Forms.ComboBox();
+            this.cmBxTypeEDIT = new System.Windows.Forms.ComboBox();
+            this.cmBxStatusEDIT = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.statusBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetDoctorEditStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.doctorTypeBindingSource)).BeginInit();
@@ -129,17 +129,7 @@ namespace Final2021
             this.btnEDITSave.TabIndex = 132;
             this.btnEDITSave.Text = "Save";
             this.btnEDITSave.UseVisualStyleBackColor = true;
-            // 
-            // cmBxStatusEDIT
-            // 
-            this.cmBxStatusEDIT.DataSource = this.statusBindingSource;
-            this.cmBxStatusEDIT.DisplayMember = "StatusType";
-            this.cmBxStatusEDIT.FormattingEnabled = true;
-            this.cmBxStatusEDIT.Location = new System.Drawing.Point(371, 178);
-            this.cmBxStatusEDIT.Name = "cmBxStatusEDIT";
-            this.cmBxStatusEDIT.Size = new System.Drawing.Size(197, 21);
-            this.cmBxStatusEDIT.TabIndex = 172;
-            this.cmBxStatusEDIT.ValueMember = "StatusID";
+            this.btnEDITSave.Click += new System.EventHandler(this.btnEDITSave_Click);
             // 
             // statusBindingSource
             // 
@@ -151,17 +141,6 @@ namespace Final2021
             this.dataSetDoctorEditStatus.DataSetName = "DataSetDoctorEditStatus";
             this.dataSetDoctorEditStatus.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // cmBxTypeEDIT
-            // 
-            this.cmBxTypeEDIT.DataSource = this.doctorTypeBindingSource;
-            this.cmBxTypeEDIT.DisplayMember = "Type";
-            this.cmBxTypeEDIT.FormattingEnabled = true;
-            this.cmBxTypeEDIT.Location = new System.Drawing.Point(371, 203);
-            this.cmBxTypeEDIT.Name = "cmBxTypeEDIT";
-            this.cmBxTypeEDIT.Size = new System.Drawing.Size(197, 21);
-            this.cmBxTypeEDIT.TabIndex = 171;
-            this.cmBxTypeEDIT.ValueMember = "TypeID";
-            // 
             // doctorTypeBindingSource
             // 
             this.doctorTypeBindingSource.DataMember = "DoctorType";
@@ -172,17 +151,6 @@ namespace Final2021
             this.dataSetEditDoctorType.DataSetName = "DataSetEditDoctorType";
             this.dataSetEditDoctorType.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // cmBxDepartmentEDIT
-            // 
-            this.cmBxDepartmentEDIT.DataSource = this.departmentBindingSource;
-            this.cmBxDepartmentEDIT.DisplayMember = "Department";
-            this.cmBxDepartmentEDIT.FormattingEnabled = true;
-            this.cmBxDepartmentEDIT.Location = new System.Drawing.Point(371, 228);
-            this.cmBxDepartmentEDIT.Name = "cmBxDepartmentEDIT";
-            this.cmBxDepartmentEDIT.Size = new System.Drawing.Size(197, 21);
-            this.cmBxDepartmentEDIT.TabIndex = 170;
-            this.cmBxDepartmentEDIT.ValueMember = "DepartmentID";
-            // 
             // departmentBindingSource
             // 
             this.departmentBindingSource.DataMember = "Department";
@@ -192,17 +160,6 @@ namespace Final2021
             // 
             this.dataSetEditDoctorDepartment.DataSetName = "DataSetEditDoctorDepartment";
             this.dataSetEditDoctorDepartment.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // cmBxClinicEDIT
-            // 
-            this.cmBxClinicEDIT.DataSource = this.clinicBindingSource;
-            this.cmBxClinicEDIT.DisplayMember = "Clinic";
-            this.cmBxClinicEDIT.FormattingEnabled = true;
-            this.cmBxClinicEDIT.Location = new System.Drawing.Point(371, 255);
-            this.cmBxClinicEDIT.Name = "cmBxClinicEDIT";
-            this.cmBxClinicEDIT.Size = new System.Drawing.Size(197, 21);
-            this.cmBxClinicEDIT.TabIndex = 169;
-            this.cmBxClinicEDIT.ValueMember = "ClinicID";
             // 
             // clinicBindingSource
             // 
@@ -307,42 +264,6 @@ namespace Final2021
             this.label14.TabIndex = 158;
             this.label14.Text = "Email";
             // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(286, 254);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(32, 13);
-            this.label15.TabIndex = 157;
-            this.label15.Text = "Clinic";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(283, 228);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(62, 13);
-            this.label16.TabIndex = 156;
-            this.label16.Text = "Department";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(283, 205);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(31, 13);
-            this.label17.TabIndex = 155;
-            this.label17.Text = "Type";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(289, 181);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(37, 13);
-            this.label18.TabIndex = 154;
-            this.label18.Text = "Status";
-            // 
             // label20
             // 
             this.label20.AutoSize = true;
@@ -434,6 +355,86 @@ namespace Final2021
             this.btnDoctorDelete.UseVisualStyleBackColor = true;
             this.btnDoctorDelete.Click += new System.EventHandler(this.btnDoctorDelete_Click);
             // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(289, 175);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(37, 13);
+            this.label18.TabIndex = 154;
+            this.label18.Text = "Status";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(283, 203);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(31, 13);
+            this.label17.TabIndex = 155;
+            this.label17.Text = "Type";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(283, 226);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(62, 13);
+            this.label16.TabIndex = 156;
+            this.label16.Text = "Department";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(286, 252);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(32, 13);
+            this.label15.TabIndex = 157;
+            this.label15.Text = "Clinic";
+            // 
+            // cmBxClinicEDIT
+            // 
+            this.cmBxClinicEDIT.DataSource = this.clinicBindingSource;
+            this.cmBxClinicEDIT.DisplayMember = "Clinic";
+            this.cmBxClinicEDIT.FormattingEnabled = true;
+            this.cmBxClinicEDIT.Location = new System.Drawing.Point(371, 253);
+            this.cmBxClinicEDIT.Name = "cmBxClinicEDIT";
+            this.cmBxClinicEDIT.Size = new System.Drawing.Size(209, 21);
+            this.cmBxClinicEDIT.TabIndex = 169;
+            this.cmBxClinicEDIT.ValueMember = "ClinicID";
+            // 
+            // cmBxDepartmentEDIT
+            // 
+            this.cmBxDepartmentEDIT.DataSource = this.departmentBindingSource;
+            this.cmBxDepartmentEDIT.DisplayMember = "Department";
+            this.cmBxDepartmentEDIT.FormattingEnabled = true;
+            this.cmBxDepartmentEDIT.Location = new System.Drawing.Point(371, 226);
+            this.cmBxDepartmentEDIT.Name = "cmBxDepartmentEDIT";
+            this.cmBxDepartmentEDIT.Size = new System.Drawing.Size(209, 21);
+            this.cmBxDepartmentEDIT.TabIndex = 170;
+            this.cmBxDepartmentEDIT.ValueMember = "DepartmentID";
+            // 
+            // cmBxTypeEDIT
+            // 
+            this.cmBxTypeEDIT.DataSource = this.doctorTypeBindingSource;
+            this.cmBxTypeEDIT.DisplayMember = "Type";
+            this.cmBxTypeEDIT.FormattingEnabled = true;
+            this.cmBxTypeEDIT.Location = new System.Drawing.Point(371, 201);
+            this.cmBxTypeEDIT.Name = "cmBxTypeEDIT";
+            this.cmBxTypeEDIT.Size = new System.Drawing.Size(209, 21);
+            this.cmBxTypeEDIT.TabIndex = 171;
+            this.cmBxTypeEDIT.ValueMember = "TypeID";
+            // 
+            // cmBxStatusEDIT
+            // 
+            this.cmBxStatusEDIT.DataSource = this.statusBindingSource;
+            this.cmBxStatusEDIT.DisplayMember = "StatusType";
+            this.cmBxStatusEDIT.FormattingEnabled = true;
+            this.cmBxStatusEDIT.Location = new System.Drawing.Point(371, 172);
+            this.cmBxStatusEDIT.Name = "cmBxStatusEDIT";
+            this.cmBxStatusEDIT.Size = new System.Drawing.Size(209, 21);
+            this.cmBxStatusEDIT.TabIndex = 172;
+            this.cmBxStatusEDIT.ValueMember = "StatusID";
+            // 
             // DoctorEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -494,10 +495,6 @@ namespace Final2021
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.Button btnEDITSave;
-        private System.Windows.Forms.ComboBox cmBxStatusEDIT;
-        private System.Windows.Forms.ComboBox cmBxTypeEDIT;
-        private System.Windows.Forms.ComboBox cmBxDepartmentEDIT;
-        private System.Windows.Forms.ComboBox cmBxClinicEDIT;
         private System.Windows.Forms.ComboBox cmBoxSelectDoctor;
         private System.Windows.Forms.Button btnFillInSELECTEDDoc;
         private System.Windows.Forms.Label label24;
@@ -508,10 +505,6 @@ namespace Final2021
         private System.Windows.Forms.TextBox txtBxFNameEDIT;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
@@ -536,5 +529,13 @@ namespace Final2021
         private System.Windows.Forms.BindingSource doctorBindingSource;
         private DataSet.DataSetSelectDoctorTableAdapters.DoctorTableAdapter doctorTableAdapter;
         private System.Windows.Forms.Button btnDoctorDelete;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.ComboBox cmBxClinicEDIT;
+        private System.Windows.Forms.ComboBox cmBxDepartmentEDIT;
+        private System.Windows.Forms.ComboBox cmBxTypeEDIT;
+        private System.Windows.Forms.ComboBox cmBxStatusEDIT;
     }
 }

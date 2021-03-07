@@ -29,8 +29,7 @@ namespace Final2021
             this.mName = mName;
             this.lName = lName;
             this.email = email;
-            this.notes = notes;
-         
+            this.notes = notes;         
             this.status = status;
             this.type = type;
             this.department = department;
@@ -41,8 +40,7 @@ namespace Final2021
         public string MName { get => mName; set => mName = value; }
         public string LName { get => lName; set => lName = value; }
         public string Email { get => email; set => email = value; }
-        public string Notes { get => notes; set => notes = value; }
-      
+        public string Notes { get => notes; set => notes = value; }      
         public int Status { get => status; set => status = value; }
         public int Type { get => type; set => type = value; }
         public int Department { get => department; set => department = value; }
@@ -58,11 +56,10 @@ namespace Final2021
                 SQLiteCommand insertCommand = new SQLiteCommand("INSERT INTO [Doctor] (DoctorFName, DoctorMName, DoctorLName, DoctorStatus," +
                     "DoctorType, DoctorDepartment, DoctorClinic, DoctorEmail, DoctorNotes)" +
                    "VALUES(@fName,@mName,@lName,@stat,@type,@depart,@clinic,@email,@notes)", con);
-                // "VALUES(?,?,?,?,?,?,?,?,?)",con);
+             
                 insertCommand.Parameters.Add(new SQLiteParameter("@fName", first));
                 insertCommand.Parameters.Add(new SQLiteParameter("@mName", mid));
-                insertCommand.Parameters.Add(new SQLiteParameter("@lName", last));
-     
+                insertCommand.Parameters.Add(new SQLiteParameter("@lName", last));     
                 insertCommand.Parameters.Add(new SQLiteParameter("@stat", stat));
                 insertCommand.Parameters.Add(new SQLiteParameter("@type", type));
                 insertCommand.Parameters.Add(new SQLiteParameter("@depart", dep));
@@ -97,27 +94,17 @@ namespace Final2021
                
                
                     while (sqlGet.Read())
-                    {                  
-                 
-                    FName = sqlGet.GetString(1);
-                    MName = sqlGet.GetString(2);
-                        LName = sqlGet.GetString(3);
-       
+                    {                
+                        FName = sqlGet.GetString(1);
+                        MName = sqlGet.GetString(2);
+                        LName = sqlGet.GetString(3);       
                         Status = sqlGet.GetInt32(4);
                         Type = sqlGet.GetInt32(5);
-                        Department = sqlGet.GetInt32(6);
-                    
-                      Clinic = sqlGet.GetInt16(7);
+                        Department = sqlGet.GetInt32(6);                    
+                        Clinic = sqlGet.GetInt16(7);
                         Email = sqlGet.GetString(8);
-                        Notes = sqlGet.GetString(9);
-                  
-
-
-                    }
-                
-
-
-
+                        Notes = sqlGet.GetString(9);                 
+                    }              
             }//end try
             catch (SQLiteException e)
             {
@@ -126,8 +113,7 @@ namespace Final2021
             finally
             {
                 DBClose();
-            }
-           
+            }          
 
         }
         // Delete Doctor
@@ -156,8 +142,7 @@ namespace Final2021
         // End Delete Doctor
         // get a list of doctors from the database
         public List<string> ViewDoctor(List<string> doctorsList)
-        {
-
+        { 
             try
             {
                 DBopen();
@@ -168,7 +153,7 @@ namespace Final2021
                 sqlGet = sqlCMD.ExecuteReader();
                 while (sqlGet.Read())
                 {
-                    string getDoc = sqlGet.GetString(11);
+                    string getDoc = sqlGet.GetString(10);
                     doctorsList.Add(getDoc);
                 }
             }
@@ -184,24 +169,38 @@ namespace Final2021
 
 
         }// end ViewDoctor()
+         // UPDATE doctor
         public void UpdateDoctor(int dID, string first, string mid, string last, int stat, int type, int dep, int clinic, string email, string notes)
         {
-
             try
             {
                 DBopen();
-                SQLiteCommand sqlUpdate;
-                sqlUpdate = con.CreateCommand();
-                sqlUpdate.CommandText = "UPDATE INTO doctor WHERE dID=DoctorID(DoctorFName,DoctorMName,DoctorLName,DoctorStatus,DoctorType,DoctorDepartment,DoctorClinic,DoctorEmail,DoctorNotes) " +
-                "VALUES(first,mid,last,stats,type,depart,clinic,email,notes);";
+                SQLiteCommand sqlUpdate = new SQLiteCommand("UPDATE Doctor SET DoctorID=@ID, DoctorFName=@fName,DoctorMName=@mName,DoctorLName=@lName," +
+                    "DoctorStatus=@status,DoctorType=@type,DoctorDepartment=@depart,DoctorClinic=@clinic,DoctorEmail=@email,DoctorNotes=@note " +
+                    "WHERE DoctorID=@ID", con);
+                sqlUpdate.Parameters.Add(new SQLiteParameter("@ID", dID));
+                sqlUpdate.Parameters.Add(new SQLiteParameter("@fName", first));
+                sqlUpdate.Parameters.Add(new SQLiteParameter("@mName", mid));
+                sqlUpdate.Parameters.Add(new SQLiteParameter("@lName", last));
+                sqlUpdate.Parameters.Add(new SQLiteParameter("@status", stat));
+                sqlUpdate.Parameters.Add(new SQLiteParameter("@type", type));
+                sqlUpdate.Parameters.Add(new SQLiteParameter("@depart", dep));
+                sqlUpdate.Parameters.Add(new SQLiteParameter("@clinic", clinic));
+                sqlUpdate.Parameters.Add(new SQLiteParameter("@email", email));
+                sqlUpdate.Parameters.Add(new SQLiteParameter("@note", notes));
+
                 sqlUpdate.ExecuteNonQuery();
             }
-            catch
+            catch (SQLiteException e)
             {
-
+                throw new Exception(e.Message);
             }
-            DBClose();
+            finally
+            {
+                DBClose();
+            }
 
         }
+        // end UPDATE doctor
     }
 }

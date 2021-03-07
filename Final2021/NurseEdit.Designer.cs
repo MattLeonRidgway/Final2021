@@ -254,6 +254,7 @@ namespace Final2021
             this.btnEditSAVE.TabIndex = 159;
             this.btnEditSAVE.Text = "Save";
             this.btnEditSAVE.UseVisualStyleBackColor = true;
+            this.btnEditSAVE.Click += new System.EventHandler(this.btnEditSAVE_Click);
             // 
             // txtBxEditFName
             // 

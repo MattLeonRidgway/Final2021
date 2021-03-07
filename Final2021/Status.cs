@@ -78,10 +78,9 @@ namespace Final2021
             {
                 DBopen();
                 SQLiteCommand sqlUpdate = new SQLiteCommand("UPDATE Status SET StatusType=@type WHERE StatusID=@iD", con);
-                sqlUpdate.Parameters.Add(new SQLiteParameter("@iD"));
-                sqlUpdate.Parameters.Add(new SQLiteParameter("@type"));
-                sqlUpdate.Parameters["@iD"].Value = statusID;
-                sqlUpdate.Parameters["@type"].Value = sType;
+                sqlUpdate.Parameters.Add(new SQLiteParameter("@iD",statusID));
+                sqlUpdate.Parameters.Add(new SQLiteParameter("@type",sType));
+            
 
                 sqlUpdate.ExecuteNonQuery();
             }
