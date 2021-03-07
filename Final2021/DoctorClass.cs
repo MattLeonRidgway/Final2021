@@ -90,8 +90,7 @@ namespace Final2021
                 sqlCMD.CommandText="SELECT * FROM Doctor WHERE DoctorID=@ID";
                 sqlCMD.Parameters.Add(new SQLiteParameter("@ID",docID));
 
-                SQLiteDataReader sqlGet = sqlCMD.ExecuteReader();
-               
+                SQLiteDataReader sqlGet = sqlCMD.ExecuteReader();              
                
                     while (sqlGet.Read())
                     {                
@@ -127,7 +126,6 @@ namespace Final2021
                 sqlCMD.Parameters.Add(new SQLiteParameter("@ID", docID));
 
                 sqlCMD.ExecuteNonQuery();
-
             }//end try
             catch (SQLiteException e)
             {

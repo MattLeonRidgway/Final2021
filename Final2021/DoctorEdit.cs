@@ -108,7 +108,79 @@ namespace Final2021
 
         private void btnEDITSave_Click(object sender, EventArgs e)
         {
+            bool check = false;
+            if (ValidateClass.isValidString(txtBxFNameEDIT.Text))
+            {
+                doc.FName = txtBxFNameEDIT.Text;
+                check = true;
+            }
+            else
+            {
+                txtBxFNameEDIT.Clear();
+                MessageBox.Show("First Name Error");
+                check = false;
+            }
+            if (ValidateClass.isValidString(txtBxMNameEDIT.Text))
+            {
+                doc.MName = txtBxMNameEDIT.Text;
+                check = true;
+            }
+            else
+            {
+                txtBxMNameEDIT.Clear();
+                MessageBox.Show("Middle Name Error");
+                check = false;
+            }
+            if (ValidateClass.isValidString(txtBxLNameEDIT.Text))
+            {
+                doc.LName = txtBxLNameEDIT.Text;
+                check = true;
+            }
+            else
+            {
+                txtBxLNameEDIT.Clear();
+                MessageBox.Show("Last Name Error");
+                check = false;
+            }
+            if (ValidateClass.isValidEmail(txtBxEmailEDIT.Text))
+            {
+                doc.Email = txtBxEmailEDIT.Text;
+                check = true;
+            }
+            else
+            {
+                txtBxEmailEDIT.Clear();
+                MessageBox.Show("Email Error");
+                check = false;
+            }
+            if (ValidateClass.isValidString(txtBxNoteEDIT.Text))
+            {
+                doc.Notes = txtBxNoteEDIT.Text;
+                check = true;
+            }
+            else
+            {
+                txtBxNoteEDIT.Clear();
+                MessageBox.Show("Notes Error");
+                check = false;
+            }
+            if (check)
+            {
+                doc.Status = Int32.Parse(cmBxStatusEDIT.SelectedValue.ToString());
+                doc.Type = Int32.Parse(cmBxTypeEDIT.SelectedValue.ToString());
+                doc.Department = Int32.Parse(cmBxDepartmentEDIT.SelectedValue.ToString());
+                doc.Clinic = Int32.Parse(cmBxClinicEDIT.SelectedValue.ToString());
 
+                doc.UpdateDoctor(cmBoxSelectDoctor.SelectedIndex, doc.FName, doc.MName, doc.LName, doc.Status, doc.Type, doc.Department, doc.Clinic,
+                    doc.Email, doc.Notes);
+
+                txtBxNoteEDIT.Clear();
+                txtBxMNameEDIT.Clear();
+                txtBxLNameEDIT.Clear();
+                txtBxFNameEDIT.Clear();
+                txtBxEmailEDIT.Clear();
+
+            }
         }
     }
 }
