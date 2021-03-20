@@ -144,13 +144,16 @@ namespace Final2021
         public List<string> ViewDoctor(int department)
         {
             List<string> doctorList = new List<string>();
+           // Status active = 0 list for GUI list box
+            int status = 0;
             try
             {
                 DBopen();
                 SQLiteCommand sqlCMD;
                 sqlCMD = con.CreateCommand();
-                sqlCMD.CommandText = "SELECT * FROM Doctor WHERE DoctorDepartment=@departID";
+                sqlCMD.CommandText = "SELECT * FROM Doctor WHERE DoctorDepartment=@departID AND DoctorStatus=@statusID";
                 sqlCMD.Parameters.Add(new SQLiteParameter("@departID", department));
+                sqlCMD.Parameters.Add(new SQLiteParameter("@statusID", status));
 
                 SQLiteDataReader sqlGet = sqlCMD.ExecuteReader();
 
@@ -158,6 +161,42 @@ namespace Final2021
                 {
                    
                     doctorList.Add(sqlGet.GetString(8));
+                }
+            }
+            catch (SQLiteException e)
+            {
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                DBClose();
+            }
+
+            return doctorList;
+
+
+        }// end ViewDoctor()
+         // get a list of doctors from the database WHERE departmentID
+        public List<int> ListIntDoctor(int department)
+        {
+            List<int> doctorList = new List<int>();
+            // Status active = 0 
+            int status = 0;
+            try
+            {
+                DBopen();
+                SQLiteCommand sqlCMD;
+                sqlCMD = con.CreateCommand();
+                sqlCMD.CommandText = "SELECT * FROM Doctor WHERE DoctorDepartment=@departID AND DoctorStatus=@statusID";
+                sqlCMD.Parameters.Add(new SQLiteParameter("@departID", department));
+                sqlCMD.Parameters.Add(new SQLiteParameter("@statusID", status));
+
+                SQLiteDataReader sqlGet = sqlCMD.ExecuteReader();
+
+                while (sqlGet.Read())
+                {
+
+                    doctorList.Add(sqlGet.GetInt32(0));
                 }
             }
             catch (SQLiteException e)

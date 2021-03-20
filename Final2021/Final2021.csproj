@@ -273,6 +273,7 @@
     <Compile Include="NurseType.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReviewedDoctor.cs" />
     <Compile Include="Status.cs" />
     <Compile Include="ValidateClass.cs" />
     <EmbeddedResource Include="AddData.resx">
