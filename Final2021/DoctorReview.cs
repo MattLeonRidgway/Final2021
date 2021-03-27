@@ -5,6 +5,7 @@ namespace Final2021
 {
     public partial class DoctorReview : Form
     { DoctorClass doc = new DoctorClass();
+        ReviewedDoctor revDoc = new ReviewedDoctor();
         public DoctorReview()
         {
             InitializeComponent();
@@ -39,6 +40,8 @@ namespace Final2021
         {
             int department = Int32.Parse(lstBxDepart.SelectedValue.ToString());
             lstBxDocREv.DataSource = doc.ViewDoctor(department);
+            btnGen.Visible = true;
+            btnGenerate.Visible = false;
         }
 
         private void DoctorReview_Load(object sender, EventArgs e)
@@ -46,6 +49,15 @@ namespace Final2021
             // TODO: This line of code loads data into the 'dataSetReviewDoctorDepartment.Department' table. You can move, or remove it, as needed.
             this.departmentTableAdapter.Fill(this.dataSetReviewDoctorDepartment.Department);
 
+        }
+
+        private void btnGen_Click(object sender, EventArgs e)
+        {
+            int department = Int32.Parse(lstBxDepart.SelectedValue.ToString());
+            
+            lstBxDocREv.ClearSelected();
+            lstBxDocREv.DataSource= revDoc.CheckReviewed(department);
+            btnGen.Visible = false;
         }
     }
 }

@@ -41,6 +41,7 @@ namespace Final2021
             this.dataSetReviewDoctorDepartment = new Final2021.DataSet.DataSetReviewDoctorDepartment();
             this.label3 = new System.Windows.Forms.Label();
             this.departmentTableAdapter = new Final2021.DataSet.DataSetReviewDoctorDepartmentTableAdapters.DepartmentTableAdapter();
+            this.btnGen = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetReviewDoctorDepartment)).BeginInit();
             this.SuspendLayout();
@@ -64,11 +65,11 @@ namespace Final2021
             // 
             // btnGenerate
             // 
-            this.btnGenerate.Location = new System.Drawing.Point(33, 260);
+            this.btnGenerate.Location = new System.Drawing.Point(44, 161);
             this.btnGenerate.Name = "btnGenerate";
-            this.btnGenerate.Size = new System.Drawing.Size(76, 41);
+            this.btnGenerate.Size = new System.Drawing.Size(120, 35);
             this.btnGenerate.TabIndex = 2;
-            this.btnGenerate.Text = "Show Doctor";
+            this.btnGenerate.Text = "Doctor By Department";
             this.btnGenerate.UseVisualStyleBackColor = true;
             this.btnGenerate.Click += new System.EventHandler(this.btnGenerate_Click);
             // 
@@ -106,7 +107,7 @@ namespace Final2021
             this.lstBxDepart.DataSource = this.departmentBindingSource;
             this.lstBxDepart.DisplayMember = "Department";
             this.lstBxDepart.FormattingEnabled = true;
-            this.lstBxDepart.Location = new System.Drawing.Point(33, 224);
+            this.lstBxDepart.Location = new System.Drawing.Point(44, 125);
             this.lstBxDepart.Name = "lstBxDepart";
             this.lstBxDepart.Size = new System.Drawing.Size(120, 30);
             this.lstBxDepart.TabIndex = 11;
@@ -125,9 +126,10 @@ namespace Final2021
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(30, 198);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(41, 97);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 13);
+            this.label3.Size = new System.Drawing.Size(119, 16);
             this.label3.TabIndex = 13;
             this.label3.Text = "Select Department";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -136,11 +138,23 @@ namespace Final2021
             // 
             this.departmentTableAdapter.ClearBeforeFill = true;
             // 
+            // btnGen
+            // 
+            this.btnGen.Location = new System.Drawing.Point(44, 203);
+            this.btnGen.Name = "btnGen";
+            this.btnGen.Size = new System.Drawing.Size(120, 39);
+            this.btnGen.TabIndex = 14;
+            this.btnGen.Text = "Generate List";
+            this.btnGen.UseVisualStyleBackColor = true;
+            this.btnGen.Visible = false;
+            this.btnGen.Click += new System.EventHandler(this.btnGen_Click);
+            // 
             // DoctorReview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnGen);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lstBxDepart);
             this.Controls.Add(this.btnExit);
@@ -172,5 +186,6 @@ namespace Final2021
         private DataSet.DataSetReviewDoctorDepartment dataSetReviewDoctorDepartment;
         private System.Windows.Forms.BindingSource departmentBindingSource;
         private DataSet.DataSetReviewDoctorDepartmentTableAdapters.DepartmentTableAdapter departmentTableAdapter;
+        private System.Windows.Forms.Button btnGen;
     }
 }

@@ -144,8 +144,8 @@ namespace Final2021
         public List<string> ViewDoctor(int department)
         {
             List<string> doctorList = new List<string>();
-           // Status active = 0 list for GUI list box
-            int status = 0;
+           // Status active = 1 list for GUI list box
+            int status = 1;
             try
             {
                 DBopen();
@@ -180,8 +180,8 @@ namespace Final2021
         public List<int> ListIntDoctor(int department)
         {
             List<int> doctorList = new List<int>();
-            // Status active = 0 
-            int status = 0;
+            // Status active = 1 
+            int status = 1;
             try
             {
                 DBopen();

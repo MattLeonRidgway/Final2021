@@ -35,28 +35,34 @@ namespace Final2021
         // Get a List of Doctors by IDS and show the Doctors Email from Doctor table for doctor and reviewed by doctor
         public List<String> BuildList(int docID, int reviewedBy, int departmentID)
         {
-            String doc = "";
-            String rev = "";
+            String docEmail = getDoctor(docID);
+            String revEmail = getDoctor(reviewedBy);
+           
+            reviewedList.Add("Doctor " + docEmail + " Reviewed By " + revEmail);
+            InsertReviewed(docID, reviewedBy, departmentID);
+            return reviewedList;
+
+        }
+        // Get doctor
+        public string getDoctor(int docID)
+        {
+            String docEmail = "";
+            // get the doctor using ID
             try
             {
                 dbClass.DBopen();
                 SQLiteCommand sqlCMD;
-                sqlCMD = dbClass.con.CreateCommand();
-                sqlCMD.CommandText = "SELECT * FROM Doctor WHERE DoctorID=@docID";
-                sqlCMD.Parameters.Add(new SQLiteParameter("@docID", docID));
-                SQLiteDataReader sqlGetDoc = sqlCMD.ExecuteReader();
-                //Get email for doc
-                while (sqlGetDoc.Read())
-                {
-                    doc = sqlGetDoc.GetString(8);
-                }
-                sqlCMD.CommandText = "SELECT * FROM Doctor WHERE DoctorID=@docID";
-                sqlCMD.Parameters.Add(new SQLiteParameter("@docID", reviewedBy));
+                sqlCMD =dbClass.con.CreateCommand();
+                sqlCMD.CommandText = "SELECT * FROM Doctor WHERE DoctorID=@ID";
+                sqlCMD.Parameters.Add(new SQLiteParameter("@ID", docID));
+
                 SQLiteDataReader sqlGet = sqlCMD.ExecuteReader();
-                // Get email of reviewedBy doc
+
                 while (sqlGet.Read())
                 {
-                    rev = sqlGet.GetString(8);
+                  
+                   docEmail = sqlGet.GetString(8);
+                   
                 }
             }//end try
             catch (SQLiteException e)
@@ -65,13 +71,12 @@ namespace Final2021
             }
             finally
             {
-                dbClass.DBClose();
-                reviewedList.Add("Doctor " + doc + " Reviewed By " + rev);
-                InsertReviewed(docID,reviewedBy,departmentID);
+               dbClass.DBClose();
             }
-            return reviewedList;
+            return docEmail;
 
         }
+        // End get doctor
         // INSERT the doctors being reviewed by Doctor into table ReviewedDoctor
         public void InsertReviewed(int docID, int departID, int reviewedBYID)
         {
@@ -79,7 +84,7 @@ namespace Final2021
             try
             {// the INSERT SQL statement
                 dbClass.DBopen();
-                SQLiteCommand insertCommand = new SQLiteCommand("INSERT INTO [ReviewedDoctor] (ReviewedDoctorID, ReviewedDepartment, ReviewedByDoctorID)" +
+                SQLiteCommand insertCommand = new SQLiteCommand("INSERT INTO [ReviewedDoctor] (ReviewedDoctorID, ReviewedDepartment, ReviewedByDoctorID)"+
                    "VALUES(@ID,@depart,@ByID)", dbClass.con);
                 // Parameters
                 insertCommand.Parameters.Add(new SQLiteParameter("@ID", docID));
@@ -109,7 +114,7 @@ namespace Final2021
                 dbClass.DBopen();
                 SQLiteCommand sqlCMD;
                 sqlCMD = dbClass.con.CreateCommand();
-                sqlCMD.CommandText = "SELECT * FROM ReviewedDoctor WHERE ReviewedDepartment=@departID, AND ReviewedDoctor=@docID";
+                sqlCMD.CommandText = "SELECT * FROM ReviewedDoctor WHERE ReviewedDepartment=@departID AND ReviewedDoctorID=@docID";
                 sqlCMD.Parameters.Add(new SQLiteParameter("@departID", departID));
                 sqlCMD.Parameters.Add(new SQLiteParameter("@docID", docID));
 
@@ -118,8 +123,6 @@ namespace Final2021
                 while (sqlGet.Read())
                 {
                     reviewedDoc.Add(sqlGet.GetInt32(3));
-
-
                 }
             }//end try
             catch (SQLiteException e)
@@ -133,53 +136,80 @@ namespace Final2021
             return reviewedDoc;
         }
         // end getReviewed By Doctor List
+        public bool isSame(int value, int id) {
+            if (id == value)
+            {
+                return false;
+
+            }
+            else {
+                return true;
+
+            }
+        }
         // check departId for a list of doctors
-        public void CheckReviewed(int departID)
+        public List<String> CheckReviewed(int departID)
         {
+            reviewedList.Clear();
             // Get a list of doctors by department ID
             List<int> doctorList = doctorClass.ListIntDoctor(departID);
           
             // shuffle list
-            Shuffle(doctorList);
-          
+            Shuffle(doctorList);          
             List<int> newDocList = doctorList;
+            bool checkTF = false;       
         
-            for (int count = 0; count < doctorList.Count; count++) // Loop through List with for
-            {  
-                int docid = doctorList.IndexOf(0);
-                List<int> reviewList = GetReviewedByDoctor(docid, departID);
+             // Loop through List with for
+            for(int count=0; count<=newDocList.Count; count++)
+            {// Get first doc in list                
+                int docid = doctorList.First();              
+                    // remove the first doctor from list
                 doctorList.RemoveAt(0);
-                Shuffle(doctorList);
-                rev = doctorList.IndexOf(0);
+                // Get all doctors that have been reviewed by the first doctor
 
+                List<int> reviewList = GetReviewedByDoctor(docid, departID);           
+               
+                // get second doctor in list for reviewedByDoctor
+                rev = doctorList.First();
+               
+                // remove second doctor from list
+                doctorList.RemoveAt(0);
 
                 if (checkList(reviewList, rev))
                 {
-                    doctorList.Add(docid);
-                    BuildList(docid, rev, departID);
-                    doctorList.RemoveAt(0);
-
-                }
-                else {
-                    // delete, clear list, recall CheckReviewed
-                    DeleteDepartment(departID);
-                    reviewedList.Clear();
+                   //if in list call again to start over
                     CheckReviewed(departID);
+                }
+                else { //else build
+
+                    checkTF = true;
+                    // Put first doc back into list to be able to review
+                    doctorList.Add(docid);
+                    Shuffle(doctorList);
+                    BuildList(docid, rev, departID);                               
               
                 }
                 // Add doctor back to list for next
            
             }
+            // if checkTF still equals false delete, clear and call again
+            if (checkTF==false) {
+                DeleteDepartment(departID);
+                Console.WriteLine("Deleted Done");
+                reviewedList.Clear();
+                CheckReviewed(departID);
+            }
+            return reviewedList;
         }
    
         public Boolean checkList(List<int> check, int id)
         {
             if (check.Contains(id))
             {
-                return false;
+                return true;
             }
             else {
-                return true;
+                return false;
             }
         }
         // randomize list 
@@ -205,7 +235,6 @@ namespace Final2021
                 sqlCMD = dbClass.con.CreateCommand();
                 sqlCMD.CommandText = "DELETE FROM ReviewedDoctor WHERE ReviewedDepartment=@ID";
                 sqlCMD.Parameters.Add(new SQLiteParameter("@ID", departID));
-
                 sqlCMD.ExecuteNonQuery();
             }//end try
             catch (SQLiteException e)
