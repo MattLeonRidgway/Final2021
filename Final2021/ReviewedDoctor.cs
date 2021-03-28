@@ -104,6 +104,24 @@ namespace Final2021
             }
 
         }
+        public Boolean checkPair(List<int> doctorList, List<int> doctorRev) {
+         
+            for (int count = 0; count <= doctorList.Count; count++) {
+                // get first, remove and check pair
+               int docOne= doctorList.First();
+               int docTwo = doctorRev.First();
+
+                doctorList.RemoveAt(1);
+                doctorRev.RemoveAt(1);
+              // check if pair is same
+                if (docOne == docTwo)
+                {  // Same
+                    return false;
+                }
+                
+            }
+            return true;
+        }// end checkPair
         //Get's a list of the Doctors that have reviewed the selected doctor and department 
         public List<int> GetReviewedByDoctor(int docID, int departID)
         {
@@ -136,74 +154,67 @@ namespace Final2021
             return reviewedDoc;
         }
         // end getReviewed By Doctor List
-        public bool isSame(int value, int id) {
-            if (id == value)
-            {
-                return false;
-
-            }
-            else {
-                return true;
-
-            }
-        }
+    
+       
         // check departId for a list of doctors
         public List<String> CheckReviewed(int departID)
         {
             reviewedList.Clear();
-            // Get a list of doctors by department ID
-            List<int> doctorList = doctorClass.ListIntDoctor(departID);
-          
-            // shuffle list
-            Shuffle(doctorList);          
-            List<int> newDocList = doctorList;
-            bool checkTF = false;       
-        
-             // Loop through List with for
-            for(int count=0; count<=newDocList.Count; count++)
-            {// Get first doc in list                
-                int docid = doctorList.First();              
-                    // remove the first doctor from list
-                doctorList.RemoveAt(0);
-                // Get all doctors that have been reviewed by the first doctor
+            // Get 2 lists of doctors by department ID
+            List<int> doctorList = doctorClass.ListIntDoctor(departID);          
+            List<int> revList = doctorClass.ListIntDoctor(departID);
+            Shuffle(doctorList);
+            Shuffle(revList);
+            bool checkTF = false;
 
-                List<int> reviewList = GetReviewedByDoctor(docid, departID);           
-               
-                // get second doctor in list for reviewedByDoctor
-                rev = doctorList.First();
-               
-                // remove second doctor from list
-                doctorList.RemoveAt(0);
+            int listSize = doctorList.Count;
+            
+            // IF checkPair is good
+            if (checkPair(doctorList,revList)){
+             
+                    var newList = doctorList.Zip(revList, (d, r) => new{ Doc=d, Rev=r  });
+                    foreach (var value in newList)
+                    {
+                       int doctorSelected = value.Doc;
+                       int reviewSelected = value.Rev;
 
-                if (checkList(reviewList, rev))
-                {
-                   //if in list call again to start over
+                        // Build list of doctors THAT HAVE reviewed doctorSelected
+                        List<int> reviewList = GetReviewedByDoctor(doctorSelected, departID);
+                    if (doctorSelected == reviewSelected)
+                    {
+                        CheckReviewed(departID);
+                    }
+                    else {                   
+                 
+                        if (checkList(reviewList, reviewSelected))
+                        {
+                            //if in list call again to start over
+                            CheckReviewed(departID);
+                        }
+                        else
+                        { //else build
+                            checkTF = true;
+                            // BuildList will return reviewedList
+                            BuildList(doctorSelected, reviewSelected, departID);
+
+                        }
+                    }// end ELSE ==
+                }//end ForEach
+               // }// end FOR looping through the two lists
+                         
+              // if checkTF still equals false delete, clear and call again
+              if (checkTF==false) {
+                    DeleteDepartment(departID);
+                    Console.WriteLine("Deleted Done");
+                    reviewedList.Clear();
                     CheckReviewed(departID);
-                }
-                else { //else build
-
-                    checkTF = true;
-                    // Put first doc back into list to be able to review
-                    doctorList.Add(docid);
-                    Shuffle(doctorList);
-                    BuildList(docid, rev, departID);                               
-              
-                }
-                // Add doctor back to list for next
-           
-            }
-            // if checkTF still equals false delete, clear and call again
-            if (checkTF==false) {
-                DeleteDepartment(departID);
-                Console.WriteLine("Deleted Done");
-                reviewedList.Clear();
-                CheckReviewed(departID);
-            }
-            return reviewedList;
+                }   
+            }// end if checkPair        
+     return reviewedList;
         }
    
         public Boolean checkList(List<int> check, int id)
-        {
+        {// Check if doctor (id) is in check
             if (check.Contains(id))
             {
                 return true;
