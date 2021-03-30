@@ -12,11 +12,12 @@ namespace Final2021
         int doctorID;
         int reviewedByDoctorID;
         int reviewedDepartmentID;
-        int rev;
+   
         List<String> reviewedList = new List<String>();
         DoctorClass doctorClass = new DoctorClass();
         DBConnection dbClass = new DBConnection();
         List<int> docRev = new List<int>();
+        List<int> dbList = new List<int>();
 
         Random ranD = new Random();
         // Default
@@ -33,20 +34,34 @@ namespace Final2021
         }
 
         // Get a List of Doctors by IDS and show the Doctors Email from Doctor table for doctor and reviewed by doctor
-        public List<String> BuildList(int docID, int reviewedBy, int departmentID)
+        public List<String> BuildList(int docID, int reviewedBy, int departmentID, List<int> docList, List<int> revList)
         {
             String docEmail = getDoctor(docID);
             String revEmail = getDoctor(reviewedBy);
-           
+            DoctorID = docID;
+            ReviewedDepartmentID = departmentID;
+            ReviewedByDoctorID = reviewedBy;
+           // add to list for viewing
             reviewedList.Add("Doctor " + docEmail + " Reviewed By " + revEmail);
-            InsertReviewed(docID, reviewedBy, departmentID);
+            // insert into DB IF the reviewed list is the same size
+            if (reviewedList.Count ==docList.Count) {
+                for (int count=0; count<docList.Count; count++) {
+                    int doc = docList[count];
+                    int rev = revList[count];
+                    // Loop through two Lists and call InsertReviewed
+                    InsertReviewed(doc, rev, departmentID);
+                }              
+           
+            }
+            
+            //return the list for viewing
             return reviewedList;
 
         }
         // Get doctor
         public string getDoctor(int docID)
-        {
-            String docEmail = "";
+        {// Used to get the doctors email
+            String docEmail = "";          
             // get the doctor using ID
             try
             {
@@ -55,14 +70,12 @@ namespace Final2021
                 sqlCMD =dbClass.con.CreateCommand();
                 sqlCMD.CommandText = "SELECT * FROM Doctor WHERE DoctorID=@ID";
                 sqlCMD.Parameters.Add(new SQLiteParameter("@ID", docID));
-
+                
                 SQLiteDataReader sqlGet = sqlCMD.ExecuteReader();
 
                 while (sqlGet.Read())
-                {
-                  
-                   docEmail = sqlGet.GetString(8);
-                   
+                {                  
+                   docEmail = sqlGet.GetString(8);                   
                 }
             }//end try
             catch (SQLiteException e)
@@ -80,7 +93,7 @@ namespace Final2021
         // INSERT the doctors being reviewed by Doctor into table ReviewedDoctor
         public void InsertReviewed(int docID, int departID, int reviewedBYID)
         {
-
+            // Insert into the DB
             try
             {// the INSERT SQL statement
                 dbClass.DBopen();
@@ -90,7 +103,6 @@ namespace Final2021
                 insertCommand.Parameters.Add(new SQLiteParameter("@ID", docID));
                 insertCommand.Parameters.Add(new SQLiteParameter("@depart", departID));
                 insertCommand.Parameters.Add(new SQLiteParameter("@ByID", reviewedBYID));
-
                 // Execute 
                 insertCommand.ExecuteNonQuery();
             }
@@ -104,24 +116,7 @@ namespace Final2021
             }
 
         }
-        public Boolean checkPair(List<int> doctorList, List<int> doctorRev) {
-         
-            for (int count = 0; count <= doctorList.Count; count++) {
-                // get first, remove and check pair
-               int docOne= doctorList.First();
-               int docTwo = doctorRev.First();
-
-                doctorList.RemoveAt(1);
-                doctorRev.RemoveAt(1);
-              // check if pair is same
-                if (docOne == docTwo)
-                {  // Same
-                    return false;
-                }
-                
-            }
-            return true;
-        }// end checkPair
+        
         //Get's a list of the Doctors that have reviewed the selected doctor and department 
         public List<int> GetReviewedByDoctor(int docID, int departID)
         {
@@ -135,9 +130,7 @@ namespace Final2021
                 sqlCMD.CommandText = "SELECT * FROM ReviewedDoctor WHERE ReviewedDepartment=@departID AND ReviewedDoctorID=@docID";
                 sqlCMD.Parameters.Add(new SQLiteParameter("@departID", departID));
                 sqlCMD.Parameters.Add(new SQLiteParameter("@docID", docID));
-
                 SQLiteDataReader sqlGet = sqlCMD.ExecuteReader();
-
                 while (sqlGet.Read())
                 {
                     reviewedDoc.Add(sqlGet.GetInt32(3));
@@ -158,58 +151,54 @@ namespace Final2021
        
         // check departId for a list of doctors
         public List<String> CheckReviewed(int departID)
-        {
+        {// Clear the list
             reviewedList.Clear();
-            // Get 2 lists of doctors by department ID
+            // Get 2 lists of doctors by department ID THEY are the same size
             List<int> doctorList = doctorClass.ListIntDoctor(departID);          
             List<int> revList = doctorClass.ListIntDoctor(departID);
+            //Shuffle list
             Shuffle(doctorList);
             Shuffle(revList);
             bool checkTF = false;
-
-            int listSize = doctorList.Count;
-            
-            // IF checkPair is good
-            if (checkPair(doctorList,revList)){
-             
-                    var newList = doctorList.Zip(revList, (d, r) => new{ Doc=d, Rev=r  });
-                    foreach (var value in newList)
-                    {
-                       int doctorSelected = value.Doc;
-                       int reviewSelected = value.Rev;
-
-                        // Build list of doctors THAT HAVE reviewed doctorSelected
-                        List<int> reviewList = GetReviewedByDoctor(doctorSelected, departID);
+        // Loop through the two list's
+                for (int count=0; count<doctorList.Count; count++)
+                {// get the index of count for each list
+                    int doctorSelected = doctorList[count];
+                    int reviewSelected = revList[count];
+                    // Build list of doctors THAT HAVE reviewed doctorSelected
+                    List<int> reviewList = GetReviewedByDoctor(doctorSelected, departID);
+                // If doctor and reviewer are the same loop again
                     if (doctorSelected == reviewSelected)
-                    {
-                        CheckReviewed(departID);
+                    {    checkTF = false;
+                        CheckReviewed(departID);                
                     }
-                    else {                   
-                 
+                    else
+                    {
+                    // Check to see if the reviewList has been reviewed by the reviewSelected
                         if (checkList(reviewList, reviewSelected))
                         {
+                            checkTF = false;
                             //if in list call again to start over
-                            CheckReviewed(departID);
+                            CheckReviewed(departID);                            
                         }
                         else
                         { //else build
                             checkTF = true;
                             // BuildList will return reviewedList
-                            BuildList(doctorSelected, reviewSelected, departID);
-
+                            BuildList(doctorSelected, reviewSelected, departID, doctorList, revList);
                         }
                     }// end ELSE ==
-                }//end ForEach
-               // }// end FOR looping through the two lists
-                         
-              // if checkTF still equals false delete, clear and call again
-              if (checkTF==false) {
+                }//end For LOOP through two lists
+                // if checkTF still equals false delete, clear and call again
+                // This means that the doctor can't be reviewed because the doctor has been reviewed by all other doctors
+                if (checkTF == false)
+                {
                     DeleteDepartment(departID);
+                // used to see when false
                     Console.WriteLine("Deleted Done");
-                    reviewedList.Clear();
                     CheckReviewed(departID);
-                }   
-            }// end if checkPair        
+                }          
+           
      return reviewedList;
         }
    
