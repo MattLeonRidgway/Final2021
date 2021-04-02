@@ -192,10 +192,8 @@ namespace Final2021
                 sqlCMD.Parameters.Add(new SQLiteParameter("@statusID", status));
 
                 SQLiteDataReader sqlGet = sqlCMD.ExecuteReader();
-
                 while (sqlGet.Read())
                 {
-
                     doctorList.Add(sqlGet.GetInt32(0));
                 }
             }

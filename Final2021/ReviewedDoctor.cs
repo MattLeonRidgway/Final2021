@@ -34,29 +34,16 @@ namespace Final2021
         }
 
         // Get a List of Doctors by IDS and show the Doctors Email from Doctor table for doctor and reviewed by doctor
-        public List<String> BuildList(int docID, int reviewedBy, int departmentID, List<int> docList, List<int> revList)
-        {
+        public List<String> BuildList(int docID, int reviewedBy)
+        {// Get email for each doctor
             String docEmail = getDoctor(docID);
             String revEmail = getDoctor(reviewedBy);
-            DoctorID = docID;
-            ReviewedDepartmentID = departmentID;
-            ReviewedByDoctorID = reviewedBy;
+  
            // add to list for viewing
-            reviewedList.Add("Doctor " + docEmail + " Reviewed By " + revEmail);
-            // insert into DB IF the reviewed list is the same size
-            if (reviewedList.Count ==docList.Count) {
-                for (int count=0; count<docList.Count; count++) {
-                    int doc = docList[count];
-                    int rev = revList[count];
-                    // Loop through two Lists and call InsertReviewed
-                    InsertReviewed(doc, rev, departmentID);
-                }              
-           
-            }
-            
-            //return the list for viewing
-            return reviewedList;
+            reviewedList.Add("Doctor " + docEmail + " Reviewed By " + revEmail); 
 
+            //return the list that will be viewed
+            return reviewedList;
         }
         // Get doctor
         public string getDoctor(int docID)
@@ -156,42 +143,48 @@ namespace Final2021
             // Get 2 lists of doctors by department ID THEY are the same size
             List<int> doctorList = doctorClass.ListIntDoctor(departID);          
             List<int> revList = doctorClass.ListIntDoctor(departID);
-            //Shuffle list
+            
+            //Shuffle two lists
             Shuffle(doctorList);
             Shuffle(revList);
+
             bool checkTF = false;
-        // Loop through the two list's
+            // Loop through the two list's
+   
                 for (int count=0; count<doctorList.Count; count++)
-                {// get the index of count for each list
+                {// use index of count for each list
                     int doctorSelected = doctorList[count];
                     int reviewSelected = revList[count];
                     // Build list of doctors THAT HAVE reviewed doctorSelected
                     List<int> reviewList = GetReviewedByDoctor(doctorSelected, departID);
-                // If doctor and reviewer are the same loop again
-                    if (doctorSelected == reviewSelected)
-                    {    checkTF = false;
-                        CheckReviewed(departID);                
-                    }
-                    else
-                    {
-                    // Check to see if the reviewList has been reviewed by the reviewSelected
-                        if (checkList(reviewList, reviewSelected))
-                        {
-                            checkTF = false;
-                            //if in list call again to start over
-                            CheckReviewed(departID);                            
-                        }
-                        else
-                        { //else build
-                            checkTF = true;
+                // If doctor and reviewer are the same call and start over
+                if (doctorSelected == reviewSelected)
+                {
+                    CheckReviewed(departID);
+                }
+                else if (reviewList.Contains( reviewSelected)){ 
+                     CheckReviewed(departID); 
+                }else{ //else build
+                            
                             // BuildList will return reviewedList
-                            BuildList(doctorSelected, reviewSelected, departID, doctorList, revList);
-                        }
-                    }// end ELSE ==
+                            BuildList(doctorSelected, reviewSelected);
+                            checkTF = true;
+                }
+                    
                 }//end For LOOP through two lists
-                // if checkTF still equals false delete, clear and call again
-                // This means that the doctor can't be reviewed because the doctor has been reviewed by all other doctors
-                if (checkTF == false)
+          // Now insert loop through the two lists this will be done AFTER list's are checked
+                for (int count = 0; count <doctorList.Count; count++)
+                {
+                    int doc = doctorList[count];
+                    int rev = revList[count];
+                    // Loop through two Lists and call InsertReviewed
+                    InsertReviewed(doc, departID, rev);
+                }
+
+                           
+            // if checkTF still equals false delete, clear and call again
+            // This means that the doctor can't be reviewed because the doctor has been reviewed by all other doctors
+            if (checkTF == false)
                 {
                     DeleteDepartment(departID);
                 // used to see when false
@@ -202,16 +195,7 @@ namespace Final2021
      return reviewedList;
         }
    
-        public Boolean checkList(List<int> check, int id)
-        {// Check if doctor (id) is in check
-            if (check.Contains(id))
-            {
-                return true;
-            }
-            else {
-                return false;
-            }
-        }
+    
         // randomize list 
         public void Shuffle(List<int> list)
         {
