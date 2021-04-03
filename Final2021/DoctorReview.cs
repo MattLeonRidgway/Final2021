@@ -58,7 +58,8 @@ namespace Final2021
             lstBxDocREv.ClearSelected();
             
             lstBxDocREv.DataSource= revDoc.CheckReviewed(department);
-            btnGen.Visible = false;
+           //comment out for debugging
+             btnGen.Visible = false;
         }
     }
 }

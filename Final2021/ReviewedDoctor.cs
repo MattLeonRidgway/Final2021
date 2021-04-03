@@ -116,8 +116,8 @@ namespace Final2021
                 sqlCMD.Parameters.Add(new SQLiteParameter("@docID", docID));
                 SQLiteDataReader sqlGet = sqlCMD.ExecuteReader();
                 while (sqlGet.Read())
-                {
-                    reviewedDoc.Add(sqlGet.GetInt32(1));
+                {// get reviewed by doctors
+                    reviewedDoc.Add(sqlGet.GetInt32(3));
                 }
             }//end try
             catch (SQLiteException e)
@@ -142,7 +142,7 @@ namespace Final2021
             //Shuffle two lists
             Shuffle(doctorList);
             Shuffle(revList);
-
+            bool check = true;
             // Loop through the two list's create pairing
    
                 for (int count=0; count<doctorList.Count; count++)
@@ -153,31 +153,50 @@ namespace Final2021
                     List<int> reviewList = GetReviewedByDoctor(doctorSelected, departID);
                 // If doctor and reviewer are the same call and start over
                     if (doctorSelected == reviewSelected)
-                    {
-                        CheckReviewed(departID);
+                    { 
+                        check = false;
+                        Console.WriteLine("------------Same DOCTOR----------------");
+                        break;
+                   
+
                     }
-                    else if (reviewList.Contains(reviewSelected)){
-                        DeleteDepartment(departID);
-                        // used to see when false
-                        Console.WriteLine("Deleted Done");
-                        reviewedList.Clear();
-                        CheckReviewed(departID);
-                    }
-                     
+                // else if (reviewList.Contains(reviewSelected)){ 
+                //else if (reviewList.Exists(p=>p.Equals(reviewSelected))) { 
+                else if (reviewList.Contains(reviewSelected)==true) {
+                    check = false;
+                    Console.WriteLine("-----------------------------Delete called ------------------- Done");
+                    DeleteDepartment(departID);
+                    reviewedList.Clear();
+                       
+                    break;
+                    }                     
                 }//end For LOOP through two lists
-                            
-            // Now insert loop through the two lists this will be done AFTER list's are checked
-            for (int count = 0; count <doctorList.Count; count++)
-                {
-                    int doc = doctorList[count];
-                    int rev = revList[count];
+            if (check == false)
+            {
+                CheckReviewed(departID);
+            }
+            else { 
+                Console.WriteLine("Calling Loop List");
+                ListLoop(doctorList, revList, departID);
+            }
+          
+                 
+     return reviewedList;
+        }
+        public void ListLoop(List<int> dList, List<int> rList, int departID) {
+            Console.WriteLine("The list size for the FOR LOOP is "+dList.Count);
+            for (int count = 0; count < dList.Count; count++)
+            {
+                Console.WriteLine("Count is "+count);
+                int doc = dList[count];
+                int rev = rList[count];
+                Console.WriteLine("The list size is " + dList.Count);
                 // Loop through two Lists and call InsertReviewed and build List
                 BuildList(doc, rev);
                 InsertReviewed(doc, departID, rev);
-                }           
-     return reviewedList;
+            }
+
         }
-   
     
         // randomize list 
         public void Shuffle(List<int> list)
@@ -203,6 +222,7 @@ namespace Final2021
                 sqlCMD.CommandText = "DELETE FROM ReviewedDoctor WHERE ReviewedDepartment=@ID";
                 sqlCMD.Parameters.Add(new SQLiteParameter("@ID", departID));
                 sqlCMD.ExecuteNonQuery();
+                Console.WriteLine("--------------INSIDE DELETE---------------------------------------------------------");
             }//end try
             catch (SQLiteException e)
             {
