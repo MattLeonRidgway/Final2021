@@ -13,7 +13,7 @@ namespace Final2021
         int reviewedByDoctorID;
         int reviewedDepartmentID;
    
-        List<String> reviewedList = new List<String>();
+        public List<String> reviewedList = new List<String>();
         DoctorClass doctorClass = new DoctorClass();
         DBConnection dbClass = new DBConnection();
         List<int> docRev = new List<int>();
@@ -59,7 +59,6 @@ namespace Final2021
                 sqlCMD.Parameters.Add(new SQLiteParameter("@ID", docID));
                 
                 SQLiteDataReader sqlGet = sqlCMD.ExecuteReader();
-
                 while (sqlGet.Read())
                 {                  
                    docEmail = sqlGet.GetString(8);                   
@@ -74,7 +73,6 @@ namespace Final2021
                dbClass.DBClose();
             }
             return docEmail;
-
         }
         // End get doctor
         // INSERT the doctors being reviewed by Doctor into table ReviewedDoctor
@@ -102,8 +100,7 @@ namespace Final2021
                 dbClass.DBClose();
             }
 
-        }
-        
+        }        
         //Get's a list of the Doctors that have reviewed the selected doctor and department 
         public List<int> GetReviewedByDoctor(int docID, int departID)
         {
@@ -120,7 +117,7 @@ namespace Final2021
                 SQLiteDataReader sqlGet = sqlCMD.ExecuteReader();
                 while (sqlGet.Read())
                 {
-                    reviewedDoc.Add(sqlGet.GetInt32(3));
+                    reviewedDoc.Add(sqlGet.GetInt32(1));
                 }
             }//end try
             catch (SQLiteException e)
@@ -132,15 +129,13 @@ namespace Final2021
                 dbClass.DBClose();
             }
             return reviewedDoc;
-        }
-        // end getReviewed By Doctor List
-    
+        }// end getReviewed By Doctor List    
        
         // check departId for a list of doctors
         public List<String> CheckReviewed(int departID)
         {// Clear the list
             reviewedList.Clear();
-            // Get 2 lists of doctors by department ID THEY are the same size
+            // Make 2 lists of doctors by department ID THEY are the same size
             List<int> doctorList = doctorClass.ListIntDoctor(departID);          
             List<int> revList = doctorClass.ListIntDoctor(departID);
             
@@ -148,8 +143,7 @@ namespace Final2021
             Shuffle(doctorList);
             Shuffle(revList);
 
-            bool checkTF = false;
-            // Loop through the two list's
+            // Loop through the two list's create pairing
    
                 for (int count=0; count<doctorList.Count; count++)
                 {// use index of count for each list
@@ -158,40 +152,29 @@ namespace Final2021
                     // Build list of doctors THAT HAVE reviewed doctorSelected
                     List<int> reviewList = GetReviewedByDoctor(doctorSelected, departID);
                 // If doctor and reviewer are the same call and start over
-                if (doctorSelected == reviewSelected)
-                {
-                    CheckReviewed(departID);
-                }
-                else if (reviewList.Contains( reviewSelected)){ 
-                     CheckReviewed(departID); 
-                }else{ //else build
-                            
-                            // BuildList will return reviewedList
-                            BuildList(doctorSelected, reviewSelected);
-                            checkTF = true;
-                }
-                    
+                    if (doctorSelected == reviewSelected)
+                    {
+                        CheckReviewed(departID);
+                    }
+                    else if (reviewList.Contains(reviewSelected)){
+                        DeleteDepartment(departID);
+                        // used to see when false
+                        Console.WriteLine("Deleted Done");
+                        reviewedList.Clear();
+                        CheckReviewed(departID);
+                    }
+                     
                 }//end For LOOP through two lists
-          // Now insert loop through the two lists this will be done AFTER list's are checked
-                for (int count = 0; count <doctorList.Count; count++)
+                            
+            // Now insert loop through the two lists this will be done AFTER list's are checked
+            for (int count = 0; count <doctorList.Count; count++)
                 {
                     int doc = doctorList[count];
                     int rev = revList[count];
-                    // Loop through two Lists and call InsertReviewed
-                    InsertReviewed(doc, departID, rev);
-                }
-
-                           
-            // if checkTF still equals false delete, clear and call again
-            // This means that the doctor can't be reviewed because the doctor has been reviewed by all other doctors
-            if (checkTF == false)
-                {
-                    DeleteDepartment(departID);
-                // used to see when false
-                    Console.WriteLine("Deleted Done");
-                    CheckReviewed(departID);
-                }          
-           
+                // Loop through two Lists and call InsertReviewed and build List
+                BuildList(doc, rev);
+                InsertReviewed(doc, departID, rev);
+                }           
      return reviewedList;
         }
    

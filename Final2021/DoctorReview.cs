@@ -56,6 +56,7 @@ namespace Final2021
             int department = Int32.Parse(lstBxDepart.SelectedValue.ToString());
             
             lstBxDocREv.ClearSelected();
+            
             lstBxDocREv.DataSource= revDoc.CheckReviewed(department);
             btnGen.Visible = false;
         }
