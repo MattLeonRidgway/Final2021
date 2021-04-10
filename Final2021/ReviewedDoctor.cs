@@ -4,10 +4,12 @@ using System.Data.SQLite;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Globalization;
+using System.Data.Linq;
 
 namespace Final2021
 {
-  class ReviewedDoctor 
+  class ReviewedDoctor: DBConnection
     {
         int doctorID;
         int reviewedByDoctorID;
@@ -15,9 +17,8 @@ namespace Final2021
    
         public List<String> reviewedList = new List<String>();
         DoctorClass doctorClass = new DoctorClass();
-        DBConnection dbClass = new DBConnection();
-        List<int> docRev = new List<int>();
-        List<int> dbList = new List<int>();
+      
+      
 
         Random ranD = new Random();
         // Default
@@ -40,8 +41,10 @@ namespace Final2021
             String revEmail = getDoctor(reviewedBy);
   
            // add to list for viewing
-            reviewedList.Add("Doctor " + docEmail + " Reviewed By " + revEmail); 
-
+            reviewedList.Add("Doctor " + docEmail + " Reviewed By " + revEmail);
+            String doctorSave = "Doctor " + docEmail + " Reviewed By " + revEmail;
+            //Insert into saved
+            InsertSaved(doctorSave);
             //return the list that will be viewed
             return reviewedList;
         }
@@ -52,9 +55,9 @@ namespace Final2021
             // get the doctor using ID
             try
             {
-                dbClass.DBopen();
+                DBopen();
                 SQLiteCommand sqlCMD;
-                sqlCMD =dbClass.con.CreateCommand();
+                sqlCMD =con.CreateCommand();
                 sqlCMD.CommandText = "SELECT * FROM Doctor WHERE DoctorID=@ID";
                 sqlCMD.Parameters.Add(new SQLiteParameter("@ID", docID));
                 
@@ -70,7 +73,7 @@ namespace Final2021
             }
             finally
             {
-               dbClass.DBClose();
+               DBClose();
             }
             return docEmail;
         }
@@ -81,9 +84,9 @@ namespace Final2021
             // Insert into the DB
             try
             {// the INSERT SQL statement
-                dbClass.DBopen();
+                DBopen();
                 SQLiteCommand insertCommand = new SQLiteCommand("INSERT INTO [ReviewedDoctor] (ReviewedDoctorID, ReviewedDepartment, ReviewedByDoctorID)"+
-                   "VALUES(@ID,@depart,@ByID)", dbClass.con);
+                   "VALUES(@ID,@depart,@ByID)", con);
                 // Parameters
                 insertCommand.Parameters.Add(new SQLiteParameter("@ID", docID));
                 insertCommand.Parameters.Add(new SQLiteParameter("@depart", departID));
@@ -97,7 +100,7 @@ namespace Final2021
             }
             finally
             { // Finally close DB
-                dbClass.DBClose();
+                DBClose();
             }
 
         }        
@@ -108,9 +111,9 @@ namespace Final2021
             List<int> reviewedDoc = new List<int>();
             try
             {
-                dbClass.DBopen();
+                DBopen();
                 SQLiteCommand sqlCMD;
-                sqlCMD = dbClass.con.CreateCommand();
+                sqlCMD =con.CreateCommand();
                 sqlCMD.CommandText = "SELECT * FROM ReviewedDoctor WHERE ReviewedDepartment=@departID AND ReviewedDoctorID=@docID";
                 sqlCMD.Parameters.Add(new SQLiteParameter("@departID", departID));
                 sqlCMD.Parameters.Add(new SQLiteParameter("@docID", docID));
@@ -126,7 +129,7 @@ namespace Final2021
             }
             finally
             {
-                dbClass.DBClose();
+                DBClose();
             }
             return reviewedDoc;
         }// end getReviewed By Doctor List    
@@ -156,10 +159,8 @@ namespace Final2021
                     { 
                         check = false;
                         Console.WriteLine("------------Same DOCTOR----------------");
-                        break;
-                   
-
-                    }
+                        break;                 
+                   }
                 // else if (reviewList.Contains(reviewSelected)){ 
                 //else if (reviewList.Exists(p=>p.Equals(reviewSelected))) { 
                 else if (reviewList.Contains(reviewSelected)==true) {
@@ -211,17 +212,49 @@ namespace Final2021
                 list[count] = value;
             }
         }
+        public void InsertSaved(String revAnd) {
+            string sDate = "Date Added: " + DateTime.Now.ToString("MMMM", CultureInfo.InvariantCulture) + " " + DateTime.Now.Year.ToString();
+            //for doctors doc=1 nurs=0
+            int doctorInt = 1;
+            int nurseInt = 0;
+            try
+            {
+                DBopen();
+                SQLiteCommand insertCommand = new SQLiteCommand("INSERT INTO [SavedReview] (SavedReviewed, SavedDoctor, SavedNurse, SavedDate)" +
+                   "VALUES(@savedRev,@savedDoc,@savedNur,@savedDate)", con);
+                // Parameters
+                insertCommand.Parameters.Add(new SQLiteParameter("@savedRev", revAnd));
+                insertCommand.Parameters.Add(new SQLiteParameter("@savedDoc", doctorInt));
+                insertCommand.Parameters.Add(new SQLiteParameter("@savedNur", nurseInt));
+                insertCommand.Parameters.Add(new SQLiteParameter("@savedDate", sDate));
+
+                // Execute 
+                insertCommand.ExecuteNonQuery();
+            }//end try
+            catch (SQLiteException e)
+            {
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                DBClose();
+            }
+
+        }
+      
+       
         // Delete Department
         public void DeleteDepartment(int departID)
         {// When the doctors can't be paired up anymore delete data in table BY department
             try
             {
-                dbClass.DBopen();
+               DBopen();
                 SQLiteCommand sqlCMD;
-                sqlCMD = dbClass.con.CreateCommand();
+                sqlCMD = con.CreateCommand();
                 sqlCMD.CommandText = "DELETE FROM ReviewedDoctor WHERE ReviewedDepartment=@ID";
                 sqlCMD.Parameters.Add(new SQLiteParameter("@ID", departID));
                 sqlCMD.ExecuteNonQuery();
+                //debug
                 Console.WriteLine("--------------INSIDE DELETE---------------------------------------------------------");
             }//end try
             catch (SQLiteException e)
@@ -230,7 +263,7 @@ namespace Final2021
             }
             finally
             {
-                dbClass.DBClose();
+               DBClose();
             }
 
         }//End Delete department 
