@@ -14,6 +14,7 @@ namespace Final2021
     [Table(Name = "SaveReview")]
     // CLASS for table This is the OBJECT for LINQ
     public class SaveReview {
+        //primary key is used just to hold a number and is not used other than here
         [Column(IsPrimaryKey = true)]
         public int SavedID { get; set; }
        [Column()]
@@ -27,20 +28,25 @@ namespace Final2021
     }
     // Database name and connection string
     public class PatientLite : DataContext {
-        private static readonly string connectionString = @"Data Source= C:\Users\scoob\OneDrive - Champlain College\Current courses\SDEV 360-81 C#\code\Final2021\Final2021\PatientLite.db";
-        public PatientLite() : base(connectionString) {
+       SQLiteCommand sqlCom = new SQLiteCommand();
+
+        private static SQLiteConnection con = new SQLiteConnection(@"Data Source= C:\Users\scoob\OneDrive - Champlain College\Current courses\SDEV 360-81 C#\code\Final2021\PatientLite.db; Version=3; Compress=true;");
+
+       // private static string connectionString = @"Data Source= C:\\Users\\scoob\\OneDrive - Champlain College\\Current courses\\SDEV 360-81 C#\\code\\Final2021\\Final2021\\PatientLite.db";
+        public PatientLite() : base(con) {
             Log = Console.Out;
         }
     }
     class SavedClass
     {// Used to insert into SaveReview to hold both nurse and doctor 1 or 0.
-        public void InsertSaved(String reviewed,int doc,int nurse,String sDate) {
+        public void InsertSaved(int saveID, String reviewed,int doc,int nurse,String sDate) {
 
             try {
                 PatientLite dbPatientLite = new PatientLite();
                 Table<SaveReview> savedReviews = dbPatientLite.GetTable<SaveReview>();
                 SaveReview saved = new SaveReview();
-               //Everything is being sent when theCalling InsertSaved
+                //Everything is being sent when theCalling InsertSaved
+                saved.SavedID = saveID;
                 saved.SavedReviewed = reviewed;
                 // doc =1 nurse =0
                 saved.SavedDoctor = doc;

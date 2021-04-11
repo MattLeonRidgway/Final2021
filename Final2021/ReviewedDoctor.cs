@@ -234,9 +234,11 @@ namespace Final2021
             //for doctors doc=1 nurs=0
             int doctorInt = 1;
             int nurseInt = 0;
+            int saveID = 1;
             SavedClass saveClass = new SavedClass();
-            saveClass.InsertSaved(revAnd,doctorInt,nurseInt,sDate);
-            
+            // Send to insert saved
+            saveClass.InsertSaved(saveID,revAnd,doctorInt,nurseInt,sDate);
+            // Commented out to use LINQ 
             //try
             //{
             //    DBopen();
