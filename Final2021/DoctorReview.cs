@@ -61,5 +61,10 @@ namespace Final2021
            //comment out for debugging
              btnGen.Visible = false;
         }
+
+        private void btnSaved_Click(object sender, EventArgs e)
+        {
+            lstBxDocREv.DataSource = revDoc.GetSaved();
+        }
     }
 }

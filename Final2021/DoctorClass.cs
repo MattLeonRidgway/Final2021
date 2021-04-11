@@ -209,7 +209,7 @@ namespace Final2021
             return doctorList;
 
 
-        }// end ViewDoctor()
+        }// list int doctor
          // UPDATE doctor
         public void UpdateDoctor(int dID, string first, string mid, string last, int stat, int type, int dep, int clinic, string email, string notes)
         {

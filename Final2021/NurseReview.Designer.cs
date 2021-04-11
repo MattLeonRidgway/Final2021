@@ -41,8 +41,17 @@ namespace Final2021
             this.departmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSetReviewDepartmentNurse = new Final2021.DataSetReviewDepartmentNurse();
             this.departmentTableAdapter = new Final2021.DataSetReviewDepartmentNurseTableAdapters.DepartmentTableAdapter();
+            this.lstBxType = new System.Windows.Forms.ListBox();
+            this.nurseTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetNurse = new Final2021.DataSetNurse();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnMakeList = new System.Windows.Forms.Button();
+            this.nurseTypeTableAdapter = new Final2021.DataSetNurseTableAdapters.NurseTypeTableAdapter();
+            this.btnSaved = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetReviewDepartmentNurse)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nurseTypeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetNurse)).BeginInit();
             this.SuspendLayout();
             // 
             // btnHome
@@ -60,7 +69,7 @@ namespace Final2021
             this.lstBxNurseRev.FormattingEnabled = true;
             this.lstBxNurseRev.Location = new System.Drawing.Point(167, 49);
             this.lstBxNurseRev.Name = "lstBxNurseRev";
-            this.lstBxNurseRev.Size = new System.Drawing.Size(405, 290);
+            this.lstBxNurseRev.Size = new System.Drawing.Size(513, 342);
             this.lstBxNurseRev.TabIndex = 8;
             // 
             // label1
@@ -74,11 +83,11 @@ namespace Final2021
             // 
             // btnGenerate
             // 
-            this.btnGenerate.Location = new System.Drawing.Point(20, 258);
+            this.btnGenerate.Location = new System.Drawing.Point(12, 168);
             this.btnGenerate.Name = "btnGenerate";
-            this.btnGenerate.Size = new System.Drawing.Size(76, 41);
+            this.btnGenerate.Size = new System.Drawing.Size(145, 34);
             this.btnGenerate.TabIndex = 14;
-            this.btnGenerate.Text = "Show Nurse";
+            this.btnGenerate.Text = "Nurse By Department";
             this.btnGenerate.UseVisualStyleBackColor = true;
             this.btnGenerate.Click += new System.EventHandler(this.btnGenerate_Click);
             // 
@@ -104,7 +113,7 @@ namespace Final2021
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(17, 196);
+            this.label3.Location = new System.Drawing.Point(12, 49);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(95, 13);
             this.label3.TabIndex = 22;
@@ -115,7 +124,7 @@ namespace Final2021
             this.lstBxDepart.DataSource = this.departmentBindingSource;
             this.lstBxDepart.DisplayMember = "Department";
             this.lstBxDepart.FormattingEnabled = true;
-            this.lstBxDepart.Location = new System.Drawing.Point(12, 225);
+            this.lstBxDepart.Location = new System.Drawing.Point(12, 65);
             this.lstBxDepart.Name = "lstBxDepart";
             this.lstBxDepart.Size = new System.Drawing.Size(145, 30);
             this.lstBxDepart.TabIndex = 20;
@@ -135,11 +144,70 @@ namespace Final2021
             // 
             this.departmentTableAdapter.ClearBeforeFill = true;
             // 
+            // lstBxType
+            // 
+            this.lstBxType.DataSource = this.nurseTypeBindingSource;
+            this.lstBxType.DisplayMember = "Type";
+            this.lstBxType.FormattingEnabled = true;
+            this.lstBxType.Location = new System.Drawing.Point(12, 129);
+            this.lstBxType.Name = "lstBxType";
+            this.lstBxType.Size = new System.Drawing.Size(145, 30);
+            this.lstBxType.TabIndex = 23;
+            this.lstBxType.ValueMember = "TypeID";
+            // 
+            // nurseTypeBindingSource
+            // 
+            this.nurseTypeBindingSource.DataMember = "NurseType";
+            this.nurseTypeBindingSource.DataSource = this.dataSetNurse;
+            // 
+            // dataSetNurse
+            // 
+            this.dataSetNurse.DataSetName = "DataSetNurse";
+            this.dataSetNurse.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 110);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(95, 13);
+            this.label2.TabIndex = 24;
+            this.label2.Text = "Select Nurse Type";
+            // 
+            // btnMakeList
+            // 
+            this.btnMakeList.Location = new System.Drawing.Point(12, 209);
+            this.btnMakeList.Name = "btnMakeList";
+            this.btnMakeList.Size = new System.Drawing.Size(145, 28);
+            this.btnMakeList.TabIndex = 25;
+            this.btnMakeList.Text = "Make List";
+            this.btnMakeList.UseVisualStyleBackColor = true;
+            this.btnMakeList.Visible = false;
+            this.btnMakeList.Click += new System.EventHandler(this.btnMakeList_Click);
+            // 
+            // nurseTypeTableAdapter
+            // 
+            this.nurseTypeTableAdapter.ClearBeforeFill = true;
+            // 
+            // btnSaved
+            // 
+            this.btnSaved.Location = new System.Drawing.Point(686, 179);
+            this.btnSaved.Name = "btnSaved";
+            this.btnSaved.Size = new System.Drawing.Size(102, 23);
+            this.btnSaved.TabIndex = 26;
+            this.btnSaved.Text = "View All Saved";
+            this.btnSaved.UseVisualStyleBackColor = true;
+            this.btnSaved.Click += new System.EventHandler(this.btnSaved_Click);
+            // 
             // NurseReview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnSaved);
+            this.Controls.Add(this.btnMakeList);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lstBxType);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lstBxDepart);
             this.Controls.Add(this.btnExit);
@@ -153,6 +221,8 @@ namespace Final2021
             this.Load += new System.EventHandler(this.NurseReview_Load);
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetReviewDepartmentNurse)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nurseTypeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetNurse)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -170,5 +240,12 @@ namespace Final2021
         private DataSetReviewDepartmentNurse dataSetReviewDepartmentNurse;
         private System.Windows.Forms.BindingSource departmentBindingSource;
         private DataSetReviewDepartmentNurseTableAdapters.DepartmentTableAdapter departmentTableAdapter;
+        private System.Windows.Forms.ListBox lstBxType;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnMakeList;
+        private DataSetNurse dataSetNurse;
+        private System.Windows.Forms.BindingSource nurseTypeBindingSource;
+        private DataSetNurseTableAdapters.NurseTypeTableAdapter nurseTypeTableAdapter;
+        private System.Windows.Forms.Button btnSaved;
     }
 }

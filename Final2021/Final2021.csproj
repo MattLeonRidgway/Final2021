@@ -95,6 +95,11 @@
       <DependentUpon>AddData.cs</DependentUpon>
     </Compile>
     <Compile Include="Clinic.cs" />
+    <Compile Include="DataSetNurse.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetNurse.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSet\DataSetReviewDepartmentNurse.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -282,6 +287,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReviewedDoctor.cs" />
+    <Compile Include="ReviewedNurse.cs" />
     <Compile Include="SavedClass.cs" />
     <Compile Include="Status.cs" />
     <Compile Include="ValidateClass.cs" />
@@ -303,6 +309,17 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="DataSetNurse.xsc">
+      <DependentUpon>DataSetNurse.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetNurse.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetNurse.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetNurse.xss">
+      <DependentUpon>DataSetNurse.xsd</DependentUpon>
+    </None>
     <None Include="LINQClass.dbml.layout">
       <DependentUpon>LINQClass.dbml</DependentUpon>
     </None>

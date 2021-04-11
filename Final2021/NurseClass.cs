@@ -101,6 +101,41 @@ namespace Final2021
 
         }
         // end Nurse Get
+        // get a list of nurse from the database WHERE departmentID AND type
+        public List<int> ListIntNurse(int department, int type)
+        {
+            List<int> nurseList = new List<int>();
+            // Status active = 1 
+            int status = 1;
+            try
+            {
+                DBopen();
+                SQLiteCommand sqlCMD;
+                sqlCMD = con.CreateCommand();
+                sqlCMD.CommandText = "SELECT * FROM Nurse WHERE NurseDepartment=@departID AND NurseStatus=@statusID AND NurseType=@type";
+                sqlCMD.Parameters.Add(new SQLiteParameter("@departID", department));
+                sqlCMD.Parameters.Add(new SQLiteParameter("@statusID", status));
+                sqlCMD.Parameters.Add(new SQLiteParameter("@type", type));
+
+                SQLiteDataReader sqlGet = sqlCMD.ExecuteReader();
+                while (sqlGet.Read())
+                {
+                    nurseList.Add(sqlGet.GetInt32(0));
+                }
+            }
+            catch (SQLiteException e)
+            {
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                DBClose();
+            }
+
+            return nurseList;
+
+
+        }// list int doctor
         // Delete Nurse
         public void deleteNurse(int nurID)
         {
@@ -126,8 +161,8 @@ namespace Final2021
 
         }
         // End Delete Nurse
-        // get a list of nurses from the database WHERE departmentID
-        public List<string> ViewNurse(int department)
+        // get a list of nurses from the database WHERE departmentID AND type
+        public List<string> ViewNurse(int department, int type)
         {//not tested
             List<string> nurseList = new List<string>();
             try
@@ -136,8 +171,9 @@ namespace Final2021
                 DBopen();
                 SQLiteCommand sqlCMD;
                 sqlCMD = con.CreateCommand();
-                sqlCMD.CommandText = "SELECT * FROM Nurse WHERE NurseDepartment=@departID";
+                sqlCMD.CommandText = "SELECT * FROM Nurse WHERE NurseDepartment=@departID AND NurseType=@type";
                 sqlCMD.Parameters.Add(new SQLiteParameter("@departID", department));
+                sqlCMD.Parameters.Add(new SQLiteParameter("@type", type));
 
                 SQLiteDataReader sqlGet = sqlCMD.ExecuteReader();
 

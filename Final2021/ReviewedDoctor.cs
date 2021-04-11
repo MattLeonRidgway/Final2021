@@ -11,29 +11,12 @@ namespace Final2021
 {
   class ReviewedDoctor: DBConnection
     {
-        int doctorID;
-        int reviewedByDoctorID;
-        int reviewedDepartmentID;
+        
+        Random ranD = new Random();
    
         public List<String> reviewedList = new List<String>();
         DoctorClass doctorClass = new DoctorClass();
       
-      
-
-        Random ranD = new Random();
-        // Default
-        public ReviewedDoctor() { }
-        public int DoctorID { get => doctorID; set => doctorID = value; }
-        public int ReviewedByDoctorID { get => reviewedByDoctorID; set => reviewedByDoctorID = value; }
-        public int ReviewedDepartmentID { get => reviewedDepartmentID; set => reviewedDepartmentID = value; }
-
-        public ReviewedDoctor(int doctorID, int reviewedByDoctorID, int reviewedDepartmentID)
-        {
-            this.doctorID = doctorID;
-            this.reviewedByDoctorID = reviewedByDoctorID;
-            this.reviewedDepartmentID = reviewedDepartmentID;
-        }
-
         // Get a List of Doctors by IDS and show the Doctors Email from Doctor table for doctor and reviewed by doctor
         public List<String> BuildList(int docID, int reviewedBy)
         {// Get email for each doctor
@@ -133,7 +116,41 @@ namespace Final2021
             }
             return reviewedDoc;
         }// end getReviewed By Doctor List    
-       
+        public List<String> GetSaved()
+        {
+            // List of doctors that have reviewed the selected doctor.
+            List<String> reviewedList = new List<String>();
+            int doctorInt = 1;
+            try
+            {
+                DBopen();
+                SQLiteCommand sqlCMD;
+                sqlCMD = con.CreateCommand();
+                sqlCMD.CommandText = "SELECT * FROM SaveReview WHERE SavedDoctor=@doc";
+                             
+                sqlCMD.Parameters.Add(new SQLiteParameter("@doc", doctorInt));
+
+
+                SQLiteDataReader sqlGet = sqlCMD.ExecuteReader();
+                while (sqlGet.Read())
+                {// get reviewed by doctors
+                   
+                    string getDoc = sqlGet.GetString(1);
+                    string getDate = sqlGet.GetString(4); 
+                    reviewedList.Add(getDoc+" "+getDate);
+                }
+            }//end try
+            catch (SQLiteException e)
+            {
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                DBClose();
+            }
+            return reviewedList;
+        }// end get Doctor List    from saved
+
         // check departId for a list of doctors
         public List<String> CheckReviewed(int departID)
         {// Clear the list
@@ -201,7 +218,7 @@ namespace Final2021
     
         // randomize list 
         public void Shuffle(List<int> list)
-        {
+        {// Used to shuffle the list
             int count = list.Count;
             while (count > 1)
             {
@@ -217,28 +234,31 @@ namespace Final2021
             //for doctors doc=1 nurs=0
             int doctorInt = 1;
             int nurseInt = 0;
-            try
-            {
-                DBopen();
-                SQLiteCommand insertCommand = new SQLiteCommand("INSERT INTO [SavedReview] (SavedReviewed, SavedDoctor, SavedNurse, SavedDate)" +
-                   "VALUES(@savedRev,@savedDoc,@savedNur,@savedDate)", con);
-                // Parameters
-                insertCommand.Parameters.Add(new SQLiteParameter("@savedRev", revAnd));
-                insertCommand.Parameters.Add(new SQLiteParameter("@savedDoc", doctorInt));
-                insertCommand.Parameters.Add(new SQLiteParameter("@savedNur", nurseInt));
-                insertCommand.Parameters.Add(new SQLiteParameter("@savedDate", sDate));
+            SavedClass saveClass = new SavedClass();
+            saveClass.InsertSaved(revAnd,doctorInt,nurseInt,sDate);
+            
+            //try
+            //{
+            //    DBopen();
+            //    SQLiteCommand insertCommand = new SQLiteCommand("INSERT INTO [SavedReview] (SavedReviewed, SavedDoctor, SavedNurse, SavedDate)" +
+            //       "VALUES(@savedRev,@savedDoc,@savedNur,@savedDate)", con);
+            //    // Parameters
+            //    insertCommand.Parameters.Add(new SQLiteParameter("@savedRev", revAnd));
+            //    insertCommand.Parameters.Add(new SQLiteParameter("@savedDoc", doctorInt));
+            //    insertCommand.Parameters.Add(new SQLiteParameter("@savedNur", nurseInt));
+            //    insertCommand.Parameters.Add(new SQLiteParameter("@savedDate", sDate));
 
-                // Execute 
-                insertCommand.ExecuteNonQuery();
-            }//end try
-            catch (SQLiteException e)
-            {
-                throw new Exception(e.Message);
-            }
-            finally
-            {
-                DBClose();
-            }
+            //    // Execute 
+            //    insertCommand.ExecuteNonQuery();
+            //}//end try
+            //catch (SQLiteException e)
+            //{
+            //    throw new Exception(e.Message);
+            //}
+            //finally
+            //{
+            //    DBClose();
+            //}
 
         }
       

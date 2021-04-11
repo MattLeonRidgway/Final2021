@@ -42,6 +42,7 @@ namespace Final2021
             this.label3 = new System.Windows.Forms.Label();
             this.departmentTableAdapter = new Final2021.DataSet.DataSetReviewDoctorDepartmentTableAdapters.DepartmentTableAdapter();
             this.btnGen = new System.Windows.Forms.Button();
+            this.btnSaved = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetReviewDoctorDepartment)).BeginInit();
             this.SuspendLayout();
@@ -58,14 +59,14 @@ namespace Final2021
             // lstBxDocREv
             // 
             this.lstBxDocREv.FormattingEnabled = true;
-            this.lstBxDocREv.Location = new System.Drawing.Point(177, 53);
+            this.lstBxDocREv.Location = new System.Drawing.Point(160, 53);
             this.lstBxDocREv.Name = "lstBxDocREv";
-            this.lstBxDocREv.Size = new System.Drawing.Size(405, 290);
+            this.lstBxDocREv.Size = new System.Drawing.Size(503, 342);
             this.lstBxDocREv.TabIndex = 1;
             // 
             // btnGenerate
             // 
-            this.btnGenerate.Location = new System.Drawing.Point(44, 161);
+            this.btnGenerate.Location = new System.Drawing.Point(12, 117);
             this.btnGenerate.Name = "btnGenerate";
             this.btnGenerate.Size = new System.Drawing.Size(120, 35);
             this.btnGenerate.TabIndex = 2;
@@ -75,7 +76,7 @@ namespace Final2021
             // 
             // btnHome
             // 
-            this.btnHome.Location = new System.Drawing.Point(44, 411);
+            this.btnHome.Location = new System.Drawing.Point(12, 415);
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(75, 23);
             this.btnHome.TabIndex = 4;
@@ -85,7 +86,7 @@ namespace Final2021
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(144, 411);
+            this.btnCancel.Location = new System.Drawing.Point(112, 415);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 9;
@@ -94,7 +95,7 @@ namespace Final2021
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(236, 411);
+            this.btnExit.Location = new System.Drawing.Point(204, 415);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 23);
             this.btnExit.TabIndex = 10;
@@ -107,7 +108,7 @@ namespace Final2021
             this.lstBxDepart.DataSource = this.departmentBindingSource;
             this.lstBxDepart.DisplayMember = "Department";
             this.lstBxDepart.FormattingEnabled = true;
-            this.lstBxDepart.Location = new System.Drawing.Point(44, 125);
+            this.lstBxDepart.Location = new System.Drawing.Point(12, 81);
             this.lstBxDepart.Name = "lstBxDepart";
             this.lstBxDepart.Size = new System.Drawing.Size(120, 30);
             this.lstBxDepart.TabIndex = 11;
@@ -127,7 +128,7 @@ namespace Final2021
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(41, 97);
+            this.label3.Location = new System.Drawing.Point(9, 53);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(119, 16);
             this.label3.TabIndex = 13;
@@ -140,20 +141,31 @@ namespace Final2021
             // 
             // btnGen
             // 
-            this.btnGen.Location = new System.Drawing.Point(44, 203);
+            this.btnGen.Location = new System.Drawing.Point(12, 159);
             this.btnGen.Name = "btnGen";
             this.btnGen.Size = new System.Drawing.Size(120, 39);
             this.btnGen.TabIndex = 14;
-            this.btnGen.Text = "Generate List";
+            this.btnGen.Text = "Make List";
             this.btnGen.UseVisualStyleBackColor = true;
             this.btnGen.Visible = false;
             this.btnGen.Click += new System.EventHandler(this.btnGen_Click);
+            // 
+            // btnSaved
+            // 
+            this.btnSaved.Location = new System.Drawing.Point(669, 185);
+            this.btnSaved.Name = "btnSaved";
+            this.btnSaved.Size = new System.Drawing.Size(119, 23);
+            this.btnSaved.TabIndex = 27;
+            this.btnSaved.Text = "View All Saved";
+            this.btnSaved.UseVisualStyleBackColor = true;
+            this.btnSaved.Click += new System.EventHandler(this.btnSaved_Click);
             // 
             // DoctorReview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnSaved);
             this.Controls.Add(this.btnGen);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lstBxDepart);
@@ -187,5 +199,6 @@ namespace Final2021
         private System.Windows.Forms.BindingSource departmentBindingSource;
         private DataSet.DataSetReviewDoctorDepartmentTableAdapters.DepartmentTableAdapter departmentTableAdapter;
         private System.Windows.Forms.Button btnGen;
+        private System.Windows.Forms.Button btnSaved;
     }
 }

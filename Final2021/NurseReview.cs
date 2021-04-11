@@ -5,6 +5,7 @@ namespace Final2021
 {
     public partial class NurseReview : Form
     { NurseClass nur = new NurseClass();
+        ReviewedNurse reviewNur = new ReviewedNurse();
         public NurseReview()
         {
             InitializeComponent();
@@ -32,6 +33,8 @@ namespace Final2021
 
         private void NurseReview_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dataSetNurse.NurseType' table. You can move, or remove it, as needed.
+            this.nurseTypeTableAdapter.Fill(this.dataSetNurse.NurseType);
             // TODO: This line of code loads data into the 'dataSetReviewDepartmentNurse.Department' table. You can move, or remove it, as needed.
             this.departmentTableAdapter.Fill(this.dataSetReviewDepartmentNurse.Department);
 
@@ -40,7 +43,25 @@ namespace Final2021
         private void btnGenerate_Click(object sender, EventArgs e)
         {           
             int department = Int32.Parse(lstBxDepart.SelectedValue.ToString());
-            lstBxNurseRev.DataSource = nur.ViewNurse(department);
+            int type = Int32.Parse(lstBxType.SelectedValue.ToString());
+            lstBxNurseRev.DataSource = nur.ViewNurse(department,type);
+            btnGenerate.Visible = false;
+            btnMakeList.Visible = true;
+        }
+
+        private void btnMakeList_Click(object sender, EventArgs e)
+        {
+            int depart = Int32.Parse(lstBxDepart.SelectedValue.ToString());
+            int type = Int32.Parse(lstBxType.SelectedValue.ToString());
+            lstBxNurseRev.ClearSelected();
+            lstBxNurseRev.DataSource = reviewNur.CheckReviewed(depart, type);
+            btnMakeList.Visible = false;
+        }
+
+        private void btnSaved_Click(object sender, EventArgs e)
+        {
+            
+            lstBxNurseRev.DataSource = reviewNur.GetSaved();
         }
     }
 }

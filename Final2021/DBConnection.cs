@@ -13,6 +13,8 @@ namespace Final2021
     class DBConnection
     {  // This class is used to create the database connection
        // it will have a open connection, closeConnection
+
+        // Trying to add in LINQ but database isn't being able to be added.
        //string dataBaseLocation= @"Data Source= C:\Users\scoob\OneDrive - Champlain College\Current courses\SDEV 360-81 C#\code\Final2021\PatientLite.db; Version=3; Compress=true;";
        // public SQLiteConnection sqlCon= new SQLiteConnection("Data Source=PatientLite.db; Version = 3; New = True; Compress = True; ");
         public SQLiteCommand sqlCom = new SQLiteCommand();
@@ -36,7 +38,7 @@ namespace Final2021
                 Console.WriteLine("Database connected");
                 con.Open();
             }
-            catch (Exception ex)
+            catch (Exception ex)// Show error in console when the db can't open 
             {
                 Console.WriteLine("Connection Error", ex);
             }
@@ -47,7 +49,7 @@ namespace Final2021
         }
         public void DBClose()
         {
-            try
+            try// Close the connection
             {
                 con.Close();
             }
@@ -57,7 +59,7 @@ namespace Final2021
             }
         }// Close the connection
         public void Query(string query)
-        {
+        {// Not in use 
 
             DBopen();
             con.Open();
