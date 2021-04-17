@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.Data.SQLite;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Final2021
-{
+{/* ReviewedNurse
+  * Pair up a nurse by department and Type
+  * Insert into DB
+  */
     class ReviewedNurse: DBConnection
     {
       
@@ -17,7 +18,9 @@ namespace Final2021
         NurseClass nurseClass = new NurseClass();
         // reviewedList
         public List<String> reviewedList = new List<String>();
-        // randomize list 
+        /* Shuffle
+         * Put a List in and the list get's shuffled
+         */
         public void Shuffle(List<int> list)
         {// Used to shuffle the list
             int count = list.Count;
@@ -31,11 +34,13 @@ namespace Final2021
             }
         }
 
-        // Get a Nurse by IDS and show the nurse Email from Nurse table for nurse and reviewed by nurse
+        /* BuildList
+         * Get a Nurse by IDS and show the nurse Email from Nurse table for nurse and reviewed by nurse
+         */
         public List<String> BuildList(int nurID, int reviewedBy)
         {// Get email for each nurse
-            String nurseEmail = getNurse(nurID);
-            String revEmail = getNurse(reviewedBy);
+            String nurseEmail = GetNurse(nurID);
+            String revEmail = GetNurse(reviewedBy);
 
             // add to list for viewing
             reviewedList.Add("Nurse " + nurseEmail + " Reviewed By " + revEmail);
@@ -45,8 +50,10 @@ namespace Final2021
             //return the list that will be viewed
             return reviewedList;
         }// END BuildList
-        
-        public string getNurse(int nurseID)
+        /* GetNurse
+         * Put nurse ID in and get the email address
+         */
+        public string GetNurse(int nurseID)
         {// Get email for nurse
             String nurseEmail = "";
             try
@@ -74,7 +81,9 @@ namespace Final2021
             return nurseEmail;
         }
         // End get nurse
-
+        /* GetSaved
+         * Get a List from SAVED 
+         */
         public List<String> GetSaved()
         {
             // List of nurses a in saved.
@@ -85,7 +94,7 @@ namespace Final2021
                 DBopen();
                 SQLiteCommand sqlCMD;
                 sqlCMD = con.CreateCommand();
-                sqlCMD.CommandText = "SELECT * FROM SavedReview WHERE SavedNurse=@nur";
+                sqlCMD.CommandText = "SELECT * FROM SaveReview WHERE SavedNurse=@nur";
 
                 sqlCMD.Parameters.Add(new SQLiteParameter("@nur", nurseInt));
 
@@ -108,10 +117,11 @@ namespace Final2021
                 DBClose();
             }
             return reviewedList;
-        }// end get Nurse List from saved
-
-
-        // INSERT the nurse being reviewed by nurse into table ReviewedNurse
+        }// END get Nurse List from saved
+        
+        /* InsertReviewed
+         * Insert a new nurse
+         */
         public void InsertReviewed(int nurseID, int departID, int reviewedBYID, int nurseType)
         {
             // Insert into the DB
@@ -136,8 +146,11 @@ namespace Final2021
                 DBClose();
             }
 
-        }// end insert into reviewedNurse
-         //Get's a list of the nurses that have reviewed the selected nurse, department and type
+        }// END insert into reviewedNurse
+        
+        /* GetReviewedByNurse
+         * List of nurses that have reviewed selected nurse 
+        */
         public List<int> GetReviewedByNurse(int nurseID, int departID)
         {
             // List of nurses that have reviewed the selected nurse.
@@ -165,8 +178,11 @@ namespace Final2021
                 DBClose();
             }
             return reviewedNurse;
-        }// end getReviewed By nurse List    
-
+        }// END getReviewed By nurse List    
+        /* CheckReviewed:
+         * Pair up nurse check if paired before or paired with the same nurse
+         * 
+         */
         // check departId and type for a list of nurses
         public List<String> CheckReviewed(int departID, int type)
         {// Clear the list
@@ -192,7 +208,7 @@ namespace Final2021
                 {
                     check = false;
                     // Used for debugging
-                    Console.WriteLine("------------Same NURSE SELECTED----------------");
+                   // Console.WriteLine("------------Same NURSE SELECTED----------------");
                     break;
                 }
                 
@@ -200,7 +216,7 @@ namespace Final2021
                 else if (reviewList.Contains(reviewSelected) == true)
                 {
                     check = false;
-                    Console.WriteLine("-----------------------------Delete called ------------------- Done");
+                   // Console.WriteLine("-----------------------------Delete called ------------------- Done");
                     DeleteDepartment(departID);
                     reviewedList.Clear();
 
@@ -216,32 +232,44 @@ namespace Final2021
                 Console.WriteLine("Calling Loop List");
                 ListLoop(nurseList, revList, departID, type);
             }
-
-
             return reviewedList;
-        }
+        }// END
+        
+        /* ListLoop
+         * Loop both lists send to BuildList and InsertReviewed
+         */
         public void ListLoop(List<int> nList, List<int> rList, int departID, int type)
         {
             Console.WriteLine("The list size for the FOR LOOP is " + nList.Count);
             for (int count = 0; count < nList.Count; count++)
             {
-                Console.WriteLine("Count is " + count);
+               // Console.WriteLine("Count is " + count);
                 int doc = nList[count];
                 int rev = rList[count];
-                Console.WriteLine("The list size is " + nList.Count);
+               // Console.WriteLine("The list size is " + nList.Count);
                 // Loop through two Lists and call InsertReviewed and build List
                 BuildList(doc, rev);
                 InsertReviewed(doc, departID, rev, type);
             }
 
-        }
-        // Used to insert the reviews so that they are saved
+        }//END
+        /* INSERT saved
+         * UPDATE to LINQ
+         */
+        // Used to insert the reviews so that they are saved current and OLD
+       
         public void InsertSaved(String revAnd)
         {
             string sDate = "Date Added: " + DateTime.Now.ToString("MMMM", CultureInfo.InvariantCulture) + " " + DateTime.Now.Year.ToString();
             //for nurse doc=0 nurs=1
             int doctorInt = 0;
             int nurseInt = 1;
+            int saveID = 1;// Saved for LINQ ID not used for anything else
+            SavedClass saveClass = new SavedClass();
+            // Send to insert saved 
+            saveClass.InsertSaved(saveID, revAnd, doctorInt, nurseInt, sDate);
+            /*
+             * NOT USED LINQ instead
             try
             {
                 DBopen();
@@ -263,11 +291,13 @@ namespace Final2021
             finally
             {
                 DBClose();
-            }
+            }*/
 
         }
 
-        // Delete Department
+        /*Delete Department
+         *  Delete by department ID
+         */
         public void DeleteDepartment(int departID)
         {// When the nurse can't be paired up anymore delete data in table BY department
             try
@@ -279,7 +309,7 @@ namespace Final2021
                 sqlCMD.Parameters.Add(new SQLiteParameter("@ID", departID));
                 sqlCMD.ExecuteNonQuery();
                 //debug
-                Console.WriteLine("--------------INSIDE DELETE---------------------------------------------------------");
+               // Console.WriteLine("--------------INSIDE DELETE---------------------------------------------------------");
             }//end try
             catch (SQLiteException e)
             {
@@ -290,7 +320,7 @@ namespace Final2021
                 DBClose();
             }
 
-        }//End Delete department 
+        }//END Delete department 
 
-    }
+    }// END CLASS
 }

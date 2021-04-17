@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 /* Edit Nurse
  * Select a Nurse click Fill In the text boxes and combo boxes get info from DB and fills them in
@@ -70,7 +63,7 @@ namespace Final2021
         {// get the ID from the combo box Select Nurse
             int getNurseID = Int32.Parse(cmBxSelectNurse.SelectedValue.ToString());
             // Calls getNurse sends the nurse ID
-            nur.getNurse(getNurseID);
+            nur.GetNurse(getNurseID);
             txtBxEditFName.Text = nur.FName;
             txtBxEditMName.Text = nur.MName;
             txtBxEditLName.Text = nur.LName;         
@@ -86,7 +79,7 @@ namespace Final2021
             cmBxSelectNurse.Refresh();
 
         }
-
+        // Not used
         private void btnDeleteSelected_Click(object sender, EventArgs e)
         {            
         }
@@ -97,7 +90,7 @@ namespace Final2021
             if (MessageBox.Show("Confirm?", nurse, MessageBoxButtons.YesNo) == DialogResult.Yes)
             {  
               // sends nurse ID to deleteNurse
-                nur.deleteNurse(Int32.Parse(cmBxSelectNurse.SelectedValue.ToString()));
+                nur.DeleteNurse(Int32.Parse(cmBxSelectNurse.SelectedValue.ToString()));
                 //refresh dataset for combo box
                 this.nurseTableAdapter.Fill(this.dataSetSelectNurse.Nurse);
                 cmBxSelectNurse.Refresh();

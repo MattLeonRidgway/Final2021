@@ -65,7 +65,7 @@ namespace Final2021
         private void btnFillInSELECTEDDoc_Click(object sender, EventArgs e)
         {
             int getDocID = Int32.Parse(cmBoxSelectDoctor.SelectedValue.ToString());
-            doc.getDoctor(getDocID);
+            doc.GetDoctor(getDocID);
             txtBxFNameEDIT.Text = doc.FName;
             txtBxMNameEDIT.Text = doc.MName;
             txtBxLNameEDIT.Text = doc.LName;
@@ -90,7 +90,7 @@ namespace Final2021
             if (MessageBox.Show("Confirm?", doctor, MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 
-                doc.deleteDoctor(Int32.Parse(cmBoxSelectDoctor.SelectedValue.ToString()));
+                doc.DeleteDoctor(Int32.Parse(cmBoxSelectDoctor.SelectedValue.ToString()));
                 //refresh dataset for combo box
                 this.doctorTableAdapter.Fill(this.dataSetSelectDoctor.Doctor);
                 cmBoxSelectDoctor.Refresh();

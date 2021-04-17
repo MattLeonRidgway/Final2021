@@ -51,34 +51,34 @@ namespace Final2021
             this.btnExit = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.cmboxClinic = new System.Windows.Forms.ComboBox();
-            this.cmBoxDepartmnet = new System.Windows.Forms.ComboBox();
-            this.cmboxType = new System.Windows.Forms.ComboBox();
-            this.cmboxStatus = new System.Windows.Forms.ComboBox();
-            this.dataSetStatus = new Final2021.DataSet.DataSetStatus();
-            this.statusBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.statusTableAdapter = new Final2021.DataSet.DataSetStatusTableAdapters.StatusTableAdapter();
-            this.dataSetDoctorType = new Final2021.DataSet.DataSetDoctorType();
-            this.doctorTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.doctorTypeTableAdapter = new Final2021.DataSet.DataSetDoctorTypeTableAdapters.DoctorTypeTableAdapter();
-            this.dataSetDepartment = new Final2021.DataSet.DataSetDepartment();
-            this.departmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.departmentTableAdapter = new Final2021.DataSet.DataSetDepartmentTableAdapters.DepartmentTableAdapter();
-            this.dataSetClinic = new Final2021.DataSet.DataSetClinic();
             this.clinicBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetClinic = new Final2021.DataSet.DataSetClinic();
+            this.cmBoxDepartmnet = new System.Windows.Forms.ComboBox();
+            this.departmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetDepartment = new Final2021.DataSet.DataSetDepartment();
+            this.cmboxType = new System.Windows.Forms.ComboBox();
+            this.doctorTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetDoctorType = new Final2021.DataSet.DataSetDoctorType();
+            this.cmboxStatus = new System.Windows.Forms.ComboBox();
+            this.statusBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetStatus = new Final2021.DataSet.DataSetStatus();
+            this.statusTableAdapter = new Final2021.DataSet.DataSetStatusTableAdapters.StatusTableAdapter();
+            this.doctorTypeTableAdapter = new Final2021.DataSet.DataSetDoctorTypeTableAdapters.DoctorTypeTableAdapter();
+            this.departmentTableAdapter = new Final2021.DataSet.DataSetDepartmentTableAdapters.DepartmentTableAdapter();
             this.clinicTableAdapter = new Final2021.DataSet.DataSetClinicTableAdapters.ClinicTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetStatus)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.statusBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetDoctorType)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.doctorTypeBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetDepartment)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetClinic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clinicBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetClinic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetDepartment)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.doctorTypeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetDoctorType)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statusBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetStatus)).BeginInit();
             this.SuspendLayout();
             // 
             // btnHome
             // 
-            this.btnHome.Location = new System.Drawing.Point(11, 412);
+            this.btnHome.Location = new System.Drawing.Point(256, 420);
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(75, 23);
             this.btnHome.TabIndex = 128;
@@ -226,7 +226,7 @@ namespace Final2021
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(330, 9);
+            this.label1.Location = new System.Drawing.Point(341, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(134, 42);
             this.label1.TabIndex = 78;
@@ -234,7 +234,7 @@ namespace Final2021
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(716, 412);
+            this.btnExit.Location = new System.Drawing.Point(459, 420);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 23);
             this.btnExit.TabIndex = 131;
@@ -244,7 +244,7 @@ namespace Final2021
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(363, 378);
+            this.btnCancel.Location = new System.Drawing.Point(363, 420);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 130;
@@ -262,6 +262,16 @@ namespace Final2021
             this.cmboxClinic.TabIndex = 134;
             this.cmboxClinic.ValueMember = "ClinicID";
             // 
+            // clinicBindingSource
+            // 
+            this.clinicBindingSource.DataMember = "Clinic";
+            this.clinicBindingSource.DataSource = this.dataSetClinic;
+            // 
+            // dataSetClinic
+            // 
+            this.dataSetClinic.DataSetName = "DataSetClinic";
+            this.dataSetClinic.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // cmBoxDepartmnet
             // 
             this.cmBoxDepartmnet.DataSource = this.departmentBindingSource;
@@ -273,6 +283,16 @@ namespace Final2021
             this.cmBoxDepartmnet.TabIndex = 135;
             this.cmBoxDepartmnet.ValueMember = "DepartmentID";
             // 
+            // departmentBindingSource
+            // 
+            this.departmentBindingSource.DataMember = "Department";
+            this.departmentBindingSource.DataSource = this.dataSetDepartment;
+            // 
+            // dataSetDepartment
+            // 
+            this.dataSetDepartment.DataSetName = "DataSetDepartment";
+            this.dataSetDepartment.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // cmboxType
             // 
             this.cmboxType.DataSource = this.doctorTypeBindingSource;
@@ -283,6 +303,16 @@ namespace Final2021
             this.cmboxType.Size = new System.Drawing.Size(197, 21);
             this.cmboxType.TabIndex = 136;
             this.cmboxType.ValueMember = "TypeID";
+            // 
+            // doctorTypeBindingSource
+            // 
+            this.doctorTypeBindingSource.DataMember = "DoctorType";
+            this.doctorTypeBindingSource.DataSource = this.dataSetDoctorType;
+            // 
+            // dataSetDoctorType
+            // 
+            this.dataSetDoctorType.DataSetName = "DataSetDoctorType";
+            this.dataSetDoctorType.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // cmboxStatus
             // 
@@ -296,57 +326,27 @@ namespace Final2021
             this.cmboxStatus.ValueMember = "StatusID";
             this.cmboxStatus.SelectedIndexChanged += new System.EventHandler(this.cmboxStatus_SelectedIndexChanged_1);
             // 
-            // dataSetStatus
-            // 
-            this.dataSetStatus.DataSetName = "DataSetStatus";
-            this.dataSetStatus.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // statusBindingSource
             // 
             this.statusBindingSource.DataMember = "Status";
             this.statusBindingSource.DataSource = this.dataSetStatus;
             // 
+            // dataSetStatus
+            // 
+            this.dataSetStatus.DataSetName = "DataSetStatus";
+            this.dataSetStatus.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // statusTableAdapter
             // 
             this.statusTableAdapter.ClearBeforeFill = true;
-            // 
-            // dataSetDoctorType
-            // 
-            this.dataSetDoctorType.DataSetName = "DataSetDoctorType";
-            this.dataSetDoctorType.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // doctorTypeBindingSource
-            // 
-            this.doctorTypeBindingSource.DataMember = "DoctorType";
-            this.doctorTypeBindingSource.DataSource = this.dataSetDoctorType;
             // 
             // doctorTypeTableAdapter
             // 
             this.doctorTypeTableAdapter.ClearBeforeFill = true;
             // 
-            // dataSetDepartment
-            // 
-            this.dataSetDepartment.DataSetName = "DataSetDepartment";
-            this.dataSetDepartment.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // departmentBindingSource
-            // 
-            this.departmentBindingSource.DataMember = "Department";
-            this.departmentBindingSource.DataSource = this.dataSetDepartment;
-            // 
             // departmentTableAdapter
             // 
             this.departmentTableAdapter.ClearBeforeFill = true;
-            // 
-            // dataSetClinic
-            // 
-            this.dataSetClinic.DataSetName = "DataSetClinic";
-            this.dataSetClinic.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // clinicBindingSource
-            // 
-            this.clinicBindingSource.DataMember = "Clinic";
-            this.clinicBindingSource.DataSource = this.dataSetClinic;
             // 
             // clinicTableAdapter
             // 
@@ -384,14 +384,14 @@ namespace Final2021
             this.Name = "Doctor";
             this.Text = "Doctor";
             this.Load += new System.EventHandler(this.Doctor_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetStatus)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.statusBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetDoctorType)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.doctorTypeBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetDepartment)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetClinic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clinicBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetClinic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetDepartment)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.doctorTypeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetDoctorType)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statusBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetStatus)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -3,10 +3,16 @@
 namespace Final2021
 {
     class ValidateClass
-    {
+    {/* Validation class
+      * Used to test strings, int, email aplphanumeric
+      * 
+      */
 
 
-        //check string for ONLY letters
+        /* isValidString
+         * Checks for empty string and if text entered is a valid string
+         * 
+         */
         public static bool isValidString(string input)
         {
             bool validateString = true;
@@ -18,7 +24,10 @@ namespace Final2021
             }
             return validateString;
         }
-        //Check for string and number
+        /* isValidAlphnamuric
+         * Validate a textbox and uses regex to match alphanumeric
+         * 
+         */
         public static bool isValidAlphanumeric(string input)
         {
             bool validateString = true;
@@ -30,7 +39,9 @@ namespace Final2021
             }
             return validateString;
         }
-        //check email
+        /* isValidEmail
+         * Validates EMAIL addresss
+         */
         public static bool isValidEmail(string input)
         {
             bool validateEmail = true;
@@ -42,7 +53,9 @@ namespace Final2021
             }
             return validateEmail;
         }
-        // is Int
+        /* isValidInt
+         * Check to make sure an INT is valid
+         */
         public static bool isValidInt(string input)
         {
             bool validateInt = true;

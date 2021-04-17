@@ -56,7 +56,7 @@ namespace Final2021
             // 
             // btnHome
             // 
-            this.btnHome.Location = new System.Drawing.Point(37, 407);
+            this.btnHome.Location = new System.Drawing.Point(273, 415);
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(75, 23);
             this.btnHome.TabIndex = 11;
@@ -75,11 +75,13 @@ namespace Final2021
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(312, 20);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(324, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 13);
+            this.label1.Size = new System.Drawing.Size(177, 24);
             this.label1.TabIndex = 7;
             this.label1.Text = "Nurse Review List";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // btnGenerate
             // 
@@ -93,7 +95,7 @@ namespace Final2021
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(224, 407);
+            this.btnExit.Location = new System.Drawing.Point(460, 415);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 23);
             this.btnExit.TabIndex = 19;
@@ -103,7 +105,7 @@ namespace Final2021
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(132, 407);
+            this.btnCancel.Location = new System.Drawing.Point(368, 415);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 18;

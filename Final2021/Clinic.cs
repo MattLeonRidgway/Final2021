@@ -3,7 +3,11 @@ using System.Collections.Generic;
 using System.Data.SQLite;
 
 namespace Final2021
-{
+{/* Clinic Class:
+  * Builds the Clinic Object
+  * Insert and Update
+  * Gets Clinic List
+  */
     class Clinic : DBConnection
     {
         int clinicID;
@@ -23,15 +27,17 @@ namespace Final2021
 
         public int ClinicID { get => clinicID; set => clinicID = value; }
         public string ClinicString { get => clinicString; set => clinicString = value; }
-        // INSERT clinic WORKING
+        /* InsertClinic:
+         * Insert Clinic the ID is auto incremented at the DB
+         */
         public void InsertClinic(string clinic)
         {
-
+           
             try
             {
                 DBopen();
-                SQLiteCommand insertCommand = new SQLiteCommand("INSERT INTO Clinic (Clinic)VALUES(?)", con);
-                insertCommand.Parameters.AddWithValue(clinic, ClinicString);
+                SQLiteCommand insertCommand = new SQLiteCommand("INSERT INTO [Clinic] (Clinic) VALUES(@clinic)", con);
+                insertCommand.Parameters.Add(new SQLiteParameter( "@clinic",ClinicString));
                 insertCommand.ExecuteNonQuery();
 
             }
@@ -43,8 +49,11 @@ namespace Final2021
             {
                 DBClose();
             }
-        }// end insert clinic
-        // get a list of clinics 
+        }// END insert clinic
+
+        /* ViewClinic:
+         * Returns a List of Clinics
+         */
         public List<string> ViewClinic(List<string> clinicList)
         {
 
@@ -69,19 +78,20 @@ namespace Final2021
             DBClose();
             return clinicList;
         }// end ViewClinic()
-        public void UpdateClinic(int clinicID, string clinicType)
+        /* UpdateClinic
+         * clinicID and clinicType sent in
+         * Update Clinic by type and ID
+         */
+        public void UpdateClinic(int clinicID, string clinicString)
         {
 
             try
             {
                 DBopen();
                 SQLiteCommand sqlUpdate =new SQLiteCommand("UPDATE Clinic SET Clinic=@clinic WHERE ClinicID=@iD", con);
-                sqlUpdate.Parameters.Add(new SQLiteParameter("@iD"));
-                sqlUpdate.Parameters.Add(new SQLiteParameter("@clinic"));
-                sqlUpdate.Parameters["@iD"].Value = clinicID;
-                sqlUpdate.Parameters["@clinic"].Value = clinicType;
-
-              
+                sqlUpdate.Parameters.Add(new SQLiteParameter("@iD",ClinicID));
+                sqlUpdate.Parameters.Add(new SQLiteParameter("@clinic",ClinicString));      
+                // Execute
                 sqlUpdate.ExecuteNonQuery();
             }
             catch (SQLiteException e)
@@ -94,6 +104,6 @@ namespace Final2021
 
             }
 
-        }
-    }
+        }// END UpdateClinic
+    }//END class
 }

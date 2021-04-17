@@ -87,7 +87,7 @@ namespace Final2021
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(713, 415);
+            this.btnExit.Location = new System.Drawing.Point(495, 415);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 23);
             this.btnExit.TabIndex = 83;
@@ -97,7 +97,7 @@ namespace Final2021
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(414, 382);
+            this.btnCancel.Location = new System.Drawing.Point(414, 415);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 82;
@@ -107,7 +107,7 @@ namespace Final2021
             // 
             // btnHome
             // 
-            this.btnHome.Location = new System.Drawing.Point(12, 415);
+            this.btnHome.Location = new System.Drawing.Point(327, 415);
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(75, 23);
             this.btnHome.TabIndex = 81;

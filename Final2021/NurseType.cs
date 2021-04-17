@@ -3,7 +3,11 @@ using System.Collections.Generic;
 using System.Data.SQLite;
 
 namespace Final2021
-{
+{/* NurseType Class
+  * Used to update and Insert a new type
+  * Get a list of types
+  * 
+  */
     class NurseType : DBConnection
     {
         int id;
@@ -23,13 +27,16 @@ namespace Final2021
 
         public int Id { get => id; set => id = value; }
         public string Type { get => type; set => type = value; }
+        /* InsertNurseType
+         * Makes a new nurse type
+         */
         public void InsertNurseType(string type)
         {
             try
             {
                 DBopen();
-                SQLiteCommand insertCommand = new SQLiteCommand("INSERT INTO NurseType(Type)VALUES(?)", con);
-                insertCommand.Parameters.AddWithValue(type, Type);
+                SQLiteCommand insertCommand = new SQLiteCommand("INSERT INTO NurseType(Type)VALUES(@type)", con);
+                insertCommand.Parameters.Add(new SQLiteParameter("@type", Type));
                 insertCommand.ExecuteNonQuery();
             }
             catch (SQLiteException e)
@@ -41,8 +48,10 @@ namespace Final2021
                 DBClose();
             }
 
-        }// end insert Type
-         // get a list Types 
+        }// END insert Type
+         /* ViewType:
+          * Returns a List of nurse types
+          */
         public List<string> ViewType(List<string> typeList)
         {
             DBopen();
@@ -65,7 +74,12 @@ namespace Final2021
             }
             DBClose();
             return typeList;
-        }// end View type
+        }// END View type
+        
+        /* UpdateType
+         * Updates the database based on type ID
+         * 
+         */
         public void UpdateType(int typeID, string type)
         {
 
@@ -89,6 +103,7 @@ namespace Final2021
                 DBClose();
 
             }
-        }
-    }
+        }// END 
+
+    }// END class
 }

@@ -3,7 +3,12 @@ using System.Collections.Generic;
 using System.Data.SQLite;
 
 namespace Final2021
-{
+{/* Department Class using the DBConnection
+  * Insert a new department
+  * UPdate department
+  * Get a List of departments
+  * Build Department Object 
+  */
     class Department : DBConnection
     {
         int departmentID;
@@ -23,16 +28,19 @@ namespace Final2021
 
         public int DepartmentID { get => departmentID; set => departmentID = value; }
         public string DepartmentString { get => departmentString; set => departmentString = value; }
-        public void InsertDepartment(string depart)
+        /* InsertDepartment
+         * Inserts a new department into the database
+         */
+        public void InsertDepartment(string departmentString)
         {
 
             try
             {
                 DBopen();
-                SQLiteCommand insertCommand = new SQLiteCommand("INSERT INTO Department(Department)VALUES(?)", con);
-                insertCommand.Parameters.AddWithValue(depart, DepartmentString);
+                SQLiteCommand insertCommand = new SQLiteCommand("INSERT INTO Department(Department)VALUES(@dep)", con);
+                insertCommand.Parameters.Add(new SQLiteParameter("@dep", DepartmentString));
+                // Execute SQL
                 insertCommand.ExecuteNonQuery();
-
             }
             catch (SQLiteException e)
             {
@@ -43,41 +51,48 @@ namespace Final2021
                 DBClose();
             }
         }// end insert department
-        // get a list of departments
-        public List<string> ViewDepartment(DBConnection conn, List<string> departList)
+        /* ViewDepartment
+         * Return a List of ALL departments
+         */
+        public List<string> ViewDepartment(List<string> departList)
         {
-            DBopen();
+           
             try
-            {
+            { DBopen();
                 SQLiteDataReader sqlGet;
                 SQLiteCommand sqlCMD;
                 sqlCMD = con.CreateCommand();
                 sqlCMD.CommandText = "SELECT * FROM Department";
                 sqlGet = sqlCMD.ExecuteReader();
+                // Loop to add to List from DB
                 while (sqlGet.Read())
                 {
                     string getDepart = sqlGet.GetString(11);
                     departList.Add(getDepart);
                 }
             }
-            catch
+            catch (SQLiteException e)
             {
-                Console.WriteLine("View Department catch");
+                throw new Exception(e.Message);
             }
-            DBClose();
+            finally
+            {
+                DBClose();
+            }
             return departList;
-        }// end ViewDepartment()
-        public void UpdateDepartment(int departmentID, string departmentType)
+        }// END ViewDepartment()
+        /* UpdateDepartment:
+         * Updates the database using the department ID
+         */
+        public void UpdateDepartment(int departmentID, string departmentString)
         {
             try
             {
                 DBopen();
                 SQLiteCommand sqlUpdate = new SQLiteCommand("UPDATE Department SET Department=@department WHERE DepartmentID=@iD", con);
-                sqlUpdate.Parameters.Add(new SQLiteParameter("@iD"));
-                sqlUpdate.Parameters.Add(new SQLiteParameter("@department"));
-                sqlUpdate.Parameters["@iD"].Value = departmentID;
-                sqlUpdate.Parameters["@department"].Value = departmentType;
-
+                sqlUpdate.Parameters.Add(new SQLiteParameter("@iD",DepartmentID));
+                sqlUpdate.Parameters.Add(new SQLiteParameter("@department",DepartmentString));
+         
                 sqlUpdate.ExecuteNonQuery();
             }
             catch (SQLiteException e)
@@ -89,6 +104,7 @@ namespace Final2021
                 DBClose();
 
             }
-        }
-    }
+        }// END Update
+
+    }// END CLass
 }

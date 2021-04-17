@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using System.Data.SQLite;
 
 namespace Final2021
-{
+{/* Status Class
+  * Insert Update view all
+  * 
+  */
     class Status : DBConnection
     {
         string statusType;
@@ -24,7 +27,9 @@ namespace Final2021
         }
         public string StatusType { get => statusType; set => statusType = value; }
         public int StatusID { get => statusID; set => statusID = value; }
-        // Insert into database statusType TESTED WORKING
+        /* InsertStatus
+         * Insert a new status into the DB
+         */
         public void InsertStatus(string sType)
         {
 
@@ -43,11 +48,13 @@ namespace Final2021
             {
                 DBClose();
             }
+        }// END insert status
 
-
-
-        }// end insert status
-        // get a list of status 
+        /* ViewStatus
+         * Return a List of ALL status items
+         * 
+         */
+        
         public List<string> ViewStatus(List<string> statusList)
         {
             try
@@ -71,6 +78,9 @@ namespace Final2021
             DBClose();
             return statusList;
         }// end ViewStatus()
+        /* UpdateStatus
+         * Update status by ID
+         */
         public void UpdateStatus(int statusID, string sType)
         {
 
@@ -94,6 +104,6 @@ namespace Final2021
                 
             }
 
-        }
-    }
+        }//END UpdateStatus
+    }//END class
 }

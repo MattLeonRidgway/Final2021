@@ -63,5 +63,10 @@ namespace Final2021
             
             lstBxNurseRev.DataSource = reviewNur.GetSaved();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

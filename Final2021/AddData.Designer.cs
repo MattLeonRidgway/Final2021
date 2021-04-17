@@ -103,7 +103,7 @@ namespace Final2021
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(161, 318);
+            this.label6.Location = new System.Drawing.Point(152, 315);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(46, 16);
             this.label6.TabIndex = 32;
@@ -132,7 +132,7 @@ namespace Final2021
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(152, 272);
+            this.label5.Location = new System.Drawing.Point(152, 270);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(88, 16);
             this.label5.TabIndex = 29;
@@ -141,7 +141,7 @@ namespace Final2021
             // btnNurseType
             // 
             this.btnNurseType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNurseType.Location = new System.Drawing.Point(463, 213);
+            this.btnNurseType.Location = new System.Drawing.Point(479, 213);
             this.btnNurseType.Name = "btnNurseType";
             this.btnNurseType.Size = new System.Drawing.Size(147, 33);
             this.btnNurseType.TabIndex = 28;
@@ -154,14 +154,14 @@ namespace Final2021
             this.txtBxNurseType.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBxNurseType.Location = new System.Drawing.Point(251, 215);
             this.txtBxNurseType.Name = "txtBxNurseType";
-            this.txtBxNurseType.Size = new System.Drawing.Size(206, 31);
+            this.txtBxNurseType.Size = new System.Drawing.Size(220, 31);
             this.txtBxNurseType.TabIndex = 27;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(156, 225);
+            this.label4.Location = new System.Drawing.Point(152, 221);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(89, 16);
             this.label4.TabIndex = 26;
@@ -170,7 +170,7 @@ namespace Final2021
             // btnDoctorType
             // 
             this.btnDoctorType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDoctorType.Location = new System.Drawing.Point(463, 168);
+            this.btnDoctorType.Location = new System.Drawing.Point(477, 166);
             this.btnDoctorType.Name = "btnDoctorType";
             this.btnDoctorType.Size = new System.Drawing.Size(147, 31);
             this.btnDoctorType.TabIndex = 25;
@@ -183,14 +183,14 @@ namespace Final2021
             this.txtBxDrType.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBxDrType.Location = new System.Drawing.Point(251, 165);
             this.txtBxDrType.Name = "txtBxDrType";
-            this.txtBxDrType.Size = new System.Drawing.Size(206, 31);
+            this.txtBxDrType.Size = new System.Drawing.Size(220, 31);
             this.txtBxDrType.TabIndex = 24;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(156, 175);
+            this.label3.Location = new System.Drawing.Point(152, 175);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(94, 16);
             this.label3.TabIndex = 23;
@@ -199,7 +199,7 @@ namespace Final2021
             // btnStatus
             // 
             this.btnStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStatus.Location = new System.Drawing.Point(463, 123);
+            this.btnStatus.Location = new System.Drawing.Point(479, 123);
             this.btnStatus.Name = "btnStatus";
             this.btnStatus.Size = new System.Drawing.Size(118, 31);
             this.btnStatus.TabIndex = 22;
@@ -212,14 +212,14 @@ namespace Final2021
             this.txtBxStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBxStatus.Location = new System.Drawing.Point(251, 123);
             this.txtBxStatus.Name = "txtBxStatus";
-            this.txtBxStatus.Size = new System.Drawing.Size(206, 31);
+            this.txtBxStatus.Size = new System.Drawing.Size(220, 31);
             this.txtBxStatus.TabIndex = 21;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(152, 127);
+            this.label2.Location = new System.Drawing.Point(152, 133);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(69, 16);
             this.label2.TabIndex = 20;

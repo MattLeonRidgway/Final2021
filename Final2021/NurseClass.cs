@@ -3,7 +3,14 @@ using System.Collections.Generic;
 using System.Data.SQLite;
 
 namespace Final2021
-{
+{/* The Nurse may not be used 
+  * NurseClass
+  * Insert a new nurse
+  * Update nurse
+  * Delete nurse
+  * View nurses
+  * 
+  */
     class NurseClass : DBConnection
     {
         string fName, mName, lName, email, notes;       
@@ -32,7 +39,9 @@ namespace Final2021
         public int Type { get => type; set => type = value; }
         public int Department { get => department; set => department = value; }
         public int Clinic { get => clinic; set => clinic = value; }
-
+        /* InsertNurse
+         * Insert a new nurse
+         */
         public void InsertNurse(string first, string mid, string last, int stat, int type, int dep, int clinic, string email, string notes)
         {
          try
@@ -62,9 +71,12 @@ namespace Final2021
             {
                 DBClose();
             }
-        }// end insert nurse
-         // get Nurse Get
-        public void getNurse(int nurseID)
+        }// END insert nurse
+        /* GetNurse
+         * Get nurse by ID
+         * 
+         */
+        public void GetNurse(int nurseID)
         {
            try
             {
@@ -100,8 +112,12 @@ namespace Final2021
 
 
         }
-        // end Nurse Get
-        // get a list of nurse from the database WHERE departmentID AND type
+        // END Nurse Get
+      
+        /* ListIntNurse
+         * Int List of nurses by department ID
+         * returns a List
+       */
         public List<int> ListIntNurse(int department, int type)
         {
             List<int> nurseList = new List<int>();
@@ -135,9 +151,11 @@ namespace Final2021
             return nurseList;
 
 
-        }// list int doctor
-        // Delete Nurse
-        public void deleteNurse(int nurID)
+        }// END list int doctor
+        /* Delete Nurse
+         * Delete a nurse BY id
+         */
+        public void DeleteNurse(int nurID)
         {
             try
             {
@@ -161,25 +179,27 @@ namespace Final2021
 
         }
         // End Delete Nurse
-        // get a list of nurses from the database WHERE departmentID AND type
+       /* ViewNurse
+        * List returned of all nurses in department of nurse type
+        * 
+        */
         public List<string> ViewNurse(int department, int type)
         {//not tested
             List<string> nurseList = new List<string>();
             try
             {
-
                 DBopen();
                 SQLiteCommand sqlCMD;
                 sqlCMD = con.CreateCommand();
                 sqlCMD.CommandText = "SELECT * FROM Nurse WHERE NurseDepartment=@departID AND NurseType=@type";
                 sqlCMD.Parameters.Add(new SQLiteParameter("@departID", department));
                 sqlCMD.Parameters.Add(new SQLiteParameter("@type", type));
-
+                // READER
                 SQLiteDataReader sqlGet = sqlCMD.ExecuteReader();
 
                 while (sqlGet.Read())
                 {
-                   
+                   //WHILE loop to fill list
                     nurseList.Add(sqlGet.GetString(8));
                 }
             }
@@ -193,11 +213,12 @@ namespace Final2021
             }
 
             return nurseList;
-
-
-
-        }// end ViewNurse()
-        // UPDATE nurse
+        }// END ViewNurse()
+        
+        /* UpdateNurse:
+         * Update the nurse BY ID
+         * 
+         */
         public void UpdateNurse(int nID, string first, string mid, string last, int stat, int type, int dep, int clinic, string email, string notes)
         {
             try
@@ -228,6 +249,6 @@ namespace Final2021
             }
            
         }
-        // end UPDATE nurse 
-    }
+        // END UPDATE nurse 
+    }// END class
 }
