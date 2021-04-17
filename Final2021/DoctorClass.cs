@@ -13,11 +13,12 @@ using System.Data.SQLite;
 // DoctorEmail string
 // DoctorNotes string
 namespace Final2021
-{/* DoctorClass
-  * Used to Insert, Update, Delete
-  * Get a List of Active Doctors
-  * Get View
-  * 
+{
+    /* DoctorClass
+     * Used to Insert, Update, Delete
+     * Get a List of Active Doctors
+     * Get View
+    * 
   */
     class DoctorClass : DBConnection
     {// Doctor extends DBConnection
