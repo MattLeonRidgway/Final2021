@@ -107,9 +107,9 @@ namespace Final2021
                     FName = sqlGet.GetString(1);
                     MName = sqlGet.GetString(2);
                     LName = sqlGet.GetString(3);
-                    Status = sqlGet.GetInt32(4);
-                    Type = sqlGet.GetInt32(5);
-                    Department = sqlGet.GetInt32(6);
+                    Status = sqlGet.GetInt16(4);
+                    Type = sqlGet.GetInt16(5);
+                    Department = sqlGet.GetInt16(6);
                     Clinic = sqlGet.GetInt16(7);
                     Email = sqlGet.GetString(8);
                     Notes = sqlGet.GetString(9);

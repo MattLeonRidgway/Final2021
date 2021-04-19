@@ -19,7 +19,9 @@ namespace Final2021
         {
             InitializeComponent();
         }
-
+        /* Cancel:
+         * Clear text boxes
+         */
         private void btnCancel_Click(object sender, EventArgs e)
         {// Clear text boxes
             txtBxEditEmail.Clear();
@@ -28,7 +30,9 @@ namespace Final2021
             txtBxEditMName.Clear();
             txtBxEditNote.Clear();
         }
-
+        /* Exit
+         * Exit program
+         */
         private void btnExit_Click(object sender, EventArgs e)
         {// Message box to confirm exit
             if (MessageBox.Show("Confirm?", "Close Application", MessageBoxButtons.YesNo) == DialogResult.Yes)
@@ -41,14 +45,16 @@ namespace Final2021
                 this.Activate();
             }
         }
-
+        /* Home
+         * Navigate to the Home form
+         */
         private void btnHome_Click(object sender, EventArgs e)
         {// Takes the user home and hides the current form
             Form1 home = new Form1();
             home.Show();
             Hide();
         }
-
+        // LOAD dataset
         private void NurseEdit_Load(object sender, EventArgs e)
         {// Loads the datasets when the form loads
             
@@ -58,7 +64,9 @@ namespace Final2021
             this.statusTableAdapter.Fill(this.dataSetNurseEditStatus.Status);
             this.nurseTableAdapter.Fill(this.dataSetSelectNurse.Nurse);
         }
-
+        /* FillInEdit
+         * Select a nurse and fill the text boxes from the database
+         */
         private void btnFillInEDIT_Click(object sender, EventArgs e)
         {// get the ID from the combo box Select Nurse
             int getNurseID = Int32.Parse(cmBxSelectNurse.SelectedValue.ToString());
@@ -66,8 +74,8 @@ namespace Final2021
             nur.GetNurse(getNurseID);
             txtBxEditFName.Text = nur.FName;
             txtBxEditMName.Text = nur.MName;
-            txtBxEditLName.Text = nur.LName;         
-
+            txtBxEditLName.Text = nur.LName;
+            cmBoxEDITStatus.SelectedItem = nur.Status;
             cmBxTypeEDIT.SelectedIndex = nur.Type;
             cmBxDepartEDIT.SelectedIndex = nur.Department;
             cmBxClinicEDIT.SelectedIndex = nur.Clinic;
@@ -83,7 +91,9 @@ namespace Final2021
         private void btnDeleteSelected_Click(object sender, EventArgs e)
         {            
         }
-
+        /* Delete:
+         * Deleted the selected nurse
+         */
         private void btnNurseDelete_Click(object sender, EventArgs e)
         {// Select Nurse message box confirm delete
             string nurse = "Deleted Nurse "+cmBxSelectNurse.Text;
@@ -102,7 +112,9 @@ namespace Final2021
             }
             
         }
-
+/* Save nurse UPDATE
+ * UPDATE the database
+ */
         private void btnEditSAVE_Click(object sender, EventArgs e)
         {// UPDATE
             bool check = false;

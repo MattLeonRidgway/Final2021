@@ -5,13 +5,17 @@ namespace Final2021
 {
     public partial class EditData : Form          
     {
-       
+       /* Edit Data
+        * select an item to edit enter the change in the text box and select the desired button
+        */
    
         public EditData()
         {
             InitializeComponent();
         }
-
+        /* Exit:
+         * Click to close the program
+         */
         private void btnExit_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Confirm?", "Close Application", MessageBoxButtons.YesNo) == DialogResult.Yes)
@@ -24,14 +28,16 @@ namespace Final2021
                 this.Activate();
             }
         }
-
+        /* Home:
+         * Click to go to HOME form (form1)
+         */
         private void btnHome_Click(object sender, EventArgs e)
         {
             Form1 home = new Form1();
             home.Show();
             Hide();
         }
-
+        // Load datasets
         private void EditData_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'dataSetEditClinicData.Clinic' table. You can move, or remove it, as needed.
@@ -44,11 +50,10 @@ namespace Final2021
             this.doctorTypeTableAdapter.Fill(this.dataSetEditDoctorTypeData.DoctorType);
             // TODO: This line of code loads data into the 'dataSetEDITStatus.Status' table. You can move, or remove it, as needed.
             this.statusTableAdapter.Fill(this.dataSetEDITStatus.Status);
-
-
-
         }
-
+        /* Cancel
+         *  Used to clear the text boxes
+         */
         private void btnCancel_Click(object sender, EventArgs e)
         {
             txtBxClinic.Clear();
@@ -57,7 +62,10 @@ namespace Final2021
             txtBxNurseType.Clear();
             txtBxStatus.Clear();
         }
-
+        /* Status:
+         * UPDATE status
+         * Validate status entered 
+         */
         private void btnStatus_Click(object sender, EventArgs e)
         {
             Status status = new Status();
@@ -71,15 +79,16 @@ namespace Final2021
 
             }
             else
-            {
+            {// ERROR
                 MessageBox.Show("Correct Errors");
-            }
-           
+            }           
 
         }
-
+        /* Doctor Type:
+         * UPDATE the doctor TYPE
+         */
         private void btnDoctorType_Click(object sender, EventArgs e)
-        {
+        {// Validate text box
             DoctorType docType = new DoctorType();
             if (ValidateClass.isValidString(txtBxDoctorType.Text)) {
                 docType.Type = txtBxDoctorType.Text;
@@ -95,7 +104,9 @@ namespace Final2021
             }
        
         }
-
+        /* Nurse Type
+         * Used to UPDATE the nurse type
+         */
         private void btnNurseType_Click(object sender, EventArgs e)
         {
             NurseType nurseType = new NurseType();
@@ -113,7 +124,9 @@ namespace Final2021
             }
     
         }
-
+        /* Department
+         * UPDATE the department
+         */
         private void btnDepartment_Click(object sender, EventArgs e)
         {
             Department department = new Department();
@@ -131,7 +144,9 @@ namespace Final2021
             }
            
         }
-
+        /* Clinic
+         * Used to UPDATE the clinic Validating the text box and sending an UPDATE to the data base
+         */
         private void btnClinic_Click(object sender, EventArgs e)
         {
             Clinic clinic = new Clinic();

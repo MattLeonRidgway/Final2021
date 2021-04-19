@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Windows.Forms;
-
+/* AddData:
+ * This form is used to add in Status, Clinic, Doctor type, nurse type
+ *  and Department.
+ */
 
 namespace Final2021
 {
@@ -16,7 +19,11 @@ namespace Final2021
         {
             InitializeComponent();
         }
-
+        /* Status:
+         * Validate text box
+         * Clear the text box
+         * Insert into database
+         */
         private void btnStatus_Click(object sender, EventArgs e)
         {
 
@@ -27,13 +34,17 @@ namespace Final2021
                 stat.InsertStatus(stat.StatusType);
             }
             else
-            {
+            {// Error
                 txtBxStatus.Clear();
                 txtBxStatus.AppendText("Invalid");
             }
 
         }
-
+        /* Doctor Type:
+         * Validate text box
+         * Clear the text box
+         * Insert into database
+         */
         private void btnDoctorType_Click(object sender, EventArgs e)
         {
             if (ValidateClass.isValidString(txtBxDrType.Text))
@@ -43,12 +54,16 @@ namespace Final2021
                 docType.InsertDoctorType(docType.Type);
             }
             else
-            {
+            {// Error
                 txtBxDrType.Clear();
                 txtBxDrType.AppendText("Invalid");
             }
         }
-
+        /* Nurse type:
+         * Validate text box
+         * Clear the text box
+         * Insert into database
+         */
         private void btnNurseType_Click(object sender, EventArgs e)
         {
             if (ValidateClass.isValidString(txtBxNurseType.Text))
@@ -58,15 +73,19 @@ namespace Final2021
                 nurType.InsertNurseType(nurType.Type);
             }
             else
-            {
+            {// Error
                 txtBxNurseType.Clear();
                 txtBxNurseType.AppendText("Invalid");
 
             }
         }
-
+        /* Department:
+         * Validate text box
+         * Clear the text box
+         * Insert into database
+         */
         private void btnDepartment_Click(object sender, EventArgs e)
-        {
+        {// Validate text 
 
             if (ValidateClass.isValidString(txtBxDepartment.Text))
             {
@@ -75,12 +94,16 @@ namespace Final2021
                 department.InsertDepartment(department.DepartmentString);
             }
             else
-            {
+            {// On Error
                 txtBxDepartment.Clear();
                 txtBxDepartment.AppendText("Invalid");
             }
         }
-
+        /* Clinic:
+         * Validate text box
+         * Clear the text box
+         * Insert into database
+         */
         private void btnClinic_Click(object sender, EventArgs e)
         {
 
@@ -97,7 +120,9 @@ namespace Final2021
             }
 
         }
-
+        /* Cancel:
+         * Clear text boxes
+         */
         private void btnCancel_Click(object sender, EventArgs e)
         {
             txtBxClinic.Clear();
@@ -106,7 +131,9 @@ namespace Final2021
             txtBxDrType.Clear();
             txtBxStatus.Clear();
         }
-
+        /* Exit:
+         * Message box to exit the program
+         */
         private void btnExit_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Confirm?", "Close Application", MessageBoxButtons.YesNo) == DialogResult.Yes)
@@ -119,7 +146,9 @@ namespace Final2021
                 this.Activate();
             }
         }
-
+        /* Home:
+         * Navigate to Form1 the HOME PAGE
+         */
         private void btnHome_Click(object sender, EventArgs e)
         {
             Form1 home = new Form1();

@@ -2,7 +2,9 @@
 using System.Windows.Forms;
 
 namespace Final2021
-{
+{/* Nurse form
+  * Used to ADD a new nurse
+  */
     public partial class Nurse : Form
     {
         DBConnection connection = new DBConnection();
@@ -11,7 +13,9 @@ namespace Final2021
         {
             InitializeComponent();
         }
-
+        /* Exit
+         * Exit program
+         */
         private void btnExit_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Confirm?", "Close Application", MessageBoxButtons.YesNo) == DialogResult.Yes)
@@ -24,19 +28,21 @@ namespace Final2021
                 this.Activate();
             }
         }
-
+/* Home
+ * Navigate to form 1
+ */
         private void btnHome_Click(object sender, EventArgs e)
         {
             Form1 home = new Form1();
             home.Show();
             Hide();
         }
-
+        //NOT used
         private void lstBxStatus_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
-
+        // LOAD dataset
         private void Nurse_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'dataSetNurseClinicAdd.Clinic' table. You can move, or remove it, as needed.
@@ -50,7 +56,11 @@ namespace Final2021
 
 
         }
-
+        /* Add nurse
+         * Validate text boxes
+         * IF true insert the new Nurse
+         * Else show error
+         */
         private void editAddNurse_Click(object sender, EventArgs e)
         {
             bool check = true;
@@ -109,7 +119,7 @@ namespace Final2021
                 check = false;
             }
             if (check)
-            {
+            {// IF true
                 nurse.Status = Int32.Parse(cmboxStatus.SelectedValue.ToString());
                 nurse.Type = Int32.Parse(cmboxType.SelectedValue.ToString());
                 nurse.Department = Int32.Parse(cmboxDepartment.SelectedValue.ToString());
@@ -125,7 +135,7 @@ namespace Final2021
               
             }
             else
-            {
+            {// else ERROR
                 MessageBox.Show("Correct Errors");
             }
         }

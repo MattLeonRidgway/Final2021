@@ -2,7 +2,11 @@
 using System.Windows.Forms;
 
 namespace Final2021
-{
+{/* Nurse Review Form
+  * generate a list of nurse show in list box
+  * pair the nurses and show in list box
+  * Saved will show old and current
+  */
     public partial class NurseReview : Form
     { NurseClass nur = new NurseClass();
         ReviewedNurse reviewNur = new ReviewedNurse();
@@ -10,7 +14,9 @@ namespace Final2021
         {
             InitializeComponent();
         }
-
+        /* Exit:
+         * Exit program
+         */
         private void btnExit_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Confirm?", "Close Application", MessageBoxButtons.YesNo) == DialogResult.Yes)
@@ -23,14 +29,18 @@ namespace Final2021
                 this.Activate();
             }
         }
-
+        /* Home:
+         * Navigate to Home
+         */
         private void btnHome_Click(object sender, EventArgs e)
         {
             Form1 home = new Form1();
             home.Show();
             Hide();
         }
-
+        /* LOAD datasets
+         * 
+         */
         private void NurseReview_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'dataSetNurse.NurseType' table. You can move, or remove it, as needed.
@@ -39,7 +49,9 @@ namespace Final2021
             this.departmentTableAdapter.Fill(this.dataSetReviewDepartmentNurse.Department);
 
         }
-
+        /* Generate:
+         * Build list of nurses
+         */
         private void btnGenerate_Click(object sender, EventArgs e)
         {           
             int department = Int32.Parse(lstBxDepart.SelectedValue.ToString());
@@ -48,7 +60,9 @@ namespace Final2021
             btnGenerate.Visible = false;
             btnMakeList.Visible = true;
         }
-
+        /* MakeList:
+         * Pair list of nurses 
+         */
         private void btnMakeList_Click(object sender, EventArgs e)
         {
             int depart = Int32.Parse(lstBxDepart.SelectedValue.ToString());
@@ -57,13 +71,13 @@ namespace Final2021
             lstBxNurseRev.DataSource = reviewNur.CheckReviewed(depart, type);
             btnMakeList.Visible = false;
         }
-
+        //NOT used
         private void btnSaved_Click(object sender, EventArgs e)
         {
             
             lstBxNurseRev.DataSource = reviewNur.GetSaved();
         }
-
+        //NOT used
         private void label1_Click(object sender, EventArgs e)
         {
 
