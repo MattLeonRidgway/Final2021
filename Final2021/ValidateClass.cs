@@ -1,10 +1,12 @@
-﻿using System.Text.RegularExpressions;
+﻿using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 namespace Final2021
 {
     class ValidateClass
     {/* Validation class
-      * Used to test strings, int, email aplphanumeric
+      * Used to test strings, int, email alphanumeric
+      * Check list size
       * 
       */
 
@@ -68,6 +70,20 @@ namespace Final2021
             }
             return validateInt;
         }
-
+        /* checkListSize
+         * Checks IF size is less than one
+         */
+        public bool checkList(List<string> passedList)
+        {
+            if (passedList.Count <= 1)
+            {
+                return false;
+            }
+            else { 
+              return true;
+            }
+          
+        }
     }
+   
 }

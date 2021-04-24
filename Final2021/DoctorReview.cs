@@ -9,6 +9,8 @@ namespace Final2021
     public partial class DoctorReview : Form
     { DoctorClass doc = new DoctorClass();
         ReviewedDoctor revDoc = new ReviewedDoctor();
+        ValidateClass validate = new ValidateClass();
+
         public DoctorReview()
         {
             InitializeComponent();
@@ -49,8 +51,17 @@ namespace Final2021
         {
             int department = Int32.Parse(lstBxDepart.SelectedValue.ToString());
             lstBxDocREv.DataSource = doc.ViewDoctor(department);
-            btnGen.Visible = true;
-            btnGenerate.Visible = false;
+            if (validate.checkList(doc.ViewDoctor(department)))
+            {
+                btnGen.Visible = true;
+                btnGenerate.Visible = false;
+            }
+            else {
+                MessageBox.Show("Not enough Doctors to build a List");
+                btnGen.Visible = false;
+                btnGenerate.Visible = true;
+            }
+   
         }
         // Load dataset
         private void DoctorReview_Load(object sender, EventArgs e)
@@ -69,6 +80,7 @@ namespace Final2021
             lstBxDocREv.ClearSelected();
             
             lstBxDocREv.DataSource= revDoc.CheckReviewed(department);
+            
            //comment out for debugging
              btnGen.Visible = false;
         }

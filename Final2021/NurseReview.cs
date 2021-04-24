@@ -10,6 +10,7 @@ namespace Final2021
     public partial class NurseReview : Form
     { NurseClass nur = new NurseClass();
         ReviewedNurse reviewNur = new ReviewedNurse();
+        ValidateClass validate = new ValidateClass();
         public NurseReview()
         {
             InitializeComponent();
@@ -57,8 +58,16 @@ namespace Final2021
             int department = Int32.Parse(lstBxDepart.SelectedValue.ToString());
             int type = Int32.Parse(lstBxType.SelectedValue.ToString());
             lstBxNurseRev.DataSource = nur.ViewNurse(department,type);
-            btnGenerate.Visible = false;
+            if (validate.checkList(nur.ViewNurse(department, type))) { 
+              btnGenerate.Visible = false;
             btnMakeList.Visible = true;
+            }
+            else
+            {
+                MessageBox.Show("Not enough Nurses to build a list");
+                btnGenerate.Visible = true;
+                btnMakeList.Visible = false;
+            }
         }
         /* MakeList:
          * Pair list of nurses 
