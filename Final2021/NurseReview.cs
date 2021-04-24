@@ -52,17 +52,19 @@ namespace Final2021
         }
         /* Generate:
          * Build list of nurses
+         * Check list for size
          */
         private void btnGenerate_Click(object sender, EventArgs e)
         {           
             int department = Int32.Parse(lstBxDepart.SelectedValue.ToString());
             int type = Int32.Parse(lstBxType.SelectedValue.ToString());
             lstBxNurseRev.DataSource = nur.ViewNurse(department,type);
+            //IF true
             if (validate.checkList(nur.ViewNurse(department, type))) { 
-              btnGenerate.Visible = false;
-            btnMakeList.Visible = true;
+                btnGenerate.Visible = false;
+                btnMakeList.Visible = true;
             }
-            else
+            else// ELSE False
             {
                 MessageBox.Show("Not enough Nurses to build a list");
                 btnGenerate.Visible = true;

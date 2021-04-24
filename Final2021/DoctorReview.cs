@@ -46,17 +46,18 @@ namespace Final2021
         }
         /* Generate
          * Build a list of doctors based on department and show in list box
+         * Check list size
          */
         private void btnGenerate_Click(object sender, EventArgs e)
         {
             int department = Int32.Parse(lstBxDepart.SelectedValue.ToString());
             lstBxDocREv.DataSource = doc.ViewDoctor(department);
             if (validate.checkList(doc.ViewDoctor(department)))
-            {
+            {//true
                 btnGen.Visible = true;
                 btnGenerate.Visible = false;
             }
-            else {
+            else {//false
                 MessageBox.Show("Not enough Doctors to build a List");
                 btnGen.Visible = false;
                 btnGenerate.Visible = true;

@@ -229,11 +229,12 @@ namespace Final2021
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(330, 20);
+            this.label1.Location = new System.Drawing.Point(230, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(168, 39);
+            this.label1.Size = new System.Drawing.Size(276, 39);
             this.label1.TabIndex = 19;
-            this.label1.Text = "Add Data";
+            this.label1.Text = "Add Information";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // AddData
             // 
