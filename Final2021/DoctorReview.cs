@@ -92,5 +92,11 @@ namespace Final2021
         {
             lstBxDocREv.DataSource = revDoc.GetSaved();
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            lstBxDocREv.DataSource = null;
+            lstBxDocREv.Items.Clear();
+        }
     }
 }

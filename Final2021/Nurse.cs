@@ -139,5 +139,14 @@ namespace Final2021
                 MessageBox.Show("Correct Errors");
             }
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            txtBxEmail.Clear();
+            txtBxFName.Clear();
+            txtBxLName.Clear();
+            txtBxMName.Clear();
+            txtBxNote.Clear();
+        }
     }
 }

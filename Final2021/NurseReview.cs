@@ -93,5 +93,11 @@ namespace Final2021
         {
 
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            lstBxNurseRev.DataSource = null;
+            lstBxNurseRev.Items.Clear();
+        }
     }
 }

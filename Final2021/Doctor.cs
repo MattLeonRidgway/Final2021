@@ -171,5 +171,14 @@ namespace Final2021
         {
 
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            txtBxEmail.Clear();
+            txtBxFName.Clear();
+            txtBxLName.Clear();
+            txtBxMName.Clear();
+            txtBxNotes.Clear();
+        }
     }
 }
