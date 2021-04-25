@@ -55,21 +55,7 @@ namespace Final2021
             }
             return validateEmail;
         }
-        /* isValidInt
-         * Check to make sure an INT is valid
-         */
-        public static bool isValidInt(string input)
-        {
-            bool validateInt = true;
-            if (string.IsNullOrEmpty(input))// Validate for empty text box
-                validateInt = false;
-            else
-            {
-                validateInt = true;
-
-            }
-            return validateInt;
-        }
+        
         /* checkListSize
          * Checks IF size is less than one
          */
