@@ -41,10 +41,10 @@ namespace Final2021
         {// Get email for each nurse
             String nurseEmail = GetNurse(nurID);
             String revEmail = GetNurse(reviewedBy);
-
-            // add to list for viewing
-            reviewedList.Add("Nurse " + nurseEmail + " Reviewed By " + revEmail);
             String nurseSave = "Nurse " + nurseEmail + " Reviewed By " + revEmail;
+            // add to list for viewing
+            reviewedList.Add(nurseSave);
+          
             //Insert into saved
             InsertSaved(nurseSave);
             //return the list that will be viewed
@@ -229,7 +229,7 @@ namespace Final2021
             }
             else
             {
-                Console.WriteLine("Calling Loop List");
+             //   Console.WriteLine("Calling Loop List");
                 ListLoop(nurseList, revList, departID, type);
             }
             return reviewedList;
@@ -239,17 +239,17 @@ namespace Final2021
          * Loop both lists send to BuildList and InsertReviewed
          */
         public void ListLoop(List<int> nList, List<int> rList, int departID, int type)
-        {
-            Console.WriteLine("The list size for the FOR LOOP is " + nList.Count);
+        {//Used for debug
+            //Console.WriteLine("The list size for the FOR LOOP is " + nList.Count);
             for (int count = 0; count < nList.Count; count++)
             {
                // Console.WriteLine("Count is " + count);
-                int doc = nList[count];
+                int nur = nList[count];
                 int rev = rList[count];
                // Console.WriteLine("The list size is " + nList.Count);
                 // Loop through two Lists and call InsertReviewed and build List
-                BuildList(doc, rev);
-                InsertReviewed(doc, departID, rev, type);
+                BuildList(nur, rev);
+                InsertReviewed(nur, departID, rev, type);
             }
 
         }//END

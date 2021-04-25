@@ -68,11 +68,14 @@ namespace Final2021
                     typeList.Add(getType);
                 }
             }
-            catch
+            catch (SQLiteException e)
             {
-                Console.WriteLine("View Type catch");
+                throw new Exception(e.Message);
             }
-            DBClose();
+            finally
+            {
+                DBClose();
+            }
             return typeList;
         }// END View type
         

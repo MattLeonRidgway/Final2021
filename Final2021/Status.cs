@@ -36,8 +36,8 @@ namespace Final2021
             try
             {
                 DBopen();
-                SQLiteCommand insertCommand = new SQLiteCommand("INSERT INTO Status(StatusType)VALUES(?)", con);
-                insertCommand.Parameters.AddWithValue(sType, StatusType);
+                SQLiteCommand insertCommand = new SQLiteCommand("INSERT INTO Status(StatusType)VALUES(@type)", con);
+                insertCommand.Parameters.Add(new SQLiteParameter("type",StatusType));
                 insertCommand.ExecuteNonQuery();
             }
             catch (SQLiteException e)

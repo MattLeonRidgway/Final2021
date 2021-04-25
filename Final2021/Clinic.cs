@@ -71,11 +71,15 @@ namespace Final2021
                     clinicList.Add(getClinic);
                 }
             }
-            catch
+            catch (SQLiteException e)
             {
-                Console.WriteLine("View clinic catch");
+                throw new Exception(e.Message);
             }
-            DBClose();
+            finally
+            {
+                DBClose();
+
+            }
             return clinicList;
         }// end ViewClinic()
         /* UpdateClinic
