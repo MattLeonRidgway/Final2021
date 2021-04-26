@@ -7,19 +7,34 @@ namespace Final2021
     {/* Validation class
       * Used to test strings, int, email alphanumeric
       * Check list size
+      * Check for null or empty
       * 
       */
-
+        /* nullOrEmpty
+         * input string is checked for null or an empty string
+         */
+        public static bool nullOrEmpty(string input) {
+           
+            if (string.IsNullOrEmpty(input)) {// Validate for empty text box
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            
+        }
 
         /* isValidString
-         * Checks for empty string and if text entered is a valid string
+         * Validate using regex string
          * 
          */
         public static bool isValidString(string input)
         {
             bool validateString = true;
-            if (string.IsNullOrEmpty(input))// Validate for empty text box
+            if (nullOrEmpty(input)) { 
                 validateString = false;
+            }                
             else
             {
                 validateString = Regex.IsMatch(input, @"^[a-zA-Z\s]+$");
@@ -27,14 +42,15 @@ namespace Final2021
             return validateString;
         }
         /* isValidAlphnamuric
-         * Validate a textbox and uses regex to match alphanumeric
+         * Use regex to match alphanumeric
          * 
          */
         public static bool isValidAlphanumeric(string input)
         {
             bool validateString = true;
-            if (string.IsNullOrEmpty(input))// Validate for empty text box
-                validateString = false;
+            if (nullOrEmpty(input)) { 
+               validateString = false;
+            }             
             else
             {
                 validateString = Regex.IsMatch(input, @"^[a-zA-Z0-9\s]+$");
@@ -47,8 +63,9 @@ namespace Final2021
         public static bool isValidEmail(string input)
         {
             bool validateEmail = true;
-            if (string.IsNullOrEmpty(input))// Validate for empty text box
-                validateEmail = false;
+            if (nullOrEmpty(input)) { 
+             validateEmail = false;
+            }               
             else
             {
                 validateEmail = Regex.IsMatch(input, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", RegexOptions.IgnoreCase);
