@@ -43,10 +43,10 @@ namespace Final2021
             this.departmentTableAdapter = new Final2021.DataSetReviewDepartmentNurseTableAdapters.DepartmentTableAdapter();
             this.lstBxType = new System.Windows.Forms.ListBox();
             this.nurseTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSetNurse = new Final2021.DataSetNurse();
+            this.dataSetNurse = new Final2021.DataSet.DataSetNurse();
             this.label2 = new System.Windows.Forms.Label();
             this.btnMakeList = new System.Windows.Forms.Button();
-            this.nurseTypeTableAdapter = new Final2021.DataSetNurseTableAdapters.NurseTypeTableAdapter();
+            this.nurseTypeTableAdapter = new Final2021.DataSet.DataSetNurseTableAdapters.NurseTypeTableAdapter();
             this.btnSaved = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetReviewDepartmentNurse)).BeginInit();
@@ -246,9 +246,9 @@ namespace Final2021
         private System.Windows.Forms.ListBox lstBxType;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnMakeList;
-        private DataSetNurse dataSetNurse;
+        private DataSet.DataSetNurse dataSetNurse;
         private System.Windows.Forms.BindingSource nurseTypeBindingSource;
-        private DataSetNurseTableAdapters.NurseTypeTableAdapter nurseTypeTableAdapter;
+        private DataSet.DataSetNurseTableAdapters.NurseTypeTableAdapter nurseTypeTableAdapter;
         private System.Windows.Forms.Button btnSaved;
     }
 }

@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace Final2021 {
+namespace Final2021.DataSet {
     
     
     /// <summary>
@@ -617,7 +617,7 @@ namespace Final2021 {
         }
     }
 }
-namespace Final2021.DataSetNurseTableAdapters {
+namespace Final2021.DataSet.DataSetNurseTableAdapters {
     
     
     /// <summary>
